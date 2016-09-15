@@ -3,11 +3,33 @@
     <head>
         <meta charset="utf-8"/>
         <title>The sliding gallery excercise</title>
-        <script type="text/javascript" src="gallery.js"></script>
+        <style type="text/css">
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+        }
+        #gallery, fieldset {
+            width: 400px;
+        }
+        fieldset {
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+        #gallery {
+            height: 248px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        </style>
     </head>
     <body>
         <div id="gallery">
-            <img id="mainPic" src="photos/12697001013_931afbb2a8_o.jpg">
+            <img src="photos/image1.jpg" width="400"><img src="photos/image2.jpg" width="400"><img src="photos/image3.jpg" width="400"><img src="photos/image4.jpg" width="400"><img src="photos/image5.jpg" width="400"><img src="photos/image6.jpg" width="400">
         </div>
+        <fieldset>
+            <legend>sterowanie galerią</legend>
+            <button id="prev">poprzedni</button>
+            <button id="next">następny</button>
+        </fieldset>
+        <script type="text/javascript" src="gallery.js"></script>
     </body>
 </html>
