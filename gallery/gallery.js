@@ -13,7 +13,7 @@ function onPrev() {
     if (index < 0) {
         index = maxIndex;
     }
-    moveGalleryToIndex();
+    moveGalleryToIndex(index);
 }
 
 function onNext() {
@@ -21,9 +21,9 @@ function onNext() {
     if (index > maxIndex) {
         index = 0;
     }
-    moveGalleryToIndex();
+    moveGalleryToIndex(index);
 }
 
-function moveGalleryToIndex() {
-    $gallery.scrollLeft = 400 * index;
+function moveGalleryToIndex(idx) {
+    $gallery.scrollLeft = 400 * idx;
 }

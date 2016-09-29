@@ -1,0 +1,24 @@
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#gallery, fieldset {
+    width: 400px;
+}
+fieldset {
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+fieldset button {
+    background: white;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 4px 10px;
+}
+#gallery {
+    height: 248px;
+    overflow: hidden;
+    white-space: nowrap;
+}
