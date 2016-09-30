@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Tworzenie galerii: przewodnik</title>
+        <link href="style.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <script type="text/javascript" src="js/marked.js"></script>
+        <div id="content"></div>
+        <script>
+            var xhr = new XMLHttpRequest();
+            xhr.addEventListener('load', loaded);
+            xhr.open('GET', 'tutorial.md');
+            xhr.send();
+            function loaded(e) {
+                var res = e.target;
+                document.querySelector("#content").innerHTML = 
+                    marked(res.response);
+            }
+        </script>
+    </body>
+</html>
