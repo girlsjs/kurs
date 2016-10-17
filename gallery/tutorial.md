@@ -73,7 +73,7 @@ Funkcja to tak naprawdę mały program:
 * Ma swoją logikę - kod pomiędzy nawiasami klamrowymi (w tzw. ciele)
 * Ma wyjście - wartość przy słowie `return` (co jeśli nie ma returna?)
 
-W JavaSkrpycie funkcja może też korzystać ze zmiennych znajdujących się poza jej ciałem, o ile te zmienne są dostępne w miejscu, w którym znajduje się definicja tej funkcji. Jeżeli funkcja wpływa w jakiś sposób na cokolwiek innego niż jej wejście i wyjście (na przykład powoduje przewinięcie się obrazka w galerii lub zmienia wartość zmiennej zdefiniowanej poza jej ciałem) to mówimy, że taka funkcja ma efekt uboczny. Uboczny nie znaczy w tym kontekście "nieporządany"
+W JavaSkrpycie funkcja może też korzystać ze zmiennych znajdujących się poza jej ciałem, o ile te zmienne są dostępne w miejscu, w którym znajduje się definicja tej funkcji. Jeżeli funkcja wpływa w jakiś sposób na cokolwiek innego niż jej wejście i wyjście (na przykład powoduje przewinięcie się obrazka w galerii lub zmienia wartość zmiennej zdefiniowanej poza jej ciałem) to mówimy, że taka funkcja ma efekt uboczny. Uboczny nie znaczy w tym kontekście "niepożądany"
 
 ```
 var a = 10;
