@@ -139,7 +139,9 @@ nav ul > li button:before {
 	width: 100%;
 }
 
-
+nav ul > li button.selected {
+	opacity: 1;
+}
 :-webkit-full-screen .fullscreen{
     background: rgba(0,0,0,.4) url(http://leemark.github.io/better-simple-slideshow/img/compress_ffffff_64.png);
     -webkit-background-size: contain;
