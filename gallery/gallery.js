@@ -25,5 +25,5 @@ function onNext() {
 }
 
 function moveGalleryToIndex(idx) {
-    $gallery.scrollLeft = 400 * idx;
+    $gallery.style.left = 400 * idx + 'px';
 }
