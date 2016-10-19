@@ -1,3 +1,30 @@
+## Spis treści
+
+1. Wstęp
+2. Środowisko
+3. Stan początkowy
+	1. Podgląd elementów w dev toolsach
+	2. Lekka dygresja - mechanizm przełączania obrazków
+4. Etap 1 - Pisanie pierwszych poleceń (step1.js)
+	1. Wstęp do programowania
+	2. DOM + konsola
+	3. Element i wołanie na nim metod
+5. Etap 2 - prosta nawigacja na guziczkach (step2.js)
+	1. Funkcje
+	2. Nasłuchiwanie eventów
+	3. Chowanie poprzedniego elementu
+6. Etap 3 - nawigowanie do poprzedniego i następnego elementu (step3.js)
+	1. Zmienne
+	2. Proste operacje arytmetyczne i tekstowe
+	3. Instrukcje warunkowe
+7. Etap 4 - łączenie dwóch nawigacji razem (step4.js)
+	1. Parametry funkcji
+	2. Debugowanie
+8. Etap 5 - autoplay (step5.js)
+9. Etap 6 - dodawanie nowych obrazków (stub)
+10. Etap 7 - jakby jeszcze było mało (stub)
+11. Referencje
+
 ## Wstęp
 
 Efekt końcowy do którego dążymy (demo). Na ten efekt składa się X kompletnych, samodzielnych etapów, więc nawet jeśli zdążymy zrobić tylko 2, to i tak będziemy mieć gotową, działającą galerię, w najgorszym wypadku z mniejszą ilością wodotrysków.
@@ -37,7 +64,7 @@ Na dowolnym elemencie możemy kliknąć **prawy przycisk > Zbadaj element** i zo
 
 Po prawej mamy panel który wypisuje wszystkie style które wpływają na wygląd aktualnie podświetlonego elementu i skąd one pochodzą - to przydaje się bardzo przy pisaniu kodu CSS. Na dole za to mamy konsolę, w której możemy bezpośrednio wpisywać kod JavaScript i patrzeć jaki będzie miał efekt na stronie. (Chwila na rozejrzenie się po strukturze drzewa DOM, dostępnych narzędziach. Można poprosić grupę, żeby np powyłączali niektóre style, itp).
 
-## Lekka dygresja - mechanizm przełączania obrazków 
+### Lekka dygresja - mechanizm przełączania obrazków 
 
 (najprawdopodobniej TMI - skrócę to jak będę miała bardziej całościowy pogląd)
 Na naszym kursie nie będziemy zajmowali się zbyt szczegółowo CSS, ale te dwie właściwości przydadzą nam się do zrozumienia jak działa mechanizm przełączania slajdów:
@@ -310,7 +337,7 @@ var currentNumber = 1;
 
 (Staramy się nie odlatywać za bardzo w dygresje na temat scope, hoistingu, undefined i tym podobnych - na tym etapie TMI. Waham się czy mówić, że jeżeli nie nadamy tej zmiennej wartości na początku, to JavaScript nie rzuci nam od razu komunikatem o błędzie, tylko mogą wyniknąć problemy w zupełnie niespodziewanych miejscach. I tak nie obejmiemy całego JavaScriptu w jeden dzień.) 
 
-### Proste operacje arytmetyczne i na znakach
+### Proste operacje arytmetyczne i tekstowe
 
 Wracamy do naszej funkcji do punktów 3.3. i 3.4. Chcemy pobrać aktualną wartość zmiennej `currentNumber`, dodać do niej 1 i zapisać jako nowy numer. W tym celu możemy sobie stworzyć wewnątrz funkcji dodatkową pomocniczą zmienną:
 
