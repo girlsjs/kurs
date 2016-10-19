@@ -70,7 +70,7 @@
 }
 .next:hover, 
 .prev:hover,
-nav ul > li button:hover {
+nav button:hover {
   cursor: pointer;
   opacity: 1;
 }
@@ -106,6 +106,15 @@ nav ul > li button:hover {
 nav {
 	text-align: center;
 	line-height: 25px;
+	position: relative;
+}
+
+nav button {
+	background: #000;
+	color: #fff;
+	position: relative;
+	border: none;
+	outline: none;
 }
 
 nav ul {
@@ -119,16 +128,33 @@ nav ul > li {
 }
 
 nav ul > li button {
-	background: #000;
-	color: #fff;
-	position: relative;
-	border: none;
-	outline: none;
 	width: 15px; 
 	height: 20px;
 	line-height: 25px;
 	font-size: 32px;
-	opacity: 0.7;
+	opacity: 0.7;	
+}
+
+nav button.play {
+	position: absolute;
+	width: 30px;
+	height: 20px;
+	font-size: 15px;
+	line-height: 15px;
+	right: 0;
+	bottom: 0;
+}
+
+nav button.play:before {
+	content: '\25B6';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+nav button.play.playing:before {
+	content: '\23f8';
 }
 
 nav ul > li button:before {
