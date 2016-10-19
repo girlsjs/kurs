@@ -86,22 +86,6 @@ nav button:hover {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-.fullscreen {
-  display: block;
-  width: 24px;
-  height: 24px;    
-  background: rgba(0,0,0,.3) url(http://leemark.github.io/better-simple-slideshow/img/arrows-alt_ffffff_64.png); 
-  -webkit-background-size: contain; 
-  background-size: contain;
-  position: absolute;
-  top: 5px;
-  left: 5px;   
-  cursor: pointer;    
-  opacity: .3;
-} 
-.fullscreen:hover {
-  opacity: .8;   
-}
 
 nav {
 	text-align: center;
@@ -167,40 +151,4 @@ nav ul > li button:before {
 
 nav ul > li button.selected {
 	opacity: 1;
-}
-:-webkit-full-screen .fullscreen{
-    background: rgba(0,0,0,.4) url(http://leemark.github.io/better-simple-slideshow/img/compress_ffffff_64.png);
-    -webkit-background-size: contain;
-    background-size: contain;
-}
-:-moz-full-screen .fullscreen{
-    background: rgba(0,0,0,.4) url(http://leemark.github.io/better-simple-slideshow/img/compress_ffffff_64.png);
-    background-size: contain;
-}
-:-ms-fullscreen .fullscreen{
-    background: rgba(0,0,0,.4) url(http://leemark.github.io/better-simple-slideshow/img/compress_ffffff_64.png);
-    background-size: contain;
-}
-:full-screen .fullscreen{
-    background: rgba(0,0,0,.4) url(http://leemark.github.io/better-simple-slideshow/img/compress_ffffff_64.png);
-    -webkit-background-size: contain;
-    background-size: contain;
-}
-:-webkit-full-screen .fullscreen{
-    background: rgba(0,0,0,.4) url(http://leemark.github.io/better-simple-slideshow/img/compress_ffffff_64.png);
-    -webkit-background-size: contain;
-    background-size: contain;
-}
-:-moz-full-screen .fullscreen{
-    background: rgba(0,0,0,.4) url(http://leemark.github.io/better-simple-slideshow/img/compress_ffffff_64.png);
-    background-size: contain;
-}
-:-ms-fullscreen .fullscreen{
-    background: rgba(0,0,0,.4) url(http://leemark.github.io/better-simple-slideshow/img/compress_ffffff_64.png);
-    background-size: contain;
-}
-:fullscreen .fullscreen{
-    background: rgba(0,0,0,.4) url(http://leemark.github.io/better-simple-slideshow/img/compress_ffffff_64.png);
-    -webkit-background-size: contain;
-    background-size: contain;
 }
