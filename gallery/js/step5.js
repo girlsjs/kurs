@@ -7,12 +7,13 @@ var playing = false;
 var slideDuration = 3500;
 var slideshowInterval = null;
 
-function playButtonClicked ( ) {
+function playButtonClicked ( event ) {
 	if ( playing === true ) {
 		stopSlideshow();
 	} else {
 		startSlideshow();
 	}
+	event.stopPropagation();
 }
 document.querySelector('#play').addEventListener( 'click', playButtonClicked );
 
@@ -82,3 +83,10 @@ function showPreviousSlide ( ) {
     showSlide( newNumber );
 }
 document.querySelector('#prev').addEventListener( 'click', showPreviousSlide );
+
+function maybeStopSlideshow ( ) {
+	if ( playing === true ) {
+		stopSlideshow();
+	}
+}
+document.querySelector( '#wrapper' ).addEventListener( 'click', maybeStopSlideshow );
