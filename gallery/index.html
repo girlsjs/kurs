@@ -1,19 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8"/>
         <title>The sliding gallery excercise</title>
         <link href="style.css" type="text/css" rel="stylesheet"/>
     </head>
-    <body>
-        <fieldset>
-            <legend>sterowanie galerią</legend>
-            <button id="prev">poprzedni</button>
-            <button id="next">następny</button>
-        </fieldset>
-        <div id="gallery">
-            <img src="photos/image1.jpg" width="400"><img src="photos/image2.jpg" width="400"><img src="photos/image3.jpg" width="400"><img src="photos/image4.jpg" width="400"><img src="photos/image5.jpg" width="400"><img src="photos/image6.jpg" width="400">
-        </div>
-        <script type="text/javascript" src="gallery.js"></script>
+	<div id="wrapper" class="wrapper">
+		<div id="slides" class="slides" tabindex="1" autofocus="autofocus">
+				<figure id="slide1" class="show">
+				  <img src="http://leemark.github.io/better-simple-slideshow/demo/img/medium.jpg" width="100%" /><figcaption>"Medium" by <a href="https://www.flickr.com/photos/thomashawk/14586158819/">Thomas Hawk</a>.</figcaption> 
+				</figure>
+				<figure id="slide2">
+				  <img src="http://leemark.github.io/better-simple-slideshow/demo/img/colorado.jpg" width="100%" /><figcaption>"Colorado" by <a href="https://www.flickr.com/photos/stuckincustoms/88370744">Trey Ratcliff</a>.</figcaption> 
+				</figure>
+				<figure  id="slide3">
+				  <img src="http://leemark.github.io/better-simple-slideshow/demo/img/monte-vista.jpg" width="100%" /><figcaption>"Early Morning at the Monte Vista Wildlife Refuge, Colorado" by <a href="https://www.flickr.com/photos/davesoldano/8572429635">Dave Soldano</a>.</figcaption> 
+				</figure>
+				<figure id="slide4">
+				  <img src="http://leemark.github.io/better-simple-slideshow/demo/img/sunrise.jpg" width="100%" /><figcaption>"Sunrise in Eastern Colorado" by <a href="https://www.flickr.com/photos/35528040@N04/6673031153">Pam Morris</a>.</figcaption> 
+				</figure>
+				<figure id="slide5">
+				  <img src="http://leemark.github.io/better-simple-slideshow/demo/img/colorado-colors.jpg" width="100%" /><figcaption>"Colorado colors" by <a href="https://www.flickr.com/photos/cptspock/2857543585">Jasen Miller</a>.</figcaption> 
+				</figure>
+				<div id="prev" class="prev">&laquo;</div>
+				<div id="next" class="next">&raquo;</div>					
+			</div> <!-- // slides -->
+			<nav>
+				<ul>
+					<li><button id="pin1" class="pin" />
+					<li><button id="pin2" class="pin" />
+					<li><button id="pin3" class="pin" />
+					<li><button id="pin4" class="pin" />
+					<li><button id="pin5" class="pin" />
+				</ul>
+				<button id="play" class="play"></button>
+			</nav>
+		
+		</div>
+		<script type="text/javascript" src="gallery.js"></script>		
     </body>
 </html>
