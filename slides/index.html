@@ -11,6 +11,9 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<link rel="stylesheet" href="css/font-awesome.min.css">		
+		<link rel="stylesheet" href="css/custom.css">		
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -28,18 +31,213 @@
 					<section>
 						<img style="height: 400px;"  src="img/kaczucha.svg"/>					
 						<h3 class="fragment grow">Cześć!</h3>
+						<i class="fragment fade-down fa fa-angle-down"></i>
 					</section>			
 					<section>
 						<p>Dzisiaj nauczymy się, jak za pomocą języka JavaScript stworzyć interaktywną galerię obrazków.</p>	
-						<figure>
-							<img style="height: 400px;" src="img/demo.jpg" />					<figcaption class="fragment fade-right">(kliknij, żeby zobaczyć demo)</figcaption>	
-						</figure>
-
-						
+						<a href="../gallery/demo.html" target="_blank">
+							<figure>
+								<img style="height: 400px;" src="img/demo.jpg" />					<figcaption class="fragment fade-right">(kliknij, żeby zobaczyć demo)</figcaption>	
+							</figure>
+						</a>
+						<i class="fragment fade-down fa fa-angle-down"></i>						
 					</section>
+					<section>
+						<p>Struktura i wygląd galerii <span style="font-style: italic">(HTML i CSS)</span> są już gotowe.</p>	
+						<p class="fragment fade-right"><a href="../gallery/index.html" target="_blank">
+							(Kliknij tutaj, żeby zobaczyć)
+						</a></p>
+						<p class="fragment fade-left">Naszym zadaniem będzie ożywić ją dodając kod JavaScript.</p>							
+						<i class="fragment fade-down fa fa-angle-right"></i>						
+					</section>							
 				</section>	
 				<section>
-					<p>test</p>
+					<p>Na efekt końcowy składa się kilka niezależnych etapów, więc nie martw się, jeżeli nie zdążymy zrobić wszystkiego.</p>		
+					<p class="fragment fade-up note side-note">Swoją drogą, przyjemne te slajdy, prawda? :-) Wszystkie animacje i przejścia między nimi są zakodowane właśnie w JavaScript.</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>				
+				<section>
+					<p>Zadania będziemy robić w trzyosobowych grupach, dlatego ważne jest, żebyśmy dyskutowały razem nad pomysłami i pomagały sobie nawzajem.</p>		
+					<p class="fragment fade-up">Nasz(a) instruktor(ka) będzie cały czas nad nami czuwać i chętnie odpowie na wszystkie pytania.</p>
+					<p class="fragment note question"><strong>Gotowe?</strong> Na zielono pojawią się pytania, które warto omówić w grupach przed wyruszeniem dalej.</p>					
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>		
+				<section>
+					<section>					
+						<h3>Środowisko pracy</h3>
+						<ul>
+							<li class="fragment fade-right"><strong>edytor tekstu</strong> - do pisania naszego kodu. Jeżeli nie masz ulubionego, możesz zainstalować <a href="http://brackets.io/">Brackets</a> (też działa w oparciu o JavaScript!)</li>
+							<li class="fragment fade-right"><strong>przeglądarka internetowa</strong> - na pewno masz swoją ulubioną. Jeżeli jest to Internet Explorer, to... czas zmienić swoją ulubioną przeglądarkę, bo bywa mocno nieprzewidywalna ;-) Na przykład na <a href="https://www.google.pl/chrome/browser/desktop/">Chrome</a>.</li>	
+							<li class="fragment fade-right"><strong>narzędzia programisty</strong> - już je masz! Naciśnij F12 (Ctrl + Option + J na Macbookach) żeby się przekonać.</li>							
+						</ul>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>			
+					<section>
+						<h3>Ściągawka</h3>
+						<p><a href="https://developer.mozilla.org/">https://developer.mozilla.org/</a></p>	
+						<p class="fragment fade-up note side-note">Ściągawki są jak najbardziej wskazane, nikt nie zna tego wszystkiego na pamięć!</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>						
+					</section>					
+				</section>		
+				<section>
+					<section>
+						<h3>Pamiętacie <a href="../gallery/demo.html" target="_blank">demo naszej galerii</a>?</h3>
+						<p>Składają się na nią trzy warstwy:</p>			
+						<i class="fragment fade-down fa fa-angle-down"></i>						
+					</section>	
+					<section>					
+						<h3>Struktura dokumentu</h3>
+						<p class="note question">Jakie elementy są widoczne na stronie?</p>
+						<p class="fragment fade-up">Obrazki, tekst, akapity, nagłówki, ikonki, itp. - <span class="fragment highlight-blue">za to wszystko odpowiedzialny jest HTML.</span></p>						
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>						
+					<section>					
+						<h3>Prezentacja</h3>
+						<p class="note question">Jak wyglądają poszczególne elementy?</p>
+						<p class="fragment fade-up">Rozmiar, kształt, kolor, rodzaj czcionki, pozycja względem innych elementów - na te pytania odpowiada <span class="fragment highlight-blue">CSS.</span></p>						
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>	
+						<section>					
+						<h3>Interakcja z użytkownikiem</h3>
+						<p class="note question">Co się dzieje na stronie?</p>
+						<p class="fragment fade-up">Jakie możliwości ma użytkownik? Co się wtedy stanie? - Do tego potrzebny nam JavaScript - <span class="fragment highlight-blue">i tym też się za chwilę zajmiemy.</span></p>						
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>					
+				</section>		
+				<section>
+					<section>
+						<h3>Zastanówmy się</h3>
+						<p class="note question">Z jakich elementów składa się nasza galeria? Skąd możemy wiedzieć jak są zbudowane?</p>			
+						<i class="fragment fade-down fa fa-angle-down"></i>						
+					</section>	
+					<section>					
+						<h3>Narzędzia programisty!</h3>
+						<p class="fragment fade-up">Prawie każda przeglądarka internetowa ma w sobie genialne narzędzia, które pomogą nam zrozumieć z czego składa się strona i w jaki sposób ona działa. </p>						
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>						
+					<section>					
+						<!-- screencast -->
+						<p>Opcja <span class="fragment highlight-blue">Zbadaj</span> pozwala nam podejrzeć szczegóły.</p>		
+						<img src="img/zbadaj.gif" />
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>	
+					<section>					
+						<!-- screencast -->
+						<p>Podświetlenie wybranego elementu</p>
+						<img src="img/podswietl.gif" />
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>	
+					<section>					
+						<!-- screencast -->
+						<p>Klasy, style, i możliwość ich zmiany</p>	<img src="img/style.gif" />					
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>					
+					<section>					
+						<!-- screencast -->
+						<p>Konsola JavaScript</p>					<img src="img/konsola.gif" />	
+						<br />
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>						
+				</section>		
+				<section>
+					<p class="note task">Czas na eksperymenty! Korzystając z tych narzędzi, spróbujmy zabrać klasę <code>show</code> z elementu który ma ją obecnie, i dodać ją do innego obrazka.</p>		
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>			
+				<section data-transition="convex-in zoom-out">
+					<p>Udało się? Klasa <code>show</code> dopisuje dodatkowe style CSS, dzięki czemu element, który ma tę klasę, pokazuje się na wierzchu pozostałych. </p>
+					<p class="fragment fade-up note more">Jeżeli zastanawiasz się, jak to jest zrobione, nasz(a) instruktor(ka) chętnie to wytłumaczy dokładniej.</p>					
+					<p class="fragment fade-in">Naszym zadaniem będzie znalezienie sposobu, żeby przełączać tę klasę przy użyciu kodu, i dzięki temu automatycznie zmieniać slajdy.</p>		
+
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>
+				<section data-transition="zoom-in convex-out">
+					<section>
+						<h3 class="note question">Skąd komputer wie, co ma robić?</h3>	
+						<p class="fragment fade-left">Była taka zabawa na samym początku zajęć...</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>			
+					<section>
+						<p class="note task">Zapiszmy po polsku instrukcje potrzebne do pokazania slajdu nr 5.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>						
+					</section>					
+				</section>					
+				<section>
+					<p>Pewnie wygląda to mniej więcej tak:</p>
+					<pre class="fragment fade-left"><code>1. Znajdź slajd nr 5 w dokumencie.
+2. Dodaj do niego klasę show.</code></pre>					
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>	
+				<section>
+					<section>
+						<p>Do szukania elementów w dokumencie przyda nam się obiekt <code>document</code>.</p>
+						<p class="fragment fade-up note task">Otwórz narzędzia programisty, wpisz w konsoli słowo <code>document</code> i sprawdź, co się stanie.</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>			
+					<section>
+						<p>Mamy tutaj obiekt, który zawiera całą strukturę pliku HTML. Dzięki niemu możemy znaleźć dowolny element dokumentu i zmienić go przy pomocy kodu.</p>
+						<p class="note more">Dla ciekawych jak to działa - lektura na potem: <a href="https://css-tricks.com/dom/">What is the DOM? - on CSS Tricks</a></p>
+						<i class="fragment fade-down fa fa-angle-right"></i>						
+					</section>					
+				</section>	
+				<section>
+					<p>Obiekt <code>document</code> ma wiele <strong>metod</strong> do operowania na elementach strony. W tym momencie poznamy jedną z nich:</p>
+					<ul class="fragment fade-in"><li><strong><code>querySelector( warunek )</code></strong> - wybiera wszystkie elementy, które spełniają dany warunek.</li></ul>	
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>		
+				<section>
+					<p>Jeżeli znasz CSS, to świetnie. Selektory w tym przypadku działają dokładnie tak samo, na przykład:</p>
+					<pre><code>// wybiera wszystkie nagłówki 3 stopnia
+document.querySelector( 'h3' ) 
+// wybiera wszystkie artykuły
+document.querySelector( 'article' ) 
+// wybiera wszystkie elementy z klasą moja-klasa
+document.querySelector( '.moja-klasa' ) 
+// wybiera element z ID artykul-1
+document.querySelector( '#artykul-1' ) </code></pre>										<p class="fragment fade-up note more">Jeżeli nie znasz CSS, nic straconego. W narzędziach programisty pod prawym przyciskiem myszy znajdziesz opcję <strong>Kopiuj > Kopiuj selektor</strong>.</p>	
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>	
+				<section>
+					<p class="note task">Otwórzmy konsolę i na podstawie przykładów z poprzedniego slajdu napiszmy kod, który znajdzie nam slajd nr 5.</p>		
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>		
+				<section>
+					<pre><code>document.querySelector( '#slide5' )</code></pre>
+					<p>To, co dostałyśmy z powrotem to element drzewa dokumentu. Chcemy teraz znaleźć metody, które pozwolą na dodanie lub zabranie mu klasy CSS. </p>	
+					<p class="fragment fade-down">W tym celu pomogą nam:</p>
+					<ul class="fragment fade-down">
+						<li><strong><code>classList.add( nazwa-klasy )</code></strong> - dodaje klasę o podanej nazwie,</li>
+						<li><strong><code>classList.remove( nazwa-klasy )</code></strong> - zabiera daną klasę z elementu.</li>	
+					</ul>
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>		
+				<section>
+					<p class="note task">Złóżmy w konsoli kod potrzebny do pokazania slajdu 5 - szukamy go przy użyciu <code>querySelector</code>, a potem wołamy na nim metodę <code>classList.add</code> z nazwą klasy. Uwaga na duże i małe litery! Polecenie kończymy średnikiem.</p>
+					<p class="fragment fade-left">Gotowe?</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>
+				<section>
+					<section>
+						<pre><code>document.querySelector( '#slide5' ).classList.add( 'show' );</code></pre>
+						<p>Działa? Teraz zróbmy to samo dla slajdu 4.</p>	
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>		
+					<section>
+						<pre><code>document.querySelector( '#slide4' ).classList.add( 'show' );</code></pre>
+						<p class="fragment fade-right note question">Kod dla slajdu 4 nie zadziałał, chociaż jest zbudowany praktycznie tak samo jak poprzedni. Jakieś pomysły dlaczego tak się stało?</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>						
+					<section>
+						<p>Musimy schować slajd 5, który przykrywa nam pozostałe.</p>
+						<p class="note task">Napiszmy w konsoli kod, który to zrobi.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>						
+					</section>					
+				</section>				
+				<section data-transition="convex-in zoom-out">
+					<pre><code>document.querySelector( '#slide5' ).classList.remove( 'show' );</code></pre>
+					<p>Super! Skopiujmy wszystkie trzy fragmenty do naszego pliku <code>galeria.js</code>. Przydadzą nam się niedługo przy programowaniu nawigacji.</p>	
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>		
+				<section data-background-image="img/coffee.gif" data-transition="zoom">					
 				</section>					
 			</div>
 		</div>
@@ -51,6 +249,7 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+				controls: false,
 				transition: 'convex',
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
