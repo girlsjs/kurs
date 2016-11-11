@@ -239,7 +239,117 @@ document.querySelector( '#artykul-1' ) </code></pre>										<p class="fragment
 				</section>		
 				<section data-background-image="img/coffee.gif" data-transition="zoom">					
 				</section>					
+				<section data-transition="zoom-in convex-out">	
+					<section>
+						<h3>Zacznijmy od menu</h3>
+						<p class="fragment fade-left">Na dole mamy 5 białych guziczków. Oprogramujemy każdy z nich tak, żeby pokazywał odpowiedni slajd. </p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>		
+					<section>
+						<p class="note question">Zastanówmy się i zapiszmy po polsku, jak będzie wyglądał przepis na pokazanie slajdu 5 gdy ktoś kliknie myszą guzik o tym numerze.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>						
+				</section>	
+				<section>
+					<p>Gotowe?</p>
+					<div class="fragment fade-up">
+						<p>Wyszło nam pewnie coś takiego:</p>
+					<pre><code>1. Znajdź piąty guziczek.
+2. Sprawdzaj, kiedy zostanie kliknięty.
+3. Kiedy jest kliknięty wykonaj akcję:
+	3.1. Schowaj aktualnie widoczny slajd.
+	3.2. Pokaż slajd piąty.</code></pre>
+					</div>
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>					
+				<section>
+					<p>Tym razem zaczniemy od końca. Ostatnie dwie instrukcje powinny wykonywać się razem, więc porzebujemy znaleźć jakiś sposób, żeby je ze sobą powiązać.</p>
+					<p class="fragment fade-right">Do tego potrzebne nam będą <strong>funkcje</strong>.</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>			
+				<section>
+					<p class="note more"><strong>Funkcja</strong> to ciąg kilku poleceń które tworzą logiczną całość, i powinny wykonywać się razem jedno po drugim.</p>
+					<p class="fragment fade-left">W JavaScript możemy budować funkcje na kilka różnych sposobów, z czego najprostszy to:</p>
+					<pre class="fragment fade-right"><code>function nazwafunkcji ( ) {
+   /* treść funkcji */
+}</code></pre>					
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>
+				<section>
+					<p class="note task">W pliku <code>galeria.js</code> stwórz funkcję o nazwie <code>showSlide5</code>. W jej treści dodaj kod, który pokazuje piąty slajd (tak, jak zrobiłyśmy to na poprzednim etapie).</p>			
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>	
+				<section>
+					<section>
+						<pre><code>function showSlide5 ( ) {
+   document.querySelector('#slide5').classList.add('show');
+}</code></pre>
+						<p class="fragment fade-right">Mamy naszą pierwszą funkcję! Teraz chcemy powiązać ją z guziczkiem nr 5, tak żeby wykonywała się za każdym razem, kiedy ktoś go kliknie. </p>	
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>		
+					<section>
+						<p class="note question">Pamiętacie, jak udało nam się znaleźć konkretny slajd na poprzednim etapie? Jak możemy zrobić teraz to samo z guziczkiem?</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>						
+					</section>					
+				</section>	
+				<section>
+					<pre><code>document.querySelector( '#pin5' )</code></pre>
+					<p>Teraz potrzebujemy jakiejś metody, która pozwoli nam powiązać naszą funkcję z kliknięciem w ten element.</p>
+					<div class="fragment fade-left">
+						<p>Dzięki ściągawce wiemy, że jest to:</p>
+						<ul>
+							<li><strong><code>addEventListener( wydarzenie, akcja-do-wykonania )</code></strong> - wykonuje podaną akcję, gdy z elementem stanie się coś konkretnego.</li>
+						</ul>						
+					</div>
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>					
+				<section>
+					<p class="note more"><strong>Wydarzeniem</strong> może być wszystko, co dzieje się na stronie: to, co robi z nią użytkownik (kliknięcie, przesunięcie myszy nad elementem, wciśnięcie klawisza, zmaksymalizowanie okna, scroll, itp), a także rzeczy, które dzieją się automatycznie, np. załadowanie strony.</p>		
+					<p class="fragment fade-up">W tym przypadku potrzebny nam będzie typ <code>'click'</code>, który odpowiada za kliknięcie w dany element.</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>		
+				<section>
+					<p class="note task">W pliku <code>galeria.js</code> masz już kod wyszukujący guziczek nr 5. Przy użyciu metody <code>addEventListener</code> powiąż kliknięcie na tym guziczku (wydarzenie <code>'click'</code>) z funkcją <code>showSlide5</code> napisaną wcześniej.</p>			
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>				
+				<section>
+					<section>
+						<pre><code>document.querySelector('#pin5').addEventListener( 'click', showSlide5 );</code></pre>
+						<p class="fragment fade-right">Co teraz? Odświeżamy stronę i patrzymy, czy działa ;-)</p>	
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>		
+					<section>
+						<p>Mamy już kod, który pokazuje slajd 5. Teraz zanim go pokażemy, przydałoby się znaleźć aktualny slajd i go schować.</p>
+						<p class="fragment fade-up note question">Jak możemy znaleźć aktualny slajd? Czy jest coś, co wyróżnia go od pozostałych?</p>						
+						<i class="fragment fade-down fa fa-angle-down"></i>						
+					</section>	
+					<section>
+						<p class="note task">Aktualny slajd, w odróżnieniu od pozostałych, ma dodaną klasę <code>show</code>. Dodając kropkę przed nazwą klasy dostaniemy selektor, który pozwala po niej wyszukiwać. Korzystając z tej wiedzy i poprzednich przykładów, dodaj na początku funkcji <code>showSlide5</code> kod, który znajdzie aktualny slajd i go schowa.</p>						
+						<i class="fragment fade-down fa fa-angle-right"></i>						
+					</section>	
+				</section>						
+				<section>
+					<p>Po schowaniu aktualnego slajdu całość przedstawi nam się następująco:</p>
+					<pre><code>function showSlide5( ) {
+   document.querySelector( '.show' ).classList.remove( 'show' );
+   document.querySelector( '#slide5' ).classList.add( 'show' );
+}
+document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code></pre>
+					<p class="fragment fade-right">Działa? Teraz możemy na tej podstawie stworzyć kod dla pozostałych slajdów i przycisków. Najprostszym sposobem będzie metoda <em>kopiuj-wklej-zmień co trzeba</em>.</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>					
+				<section data-transition="convex-in zoom-out">
+					<h3>Czas na testy!</h3>
+					<p>Co potrzebujemy sprawdzić, żeby mieć pewność, że wszystko jest OK?</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>		
+				<section data-transition="zoom-in concave-out">
+					<h3>Czas na testy!</h3>
+					<p>Co potrzebujemy sprawdzić, żeby mieć pewność, że wszystko jest OK?</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>						
 			</div>
+	
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
@@ -250,6 +360,7 @@ document.querySelector( '#artykul-1' ) </code></pre>										<p class="fragment
 			Reveal.initialize({
 				history: true,
 				controls: false,
+				progress: false,
 				transition: 'convex',
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
