@@ -16,6 +16,7 @@
 }
 
 i.fa {
+	display: block;
 	font-family: 'FontAwesome' !important;
 	font-size: 1.6em;
 	font-style: normal;
@@ -49,6 +50,11 @@ i.fa {
 
 .reveal .side-note {
 	background: rgba(255, 255, 255, 0.4);	
+}
+
+.reveal .side-note:before {
+	content: "\f08d";
+	transform: translateX(0.1em) translateY(-50%) rotate(-30deg);	
 }
 
 .reveal .question {

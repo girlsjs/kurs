@@ -340,14 +340,272 @@ document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code
 				</section>					
 				<section data-transition="convex-in zoom-out">
 					<h3>Czas na testy!</h3>
-					<p>Co potrzebujemy sprawdzić, żeby mieć pewność, że wszystko jest OK?</p>
+					<p class="note question">Co potrzebujemy sprawdzić, żeby mieć pewność, że wszystko jest OK?</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>			
+				<section data-transition="zoom-in convex-out">	
+					<section>
+						<h3>Nawigacja poprzedni / następny</h3>
+						<p class="fragment fade-left">Następnym krokiem będzie zaprogramowanie strzałek po prawej i lewej, które przeniosą nas do następnego / poprzedniego obrazka.</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>		
+					<section>
+						<p class="note question">Tradycyjnie, zacznijmy od zapisania po polsku, co potrzebujemy zrobić, żeby po kliknięciu przycisku <code>>></code> pokazał się następny slajd w kolejności.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>						
+				</section>				
+				<section>
+					<p>Jest kilka sposobów, na jaki można to zapisać. Tutaj mamy przykładowy:</p>
+					<pre class="fragment fade-left"><code>1. Znajdź prawą strzałkę,
+2. Sprawdzaj, kiedy zostanie kliknięta.
+3. Kiedy zostanie kliknięta wykonaj zdarzenie:
+	3.1. Znajdź slajd, który aktualnie ma przypisaną klasę `show`,
+	3.2. Zabierz mu tę klasę,
+	3.3. Znajdź element następny w kolejności,
+	3.4. Dodaj mu klasę `show`.</code></pre>	
+					<p class="fragment fade-right note side-note">Jeżeli wasz sposób różni się bardzo od przykładowego, instruktor(ka) chętnie podpowie co dalej.</p>					
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>	
+				<section>
+					<section>
+						<p>Sporo z tych lub podobnych instrukcji mamy już omówione:</p>
+						<ul style="list-style-type: none;">
+							<li class="fragment highlight-blue">1. Znajdź prawą strzałkę,</li>		
+							<li class="fragment highlight-blue">2. Sprawdzaj, kiedy zostanie kliknięta.</li>
+							<li class="fragment highlight-blue">3. Kiedy zostanie kliknięta wykonaj zdarzenie:</li>
+							<li ><ul style="list-style-type: none;">
+		<li class="fragment highlight-blue">3.1. Znajdź slajd, który aktualnie ma przypisaną klasę <code>show</code>,</li>
+		<li class="fragment highlight-blue">3.2. Zabierz mu tę klasę,</li>
+		<li>3.3. Znajdź element następny w kolejności,</li>
+						<li>3.4. Dodaj mu klasę <code>show</code>.</li>
+							</ul></li>
+						</ul>					
+						<i class="fragment fade-down fa fa-angle-down"></i>	
+					</section>		
+					<section>
+						<p class="note question">Masz wątpliwości, jak zrobić którąś z podświetlonych rzeczy? Teraz jest dobry moment, żeby to wyjaśnić.</p>		<i class="fragment fade-down fa fa-angle-down"></i>				
+					</section>
+					<section>
+						<p class="note task">Korzystając z tego, co już wiemy, w pliku <code>galeria.js</code> stwórz funkcję <code>showNextSlide</code>, i dodaj w niej ukrywanie aktualnego elementu. Powiąż tę funkcję z kliknięciem na prawej strzałce. </p>		
+						<i class="fragment fade-down fa fa-angle-right"></i>				
+					</section>					
+				</section>	
+				<section>
+					<p>Przykład rozwiązania:</p>
+					<pre class="fragment fade-left"><code>function showNextSlide( ) {
+   document.querySelector( '.show' ).classList.remove( 'show' );
+   // tutaj będzie reszta naszego kodu
+}
+document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</code></pre>	
+					<p class="fragment fade-right">Sprawdźmy, jak to działa!</p>					
 					<i class="fragment fade-down fa fa-angle-right"></i>	
 				</section>		
-				<section data-transition="zoom-in concave-out">
-					<h3>Czas na testy!</h3>
-					<p>Co potrzebujemy sprawdzić, żeby mieć pewność, że wszystko jest OK?</p>
+				<section>
+					<p class="note question">Najtrudniejsze na tym etapie jest znalezienie następnego elementu w kolejności. Jakie mamy pomysły, na to jak to zrobić?</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>		
+				<section>
+					<p>Potrzebujemy zapamiętać gdzieś, jaki slajd był ostatnio wyświetlany, i na tej podstawie obliczyć, który będzie następny.</p>
+					<p class="fragment fade-up">W tym celu potrzebne nam będą <strong>zmienne</strong>.</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>
+				<section>
+					<p class="note more"><strong>Zmienna</strong> jest to schowek, w którym możemy zapisywać informacje i odczytywać je później w innym miejscu. W JavaScript w każdej zmiennej można przechowywać praktycznie wszystko - tekst, liczbę, element dokumentu, złożony obiekt, a nawet funkcję.</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>	
+				<section>
+					<p>Żeby stworzyć <strong>zmienną</strong> w JavaScript używamy słowa kluczowego <code>var</code>:</p>
+					<pre class="fragment fade-left"><code>//zmienna tekstowa
+var courseTitle = 'Galeria JavaScript';</code></pre>	
+					<p class="fragment fade-right">Tak stworzonej zmiennej możemy potem używać dalej w kodzie po prostu podając jej nazwę, na przykład:</p>
+					<pre class="fragment fade-left"><code>//zmienna liczbowa - długość tekstu
+var titleLength = courseTitle.length;</code></pre>						
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>	
+				<section>
+					<section>
+						<p class="note question">Jak już wspomnieliśmy, w zmiennej można przechowywać wszystko. Zastanówmy się, w jakiej formie będzie najłatwiej zapamiętać aktualny slajd, żeby potem na tej podstawie obliczyć kolejny.</p>				
+						<i class="fragment fade-down fa fa-angle-down"></i>	
+					</section>		
+					<section>
+						<p>Najłatwiej będzie nam zapamiętać numer aktualnego elementu. To pozwoli nam wyznaczyć następny / poprzedni element poprzez dodawanie i odejmowanie.</p>
+						<p class="note question">Spróbujmy doprecyzować nasz algorytm dla prawej strzałki, wiedząc, że będziemy odczytywać i zapisywać numer aktualnego elementu.</p>	
+						<i class="fragment fade-down fa fa-angle-right"></i>				
+					</section>				
+				</section>		
+				<section>
+					<p>Wygląda to pewnie tak:</p>
+					<pre class="fragment fade-left"><code>1. Znajdź prawą strzałkę,
+2. Sprawdzaj, kiedy zostanie kliknięta. 
+3. Kiedy zostanie kliknięta wykonaj zdarzenie: 
+	3.1. Znajdź slajd, który aktualnie ma przypisaną klasę `show`,
+	3.2. Zabierz mu tę klasę, // dotąd bez zmian
+	3.3. Odczytaj numer aktualnego elementu zapisany w zmiennej,
+	3.4. Dodaj do niego `1`,
+	3.5. Znajdź element o nowym numerze,
+	3.6. Dodaj mu klasę `show`.
+	3.7. Zapisz nowy numer jako aktualny element.</code></pre>	
+					<p class="fragment fade-right">Wszystko jasne? Teraz jest dobry czas na pytania przed ruszeniem dalej.</p>					
 					<i class="fragment fade-down fa fa-angle-right"></i>	
-				</section>						
+				</section>		
+				<section>
+					<section>
+						<p class="note question">Skąd możemy odczytać aktualny numer na etapie 3.3?</p>
+						<p class="fragment fade-left">Potrzebujemy zapisać go wcześniej poza funkcją, najlepiej na początku pliku.</p>			
+						<i class="fragment fade-down fa fa-angle-down"></i>	
+					</section>	
+					<section>
+						<p class="note question">Jaką wartość chcemy mu przypisać na początku?</p>
+						<p class="fragment fade-right">Po załadowaniu strony pojawia się pierwszy slajd, więc na początku aktualny numer powinien mieć wartość 1.</p>			
+						<i class="fragment fade-down fa fa-angle-down"></i>	
+					</section>					
+					<section>
+						<p class="note task">Skoro już wiemy, co mamy robić, przełóżmy to teraz na praktykę. Na początku pliku <code>galeria.js</code> stwórzmy zmienną o nazwie <code>currentNumber</code> i przypiszmy jej wartość <code>1</code>.</p>	
+						<i class="fragment fade-down fa fa-angle-right"></i>				
+					</section>				
+				</section>			
+				<section>
+					<section>
+						<pre><code>var currentNumber = 1;</code></pre>
+						<p class="fragment fade-right">Świetnie, mamy naszą pierwszą zmienną!</p>	
+						<p class="fragment fade-left">Teraz chcemy dodać do niej 1 i zapamiętać tę wartość. W tym celu możemy stworzyć sobie dodatkową zmienną do pomocy.</p>						
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>				
+					<section>
+						<p class="note task">Na końcu funkcji <code>showNextSlide</code> stwórzmy nową zmienną o nazwie <code>newNumber</code>, i przypiszmy jej wartość o 1 większą niż ma <code>currentNumber</code>.</p>	
+						<i class="fragment fade-down fa fa-angle-right"></i>				
+					</section>				
+				</section>		
+				<section>
+					<pre><code>var newNumber = currentNumber + 1;</code></pre>	
+					<p class="fragment fade-left">Teraz skoro mamy już nowy numer, potrzebujemy znaleźć element o tym numerze.</p>					
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>	
+				<section>
+					<p>Wszystkie nasze slajdy mają ID w postaci <code>#slide</code> + kolejny numer (1, 2, 3, ...).</p>				
+					<p class="fragment fade-right">Dzięki temu możemy wykorzystać możliwości JavaScript i skleić tekst z liczbą używając tego samego znaku +, na przykład:</p>	
+					<pre class="fragment fade-left"><code>'#slide' + 1</code></pre>						
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>	
+				<section>
+					<p>Wszystkie nasze slajdy mają ID w postaci <code>#slide</code> + kolejny numer (1, 2, 3, ...).</p>				
+					<p class="fragment fade-right">Dzięki temu możemy wykorzystać możliwości JavaScript i skleić tekst z liczbą używając tego samego znaku +, na przykład:</p>	
+					<pre class="fragment fade-left"><code>'#slide' + 1</code></pre>						
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>		
+				<section>
+					<p class="note task">Korzystając z tej właściwości, dopiszmy na końcu funkcji <code>showNextSlide</code> kod który: znajduje element o numerze <code>newNumber</code> i  dodaje do niego klasę <code>show</code>.</p>			
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>		
+				<section>
+					<section>
+						<pre><code>    document.querySelector('#slide' + newNumber).classList.add('show');</code></pre>
+						<p class="fragment fade-left">Została nam jeszcze jedna rzecz - zapisanie nowego numeru jako aktualny.</p>						
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>				
+					<section>					
+						<p class="note task">Na końcu funkcji <code>showNextSlide</code> zapiszmy w zmiennej <code>currentNumber</code> nowy numer aktualnego slajdu. (Obecnie jest on przechowywany w <code>newNumber</code>).</p>	
+						<i class="fragment fade-down fa fa-angle-right"></i>				
+					</section>				
+				</section>		
+				<section>
+					<p>Jeżeli wszystko poszło zgodnie z planem, nasz kod powinien wyglądać mniej więcej tak:</p>
+					<pre class="fragment fade-left"><code>var currentNumber = 1;
+
+function showNextSlide( ) {
+    document.querySelector( '.show' ).classList.remove( 'show' );
+    var newNumber = currentNumber + 1;
+    document.querySelector( '#slide' + newNumber ).classList.add( 'show' );	
+    currentNumber = newNumber;
+}
+document.querySelector('#next').addEventListener( 'click', showNextSlide );</code></pre>	
+					<p class="fragment fade-right">Wszystko gotowe? Czas na testy! :-)</p>					
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>	
+				<section>
+					<section>
+						<p>Po dojechaniu do końca pojawia nam się czarny ekran.</p>	
+						<p class="note question fragment fade-left">Dlaczego tak się dzieje i jak możemy to naprawić?</p>		
+						<i class="fragment fade-down fa fa-angle-down"></i>	
+					</section>	
+					<section>
+						<p>Mamy tylko 5 slajdów, więc po dojechaniu do końca skrypt próbuje załadować nam slajd 6 który nie istnieje.</p>
+						<p class="fragment fade-right">Żeby to naprawić, możemy sprawdzać po dodawaniu jaki mamy obecny numer. Jeżeli jest większy niż 5, to trzeba zmienić go z powrotem na 1.</p>
+						<p class="fragment fade-left note question">Poprawmy algorytm naszej funkcji tak, żeby to uwzględnił.</p>		
+						<i class="fragment fade-down fa fa-angle-down"></i>	
+					</section>					
+					<section>
+						<pre><code>	3.1. Znajdź slajd, który aktualnie ma przypisaną klasę `show`,
+	3.2. Zabierz mu tę klasę, 
+	3.3. Odczytaj numer aktualnego elementu zapisany w zmiennej,
+	3.4. Dodaj do niego `1`,
+	3.5. Jeżeli nowy numer jest większy od 5, to zmień go na 1.
+	3.6. Znajdź element o nowym numerze,
+	3.7. Dodaj mu klasę `show`.
+	3.8. Zapisz nowy numer jako aktualny element.</code></pre>		
+						<p>Żeby osiągnąć taki efekt, przydadzą nam się <strong>instrukcje warunkowe</strong>.</p>	
+						<i class="fragment fade-down fa fa-angle-right"></i>				
+					</section>				
+				</section>
+				<section>
+					<p class="note more"><strong>Instrukcje warunkowe</strong> to fragmenty kodu, które wykonują się tylko wtedy, kiedy jest spełniony dany warunek.</p>
+					<div class="fragment fade-up">
+						<p>Najprostsza z nich wygląda tak:</p>
+						<pre><code>if ( warunek ) {
+    wykonaj kod, który jest tutaj.
+}</code></pre>							
+					</div>				
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>			
+				<section>
+					<p class="note more">Do porównania, która liczba jest większa lub mniejsza używamy znaków <code>&gt;</code> i <code>&lt;</code>.</p>
+					<p class="fragment fade-up">Coś jest niejasne?</p>			
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>		
+				<section>
+					<p class="note task">We właściwym miejscu funkcji <code>showNextSlide</code> dodajmy instrukcję warunkową, która: sprawdza, czy nowy numer (<code>newNumber</code>) jest większy od 5, i jeżeli jest, to przypisuje mu wartość 1.</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>	
+				<section>
+					<p>Na tym etapie nasz kod wygląda tak:</p>
+					<pre class="fragment fade-left"><code>var currentNumber = 1;
+
+function showNextSlide( ) {
+    document.querySelector( '.show' ).classList.remove( 'show' );
+    var newNumber = currentNumber + 1;
+    if( newNumber > 5 ) {
+        newNumber = 1;
+    }
+    document.querySelector( '#slide' + newNumber ).classList.add( 'show' );	
+    currentNumber = newNumber;
+}
+document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</code></pre>	
+					<p class="fragment fade-right">Czas na testy!</p>					
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>	
+				<section>
+					<p class="note task">Jeżeli wszystko działa jak trzeba, możemy stworzyć i powiązać analogiczną funkcję dla lewej strzałki. Nazwijmy ją <code>showPreviousSlide</code>. Większość kodu możemy skopiować z funkcji dla prawej strzałki, musimy tylko zmienić dodawanie na odejmowanie, a także warunek dotarcia do końca, i zwrócić uwagę na selektor dla strzałki. Po skończonej pracy przetestujmy, jak to działa.</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>
+				<section data-transition="convex-in zoom-out">
+					<p>Przykładowy kod funkcji <code>showPreviousSlide</code>:</p>
+					<pre class="fragment fade-left"><code>function showPreviousSlide( ) {
+    document.querySelector( '.show' ).classList.remove( 'show' );
+    var newNumber = currentNumber - 1;
+    if( newNumber < 1 ) {
+        newNumber = 5;
+    }
+    document.querySelector( '#slide' + newNumber ).classList.add( 'show' );	
+    currentNumber = newNumber;
+}
+document.querySelector( '#prev' ).addEventListener( 'click', showPreviousSlide );</code></pre>					
+					<i class="fragment fade-down fa fa-angle-right"></i>	
+				</section>	
+				<section data-transition="zoom">
+					<p>Wow, udało nam się zrobić naprawdę dużo! Czas na zasłużoną przerwę.</p>
+					<img src="img/coffee2.gif" />
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>					
 			</div>
 	
 		</div>
