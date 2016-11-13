@@ -6,7 +6,8 @@
   font-style: normal;
 }
 
-.reveal section img {
+.reveal section img,
+.reveal pre code {
 	max-height: 500px;
 }
 

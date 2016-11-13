@@ -532,7 +532,7 @@ Testujemy jeszcze raz - działa! :)
 ## Etap 5 - Autoplay // przyklad w step5.js, opis do zrobienia
 
 - Algorytm na tablicy
-- zapamiętanie stanu play/pauza
+- zapamiętanie stanu play / pauza
 - guzik do play / pausy, który zmienia swój wygląd w zależności od stanu
 - wprowadzenie setInterval, implementacja
 - clearInterval po wyłączeniu
