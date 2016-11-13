@@ -137,7 +137,7 @@ nav button.play:before {
 	width: 100%;
 }
 
-nav button.play.playing:before {
+nav button.play.on:before {
 	content: '\23f8';
 }
 

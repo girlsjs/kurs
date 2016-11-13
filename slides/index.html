@@ -605,9 +605,446 @@ document.querySelector( '#prev' ).addEventListener( 'click', showPreviousSlide )
 					<p>Wow, udało nam się zrobić naprawdę dużo! Czas na zasłużoną przerwę.</p>
 					<img src="img/coffee2.gif" />
 					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>	
+				<section data-transition="zoom-in convex-out">	
+					<section>
+						<h3>Testujemy!</h3>
+						<p>Mamy już dwa sposoby nawigacji po galerii - guziczki na dole i strzałki. Najwyższy czas sprawdzić, jak obie zadziałają nam razem.</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>		
+					<section>
+						<p class="note question">Jeżeli używamy na zmianę guziczków i strzałek, kolejność obrazków jest nie do końca w porządku. Co właściwie jest nie tak? Jakieś pomysły dlaczego tak się dzieje?</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>						
+				</section>	
+				<section>	
+					<section>
+						<p>Funkcje <code>showNextSlide</code> i <code>showPreviousSlide</code> odczytują z  <code>currentNumber</code> numer aktualnego slajdu i na tej podstawie wybierają następny.</p>
+						<p class="fragment fade-up">Niestety funkcje przypisane do guziczków (<code>showSlide1</code> ... <code>showSlide5</code>) nie aktualizują tej wartości, więc nasz kod ma złe dane na temat tego, który slajd jest aktualnie na wierzchu.</p>						
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>		
+					<section>
+						<p class="note side-note">Hurra! Mamy nasz pierwszy efekt uboczny ;-) Takie rzeczy często dzieją się przy dodawaniu nowych funkcjonalności do starego kodu. Żeby temu zapobiec, przydają się testy i upraszczanie kodu tak bardzo, jak tylko to możliwe.</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>				
+					<section>
+						<p class="note question">Jak możemy naprawić nasz problem i zapobiec podobnym sytuacjom w przyszłości?</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>						
+				</section>		
+				<section>	
+					<section>
+						<p>Najprostszym rozwiązaniem byłoby zapisanie wartości <code>currentNumber</code> za każdym razem, kiedy ktoś kliknie któryś z guziczków.</p>
+						<p>W ten sposób każda z funkcji <code>showSlide1</code> ... <code>showSlide5</code> zapisywałaby odpowiedni numer od 1 do 5.</p>						
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>		
+					<section>
+						<p>To rozwiązanie ma niestety poważną wadę. Za każdym razem, kiedy będziemy coś zmieniać w naszym kodzie, potrzebujemy sprawdzić wszystkie istniejące funkcje i upewnić się czy są dalej aktualne. Jeżeli nie, trzeba będzie poprawiać każdą z nich z osobna.</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>				
+					<section>
+						<p>Dużo lepszym rozwiązaniem będzie stworzenie uniwersalnej funkcji, która pokaże dowolny slajd o podanym numerze. Dzięki temu logika pokazywania slajdu będzie zawsze taka sama, a ewentualne zmiany trzeba będzie wprowadzić tylko raz.</p>
+						<p class="fragment fade-up">W tym celu przydadzą nam się <strong>parametry funkcji</strong>.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>						
+				</section>	
+				<section>
+					<p class="note more">Jak pewnie pamiętacie, funkcja to spójny ciąg poleceń, który można <strong>wywołać</strong> z dowolnego miejsca w kodzie żeby wykonywały się jedno po drugim. Jeżeli przekażemy do funkcji <strong>parametry</strong>, te same polecenia mogą za każdym razem działać na innych danych.</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>	
+				<section>
+					<p>Prosty przykład - funkcja, która bierze imię jako <strong>parametr</strong>, i wypisuje w konsoli pozdrowienia dla osoby o danym imieniu:</p>
+					<pre class="fragment fade-left"><code>function hej( imie ) {
+    console.log( 'Hej ' + imie + '! Miło Cię widzieć!' );
+}</code></pre>						
+					<p class="fragment fade-right">Teraz możemy wywołać tę funkcję, na przykład:</p>	
+					<pre class="fragment fade-left"><code>hej( 'Magda' );</code></pre>		
+					<p class="fragment fade-right note question">Co się stanie jeżeli wywołamy fukcję <code>hej</code> w ten sposób?</p>					
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>			
+				<section>
+					<p>Koniec dygresji, wracamy do naszego pokazu slajdów :-)</p>
+					<p class="fragment fade-up note question">Na podstawie funkcji które mamy już napisane, zastanówmy się, jakie są części wspólne? Jak możemy zapisać po polsku, co uniwersalna funkcja powinna robić?</p>						
+					<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>	
+				<section>						
+					<section>
+						<pre><code>1. Dla podanego numeru slajdu
+    1.1. Znajdź aktualnie pokazywany element,
+	1.2. Zabierz mu klasę show,
+	1.3. Znajdź elemen o podanym numerze,
+	1.4. Dodaj mu klasę show,
+	1.5. Zapisz podany numer jako aktualny numer slajdu</code></pre>
+						<p class="note question fragment fade-left">Jeżeli masz jakieś wątpliwości, teraz jest dobry moment na pytania.</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>				
+					<section>
+						<p class="note task">W pliku <code>galeria.js</code> dodaj nową funkcję <code>showSlide</code>, która przyjmuje numer slajdu do pokazania (<code>newNumber</code>) jako parametr. W treści funkcji umieść wszystkie potrzebne instrukcje: chowanie aktualnego slajdu, znalezienie slajdu o nowym numerze i pokazanie go, zapisanie aktualnego numeru.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>						
+				</section>		
+				<section>						
+					<section>
+						<p>Przykładowy kod, jak można to zrobić:</p>
+						<pre class="fragment fade-left"><code>function showSlide ( newNumber ) {
+    document.querySelector( '.show' ).classList.remove( 'show' );
+    document.querySelector( '#slide' + newNumber ).classList.add( 'show' );
+    currentNumber = newNumber;	
+}</code></pre>
+						<p class="fragment fade-right">Co dalej? Potrzebujemy zmodyfikować funkcje które już mamy, tak, żeby korzystały z tej uniwersalnej.</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>				
+					<section>
+						<p class="note task">W pliku <code>galeria.js</code> znajdź funkcje <code>showSlide1</code> do <code>showSlide5</code>. Zastąp ich obecną treść wywołaniem uniwersalnej funkcji <code>showSlide</code> z odpowiednim parametrem.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>						
+				</section>	
+				<section>						
+					<section>
+						<p>Kod dla guziczka nr 1 - pozostałe wyglądają analogicznie:</p>
+						<pre class="fragment fade-left"><code>function showSlide1 ( ) {
+   showSlide( 1 );
+}
+document.querySelector( '#pin1' ).addEventListener( 'click', showSlide1 );</code></pre>
+						<p class="fragment fade-right">Teraz zróbmy to samo dla funkcji operujących na strzałkach.</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>				
+					<section>
+						<p class="note task">W pliku <code>galeria.js</code> znajdź funkcje <code>showPreviousSlide</code> i <code>showNextSlide</code>. Usuń z nich wszystko, co znajduje się w uniwersalnej funkcji <code>showSlide</code> i zamiast tego wywołaj tę funkcję z odpowiednim parametrem.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>						
+				</section>		
+				<section data-transition="convex-in zoom-out">		
+					<section>
+						<p>Kod dla strzałki w prawo po zmianach:</p>
+						<pre class="fragment fade-left"><code>function showNextSlide ( ) {
+    var newNumber = currentNumber + 1;
+    if( newNumber > 5 ) {
+        newNumber = 1;
+    }
+    showSlide( newNumber );
+}
+document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</code></pre>
+						<p class="fragment fade-right">Wszystko jasne? Czas na testy!</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>									
+				</section>
+				<section data-transition="zoom">
+					<p>Dobra robota!</p>
+					<img src="img/wedidit.gif" />
+					<p>Chcecie jeszcze? Więcej po przerwie :-)</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>			
+				<section data-transition="zoom-in convex-out">		
+					<section>
+						<p>Następną fajną rzeczą, którą warto by było zrobić jest podświetlanie guziczka, który odpowiada aktualnemu obrazkowi. </p>
+						<p>Możemy zobaczyć jak to wygląda na 						<a href="../gallery/demo.html" target="_blank">naszym demo</a>.</p>	
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>				
+					<section>
+						<p class="note question">W jaki sposób aktualny guziczek podświetla się na stronie demo? Co podpowiadają nam narzędzia programisty?</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>	
+					<section>
+						<p class="note task">Widzimy, że aktualnie podświetlany guziczek ma dodatkowo dodaną klasę <code>selected</code>. Wzorując się na funkcji <code>showSlide</code>, dodajmy w pliku <code>galeria.js</code> nową funkcję <code>selectPin</code>, która przyjmuje nowy numer jako parametr, resetuje aktualnie podświetlony guziczek i podświetla ten o podanym numerze.</p>	
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>					
+				</section>			
+				<section>						
+					<section>
+						<p>Zrobione? Tutaj mamy przykład jak taka funkcja może wyglądać:</p>
+						<pre class="fragment fade-left"><code>function selectPin ( newNumber ) {
+    document.querySelector( '.selected' ).classList.remove( 'selected' );
+    document.querySelector( '#pin' + newNumber ).classList.add( 'show' );
+}</code></pre>
+						<p class="fragment fade-right note question">Tym razem nie zapisujemy nowej wartości <code>currentNumber</code>. Dlaczego? Gdzie najlepiej będzie tę funkcję wywołać?</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>			
+					<section>
+						<p>Chcemy podświetlać guziczek za każdym razem, kiedy przełączamy slajdy, więc najlepiej będzie wywoływać tę funkcję wewnątrz funkcji <code>showSlide</code>.</p>
+						<p class="fragment fade-up">Numer podświetlonego guziczka jest zawsze taki sam jak numer pokazywanego slajdu, dlatego nie musimy zapamiętywać tej samej wartości drugi raz.</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>					
+					<section>
+						<p class="note task">Wewnątrz funkcji <code>showSlide</code> dodaj podświetlanie guziczka - wywołaj funkcję <code>selectPin</code> z odpowiednim parametrem.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>						
+				</section>	
+				<section>						
+					<section>
+						<p>Nasza funkcja <code>showSlide</code> ma teraz postać:</p>
+						<pre class="fragment fade-left"><code>function showSlide ( newNumber ) {
+    document.querySelector( '.show' ).classList.remove( 'show' );
+    document.querySelector( '#slide' + newNumber ).classList.add( 'show' );
+    currentNumber = newNumber;	
+    selectPin( newNumber);
+}</code></pre>
+						<p class="fragment fade-right">Tradycyjnie - testujemy! :-)</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>			
+					<section>
+						<p class="note question">Ooops, coś poszło nie tak! Jakieś pomysły, co się stało i jak to możemy naprawić?</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>										
+				</section>	
+				<section>
+					<p>Pomoże nam w tym konsola przeglądarki. Klikając nazwę pliku w komunikacie o błędzie możemy zobaczyć, który dokładnie fragment naszego kodu powoduje problemy:</p>
+					<img src="img/debug.gif" style="height: 400px;"/>
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>		
+				<section>
+					<p>Widzimy, że nasz skrypt ma problemy z właściwością <code>classList</code>, bo obiekt z którego próbuje to odczytać po prostu nie istnieje. </p>
+					<p class="fragment fade-up">Dlaczego tak się stało? Przy uruchomieniu strony żaden z guziczków nie ma klasy <code>selected</code>, więc wyszukiwanie po tej klasie zwróciło pusty zbiór.</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>			
+				<section>						
+					<section>
+						<p class="note question">Jak możemy rozwiązać ten problem?</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>			
+					<section>
+						<p class="note task">Upewnijmy się, że przy załadowaniu strony mamy prawidłowo pokazany pierwszy slajd i podświetlony pierwszy guziczek. W tym celu dodajmy kod, który to zrobi w okolicach początku pliku <code>galeria.js</code>.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>										
+				</section>		
+				<section data-transition="convex-in zoom-out">
+					<p>Tutaj mamy przykład jak to rozwiązać:</p>
+						<pre class="fragment fade-left"><code>var currentNumber = 1;
+document.querySelector( '#slide' + currentNumber ).classList.add( 'show' );	
+document.querySelector( '#pin' + currentNumber ).classList.add( 'selected' );</code></pre>					
+					<p class="fragment fade-right">Jak tym razem wyszły testy?</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>
+				<section data-transition="zoom">
+					<img src="img/happydance.gif" />				
+					<p class="fragment fade-right">Jeżeli nie macie jeszcze dosyć, to zapraszamy po przerwie :-)</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>	
+				<section data-transition="zoom-in convex-out">	
+					<section>
+						<h3>Autoplay!</h3>
+						<p>Tym razem spróbujmy dodać do naszego pokazu slajdów tryb autoplay.</p>
+						<p>Tradycyjnie, możemy podejrzeć jak on działa na naszym <a href="../gallery/demo.html" target="_blank">demo</a>, klikając przycisk w prawym dolnym rogu.</p>			
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>								
+					<section>
+						<p class="note question">Tym razem wyjątkowo nie bierzmy pod uwagę wszystkiego, co się dzieje na stronie i zbudujmy na razie możliwie ogólny obraz sytuacji. Widzimy, że autoodtwarzanie na zmianę włącza się i wyłącza w miarę jak klikamy przycisk <code>play</code> po kilka razy. Jak możemy zapisać na najbardziej ogólnym poziomie to co się tu dzieje?</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>			
+				</section>		
+				<section>
+					<p>Pewnie wyszło nam mniej więcej coś takiego:</p>
+						<pre class="fragment fade-left"><code>1. Znajdź przycisk play,
+2. Sprawdzaj, kiedy zostanie kliknięty. 
+3. Kiedy zostanie kliknięty wykonaj zdarzenie: 
+	3.1. Sprawdź, czy pokaz slajdów się obecnie odtwarza:
+		3.1.1. Jeżeli tak, to go wyłącz,
+		3.1.2. Jeżeli nie, to go włącz.</code></pre>			
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>	
+				<section>
+					<section>
+						<p class="note question">Czas zacząć budować funkcję która będzie zarządzać naszym pokazem slajdów. W jaki sposób możemy sprawdzić, czy pokaz slajdów się obecnie odtwarza?</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>						
+					<section>
+						<p>W ten sam sposób, w jaki pamiętamy numer aktualnego slajdu - używając zmiennej.</p>
+						<p class="fragment fade-up">W tym przypadku nasza zmienna będzie przyjmować tylko dwie wartości (odtwarza się / nie odtwarza się), więc najlepiej będzie przypisać jej <strong>wartość logiczną</strong></p>						
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>
+				</section>	
+				<section>
+					<section>
+						<p class="note more">Pamiętacie, że w JavaScript zmienna może być praktycznie wszystkim? Między innymi możemy jej przypisać <strong>wartość logiczną</strong> (prawda lub fałsz).</p>
+						<p class="fragment fade-left">Dla wartości <strong>prawda</strong> używamy słowa kluczowego <code>true</code>, dla <strong>fałszu</strong> słowa <code>false</code>:</p>
+						<pre class="fragment fade-right"><code>var isJavaScriptAwesome = true;</code></pre>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>	
+					<section>
+						<p class="">Wartości logiczne porównujemy używając potrójnego znaku równości, np:</p>	
+						<pre class="fragment fade-right"><code>if ( isJavaScriptAwesome === true ) {
+    var doWeHaveEnoughYet = false;
+}</code></pre>						
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>						
+					<section>
+						<p class="note task">Na początku pliku <code>galeria.js</code> stwórz zmienną <code>playing</code>, która będzie przechowywała aktualny stan pokazu slajdów. Na początku pokaz powinien być wyłączony, więc przypisz jej wartość fałsz.</p>						
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>
+				</section>		
+				<section>
+					<section>
+						<pre><code>var playing = false;</code></pre>
+						<p class="note more">Świetnie! Teraz możemy przejść do szkieletu naszej funkcji. Przejrzyjmy szybko kod napisany na poprzednich etapach, żeby przypomnieć sobie jak powiązać funkcję z kliknięciem myszy na elemencie i jesteśmy gotowe.</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>						
+					<section>
+						<p class="note task">W pliku <code>galeria.js</code> dodaj nową funkcję <code>playingButtonClicked</code> i powiąż ją z kliknięciem na przycisku play. W treści funkcji sprawdź obecny stan pokazu slajdów zapisany w zmiennej <code>playing</code>. Na razie wystarczy, że zmienisz go na przeciwny (z prawdy na fałsz, z fałszu na prawdę).</p>						
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>
+				</section>
+				<section>
+					<section>
+						<p>Najprawdopodobniej otrzymamy coś takiego:</p>
+						<pre class="fragment fade-left"><code>function playButtonClicked( ) {
+	if ( playing === true ) {
+		playing = false;
+	} else {
+		playing = true;
+	}
+}
+document.querySelector( '#play' ).addEventListener( 'click', playButtonClicked );</code></pre>
+						<p class="fragment fade-right">Jak możemy na tym etapie przetestować czy nasz kod działa poprawnie?</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>
+					<section>
+						<p>Najprościej będzie wpisać w konsoli nazwę naszej zmiennej - dostaniemy z powrotem jej aktualną wartość.</p>				
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>						
+				</section>					
+				<section>
+					<section>
+						<p class="note question">Zajmijmy się teraz samym przyciskiem <em>play</em>. Widzimy, że zmienia on ikonkę w zależności od tego ile razy został kliknięty. Co sprawia, że ta ikonka się zmienia?</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>						
+					<section>
+						<p>Oczywiście jest to klasa CSS. Tym razem właściwa klasa nazywa się <code>on</code>.</p>
+						<p class="note side-note">Widzimy, że liczba rzeczy do zrobienia przy włączeniu / wyłączeniu pokazu slajdów pomału nam się zwiększa. Może by tak wydzielić z nich osobne funkcje?</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>
+					<section>
+						<p class="note task">W pliku <code>galeria.js</code> dodajmy dwie nowe funkcje: <code>startSlideshow</code> i <code>stopSlideshow</code>. Funkcja start dodaje klasę <code>on</code> do przycisku <code>play</code> i zapisuje w zmiennej <code>playing</code> że pokaz slajdów jest włączony. Funkcja stop robi na odwrót. W funkcji  <code>playButtonClicked</code> wywołajmy każdą z tych dwóch funkcji w odpowiednich miejscach.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>					
+				</section>	
+				<section>
+					<p>Dużo nowego kodu! Sprawdźmy, jak nam poszło tym razem:</p>
+					<pre class="fragment fade-left"><code>function playButtonClicked( ) {
+	if ( playing === true ) {
+		stopSlideshow();
+	} else {
+		startSlideshow();
+	}
+}
+document.querySelector( '#play' ).addEventListener( 'click', playButtonClicked );
+
+function startSlideshow( ) {
+	document.querySelector( '#play' ).classList.add( 'on' );	
+	playing = true;
+}
+
+function stopSlideshow( ) {
+	document.querySelector( '#play' ).classList.remove( 'on' );	
+	playing = false;
+}</code></pre>
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>
+				<section>
+					<p class="note question">Wszystko jasne na razie? Jak tak, to testujemy.</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>
+				</section>	
+				<section>
+					<section>
+						<p>Jeżeli wszystko działa dobrze, to przechodzimy do najtrudniejszej części - włączania i wyłączania pokazu slajdów.</p>
+						<p class="fragment fade-right note question">Na czym właściwie polega pokaz slajdów? Jak możemy zapisać jego algorytm po polsku? Zacznijmy od tego, co już mamy - funkcji <code>startSlideshow</code> i jej obecnej treści.</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>						
+					<section>
+						<p>Jest kilka sposobów, żeby to zapisać, ale idea jest mniej więcej ta sama:</p>
+						<pre><code>Funkcja Włącz Pokaz Slajdów:
+	1. Dodaj klasę playing do przycisku play
+	2. Zapisz stan pokazu slajdów w zmiennej playing
+	3. Poczekaj 3 sekundy,
+	4. Przełącz slajd na następny,
+	5. Wróć do punktu 3.</code></pre>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>			
+					<section>
+						<p>W następnym kroku potrzebujemy jakiegoś sposobu do odmierzania czasu.</p>
+						<p class="fragment fade-up">Do tego przydadzą nam się <strong>interwały</strong>.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>	
+				</section>
+				<section>
+					<p class="note more"><strong>Interwał</strong> powtarza podane mu instrukcje cyklicznie w danym mu odstępie czasu.</p>
+					<div class="fragment fade-left">
+						<p>Można go stworzyć poprzez funkcję:</p>
+						<ul>
+							<li><strong><code>setInterval( akcja, odstep )</code></strong> - wykonuje akcję za każdym kolejnym razem, kiedy upłynie określony odstęp czasu (podany w milisekundach).</li>
+						</ul>					
+					</div>
+
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>						
+				<section>
+					<p class="note task">W funkcji <code>startSlideshow</code> stwórzmy interwał, który co 3000 milisekund przełącza slajd na następny. Pamiętajmy, że mamy już gotową funkcję napisaną w tym celu :-)</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>					
+				</section>	
+				<section>
+					<section>
+						<p>Po dopisaniu nowego kodu funkcja prezentuje nam się następująco:</p>
+						<pre class="fragment fade-left"><code>function startSlideshow( ) {
+	document.querySelector( '#play' ).classList.add( 'on' );	
+	playing = true;
+	setInterval( showNextSlide, slideDuration );
+}</code></pre>
+						<p class="fragment fade-right">Co tym razem pokazują nam testy?</p>				
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>
+					<section>
+						<p>Widzimy, że pokaz slajdów uruchamia się prawidłowo. Teraz potrzebujemy jakiegoś sposobu, żeby go wyłączyć.</p>
+						<p class="fragment fade-right note question">Jak możemy wyłączyć raz uruchomiony <strong>interwał</strong>?</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>						
+					<section>
+						<p>To było dosyć podchwytliwe pytanie. Jak już pewnie pamiętamy, zmienne w JavaScript mogą zapisać wszystko. </p>
+						<p class="fragment fade-right">Co się stanie, jeżeli zapiszemy w niej wynik działania funkcji <code>setInterval</code>? Ta zmienna pomoże nam potem, żeby go wyłączyć.</p>
+						<i class="fragment fade-down fa fa-angle-down"></i>	
+					</section>	
+					<section>
+						<p class="note task">W okolicach początku pliku <code>galeria.js</code> stwórz nową zmienną o nazwie <code>slideshowInterval</code>. Tam gdzie obecnie wywołujesz funkcję <code>setInterval</code>, zapisz w nowo stworzonej zmiennej wynik działania tej funkcji.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>	
+				</section>
+				<section>
+					<section>
+						<p>Tym razem powinno nam wyjść mniej więcej coś takiego:</p>	
+						<pre><code>var slideshowInterval;
+// (...)
+function startSlideshow( ) {
+	document.querySelector( '#play' ).classList.add( 'on' );	
+	playing = true;
+	slideshowInterval = setInterval( showNextSlide, 3000 );	
+}</code></pre>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>			
+					<section>
+						<p>Teraz już zostaje nam tylko wyłączyć interwał.</p>
+						<div class="fragment fade-left">
+							<p>W tym celu pomoże nam funkcja:</p>
+							<ul>
+								<li><strong><code>clearInterval( interwal )</code></strong> - wyłącza interwał zapisany wcześniej w podanej zmiennej.</li>
+							</ul>					
+						</div>
+						<i class="fragment fade-down fa fa-angle-down"></i>
+					</section>	
+					<section>
+						<p>Spróbujmy to wykorzystać od razu w praktyce.</p>
+						<p class="fragment fade-right note task">W funkcji <code>stopSlideshow</code> wyczyśćmy zapisany wcześniej interwał. W tym celu wywołajmy funkcję <code>clearInterval</code> z odpowiednim parametrem.</p>
+						<i class="fragment fade-down fa fa-angle-right"></i>
+					</section>						
+				</section>	
+				<section>
+					<p>Całość funkcji <code>stopSlideshow</code> wygląda teraz tak:</p>
+					<pre class="fragment fade-left"><code>function stopSlideshow( ) {
+	document.querySelector( '#play' ).classList.remove( 'on' );	
+	playing = false;
+	clearInterval( slideshowInterval );	
+}</code></pre>
+					<p class="fragment fade-right">Co dalej? Testujemy!</p>
+					<i class="fragment fade-down fa fa-angle-right"></i>
 				</section>					
 			</div>
-	
 		</div>
 
 		<script src="lib/js/head.min.js"></script>

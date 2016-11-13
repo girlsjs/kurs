@@ -15,18 +15,18 @@ function playButtonClicked ( event ) {
 	}
 	event.stopPropagation();
 }
-document.querySelector('#play').addEventListener( 'click', playButtonClicked );
+document.querySelector( '#play' ).addEventListener( 'click', playButtonClicked );
 
 function startSlideshow( ) {
-	slideshowInterval = setInterval(showNextSlide, slideDuration);
-	document.querySelector('#play').classList.add('playing');	
+	document.querySelector( '#play' ).classList.add('on');	
 	playing = true;
+	slideshowInterval = setInterval( showNextSlide, 3000 );	
 }
 
 function stopSlideshow( ) {
-	clearInterval( slideshowInterval );
-	document.querySelector('#play').classList.remove('playing');	
+	document.querySelector( '#play' ).classList.remove( 'on' );	
 	playing = false;
+	clearInterval( slideshowInterval );	
 }
 
 function showSlide ( newNumber ) {
