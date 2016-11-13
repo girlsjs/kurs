@@ -1034,7 +1034,7 @@ function startSlideshow( ) {
 						<i class="fragment fade-down fa fa-angle-right"></i>
 					</section>						
 				</section>	
-				<section>
+				<section class="convex-in zoom-out">
 					<p>Całość funkcji <code>stopSlideshow</code> wygląda teraz tak:</p>
 					<pre class="fragment fade-left"><code>function stopSlideshow( ) {
 	document.querySelector( '#play' ).classList.remove( 'on' );	
@@ -1043,7 +1043,10 @@ function startSlideshow( ) {
 }</code></pre>
 					<p class="fragment fade-right">Co dalej? Testujemy!</p>
 					<i class="fragment fade-down fa fa-angle-right"></i>
-				</section>					
+				</section>						
+				<section>
+					<p>//TODO Na obecnym etapie pokaz slajdów nie do końca idealnie działa w połączeniu ze strzałkami / guziczkami. Idealnie byłoby wyłączać pokaz slajdów po wciśnięciu czegokolwiek innego, ale nie wiem czy to nie będzie too much information. Mamy 2 opcje - albo skończyć jak jest, albo przeprowadzić je przez trudne meandry event.stopPropagation.</p>
+				</section>						
 			</div>
 		</div>
 

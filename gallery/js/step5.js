@@ -13,7 +13,7 @@ function playButtonClicked ( event ) {
 	} else {
 		startSlideshow();
 	}
-	event.stopPropagation();
+	//event.stopPropagation();
 }
 document.querySelector( '#play' ).addEventListener( 'click', playButtonClicked );
 
@@ -89,4 +89,4 @@ function maybeStopSlideshow ( ) {
 		stopSlideshow();
 	}
 }
-document.querySelector( '#wrapper' ).addEventListener( 'click', maybeStopSlideshow );
+//document.querySelector( '#wrapper' ).addEventListener( 'click', maybeStopSlideshow );
