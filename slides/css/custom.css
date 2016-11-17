@@ -16,6 +16,11 @@
 	font-style: italic;
 }
 
+.reveal .slides section .fragment.highlight-green.visible {
+	color: #78a978;
+	font-weight: bold;
+}
+
 i.fa {
 	display: block;
 	font-family: 'FontAwesome' !important;
@@ -90,4 +95,8 @@ code {
 
 pre {
 	padding: 0.5em;
+}
+
+.reveal ul.note li {
+	list-style-type: none;
 }
