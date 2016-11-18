@@ -1,3 +1,4 @@
-/* Girl.js
- * Plik gallery.js - tutaj będziemy dodawać nasz kod 
+/* girls.js - Interaktywna Galeria
+ * Plik gallery.js
+ * Tutaj będziemy dodawać nasz kod. 
  */
