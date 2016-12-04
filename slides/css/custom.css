@@ -100,3 +100,35 @@ pre {
 .reveal ul.note li {
 	list-style-type: none;
 }
+
+.help {
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 1em;
+	font-size: 24px;
+	color: #999;
+	z-index: 99999;
+}
+
+.help a,
+.help a:visited,
+.help a:hover,
+.help a:focus {
+	text-decoration: none;
+	color: #999;
+}
+
+.help i.fa {
+	line-height: 1;
+}
+
+.col-narrow {
+	width: 45%;
+	float: left;
+}
+
+.col-wide {
+	width: 55%;
+	float: left;
+}
