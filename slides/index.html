@@ -883,8 +883,8 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
             <section>
                 <p class="note task">Widzimy, że aktualnie podświetlany guziczek ma dodatkowo dodaną klasę <code>selected</code>.
                     Wzorując się na funkcji <code>showSlide</code>, dodajmy w pliku <code>gallery.js</code> nową funkcję
-                    <code>selectPin</code>, która przyjmuje nowy numer jako parametr, resetuje aktualnie podświetlony
-                    guziczek i podświetla ten o podanym numerze.</p>
+                    <code>selectPin</code>, która przyjmuje numer guziczka do podświetlenia jako parametr, resetuje
+                    aktualnie podświetlony guziczek i podświetla ten o podanym numerze.</p>
                 <i class="fragment fade-down fa fa-angle-right"></i>
             </section>
         </section>
@@ -893,7 +893,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
                 <p>Zrobione? Tutaj mamy przykład jak taka funkcja może wyglądać:</p>
                 <pre class="fragment fade-left"><code>function selectPin( newNumber ) {
     document.querySelector( '.selected' ).classList.remove( 'selected' );
-    document.querySelector( '#pin' + newNumber ).classList.add( 'show' );
+    document.querySelector( '#pin' + newNumber ).classList.add( 'selected' );
 }</code></pre>
                 <p class="fragment fade-right note question"> Gdzie najlepiej będzie tę funkcję wywołać? Dlaczego tym
                     razem nie zapisujemy wartości <code>currentNumber</code>?</p>
