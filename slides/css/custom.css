@@ -31,7 +31,7 @@ i.fa {
 
 .reveal .note {
 	text-align: left;
-	position: relative;	
+	position: relative;
 	display: block;
 	padding: 1em 1em 1em 3.5em;
 	margin: 1em 0em;
@@ -47,7 +47,7 @@ i.fa {
 .reveal .note:before {
 	position: absolute;
 	font-family: 'FontAwesome' !important;
-	font-size: 2em;	
+	font-size: 2em;
 	font-style: normal;
 	top: 50%;
 	left: 0.45em;
@@ -55,12 +55,12 @@ i.fa {
 }
 
 .reveal .side-note {
-	background: rgba(255, 255, 255, 0.4);	
+	background: rgba(255, 255, 255, 0.4);
 }
 
 .reveal .side-note:before {
 	content: "\f08d";
-	transform: translateX(0.1em) translateY(-50%) rotate(-30deg);	
+	transform: translateX(0.1em) translateY(-50%) rotate(-30deg);
 }
 
 .reveal .question {
@@ -88,8 +88,13 @@ i.fa {
 	content: "\f005";
 }
 
+.reveal .footer {
+	text-align: center;
+	font-size: 1vw;
+}
+
 code {
-	background: rgba(255, 255, 255, 0.4);		
+	background: rgba(255, 255, 255, 0.4);
 	font-style: normal !important;
 }
 
