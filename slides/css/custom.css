@@ -91,7 +91,15 @@ i.fa {
 .reveal .footer {
 	text-align: center;
 	font-size: 1vw;
+	position: absolute;
+	left: 8px;
+	bottom: 8px;
+	z-index: 31;
 }
+
+.reveal .footer a[rel='license'] + span { display: none; }
+.reveal .footer a[rel='license']:hover + span { display: inline; }
+.reveal .footer a[rel='license'] + span:hover { display: inline; }
 
 code {
 	background: rgba(255, 255, 255, 0.4);
