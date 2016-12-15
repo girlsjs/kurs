@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('/font/fontawesome-webfont.eot?');
+  src: url('font/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), 
+	   url('font/fontawesome-webfont.woff2') format('woff2'), url('font/fontawesome-webfont.woff') format('woff'), url('font/fontawesome-webfont.ttf') format('truetype'), url('font/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .wrapper {
   background: #000;
   max-width: 1000px;
@@ -89,7 +99,6 @@ nav button:hover {
 
 nav {
 	text-align: center;
-	line-height: 25px;
 	position: relative;
 }
 
@@ -99,6 +108,13 @@ nav button {
 	position: relative;
 	border: none;
 	outline: none;
+	font-family: 'FontAwesome';
+	line-height: 25px;
+	font-size: 10px;
+}
+
+button::-moz-focus-inner {
+  border: 0;
 }
 
 nav ul {
@@ -111,42 +127,30 @@ nav ul > li {
 	list-style-type: none;
 }
 
+
 nav ul > li button {
-	width: 15px; 
-	height: 20px;
-	line-height: 25px;
-	font-size: 32px;
-	opacity: 0.7;	
+	opacity: 0.7;		
+	width: 15px;	
 }
 
 nav button.play {
 	position: absolute;
-	width: 30px;
-	height: 20px;
-	font-size: 15px;
-	line-height: 15px;
 	right: 0;
 	bottom: 0;
+	width: 30px;
+	font-size: 16px;
 }
 
 nav button.play:before {
 	content: '\25B6';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
 }
 
 nav button.play.on:before {
-	content: '\23f8';
+	content: '\23F8';
 }
 
 nav ul > li button:before {
-	content: '\2022';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
+	content: "\f111";
 }
 
 nav ul > li button.selected {
