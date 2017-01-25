@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Girls.js - interaktywna galeria obrazków</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/solarized.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="icon" href="img/kaczucha.png">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!-- facebook meta -->
+    <meta property="og:description" content="Materiały do kursu girls.js: ciastka - z czym to się je." />
+    <meta property="og:image" content="https://girlsjs.github.io/www/assets/logo.png" />
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <img style="height: 400px;" src="img/kaczucha.svg"/>
+            <h3 class="fragment grow">Cześć!</h3>
+<p>(naciśnij spację, żeby kontynuować)</p>
+            <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+            <h1 style="font-size: 3rem">Ciasteczka - z czym to się je?</h1>
+            <figure>
+                <img style="height: 400px;" src="img/2521724022_332f67d66d_o.jpg"/>
+                <figcaption style="font-size: 0.5rem;"><a href="https://www.flickr.com/photos/clunkygirl/2521724022">Autorem zdjęcia jest MICHELE</a> - <a href="https://creativecommons.org/licenses/by-sa/2.0/">Grafika na licencji Creative Commons CC BY-SA 2.0</a></figcaption>
+            </figure>
+            <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section id="cookie-notice">
+          <p>Na wielu stronach internetowych natykamy się na tzw. cookie notice, czyli informację o tym, że dana witryna używa cookies.</p>
+          <p>W dzisiejszym, krótkim ćwiczeniu, powiemy sobie</p>
+          <ul>
+            <li class="fragment fade-down">czym właściwie są te ciasteczka</li>
+            <li class="fragment fade-down">dlaczego twórcy stron internetowych muszą o nich informować swoich użytkowników</li>
+            <li class="fragment fade-down">zrobimy naszą własną ciastko-informację.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Co w ciastku siedzi?</h2>
+          <figure>
+            <img style="height: 400px;" src="img/6164957230_a4d912723a_o.jpg"/>
+            <figcaption style="font-size: 0.5rem;"><a href="https://www.flickr.com/photos/29233640@N07/6164957230">Autorem zdjęcia jest Robert Couse-Baker</a> - <a href="https://creativecommons.org/licenses/by-sa/2.0/">Grafika na licencji Creative Commons CC BY 2.0</a></figcaption>
+          </figure>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Ciastko (profesjonalnie nazywa się "HTTP Cookie") to po prostu fragment danych, które są zapisywane przez stronę internetową w przeglądarce i które mogą być odczytane przez serwer, który tę stronę wygenerował</p>
+          <p class="fragment fade-down">Po co ktoś miałby zapisywać dane w mojej przeglądarce? Nie stać ich na twarde dyski?</p>
+          <ul>
+            <li class="fragment fade-down">statystyki odwiedzin (nie liczymy tego samego użytkownika wiele razy, albo sprawdzamy czy użytkownicy do nas wracają)</li>
+            <li class="fragment fade-down">zakupy internetowe bez zakładanie konta</li>
+            <li class="fragment fade-down">automatyczny login</li>
+            <li class="fragment fade-down">przechowywanie informacji w formularzu, żeby nie zniknęły po odświeżeniu strony</li>
+            <li class="fragment fade-down">wyświetlanie informacji o ciasteczkach</li>
+          </ul>
+        </section>
+        <section>
+          <p>Ciasteczka to nie jedyny sposób na zapisywanie danych w przeglądarce</p>
+          <p>Jest jednak prawdopodobnie najbardziej rozpowszechniony</p>
+        </section>
+        <section>
+          <h2>Obejrzyjmy nasze ciastka</h2>
+          <video src="img/cookieConsole.webm" controls="controls"></video>
+          <p style="font-size: 1rem">Przypomnienie: narzędzia programisty w Chrome włączamy przez F12 (Ctrl + Option + I na Macbookach)</p>
+        </section>
+        <section>
+          <h2>Anatomia ciastka</h2>
+          <p class="fragment fade-down">Każde ciastko składa się przynajmniej z nazwy i wartości.</p>
+          <p class="fragment fade-down">Nazwa i wartość to po prostu napisy</p>
+          <p class="fragment fade-down">Dodatkowo przeglądarka zapamiętuje, do której domeny nalezy dane ciastko, żeby wiedzieć któremu serwerowi może je udostępnić</p>
+          <p class="fragment fade-down">Serwer widzi tylko nazwę i wartość ciastka</p>
+          <p class="fragment fade-down">Pozostałe atrybuty są widoczne tylko dla przeglądarki i służą zarządzaniu ciastkami</p>
+          <p class="fragment fade-down">Spośród tych atrybutów najbardziej nas zazwyczaj interesuje tym razem nie liczba kalorii, ale data ważności</p>
+        </section>
+        <section>
+          <h2>Dlaczego informuje się użytkowników o tym, że strona używa ciastek?</h2>
+          <p class="fragment fade-down">Jednym z zastosowań ciastek jest śledzenie naszych poczynań w sieci</p>
+          <p class="fragment fade-down">UE uznała, że jeżeli będzie wymagana zgoda użytkownika na zapisanie ciastka, to problem będzie rozwiązany</p>
+          <p class="fragment fade-down"><a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2009:337:0011:0036:en:PDF">Dyrektywa 2009/136/EC Rady Europy</a> nakłada na dostawców treści internetowych, którzy chcą zapisywać dane w przeglądarce (nie tylko przez cookie, ale też przez inne mechanizmy, jak localStorage) obowiązek uzyskania zgody na taką czynność</p>
+        </section>
+        <section>
+          <h2>I co z tego wynikło?</h2>
+          <p class="fragment fade-down">W praktyce nic się nie zmieniło. Czy ktoś, kiedyś nie zgodził się na zapisanie ciastka?</p>
+          <p class="fragment fade-down">Ale za to musimy wiedzieć, jak zrobić informację o cookies</p>
+        </section>
+        <section>
+          <h2>Do maszyn!</h2>
+          <figure>
+              <img style="height: 400px;" src="img/F-15_Eagle_female_pilots,_3rd_Wing.jpg"/>
+              <figcaption style="font-size: 0.5rem;"><a href="https://commons.wikimedia.org/wiki/File:F-15_Eagle_female_pilots,_3rd_Wing.jpg">Zdjęcie w domenie publicznej. Autorem jest Tech. Sgt. Keith Brown</a></figcaption>
+            </figure>
+            <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <h3>Źródła</h3>
+          <p><a href="download/gallery.zip">Stąd pobierzesz paczkę z kodem źródłowym</a></p>
+          <p class="fragment fade-up">Po wypakowaniu znajdziesz w głównym folderze dwa pliki HTML - <strong>demo.html</strong>
+              będzie nam służyć jako przykład, <strong>index.html</strong> to plik na którym pracujemy.</p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p class="note task">Rozpakujmy nasze źródła i otwórzmy w przeglądarce plik <code>demo.html</code>.</p>
+          <p class="fragment fade-down">Nic nie widać?</p>
+          <p class="fragment fade-down">Czas włączyć narzędzia programisty!</p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Tym razem mamy naprawdę prostą strukturę dokumentu:</p>
+          <p class="fragment fade-down">Element <i>aside</i> w którym znajduje się informacja o ciasteczku oraz przycisk do jej zamknięcia</p>
+          <p class="fragment fade-down">Mnóstwo miejsca, które można wypełnić treścią</p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Zastanówmy się co można zrobić, żeby widoczna w kodzie informacja o ciasteczkach, wyświetliła się na stronie:</p>
+          <p class="fragment fade-down">Element <i>aside</i> w którym znajduje się informacja o ciasteczku oraz przycisk do jej zamknięcia</p>
+          <p class="fragment fade-down">Jakie klasy ma ustawiony element zawierający informację?</p>
+          <p class="fragment fade-down">Co się stanie, kiedy zabierzemy klasę <i>hide</i>?</p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Po tym eksperymencie (i po naszych poprzednich warsztatach) rozwiązanie powinno już się samo nasuwać</p>
+          <p class="fragment fade-down">Jak napisać funkcję, która pokaże informację o ciasteczkach?</p>
+          <p class="fragment fade-down">Pokaże, czyli zabierze klasę <i>hide</i></p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Szybka powtórka, bo widzieliśmy się przecież tak dawno</p>
+          <p class="fragment fade-down">document</p>
+          <p class="fragment fade-down">querySelector()</p>
+          <p class="fragment fade-down">classList</p>
+          <p class="fragment fade-down">classList.add() classList.remove()</p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <h2>Piszemy!</h2>
+          <figure>
+              <img style="height: 400px;" src="img/website-647013_1920.jpg"/>
+              <figcaption style="font-size: 0.5rem;"><a href="https://pixabay.com/pl/witryny-sieci-web-kod-html-647013/">Zdjęcie w domenie publicznej. Autorem jest Lawrence Monk</a></figcaption>
+            </figure>
+            <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Nasza funkcja wygląda zapewne mniej więcej tak</p>
+          <pre><code>
+function showNotice() {
+  document.querySelector('#cookie-notice').classList.remove('hide')
+}
+          </pre></code>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Mamy już funkcję, ale po przeładowaniu nadal nie widać naszej informacji. Dlaczego?</p>
+          <p class="fragment fade-down">Funkcję trzeba jeszcze wywołać</p>
+          <p class="fragment fade-down">W naszym przypadku najlepiej będzie to zrobić umieszczając taki fragment tuż przed tagiem zamykającym <i>body</i></p>
+          <pre class="fragment fade-down"><code>
+  ...        
+  &lt;script&gt;
+    showNotice();
+  &lt;/script&gt;
+&lt;/body&gt;
+          </code></pre>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Pierwsze koty za płoty<p>
+          <p class="fragment fade-down">Udało nam się wyświetlić informację o ciastkach, to teraz zastanówmy się jak ją schować</p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Stworzenie funkcji, której działanie będzie odwrotne do funkcji <i>showNotice()</i> to już dla nas bułka z masłem</p>
+          <figure>
+              <img style="height: 400px;" src="img/bread-and-butter.jpg"/>
+              <figcaption style="font-size: 0.5rem;"><a href="http://www.publicdomainpictures.net/view-image.php?image=54923&picture=&jazyk=PL">Zdjęcie w domenie publicznej. Autorem jest Marina Shemesh</a></figcaption>
+          </figure>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>200kcal później...</p>
+          <pre><code>
+function hideNotice() {
+  document.querySelector('#cookie-notice').classList.add('hide')
+}
+          </pre></code>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Kto pamięta co zrobić, żeby kliknięcie w przycisk uruchomiło naszą funkcję? Ręka do góry!<p>
+          <pre class="fragment fade-down"><code>document.querySelector( '#cookie-notice-button' ).addEventListener( 'click', hideNotice );</code></pre>
+          <p>Umieszczamy to pod wywołaniem naszej funkcji <i>showNotice()</i> i ...</p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <h2>Udało się!</h2>
+          <img src="img/nasa-celebration.gif"> 
+          <p class="fragment fade-down">Ale czy na pewno?</p>
+          <p class="fragment fade-down">Co się stanie gdy odświeżymy stronę?</p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>W większości przypadków chciałybyśmy, żeby użytkownikowi, który już raz potwierdził że zobaczył informację o ciastkach, drugi raz już jej nie pokazywać</p>
+          <p class="fragment fade-down">Musimy gdzieś zapisać, że użytkownik kliknął w przycisk</p>
+          <p class="fragment fade-down">Ale gdzie?</p>
+          <p class="fragment fade-down">W zmiennej?</p>
+          <p class="fragment fade-down">Ale zmienne są czyszczone przy każdym odświeżeniu strony...</p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Gdyby tak można było zapisać dane w przeglądarce tak, żeby przetrwały odświeżanie...</p>
+          <figure class="fragment fade-in">
+              <img style="height: 400px;" src="img/269577433_1a4cc0685d_o.jpg"/>
+              <figcaption style="font-size: 0.5rem;"><a href="https://www.flickr.com/photos/mackenzieeeee/269577433">Autorem zdjęcia jest mackenzie</a> - <a href="https://creativecommons.org/licenses/by-nd/2.0/">Grafika na licencji Creative Commons CC BY-ND 2.0</a></figcaption>
+          </figure>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        
+          
+
+
+    </div>
+    <div class="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/"><img alt="Licencja Creative Commons" style="border-width:0;vertical-align:bottom" src="./img/cc.png" /></a> <span>Ta prezentacja jest dostępna na <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">licencji Creative Commons Uznanie autorstwa-Użycie niekomercyjne-Na tych samych warunkach 3.0 Polska</a>.</span></div>
+</div>
+
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+        controls: false,
+        progress: false,
+        transition: 'convex',
+        slideNumber: 'true',
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+    
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+      if(event.currentSlide.id === 'cookie-notice') {
+        console.log('show cookie notice')
+      }
+    } );
+</script>
+</body>
+</html>
