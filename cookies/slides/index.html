@@ -112,13 +112,13 @@
         </section>
         <section>
           <h3>Źródła</h3>
-          <p><a href="download/gallery.zip">Stąd pobierzesz paczkę z kodem źródłowym</a></p>
+          <p><a href="../cookies.zip">Stąd pobierzesz paczkę z kodem źródłowym</a></p>
           <p class="fragment fade-up">Po wypakowaniu znajdziesz w głównym folderze dwa pliki HTML - <strong>demo.html</strong>
               będzie nam służyć jako przykład, <strong>index.html</strong> to plik na którym pracujemy.</p>
           <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-          <p class="note task">Rozpakujmy nasze źródła i otwórzmy w przeglądarce plik <code>demo.html</code>.</p>
+          <p class="note task">Rozpakujmy nasze źródła i otwórzmy w przeglądarce plik <code>index.html</code>.</p>
           <p class="fragment fade-down">Nic nie widać?</p>
           <p class="fragment fade-down">Czas włączyć narzędzia programisty!</p>
           <i class="fragment fade-down fa fa-angle-right"></i>
@@ -231,10 +231,80 @@ function hideNotice() {
           </figure>
           <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
-        
-          
-
-
+        <section>
+          <p>Ciastka są jak najbardziej odpowiednim mechanizmem na przechowanie takiej informacji</p>
+          <p class="fragment fade-down">Dzisiaj jednak użyjemy innego, a to dlatego, że ciastka do działania wymagają, aby strona została zaserwowana z serwera www, a nie wczytana z dysku. Nie mamy dzisiaj niestety czasu, żeby wykonać takie ćwiecznie</p>
+          <p class="fragment fade-down">Ale nic nie stracimy! Wręcz przeciwnie, bo dowiemy się (i nauczymu korzystać) o jeszcze jednym mechanizmie służącym do zapisywania danych w przeglądarce!</p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <h2>Local Storage!</h2>
+          <p class="fragment fade-down">Wprowadzony w ramach standardu HTML5, a więc stosunkowo młoda technologia (IE8+)</p>
+          <p class="fragment fade-down">Widoczny tylko dla przeglądarki (ciastka są widoczne także dla serwera)</p>
+          <p class="fragment fade-down">Można w nim przchować więcej danych, ok. 1000 razy więcej niż w ciastkach</p>
+          <p class="fragment fade-down">Duuuużo łatwiejszy w użyciu</p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Podstawowe użycie local storage</p>
+          <p>Zapisywanie napisu</p>
+          <pre><code>localStorage.setItem('nazwa', 'wartość')</code></pre>
+          <p>Odczyt z local storage i zapisanie do zmiennej</p>
+          <pre><code>var zmienna = localStorage.getItem('nazwa')</code></pre>
+          <p>Skasowanie danych z local storage</p>
+          <pre><code>localStorage.removeItem('nazwa')</code></pre>
+        </section>
+        <section>
+          <p>Zastanówmy się teraz, jak mogłybyśmy wykorzystać ten mechanizm, żeby nasza informacja o ciasteczkach, zachowywała się tak, jak powinna</p>
+          <img style="height: 400px;" src="img/RigidDeliriousHanumanmonkey.gif"/> 
+          <i class="fragment fade-down fa fa-angle-right"></i>          
+        </section>
+        <section>
+            <p>Gotowe?</p>
+            <div class="fragment fade-up">
+                <p>Wyszło nam pewnie coś takiego:</p>
+                <pre><code>1. Przy otwarciu strony sprawdź, 
+   czy w local storage jest informacja, że użytkowik kliknął przycisk
+2. Jeśli nie ma - wyświetl informację o ciasteczkach
+3. Gdy użytkownik kliknie przycisk, 
+   zapisz informację o tym w local storage i ukryj informację o ciasteczkach
+</code></pre>
+            </div>
+            <p class="fragment fade-down">Spróbujmy to teraz zakodować</p>
+            <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Zacznijmy przewrotnie od końca. Jak zmodyfikujemy naszą funkcję hideNotice()?</p>
+          <pre class="fragment fade-down"><code>function hideNotice() {
+  document.querySelector('#cookie-notice').classList.add('hide');
+  localStorage.setItem('showCookieNotice', 'false')
+}
+          </code></pre>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <p>Teraz zastanówmy się nad funkcją showNotice()</p>
+          <pre class="fragment fade-down"><code>function showNotice() {
+  if(localStorage.getItem('showCookieNotice') !== 'false') {
+    document.querySelector('#cookie-notice').classList.remove('hide')
+  }
+}
+          </code></pre>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <h2>Czas próby!</h2>
+          <p>Zapisujemy naszą stronę, odświeżamy i patrzymy co się dzieje</p>
+          <p class="fragment fade-down">Wszystko gra?</p>
+          <div class="fragment fade-down">
+            <p>Żeby przebrowadzić próbę więcej niż raz, musimy usunąć zmienną <i>showCookieNotice</i> z local storage. Możemy to zrobić wpisując w konsoli:</p>
+            <pre><code>localStorage.removeItem('showCookieNotice')</code></pre>
+          </div>
+        </section>
+        <section data-transition="zoom" data-transition-speed="slow">
+            <p>Dzięki za wspólnie spędzony czas i do zobaczenia!</p>
+            <img src="img/kaczucha.svg" style="border: none; box-shadow: none;"/>
+        </section>  
     </div>
     <div class="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/"><img alt="Licencja Creative Commons" style="border-width:0;vertical-align:bottom" src="./img/cc.png" /></a> <span>Ta prezentacja jest dostępna na <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">licencji Creative Commons Uznanie autorstwa-Użycie niekomercyjne-Na tych samych warunkach 3.0 Polska</a>.</span></div>
 </div>
