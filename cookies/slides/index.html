@@ -234,14 +234,14 @@ function hideNotice() {
         <section>
           <p>Ciastka są jak najbardziej odpowiednim mechanizmem na przechowanie takiej informacji</p>
           <p class="fragment fade-down">Dzisiaj jednak użyjemy innego, a to dlatego, że ciastka do działania wymagają, aby strona została zaserwowana z serwera www, a nie wczytana z dysku. Nie mamy dzisiaj niestety czasu, żeby wykonać takie ćwiecznie</p>
-          <p class="fragment fade-down">Ale nic nie stracimy! Wręcz przeciwnie, bo dowiemy się (i nauczymu korzystać) o jeszcze jednym mechanizmie służącym do zapisywania danych w przeglądarce!</p>
+          <p class="fragment fade-down">Ale nic nie stracimy! Wręcz przeciwnie, bo dowiemy się (i nauczymy korzystać) o jeszcze jednym mechanizmie służącym do zapisywania danych w przeglądarce!</p>
           <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
           <h2>Local Storage!</h2>
           <p class="fragment fade-down">Wprowadzony w ramach standardu HTML5, a więc stosunkowo młoda technologia (IE8+)</p>
           <p class="fragment fade-down">Widoczny tylko dla przeglądarki (ciastka są widoczne także dla serwera)</p>
-          <p class="fragment fade-down">Można w nim przchować więcej danych, ok. 1000 razy więcej niż w ciastkach</p>
+          <p class="fragment fade-down">Można w nim przechować więcej danych, ok. 1000 razy więcej niż w ciastkach</p>
           <p class="fragment fade-down">Duuuużo łatwiejszy w użyciu</p>
           <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -297,7 +297,7 @@ function hideNotice() {
           <p>Zapisujemy naszą stronę, odświeżamy i patrzymy co się dzieje</p>
           <p class="fragment fade-down">Wszystko gra?</p>
           <div class="fragment fade-down">
-            <p>Żeby przebrowadzić próbę więcej niż raz, musimy usunąć zmienną <i>showCookieNotice</i> z local storage. Możemy to zrobić wpisując w konsoli:</p>
+            <p>Żeby przeprowadzić próbę więcej niż raz, musimy usunąć zmienną <i>showCookieNotice</i> z local storage. Możemy to zrobić wpisując w konsoli:</p>
             <pre><code>localStorage.removeItem('showCookieNotice')</code></pre>
           </div>
         </section>
@@ -330,12 +330,6 @@ function hideNotice() {
             }
         ]
     });
-    
-    Reveal.addEventListener( 'slidechanged', function( event ) {
-      if(event.currentSlide.id === 'cookie-notice') {
-        console.log('show cookie notice')
-      }
-    } );
 </script>
 </body>
 </html>
