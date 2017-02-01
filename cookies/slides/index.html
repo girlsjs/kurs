@@ -67,7 +67,7 @@
           <p class="fragment fade-down">Po co ktoś miałby zapisywać dane w mojej przeglądarce? Nie stać ich na twarde dyski?</p>
           <ul>
             <li class="fragment fade-down">statystyki odwiedzin (nie liczymy tego samego użytkownika wiele razy, albo sprawdzamy czy użytkownicy do nas wracają)</li>
-            <li class="fragment fade-down">zakupy internetowe bez zakładanie konta</li>
+            <li class="fragment fade-down">zakupy internetowe bez zakładania konta</li>
             <li class="fragment fade-down">automatyczny login</li>
             <li class="fragment fade-down">przechowywanie informacji w formularzu, żeby nie zniknęły po odświeżeniu strony</li>
             <li class="fragment fade-down">wyświetlanie informacji o ciasteczkach</li>
@@ -162,7 +162,7 @@
           <p>Nasza funkcja wygląda zapewne mniej więcej tak</p>
           <pre><code>
 function showNotice() {
-  document.querySelector('#cookie-notice').classList.remove('hide')
+  document.querySelector('#cookie-notice').classList.remove('hide');
 }
           </pre></code>
           <i class="fragment fade-down fa fa-angle-right"></i>
@@ -181,6 +181,10 @@ function showNotice() {
           <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
+          <p>Nasze dzisiejsze ćwiczenie jest na tyle krótkie, że wszystko (czyli HTML, CSS i JavaScript) będziemy trzymać w jednym pliku</p>
+          <p>Pamiętajmy jednak, że w prawdziwym projekcie, warto mieć osobne pliki zarówno na CSS jak i JavaScript</p>
+        </section>
+        <section>
           <p>Pierwsze koty za płoty<p>
           <p class="fragment fade-down">Udało nam się wyświetlić informację o ciastkach, to teraz zastanówmy się jak ją schować</p>
           <i class="fragment fade-down fa fa-angle-right"></i>
@@ -197,7 +201,7 @@ function showNotice() {
           <p>200kcal później...</p>
           <pre><code>
 function hideNotice() {
-  document.querySelector('#cookie-notice').classList.add('hide')
+  document.querySelector('#cookie-notice').classList.add('hide');
 }
           </pre></code>
           <i class="fragment fade-down fa fa-angle-right"></i>
@@ -248,14 +252,14 @@ function hideNotice() {
         <section>
           <p>Podstawowe użycie local storage</p>
           <p>Zapisywanie napisu</p>
-          <pre><code>localStorage.setItem('nazwa', 'wartość')</code></pre>
+          <pre><code>localStorage.setItem('nazwa', 'wartość');</code></pre>
           <p>Odczyt z local storage i zapisanie do zmiennej</p>
-          <pre><code>var zmienna = localStorage.getItem('nazwa')</code></pre>
+          <pre><code>var zmienna = localStorage.getItem('nazwa');</code></pre>
           <p>Skasowanie danych z local storage</p>
-          <pre><code>localStorage.removeItem('nazwa')</code></pre>
+          <pre><code>localStorage.removeItem('nazwa');</code></pre>
         </section>
         <section>
-          <p>Zastanówmy się teraz, jak mogłybyśmy wykorzystać ten mechanizm, żeby nasza informacja o ciasteczkach, zachowywała się tak, jak powinna</p>
+          <p>Zastanówmy się teraz i zapiszmy w krokach po polsku, jak mogłybyśmy wykorzystać ten mechanizm, żeby nasza informacja o ciasteczkach, zachowywała się tak, jak powinna</p>
           <img style="height: 400px;" src="img/RigidDeliriousHanumanmonkey.gif"/> 
           <i class="fragment fade-down fa fa-angle-right"></i>          
         </section>
@@ -277,19 +281,21 @@ function hideNotice() {
           <p>Zacznijmy przewrotnie od końca. Jak zmodyfikujemy naszą funkcję hideNotice()?</p>
           <pre class="fragment fade-down"><code>function hideNotice() {
   document.querySelector('#cookie-notice').classList.add('hide');
-  localStorage.setItem('showCookieNotice', 'false')
+  localStorage.setItem('showCookieNotice', 'false');
 }
           </code></pre>
+          <p class="fragment fade-down">W local storage zapisaliśmy pod nazwą <i>showCookieNotice</i> słowo <i>false</i>. To będzie dla nas znak, żeby więcej nie wyświetlać informacji o ciastkach</p>
           <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
           <p>Teraz zastanówmy się nad funkcją showNotice()</p>
           <pre class="fragment fade-down"><code>function showNotice() {
   if(localStorage.getItem('showCookieNotice') !== 'false') {
-    document.querySelector('#cookie-notice').classList.remove('hide')
+    document.querySelector('#cookie-notice').classList.remove('hide');
   }
 }
           </code></pre>
+          <p class="fragment fade-down">Korzystając z <i>if</i> sprawdzamy, czy to, co zapisano w local storage pod nazwą <i>showCookieNotice</i> nie jest słowem <i>false</i> i tylko wtedy wyświetlamy naszą informację.</p>
           <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -297,8 +303,8 @@ function hideNotice() {
           <p>Zapisujemy naszą stronę, odświeżamy i patrzymy co się dzieje</p>
           <p class="fragment fade-down">Wszystko gra?</p>
           <div class="fragment fade-down">
-            <p>Żeby przeprowadzić próbę więcej niż raz, musimy usunąć zmienną <i>showCookieNotice</i> z local storage. Możemy to zrobić wpisując w konsoli:</p>
-            <pre><code>localStorage.removeItem('showCookieNotice')</code></pre>
+            <p>Żeby przeprowadzić próbę więcej niż raz, musimy usunąć z local storage to, co zapisane jest pod nazwą <i>showCookieNotice</i>. Możemy to zrobić wpisując w konsoli:</p>
+            <pre><code>localStorage.removeItem('showCookieNotice');</code></pre>
           </div>
         </section>
         <section data-transition="zoom" data-transition-speed="slow">
