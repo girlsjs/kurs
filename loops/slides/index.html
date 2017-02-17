@@ -49,10 +49,10 @@
         <section>
           <h3 style="font-size: 3rem">Pętle</h3>
           <p>W dzisiejszym ćwiczeniu poznamy pętle.</p>
-          <p>
+          <p class="fragment">
             Pętle, podobnie jak instrukcja warunkowa "if", należą do podstawowych konstrukcji w językach programowania.
           </p>
-          <p>Pętle pozwalają na wykonanie danej czynności kilka razy (bez potrzeby kopiowania i wklejania kodu)</p>
+          <p class="fragment">Pętle pozwalają na wykonanie danej czynności kilka razy (bez potrzeby kopiowania i wklejania kodu)</p>
         </section>
         <section>
           <h1 style="font-size: 3rem">Ale...</h1>
@@ -83,6 +83,43 @@
                 Grafika z serwisu maxpixel.freegreatpicture.com
               </figcaption>
             </figure>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Po co to?</h3>
+          <p>Żeby w ładny sposób przechowywać wiele podobnych danych<br /></p>
+          <p class="fragment">
+            Przykład: Jeżeli mamy 10 użytkowników na stronie, to znacznie łatwiej przechować ich imiona w jednej
+            tablicy niż w 10 oddzielnych zmiennych.
+          </p>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Jak to wygląda</h3>
+          <p>Przypomnijmy sobie najpierw jak definiujemy zmienne</p>
+          <pre class="fragment"><code class="hljs javascript">var name = "Kasia";</code></pre>
+          <p class="fragment">A tak wygląda tablica</p>
+          <pre class="fragment"><code class="hljs javascript">var names = ["Kasia", "Basia", "Asia"];</code></pre>
+          <p class="fragment">Lub tak</p>
+          <pre class="fragment"><code class="hljs javascript">var names = [
+  "Kasia",
+  "Basia",
+  "Asia"
+];</code></pre>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Jak odczytać wartość</h3>
+          <p>Przypomnijmy sobie jak odczytać wartość zmiennej</p>
+          <pre class="fragment"><code class="hljs javascript">console.log(name);</code></pre>
+          <p class="fragment">Wykorzystajmy numerki w tablicy</p>
+          <pre class="fragment"><code class="hljs javascript">console.log(names[1])</code></pre>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Uwaga! Dziwne numerowanie</h3>
+          <p>W tablicach zaczynamy numerować od wartości 0</p>
+          <pre class="fragment"><code class="hljs javascript">var names = [
+  "Kasia", // To jest wartość o numerze 0
+  "Basia", // To jest wartość o numerze 1
+  "Asia"   // To jest wartość o numerze 2
+];</code></pre>
         </section>
         <section data-transition="zoom" data-transition-speed="slow">
             <p>Dzięki za wspólnie spędzony czas i do zobaczenia!</p>
