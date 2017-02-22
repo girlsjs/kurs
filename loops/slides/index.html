@@ -191,11 +191,61 @@ console.log(names[4]);</code></pre>
         <section>
           <h3>Spróbujcie wpisać w konsolę następujące</h3>
           <pre><code class="hljs javascript">for (var i=0; i<5; i++) { console.log(i) }</code></pre>
+          <p class="fragment">Co wyszło?</p>
           <pre class="fragment"><code class="hljs javascript">0
 1
 2
 3
 4</code></pre>
+          <p class="fragment">A dlaczego?</p>
+        </section>
+        <section>
+          <h3>Ćwiczenie</h3>
+          <figure>
+            <img src="img/excercise.png" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu pixabay.com
+            </figcaption>
+          </figure>
+        </section>
+        <section>
+          <h3>Ćwiczenie</h3>
+          <p>Wykorzystując zdobytą dziś wiedzę:</p>
+          <ul>
+            <li>Utwórzcie tablicę z 6 imionami</li>
+            <li>Wypiszcie, używając pętli, wszystkie imiona</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Prawdopodobnie wyszło Wam coś takiego</h3>
+          <pre class="fragment"><code class="hljs javascript">var names = ["Ala", "Ela", "Ola", "Ula", "Ila", "Yla"];
+
+for (var i=0; i<6; i++) {
+  console.log(names[i])
+}</code></pre>
+        </section>
+        <section>
+          <h3>Problem z takim rozwiązaniem</h3>
+          <p>Nasze rozwiązanie działa tylko dla tablicy z 6 imionami.</p>
+          <p class="fragment">Co jeżeli będzie ich mniej lub więcej?</p>
+        </section>
+        <section>
+          <h3>"length" na ratunek!</h3>
+          <p>Każda tablica ma właściwość <b>length</b></p>
+          <p class="fragment"><b>length</b> zawiera zawsze aktualną ilość elementów w tablicy</p>
+          <pre class="fragment"><code class="hljs javascript">names.length // wypisze ilość elementów</code></pre>
+        </section>
+        <section>
+          <h3>Wracamy do ćwiczenia</h3>
+          <p>Rozwiążcie poprzednie zadanie tak, żeby działało dla dowolnej liczby imion w tablicy <b>names</b></p>
+        </section>
+        <section>
+          <h3>Zgadza się?</h3>
+          <pre class="fragment"><code class="hljs javascript">var names = ["Ala", "Ela", "Ola", "Ula", "Ila", "Yla"];
+
+for (var i=0; i&lt;names.length; i++) {
+  console.log(names[i])
+}</code></pre>
         </section>
         <section data-transition="zoom" data-transition-speed="slow">
             <p>Dzięki za wspólnie spędzony czas i do zobaczenia!</p>
