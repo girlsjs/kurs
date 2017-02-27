@@ -345,6 +345,23 @@ p.innerText = 'mój napis';
         </section>
 
         <section>
+          <h3>Inne atrybuty</h3>
+          <p>Nie wszystkie elementy HTML potrzebują <b>innerText</b></p>
+          <p class="fragment">Niektóre mają inne atrybuty</p>
+          <pre class="fragment"><code class="hljs javascript">&#x3C;img src=&#x22;img/1.jpg&#x22; /&#x3E;</code></pre>
+          <p class="fragment">Aby utworzyć element obrazka (<b>img</b>) <br /> potrzebny jest atrybut <b>src</b></p>
+          <pre class="fragment"><code class="hljs javascript">var img = document.createElement('img')
+img.src = 'img/1.jpg'
+
+document.querySelector('#section1').appendChild(img)</code></pre>
+        </section>
+
+        <section>
+          <h3>Sprawdźcie</h3>
+          <p class="fragment">Udało się?</p>
+        </section>
+
+        <section>
           <h3>Sukces</h3>
           <figure class>
             <img src="http://i.giphy.com/opmIBtljGbwZi.gif" />
