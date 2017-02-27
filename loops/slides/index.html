@@ -25,7 +25,7 @@
     </script>
 
     <!-- facebook meta -->
-    <meta property="og:description" content="Materiały do kursu girls.js: ciastka - z czym to się je." />
+    <meta property="og:description" content="Materiały do kursu girls.js: tablice i pętle" />
     <meta property="og:image" content="https://girlsjs.github.io/www/assets/logo.png" />
 </head>
 <body>
@@ -34,7 +34,7 @@
         <section>
             <img style="height: 400px;" src="img/kaczucha.svg"/>
             <h3 class="fragment grow">Cześć!</h3>
-<p>(naciśnij spację, żeby kontynuować)</p>
+            <p>(naciśnij spację, żeby kontynuować)</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -58,7 +58,7 @@
           <h1 style="font-size: 3rem">Ale...</h1>
         </section>
         <section>
-          <p>Żeby nasze ćwiczenie miało sens, najpierw musimy się dowiedzieć co nieco o tablicach.</p>
+          <p>Żeby nasze ćwiczenie miało sens, najpierw musimy się dowiedzieć trochę o tablicach.</p>
         </section>
         <section>
           <h3 style="font-size: 3rem">Tablice</h3>
@@ -93,12 +93,12 @@
           </p>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Jak to wygląda</h3>
-          <p>Przypomnijmy sobie najpierw jak definiujemy zmienne</p>
+          <h3 style="font-size: 3rem">Jak to wygląda?</h3>
+          <p>Przypomnijmy sobie najpierw jak definiujemy zmienne:</p>
           <pre class="fragment"><code class="hljs javascript">var name = "Kasia";</code></pre>
-          <p class="fragment">A tak wygląda tablica</p>
+          <p class="fragment">A tak wygląda tablica:</p>
           <pre class="fragment"><code class="hljs javascript">var names = ["Kasia", "Basia", "Asia"];</code></pre>
-          <p class="fragment">Lub tak</p>
+          <p class="fragment">Lub tak:</p>
           <pre class="fragment"><code class="hljs javascript">var names = [
   "Kasia",
   "Basia",
@@ -106,15 +106,15 @@
 ];</code></pre>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Jak odczytać wartość</h3>
-          <p>Przypomnijmy sobie jak odczytać wartość zmiennej</p>
+          <h3 style="font-size: 3rem">Jak odczytać wartość z tablicy?</h3>
+          <p>Przypomnijmy sobie jak odczytać wartość zmiennej:</p>
           <pre class="fragment"><code class="hljs javascript">console.log(name);</code></pre>
-          <p class="fragment">Wykorzystajmy numerki w tablicy</p>
+          <p class="fragment">Wykorzystajmy numerki w tablicy:</p>
           <pre class="fragment"><code class="hljs javascript">console.log(names[1]);</code></pre>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Uwaga! Dziwne numerowanie</h3>
-          <p>W tablicach zaczynamy numerować od wartości 0</p>
+          <h3 style="font-size: 3rem">Uwaga! Dziwne numerowanie ;)</h3>
+          <p>W tablicach zaczynamy numerować od wartości 0:</p>
           <pre class="fragment"><code class="hljs javascript">var names = [
   "Kasia", // To jest wartość o numerze 0
   "Basia", // To jest wartość o numerze 1
@@ -170,11 +170,12 @@ console.log(names[4]);</code></pre>
           <ul>
             <li class="fragment">słowo kluczowe <b>for</b></li>
             <li class="fragment">tworzenie zmiennej <br />
-              <span style="font-size: 0.7em">(jaka zmienna ma być użyta do kolejnych cykli pętli)</span></li>
+              <span style="font-size: 0.7em">(pętla potrzebuje informacji o samej sobie)</span></li>
             <li class="fragment">warunek trwania pętli <br />
               <span style="font-size: 0.7em">(pętlę kiedyś trzeba skończyć)</span></li>
             <li class="fragment">zwiększanie zmiennej <br />
-              <span style="font-size: 0.7em">(jaka ma być wartość zmiennej w kolejnych cyklach)</span></li>
+              <span style="font-size: 0.7em">(jaka ma być wartość zmiennej w kolejnych cyklach)</span><br/>
+              <span style="font-size: 0.7em">(w tym przypadku będzie to numer bieżącego "obrotu" pętli)</span></li>
           </ul>
         </section>
         <section>
@@ -189,7 +190,7 @@ console.log(names[4]);</code></pre>
 }</code></pre>
         </section>
         <section>
-          <h3>Spróbujcie wpisać w konsolę następujące</h3>
+          <h3>Spróbujcie wpisać w konsolę następujący kod:</h3>
           <pre><code class="hljs javascript">for (var i=0; i<5; i++) { console.log(i) }</code></pre>
           <p class="fragment">Co wyszło?</p>
           <pre class="fragment"><code class="hljs javascript">0
@@ -202,7 +203,7 @@ console.log(names[4]);</code></pre>
         <section>
           <h3>Ćwiczenie</h3>
           <figure>
-            <img src="img/excercise.png" />
+            <img src="img/excercise.png" style="border: none; box-shadow: none" />
             <figcaption style="font-size: 0.5rem">
               Grafika zapożyczona z serwisu pixabay.com
             </figcaption>
@@ -217,7 +218,7 @@ console.log(names[4]);</code></pre>
           </ul>
         </section>
         <section>
-          <h3>Prawdopodobnie wyszło Wam coś takiego</h3>
+          <h3>Prawdopodobnie wyszło Wam coś takiego:</h3>
           <pre class="fragment"><code class="hljs javascript">var names = ["Ala", "Ela", "Ola", "Ula", "Ila", "Yla"];
 
 for (var i=0; i<6; i++) {
@@ -232,8 +233,8 @@ for (var i=0; i<6; i++) {
         <section>
           <h3>"length" na ratunek!</h3>
           <p>Każda tablica ma właściwość <b>length</b></p>
-          <p class="fragment"><b>length</b> zawiera zawsze aktualną ilość elementów w tablicy</p>
-          <pre class="fragment"><code class="hljs javascript">names.length // wypisze ilość elementów</code></pre>
+          <p class="fragment"><b>length</b> zawiera zawsze aktualną liczbę elementów w tablicy</p>
+          <pre class="fragment"><code class="hljs javascript">names.length // wypisze liczbę elementów</code></pre>
         </section>
         <section>
           <h3>Wracamy do ćwiczenia</h3>
@@ -271,7 +272,7 @@ for (var i=0; i&lt;names.length; i++) {
         </section>
         <section>
           <h3>Czym jest drzewo DOM?</h3>
-          <p class="fragment"><i>Document Oriented Model</i> - jest to dokument napisany w HTMLu i wyświetlony w przeglądarce</p>
+          <p class="fragment"><i>Document Object Model</i> - jest to javascriptowy model dokumentu HTML wyświetlony w przeglądarce</p>
           <p class="fragment">Czyli dokładnie to, co widzicie w narzędziach programisty w zakładce <i>Elementy</i></p>
         </section>
 
@@ -325,7 +326,7 @@ p.innerText = 'mój napis';
         </section>
 
         <section>
-          <h3>A tak</h3>
+          <h3>A tak:</h3>
           <p><b>document.querySelector()</b></p>
           <p class="fragment">Jeżeli chcemy znaleźć element o identyfikatorze (id) section1 ...</p>
           <pre class="fragment"><code class="hljs javascript">document.querySelector('#section1');</code></pre>
@@ -340,16 +341,16 @@ p.innerText = 'mój napis';
         </section>
 
         <section>
-          <h3>Sprawdźcie</h3>
+          <h3>Sprawdźcie!</h3>
           <p class="fragment">Działa?</p>
         </section>
 
         <section>
-          <h3>Inne atrybuty</h3>
+          <h3>Inne właściwości</h3>
           <p>Nie wszystkie elementy HTML potrzebują <b>innerText</b></p>
-          <p class="fragment">Niektóre mają inne atrybuty</p>
+          <p class="fragment">Niektóre mają inne właściwości, na przykład obrazek (<b>img</b>)</p>
           <pre class="fragment"><code class="hljs javascript">&#x3C;img src=&#x22;img/1.jpg&#x22; /&#x3E;</code></pre>
-          <p class="fragment">Aby utworzyć element obrazka (<b>img</b>) <br /> potrzebny jest atrybut <b>src</b></p>
+          <p class="fragment">Aby utworzyć element obrazka potrzebna jest właściwość <b>src</b></p>
           <pre class="fragment"><code class="hljs javascript">var img = document.createElement('img')
 img.src = 'img/1.jpg'
 
@@ -357,12 +358,12 @@ document.querySelector('#section1').appendChild(img)</code></pre>
         </section>
 
         <section>
-          <h3>Sprawdźcie</h3>
+          <h3>Sprawdźcie!</h3>
           <p class="fragment">Udało się?</p>
         </section>
 
         <section>
-          <h3>Sukces</h3>
+          <h3>Sukces :)</h3>
           <figure class>
             <img src="http://i.giphy.com/opmIBtljGbwZi.gif" />
             <figcaption style="font-size: 0.5rem">
@@ -392,7 +393,7 @@ document.querySelector('#section1').appendChild(img)</code></pre>
         </section>
 
         <section>
-          <h3>To jedziemy</h3>
+          <h3>To jedziemy!</h3>
           <p>Otwórzcie plik <b>excercise2.html</b> w przeglądarce</p>
         </section>
 
@@ -402,7 +403,7 @@ document.querySelector('#section1').appendChild(img)</code></pre>
 
         <section>
           <h3>Zobaczmy kod</h3>
-          <p>Otwórzcie plik <b>excercise2.html</b> edytorze</p>
+          <p>Otwórzcie plik <b>excercise2.html</b> w edytorze</p>
         </section>
 
         <section>
@@ -425,21 +426,23 @@ document.querySelector('#section1').appendChild(img)</code></pre>
 
         <section>
           <h3>Zadanie</h3>
-          <p>Dodajcie pozostałe zdjęcia za pomocą kodu JS do strony</p>
+          <p>Dodajcie pozostałe zdjęcia za pomocą kodu JS do strony.</p>
         </section>
 
         <section>
-          <h3>Ustawianie atrybutu</h3>
-          <p>Aby ustawić atrybut <b>src</b> dla elementu <b>img</b></p>
-          <pre class="fragment"><code class="hljs javascript">var img = document.createElement('img');
-img.src = 'adres-obrazka';
-</code></pre>
-        </section>
-
-        <section>
-          <h3>Uwaga</h3>
+          <h3>Uwaga:</h3>
           <p>Zmienna <b>img</b> jest już utworzona!</p>
-          <p class="fragment">Przy używaniu jej, pomińcie słowo kluczowe <b>var</b></p>
+          <p class="fragment">Przy używaniu jej wewnątrz pętli,<br /> pomińcie słowo kluczowe <b>var</b></p>
+        </section>
+
+        <section>
+          <h3>Powodzenia!</h3>
+          <figure class>
+            <img src="http://i.giphy.com/IUjaKjjPPbGaQ.gif" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu giphy.com
+            </figcaption>
+          </figure>
         </section>
 
         <section>
