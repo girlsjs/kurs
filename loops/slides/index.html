@@ -55,6 +55,81 @@
           <p class="fragment">Pętle pozwalają na wykonanie danej czynności kilka razy (bez potrzeby kopiowania i wklejania kodu)</p>
         </section>
         <section>
+          <h3 style="font-size: 3rem">Przykład?</h3>
+          <p>Wyobraźmy sobie, że mamy plik 200 kartek do skserowania na starej, biurowej maszynie, ktora obsłuży tylko jedną stronę naraz.</p>
+          <figure>
+            <img src="img/copy.png" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu kaizenprint.co.uk
+            </figcaption>
+          </figure>
+        </section>      
+        <section>
+          <h3 style="font-size: 3rem">Przykład</h3>
+          <p>Chętnie zleciłybyśmy to zadanie praktykantowi, bo mamy ciekawsze rzeczy do roboty.</p>
+          <p class="fragment">Zakładając, że praktykant nigdy nie widział wcześniej ksero na oczy i zrobi tylko to, o co go wyraźnie poprosimy na piśmie, jak możemy przekazać mu co jest do zrobienia?</p>   
+        </section>   
+        <section>
+          <h3 style="font-size: 3rem">Zróbmy to ćwiczenie razem</h3> 
+        </section>     
+        <section>
+          <h3 style="font-size: 3rem">Pewnie wyszło nam coś takiego:</h3> 
+          <pre class="fragment"><code>
+1. Otwórz wieko kserokopiarki.
+2. Weź pierwszą kartkę ze stosu.
+3. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu.
+4. Zamknij wieko.
+5. Naciśnij przycisk kopiowania.
+6. Otwórz wieko
+7. Wyjmij kartkę z kserokopiarki i odłóż ją na stertę obok (zadrukowaną stroną do dołu)
+8. Weź drugą kartkę ze stosu.
+9. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu.
+10. (...)
+
+</code></pre>		
+          <p class="fragment">Nie chcemy chyba rozpisywać szczegółowych instrukcji dla każdej kartki z osobna?</p>        						
+        </section> 		
+        <section>
+          <h3 style="font-size: 3rem">Spróbujmy to usprawnić!</h3> 
+	        <p>Widzimy, że sporo instrukcji się powtarza. Możemy połączyć te instrukcje we wspólny blok i udzielić instrukcji ile razy go trzeba wykonać.</p>					       						
+        </section> 		
+        <section>
+          <h3 style="font-size: 3rem">Jak zapiszemy instrukcje dla naszego praktykanta?</h3> 
+          <pre class="fragment"><code>
+1. Otwórz wieko kserokopiarki.
+2. Weź pierwszą kartkę ze stosu.
+3. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu.
+4. Zamknij wieko.
+5. Naciśnij przycisk kopiowania.
+6. Powtórz dla kartek o numerach od 2 do 200:
+    6.1. Otwórz wieko
+    6.2. Wyjmij kartkę z kserokopiarki i odłóż ją na stertę obok (zadrukowaną stroną do dołu)
+    6.3. Weź kartkę o aktualnym numerze ze stosu.
+    6.4. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu.
+    6.5. Zamknij wieko
+    6.6. Naciśnij przycisk kopiowania
+7. (Kiedy zrobimy to wszystko dla dwusetnej kartki) Otwórz wieko kserokopiarki
+8. Wyjmij kartkę z kserokopiarki i odłóż ją na stertę obok (zadrukowaną stroną do dołu)
+9. Wyjmij plik skserowanych kartek z szuflady na dole kserokopiarki.
+10. Zabierz oba stosy kartek i przynieś do mojego biura.
+
+</code></pre>		       						
+        </section>
+        <section id="elements">
+          <h3 style="font-size: 3rem">Instrukcja 6. w naszym schemacie to właśnie pętla</h3> 
+          <p>Składają się nam na nią cztery elementy:</p>
+          <ul>
+            <li class="fragment"><strong>Warunki początkowe</strong> - od czego zaczynamy. Nasza pętla w przykładzie powyżej zaczyna się od drugiej kartki. </li>
+            <li class="fragment"><strong>Warunek trwania pętli</strong> - kiedy mamy przestać. Tutaj kończymy kserować po dwusetnej kartce.</li>
+            <li class="fragment"><strong>Instrukcje do wykonania w pętli</strong> - wszystko co jest zawarte podpunktach 6.x.</li>
+            <li class="fragment"><strong>Instrukcja przejścia do następnego kroku</strong>. Tutaj za każdym razem kiedy wykonamy instrukcje pętli, zwiększamy numer aktualnej kartki o jeden. Gdyby z jakiegoś powodu trzeba było skserować tylko nieparzyste strony, zwiększałybyśmy ten numer o 2.</li>       
+          </ul>
+        </section>      
+        <section>
+          <h3 style="font-size: 3rem">Jakieś pytania?</h3>
+          <p class="fragment">Jeżeli rozumiemy już jak działają pętle, możemy przejść dalej.</p>
+        </section>      
+        <section>
           <h1 style="font-size: 3rem">Ale...</h1>
         </section>
         <section>
@@ -166,16 +241,20 @@ console.log(names[4]);</code></pre>
         </section>
         <section>
           <h3>Anatomia pętli for</h3>
+<p><em style="font-size: 0.7em">Pamiętacie nasz <a href="#elements">przykład z praktykantem?</a></em></p>          
           <pre><code class="hljs javascript">for (var i=0; i<10; i++) {...}</code></pre>
           <ul>
             <li class="fragment">słowo kluczowe <b>for</b></li>
-            <li class="fragment">tworzenie zmiennej <br />
+            <li class="fragment">warunek początkowy -tworzenie zmiennej <br />
               <span style="font-size: 0.7em">(pętla potrzebuje informacji o samej sobie)</span></li>
             <li class="fragment">warunek trwania pętli <br />
-              <span style="font-size: 0.7em">(pętlę kiedyś trzeba skończyć)</span></li>
-            <li class="fragment">zwiększanie zmiennej <br />
-              <span style="font-size: 0.7em">(jaka ma być wartość zmiennej w kolejnych cyklach)</span><br/>
-              <span style="font-size: 0.7em">(w tym przypadku będzie to numer bieżącego "obrotu" pętli)</span></li>
+              <span style="font-size: 0.7em">(kiedy mamy przestać)</span></li>
+            <li class="fragment">instrukcja przejścia do następnego kroku<br />
+              <span style="font-size: 0.7em">(jaka ma być wartość zmiennej w następnym cyklu)</span><br/>
+            </li>
+            <li class="fragment">instrukcje do wykonania w pętli<br />
+              <span style="font-size: 0.7em">(w klamrach)</span><br/>
+            </li>            
           </ul>
         </section>
         <section>
@@ -298,7 +377,7 @@ for (var i=0; i&lt;names.length; i++) {
         </section>
 
         <section>
-          <h3>Tworzenie nowego elemenu</h3>
+          <h3>Tworzenie nowego elementu</h3>
           <p>Aby utworzyć nowy element, należy użyć metody <b>document.createElement()</b></p>
           <p class="fragment">Jako argument podajemy co to ma być za element (p, div, h1...)</p>
           <pre class="fragment"><code class="hljs javascript">var p = document.createElement('p');</code></pre>
@@ -458,7 +537,7 @@ document.querySelector('#section1').appendChild(img)</code></pre>
         <section data-transition="zoom" data-transition-speed="slow">
             <p>Dzięki za wspólnie spędzony czas i do zobaczenia!</p>
             <img src="img/kaczucha.svg" style="border: none; box-shadow: none;"/>
-        </section>
+        </section>         
     </div>
     <div class="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/"><img alt="Licencja Creative Commons" style="border-width:0;vertical-align:bottom" src="./img/cc.png" /></a> <span>Ta prezentacja jest dostępna na <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">licencji Creative Commons Uznanie autorstwa-Użycie niekomercyjne-Na tych samych warunkach 3.0 Polska</a>.</span></div>
 </div>
