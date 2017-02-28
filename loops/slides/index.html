@@ -186,10 +186,10 @@
         </section>
         <section>
           <h3 style="font-size: 3rem">Jak odczytać wartość z tablicy?</h3>
-          <p>Przypomnijmy sobie jak odczytać wartość zmiennej:</p>
-          <pre class="fragment"><code class="hljs javascript">console.log(name);</code></pre>
-          <p class="fragment">Wykorzystajmy numerki w tablicy:</p>
-          <pre class="fragment"><code class="hljs javascript">console.log(names[1]);</code></pre>
+          <p>Żeby odczytać wartość zmiennej wystarczy użyć jej nazwy. Na przykład, tak wypiszemy w konsoli pozdrowienia dla osoby ktorej imię zapisaliśmy w `name`;</p>
+          <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + name + "!" );</code></pre>          
+          <p class="fragment">Podobnie, żeby odczytać element z tablicy, potrzebujemy użyć jej nazwy i numeru elementu:</p>
+          <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + names[1] + "!" );</code></pre>   
         </section>
         <section>
           <h3 style="font-size: 3rem">Uwaga! Dziwne numerowanie ;)</h3>
@@ -213,8 +213,8 @@
           <ul>
             <li>Otwórzcie przeglądarkę Chrome</li>
             <li>Otwórzcie narzędzia programistyczne <br /><i>(F12 lub Cmd+Opt+I)</i></li>
-            <li>Zobaczcie, czy możecie utworzyć tablicę <i>names</i> jak z poprzednich slajdów, ale z 5 imionami</li>
-            <li>Spróbujcie wypisać kolejne elementy tej tablicy</li>
+            <li>Zobaczcie, czy możecie utworzyć tablicę <i>names</i> jak z poprzednich slajdów, ale z 5 imionami.</li>
+            <li>Spróbujcie wypisać kolejne elementy tej tablicy do konsoli, używając funkcji <code>console.log</code>.</li>
           </ul>
         </section>
         <section>
@@ -265,11 +265,11 @@ console.log(names[4]);</code></pre>
           <h3>Porównajcie do instrukcji warunkowej if</h3>
           <p>if</p>
           <pre><code class="hljs javascript">if (warunek) {
-  // tutaj nasz kod
+  // wykonaj ten kod jeżeli warunek jest prawdziwy
 }</code></pre>
           <p>for</p>
           <pre><code class="hljs javascript">for (var i=0; i<10; i++) {
-  // tutaj nasz kod
+  // wykonaj ten kod tak długo jak warunek trwania pętli jest prawdziwy
 }</code></pre>
         </section>
         <section>
@@ -336,148 +336,25 @@ for (var i=0; i&lt;names.length; i++) {
           <figure>
             <img src="img/Happy-Free.jpg" />
             <figcaption style="font-size: 0.5rem">
-              Grafika zapożyczona z serwisu tinybuddah.com
+              Grafika zapożyczona z serwisu tinybuddha.com
             </figcaption>
           </figure>
         </section>
         <section>
-          <h3>Czas na coś innego</h3>
-          <p>Zanim przejdziemy do ćwiczenia końcowego, nauczymy się jeszcze jednej rzeczy.</p>
-        </section>
-        <section>
-          <h3>Modyfikowanie drzewa DOM</h3>
-          <figure>
-            <img src="img/html.jpg" />
-            <figcaption style="font-size: 0.5rem">
-              Grafika zapożyczona z serwisu maxpixel.freegreatpicture.com
-            </figcaption>
-          </figure>
-        </section>
-        <section>
-          <h3>Czym jest drzewo DOM?</h3>
-          <p class="fragment"><i>Document Object Model</i> - jest to javascriptowy model dokumentu HTML wyświetlony w przeglądarce</p>
-          <p class="fragment">Czyli dokładnie to, co widzicie w narzędziach programisty w zakładce <i>Elementy</i></p>
-        </section>
-
-        <section>
-          <h3>Czas odpalić edytor</h3>
-          <p>Przejdźcie do swojego ulubionego edytora i otwórzcie plik <i>excercise1.html</i></p>
-        </section>
-
-        <section>
-          <h3>excercise1.html</h3>
-          <pre><code class="hljs javascript">&#x3C;body&#x3E;
-  &#x3C;section id=&#x22;section1&#x22;&#x3E;
-    &#x3C;h2&#x3E;Nag&#x142;&#xF3;wek 1&#x3C;/h2&#x3E;
-    &#x3C;p&#x3E;Lorem ipsum dolor sit amet...&#x3C;/p&#x3E;
-    ...
-  &#x3C;/section&#x3E;
-
-  &#x3C;script&#x3E;
-    // tutaj miejsce na Wasz skrypt ;-)
-  &#x3C;/script&#x3E;
-&#x3C;/body&#x3E;
-</code></pre>
-        </section>
-
-        <section>
-          <h3>Tworzenie nowego elementu</h3>
-          <p>Aby utworzyć nowy element, należy użyć metody <b>document.createElement()</b></p>
-          <p class="fragment">Jako argument podajemy co to ma być za element (p, div, h1...)</p>
-          <pre class="fragment"><code class="hljs javascript">var p = document.createElement('p');</code></pre>
-        </section>
-
-        <section>
-          <h3>W ten sposób utworzyliśmy pusty akapit</h3>
-          <p class="fragment">A jak umieścić w nim jakiś tekst?</p>
-          <p class="fragment">Poprzez ustawienie wartości <b>innerText</b></p>
-          <pre class="fragment"><code class="hljs javascript">var p = document.createElement('p');
-p.innerText = 'mój napis';
-</code></pre>
-        </section>
-
-        <section>
-          <h3>Tak utworzony element jest wirtualny</h3>
-          <p class="fragment">Istnieje w pamięci przeglądarki, ale nie jest nigdzie umieszczony w drzewie DOM</p>
-          <p class="fragment">Jak go doczepić?</p>
-        </section>
-
-        <section>
-          <h3>Gdzie?</h3>
-          <p>Najpierw musimy znaleźć element do którego chcemy go doczepić</p>
-          <p class="fragment">Jak znaleźć element, kto pamięta?</p>
-        </section>
-
-        <section>
-          <h3>A tak:</h3>
-          <p><b>document.querySelector()</b></p>
-          <p class="fragment">Jeżeli chcemy znaleźć element o identyfikatorze (id) section1 ...</p>
-          <pre class="fragment"><code class="hljs javascript">document.querySelector('#section1');</code></pre>
-        </section>
-
-        <section>
-          <h3>Dodawanie elementu</h3>
-          <p>Do tego służy metoda <b>appendChild</b></p>
-          <p class="fragment">Używamy jej w ten sposób: <b>nadrzędnyElement.appendChild(nowyElement)</b></p>
-          <p class="fragment">Jak to będzie wyglądało u nas?</p>
-          <pre class="fragment"><code class="hljs javascript">document.querySelector('#section1').appendChild(p)</code></pre>
-        </section>
-
-        <section>
-          <h3>Sprawdźcie!</h3>
-          <p class="fragment">Działa?</p>
-        </section>
-
-        <section>
-          <h3>Inne właściwości</h3>
-          <p>Nie wszystkie elementy HTML potrzebują <b>innerText</b></p>
-          <p class="fragment">Niektóre mają inne właściwości, na przykład obrazek (<b>img</b>)</p>
-          <pre class="fragment"><code class="hljs javascript">&#x3C;img src=&#x22;img/1.jpg&#x22; /&#x3E;</code></pre>
-          <p class="fragment">Aby utworzyć element obrazka potrzebna jest właściwość <b>src</b></p>
-          <pre class="fragment"><code class="hljs javascript">var img = document.createElement('img')
-img.src = 'img/1.jpg'
-
-document.querySelector('#section1').appendChild(img)</code></pre>
-        </section>
-
-        <section>
-          <h3>Sprawdźcie!</h3>
-          <p class="fragment">Udało się?</p>
-        </section>
-
-        <section>
-          <h3>Sukces :)</h3>
-          <figure class>
-            <img src="http://i.giphy.com/opmIBtljGbwZi.gif" />
-            <figcaption style="font-size: 0.5rem">
-              Grafika zapożyczona z serwisu giphy.com
-            </figcaption>
-          </figure>
-        </section>
-
-        <section>
-          <h3>Ćwiczenie końcowe</h3>
+          <h3>Wykorzystajmy to w praktyce</h3>
           <figure class>
             <img src="http://i.giphy.com/l0MYzAwMPl8s0jtSg.gif" />
             <figcaption style="font-size: 0.5rem">
               Grafika zapożyczona z serwisu giphy.com
             </figcaption>
           </figure>
-        </section>
-
+        </section> 
         <section>
-          <h3>Łączymy</h3>
-          <p>W ćwiczeniu końcowym połączymy wszystkie elementy dziś poznane, tj:</p>
-          <ul>
-            <li class="fragment">Tablice</li>
-            <li class="fragment">Pętle</li>
-            <li class="fragment">Tworzenie elementu</li>
-          </ul>
+          <p>W pliku <b>exercise2.html</b> mamy zapisaną tablicę obrazkow. Będziemy chcieli dodać te obrazki na stronie przy użyciu kodu JavaScript.</p>  
+          <p class="fragment">Funkcja ktora tworzy obrazek o podanym adresie i go dodaje na stronie jest już gotowa. Naszym zadaniem będzie odpowiednio wywołać ją w pętli.</p>
         </section>
-
         <section>
-          <h3>To jedziemy!</h3>
-          <p>Otwórzcie plik <b>excercise2.html</b> w przeglądarce</p>
+          <p>Otwórzmy plik <b>exercise2.html</b> w przeglądarce</p>
         </section>
 
         <section>
@@ -486,11 +363,12 @@ document.querySelector('#section1').appendChild(img)</code></pre>
 
         <section>
           <h3>Zobaczmy kod</h3>
-          <p>Otwórzcie plik <b>excercise2.html</b> w edytorze</p>
+          <p>Otwórzcie plik <b>exercise2.html</b> w edytorze</p>
         </section>
 
         <section>
           <h3>Nasz kod</h3>
+          <p><strong>TODO - zaktualizować kod</strong></p>
           <pre><code class="hljs javascript">&#x3C;body&#x3E;
   &#x3C;section id=&#x22;section1&#x22;&#x3E;
     &#x3C;img src=&#x22;img/1.jpg&#x22; /&#x3E;
@@ -499,7 +377,6 @@ document.querySelector('#section1').appendChild(img)</code></pre>
   &#x3C;script&#x3E;
     var photos = [&#x27;img/2.jpg&#x27;,&#x27;img/3.jpg&#x27;,&#x27;img/4.jpg&#x27;,&#x27;img/5.jpg&#x27;,&#x27;img/6.jpg&#x27;,
         &#x27;img/7.jpg&#x27;,&#x27;img/8.jpg&#x27;,&#x27;img/9.jpg&#x27;,&#x27;img/10.jpg&#x27;,&#x27;img/11.jpg&#x27;,&#x27;img/12.jpg&#x27;];
-    var img;
 
     // tutaj miejsce na Wasz skrypt ;-)
   &#x3C;/script&#x3E;
@@ -509,14 +386,9 @@ document.querySelector('#section1').appendChild(img)</code></pre>
 
         <section>
           <h3>Zadanie</h3>
-          <p>Dodajcie pozostałe zdjęcia za pomocą kodu JS do strony.</p>
+          <p>Korzystając z funkcji <code>dodajObrazek</code>, dodaj wszystkie obrazki z tablicy na stronie.</p>
         </section>
 
-        <section>
-          <h3>Uwaga:</h3>
-          <p>Zmienna <b>img</b> jest już utworzona!</p>
-          <p class="fragment">Przy używaniu jej wewnątrz pętli,<br /> pomińcie słowo kluczowe <b>var</b></p>
-        </section>
 
         <section>
           <h3>Powodzenia!</h3>
@@ -527,7 +399,18 @@ document.querySelector('#section1').appendChild(img)</code></pre>
             </figcaption>
           </figure>
         </section>
-
+          
+        <section>
+          <h3>Zadanie</h3>
+          <p>Korzystając z funkcji <code>dodajObrazek</code>, dodaj wszystkie obrazki z tablicy na stronie.</p>
+        </section>          
+        <section>
+          <h3>Udało się?</h3>
+          <pre class="fragment"><code class="hljs javascript">
+for (var i=0; i&lt;photos.length; i++) {
+  dodajObrazek(photos[i]);
+}</code></pre>
+        </section>
         <section>
           <h3>Wielki sukces!</h3>
           <figure class>
