@@ -65,7 +65,7 @@
           </figure>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Przykład</h3>
+          <h3 style="font-size: 3rem">Example</h3>
           <p>We're looking to delegate this task to an intern, as there's more interesting stuff for us to do.</p>
           <p class="fragment">Assuming that the intern has never seen a photocopier before and will only follow instructions w give them in print, how can we explain what's there for them to do?</p>
         </section>
@@ -86,7 +86,7 @@
 9. Insert it into the photocopier, printed side down.
 10. (...)
 </code></pre>
-          <p class="fragment">We're not going to repeat these instructions for all 200 pages, are we?</p>
+          <p class="fragment">We're not going to repeat these instructions for all 200 pages, now are we?</p>
         </section>
         <section>
           <h3 style="font-size: 3rem">Let's try to optimize this!</h3>
@@ -183,10 +183,10 @@
           <p>To read a regular variable, it's enough to use variable name. For example, this is how we'll send greetings to the console for the person whose name is stored in `username`:</p>
           <pre class="fragment"><code class="hljs javascript">console.log( "Hey " + username + "!" );</code></pre>          
           <p class="fragment">Similarly, to read the value of an array element, we'll need the array name and element number:</p>
-          <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + usernames[1] + "!" );</code>
+          <pre class="fragment"><code class="hljs javascript">console.log( "Hey " + usernames[1] + "!" );</code>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Watch out! Weird numbers ahead ;)</h3>
+          <h3 style="font-size: 3rem">Watch out! Weird numbering ahead ;)</h3>
           <p>Array element numbers normally start from 0:</p>
           <pre class="fragment"><code class="hljs javascript">var names = [
   "Kasia", // This is number 0 element
@@ -238,7 +238,7 @@ console.log(names[4]);</code></pre>
           <p>It's the most widely used one.</p>
         </section>
         <section>
-          <h3>The for loop</h3>
+          <h3>The <span style="font-size: 1.1em">for</span> loop</h3>
 <p><em style="font-size: 0.7em">Remember our <a href="#elements">photocopier example?</a></em></p>
           <pre><code class="hljs javascript">for (var i=0; i<10; i++) {...}</code></pre>
           <ul>
@@ -334,22 +334,21 @@ for (var i=0; i&lt;names.length; i++) {
             </figcaption>
           </figure>
         </section>
- <!--   DO PRZETŁUMACZENIA
         <section>
-          <h3>Wykorzystajmy to w praktyce</h3>
+          <h3>Let's use this in practice!</h3>
           <figure class>
             <img src="http://i.giphy.com/l0MYzAwMPl8s0jtSg.gif" />
             <figcaption style="font-size: 0.5rem">
-              Grafika zapożyczona z serwisu giphy.com
+              Image source: giphy.com
             </figcaption>
           </figure>
         </section> 
         <section>
-          <p>W pliku <b>exercise2.html</b> mamy zapisaną tablicę obrazkow. Będziemy chcieli dodać te obrazki na stronie przy użyciu kodu JavaScript.</p>  
-          <p class="fragment">Funkcja ktora tworzy obrazek o podanym adresie i go dodaje na stronie jest już gotowa. Naszym zadaniem będzie odpowiednio wywołać ją w pętli.</p>
+          <p>File <b>excercise1.html</b> contains an array with image addresses. We'd like to display the images in browser, using JavaScript.</p>  
+          <p class="fragment">The function that creates image element and adds it to the page is already prepared. The only thing we need to do is to call it from within a loop.</p>
         </section>
         <section>
-          <p>Otwórzmy plik <b>exercise2.html</b> w przeglądarce</p>
+          <p>Let's open <b>excercise1.html</b> in browser</p>
         </section>
 
         <section>
@@ -357,57 +356,60 @@ for (var i=0; i&lt;names.length; i++) {
         </section>
 
         <section>
-          <h3>Zobaczmy kod</h3>
-          <p>Otwórzcie plik <b>exercise2.html</b> w edytorze</p>
+          <h3>Let's see the code</h3>
+          <p>Open file <b>excercise1.html</b> in your editor</p>
         </section>
 
         <section>
-          <h3>Nasz kod</h3>
-          <p><strong>TODO - zaktualizować kod</strong></p>
+          <h3>The code</h3>
           <pre><code class="hljs javascript">&#x3C;body&#x3E;
   &#x3C;section id=&#x22;section1&#x22;&#x3E;
     &#x3C;img src=&#x22;img/1.jpg&#x22; /&#x3E;
   &#x3C;/section&#x3E;
 
-  &#x3C;script&#x3E;
-    var photos = [&#x27;img/2.jpg&#x27;,&#x27;img/3.jpg&#x27;,&#x27;img/4.jpg&#x27;,&#x27;img/5.jpg&#x27;,&#x27;img/6.jpg&#x27;,
-        &#x27;img/7.jpg&#x27;,&#x27;img/8.jpg&#x27;,&#x27;img/9.jpg&#x27;,&#x27;img/10.jpg&#x27;,&#x27;img/11.jpg&#x27;,&#x27;img/12.jpg&#x27;];
+    &#x3C;script&#x3E;
+      var section = document.querySelector(&#x22;#section1&#x22;);
+      function dodajObrazek (url) {
+        var img = document.createElement(&#x22;img&#x22;);
+        img.src = url;
+        section.appendChild(img);
+      }
 
-    // tutaj miejsce na Wasz skrypt ;-)
-  &#x3C;/script&#x3E;
+      var photos = [&#x27;img/2.jpg&#x27;,&#x27;img/3.jpg&#x27;,&#x27;img/4.jpg&#x27;,&#x27;img/5.jpg&#x27;,
+                    &#x27;img/6.jpg&#x27;,&#x27;img/7.jpg&#x27;,&#x27;img/8.jpg&#x27;,&#x27;img/9.jpg&#x27;,
+                    &#x27;img/10.jpg&#x27;,&#x27;img/11.jpg&#x27;,&#x27;img/12.jpg&#x27;];
+      
+      // a tutaj miejsce na Wasz skrypt ;-)
+
+    &#x3C;/script&#x3E;
 &#x3C;/body&#x3E;
 </code></pre>
         </section>
 
         <section>
-          <h3>Zadanie</h3>
-          <p>Korzystając z funkcji <code>dodajObrazek</code>, dodaj wszystkie obrazki z tablicy na stronie.</p>
+          <h3>Task</h3>
+          <p>Using the function <code>dodajObrazek</code> ("addImage"), add all images to the page.</p>
         </section>
 
 
         <section>
-          <h3>Powodzenia!</h3>
+          <h3>Good luck!</h3>
           <figure class>
             <img src="http://i.giphy.com/IUjaKjjPPbGaQ.gif" />
             <figcaption style="font-size: 0.5rem">
-              Grafika zapożyczona z serwisu giphy.com
+              Image source: giphy.com
             </figcaption>
           </figure>
         </section>
           
         <section>
-          <h3>Zadanie</h3>
-          <p>Korzystając z funkcji <code>dodajObrazek</code>, dodaj wszystkie obrazki z tablicy na stronie.</p>
-        </section>          
-        <section>
-          <h3>Udało się?</h3>
+          <h3>Did you do it?</h3>
           <pre class="fragment"><code class="hljs javascript">
-for (var i=0; i&lt;photos.length; i++) {
-  dodajObrazek(photos[i]);
-}</code></pre>
+  for (var i = 0; i &lt; photos.length; i++) {
+    dodajObrazek(photos[i]);
+  }
+  </code></pre>
         </section>
-        <section>
--->
         <section>
           <h3>Success!</h3>
           <figure class>

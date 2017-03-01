@@ -7,17 +7,13 @@
         font-family: 'Open Sans', sans-serif;
         background: #eeeeee;
       }
-      h1 {
-        font-weight: 400;
-      }
+
       section {
-        background: white;
         padding: 20px;
-        border: 1px solid gray;
-        width: 70%;
-        margin: 10px auto;
-        font-size: 20px;
-        line-height: 24px;
+        margin: 20px auto;
+        width: 900px;
+        background: white;
+        border: solid 1px #aeaeae;
       }
 
       section > img {
@@ -26,28 +22,46 @@
         margin: 10px;
         box-shadow: 2px 2px 7px #808080;
       }
+
+      p {
+        margin: 20px auto;
+        width: 900px;
+        font-size: 10px;
+      }
     </style>
   </head>
   <body>
     <section id="section1">
-      <h2>Nagłówek 1</h2>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere laoreet dolor et gravida.</p>
-      <p>
-        Suspendisse sapien felis, aliquam eu enim ut, euismod rutrum mauris. Vivamus porta mi non malesuada luctus.
-        Praesent volutpat ultricies hendrerit. Morbi erat neque, eleifend in interdum sit amet, vestibulum eget lorem.
-        Pellentesque ut malesuada erat. Nam nec elit sem. Morbi porttitor facilisis nibh et congue.
-      </p>
-      <p>
-        Vivamus id lacus sapien. Phasellus elementum eleifend metus, consectetur pretium nulla fermentum ac.
-        Curabitur tempus auctor tempus. Ut ultrices est vitae ex scelerisque, sit amet ultricies augue ultricies.
-        Integer dapibus ornare posuere. Pellentesque mollis leo nunc, vitae porttitor magna varius et.
-        Cras a sapien sed ante laoreet posuere a ac dui.
-      </p>
+      <img src="img/1.jpg" />
     </section>
+    <p>
+      Grafiki z serwisu pixbay.com
+    <p>
 
     <script>
-      // tutaj miejsce na Wasz skrypt ;-)
+      // znajdujemy element, do którego później dodamy wszystkie obrazki
+      var section = document.querySelector("#section1");
+
+      // definiujemy funkcję, która tworzy i dodaje obrazek we właściwe miejsce
+      // funkcja potrzebuje dostać adres obrazka jako argument
+      // przykłady użycia:
+      //    dodajObrazek("img/3.jpg");
+      //    dodajObrazek(photos[6]);
+      function dodajObrazek (url) {
+        var img = document.createElement("img");
+        img.src = url;
+        // tutaj korzystamy ze zdefiniowanego poza funkcją elementu
+        section.appendChild(img);
+      }
+
+      // to jest tablica z adresami wszystkich obrazków. Adresy są krótkie, ponieważ
+      // obrazki znajdują się (niemal) w tym samym folderze, co plik .html :)
+      var photos = ['img/2.jpg','img/3.jpg','img/4.jpg','img/5.jpg',
+                    'img/6.jpg','img/7.jpg','img/8.jpg','img/9.jpg',
+                    'img/10.jpg','img/11.jpg','img/12.jpg'];
+      
+      // a tutaj miejsce na Wasz skrypt ;-)
+
     </script>
   </body>
 </html>

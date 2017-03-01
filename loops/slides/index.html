@@ -350,11 +350,11 @@ for (var i=0; i&lt;names.length; i++) {
           </figure>
         </section> 
         <section>
-          <p>W pliku <b>exercise2.html</b> mamy zapisaną tablicę obrazkow. Będziemy chcieli dodać te obrazki na stronie przy użyciu kodu JavaScript.</p>  
-          <p class="fragment">Funkcja ktora tworzy obrazek o podanym adresie i go dodaje na stronie jest już gotowa. Naszym zadaniem będzie odpowiednio wywołać ją w pętli.</p>
+          <p>W pliku <b>excercise1.html</b> mamy zapisaną tablicę obrazkow. Będziemy chcieli dodać te obrazki na stronie przy użyciu kodu JavaScript.</p>  
+          <p class="fragment">Funkcja, która tworzy obrazek o podanym adresie i go dodaje na stronie, jest już gotowa. Naszym zadaniem będzie odpowiednio wywołać ją w pętli.</p>
         </section>
         <section>
-          <p>Otwórzmy plik <b>exercise2.html</b> w przeglądarce</p>
+          <p>Otwórzmy plik <b>excercise1.html</b> w przeglądarce</p>
         </section>
 
         <section>
@@ -363,23 +363,31 @@ for (var i=0; i&lt;names.length; i++) {
 
         <section>
           <h3>Zobaczmy kod</h3>
-          <p>Otwórzcie plik <b>exercise2.html</b> w edytorze</p>
+          <p>Otwórzcie plik <b>excercise1.html</b> w edytorze</p>
         </section>
 
         <section>
           <h3>Nasz kod</h3>
-          <p><strong>TODO - zaktualizować kod</strong></p>
           <pre><code class="hljs javascript">&#x3C;body&#x3E;
   &#x3C;section id=&#x22;section1&#x22;&#x3E;
     &#x3C;img src=&#x22;img/1.jpg&#x22; /&#x3E;
   &#x3C;/section&#x3E;
 
-  &#x3C;script&#x3E;
-    var photos = [&#x27;img/2.jpg&#x27;,&#x27;img/3.jpg&#x27;,&#x27;img/4.jpg&#x27;,&#x27;img/5.jpg&#x27;,&#x27;img/6.jpg&#x27;,
-        &#x27;img/7.jpg&#x27;,&#x27;img/8.jpg&#x27;,&#x27;img/9.jpg&#x27;,&#x27;img/10.jpg&#x27;,&#x27;img/11.jpg&#x27;,&#x27;img/12.jpg&#x27;];
+    &#x3C;script&#x3E;
+      var section = document.querySelector(&#x22;#section1&#x22;);
+      function dodajObrazek (url) {
+        var img = document.createElement(&#x22;img&#x22;);
+        img.src = url;
+        section.appendChild(img);
+      }
 
-    // tutaj miejsce na Wasz skrypt ;-)
-  &#x3C;/script&#x3E;
+      var photos = [&#x27;img/2.jpg&#x27;,&#x27;img/3.jpg&#x27;,&#x27;img/4.jpg&#x27;,&#x27;img/5.jpg&#x27;,
+                    &#x27;img/6.jpg&#x27;,&#x27;img/7.jpg&#x27;,&#x27;img/8.jpg&#x27;,&#x27;img/9.jpg&#x27;,
+                    &#x27;img/10.jpg&#x27;,&#x27;img/11.jpg&#x27;,&#x27;img/12.jpg&#x27;];
+      
+      // a tutaj miejsce na Wasz skrypt ;-)
+
+    &#x3C;/script&#x3E;
 &#x3C;/body&#x3E;
 </code></pre>
         </section>
@@ -401,15 +409,12 @@ for (var i=0; i&lt;names.length; i++) {
         </section>
           
         <section>
-          <h3>Zadanie</h3>
-          <p>Korzystając z funkcji <code>dodajObrazek</code>, dodaj wszystkie obrazki z tablicy na stronie.</p>
-        </section>          
-        <section>
           <h3>Udało się?</h3>
           <pre class="fragment"><code class="hljs javascript">
-for (var i=0; i&lt;photos.length; i++) {
-  dodajObrazek(photos[i]);
-}</code></pre>
+  for (var i = 0; i &lt; photos.length; i++) {
+    dodajObrazek(photos[i]);
+  }
+  </code></pre>
         </section>
         <section>
           <h3>Wielki sukces!</h3>
