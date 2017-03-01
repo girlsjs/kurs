@@ -92,7 +92,7 @@
         </section>
         <section>
           <h3 style="font-size: 3rem">Spróbujmy to usprawnić!</h3>
-	        <p>Widzimy, że sporo instrukcji się powtarza. Możemy połączyć te instrukcje we wspólny blok i udzielić instrukcji ile razy go trzeba wykonać.</p>
+	        <p>Widzimy, że sporo instrukcji się powtarza. Możemy połączyć te instrukcje we wspólny blok i udzielić instrukcji, ile razy go trzeba wykonać.</p>
         </section>
         <section>
           <h3 style="font-size: 3rem">Jak zapiszemy instrukcje dla naszego praktykanta?</h3>
@@ -121,7 +121,7 @@
         </section>
         <section id="elements">
           <h3 style="font-size: 3rem">Instrukcja 6. w naszym schemacie to właśnie pętla</h3>
-          <p>Składają się nam na nią cztery elementy:</p>
+          <p>Składają się na nią cztery elementy:</p>
           <ul>
             <li class="fragment"><strong>Warunki początkowe</strong> - od czego zaczynamy. Nasza pętla w przykładzie powyżej zaczyna się od drugiej kartki. </li>
             <li class="fragment"><strong>Warunek trwania pętli</strong> - kiedy mamy przestać. Tutaj kończymy kserować po dwusetnej kartce.</li>
@@ -131,7 +131,7 @@
         </section>
         <section>
           <h3 style="font-size: 3rem">Jakieś pytania?</h3>
-          <p class="fragment">Jeżeli rozumiemy już jak działają pętle, możemy przejść dalej.</p>
+          <p class="fragment">Jeżeli rozumiemy już, jak działają pętle, możemy przejść dalej.</p>
         </section>
         <section>
           <h1 style="font-size: 3rem">Ale...</h1>
@@ -155,7 +155,7 @@
         </section>
         <section>
           <h3 style="font-size: 3rem">Tablica</h3>
-          <p>Więc tablica to taki zbiór schowków, z numerkami. Do każdego z nich też można włożyć jakąś wartość.</p>
+          <p>Tablica to taki zbiór schowków, z numerkami. Do każdego z nich też można włożyć jakąś wartość.</p>
             <figure>
               <img src="img/locker.jpg" style="height: 12em" />
               <figcaption style="font-size: 0.5rem">
@@ -165,7 +165,7 @@
         </section>
         <section>
           <h3 style="font-size: 3rem">Po co to?</h3>
-          <p>Żeby w ładny sposób przechowywać wiele podobnych danych<br /></p>
+          <p>Żeby w ładny sposób przechowywać wiele podobnych danych.<br /></p>
           <p class="fragment">
             Przykład: Jeżeli mamy 10 użytkowników na stronie, to znacznie łatwiej przechować ich imiona w jednej
             tablicy niż w 10 oddzielnych zmiennych.
@@ -173,7 +173,7 @@
         </section>
         <section>
           <h3 style="font-size: 3rem">Jak to wygląda?</h3>
-          <p>Przypomnijmy sobie najpierw jak definiujemy zmienne:</p>
+          <p>Przypomnijmy sobie najpierw, jak definiujemy zmienne:</p>
           <pre class="fragment"><code class="hljs javascript">var name = "Kasia";</code></pre>
           <p class="fragment">A tak wygląda tablica:</p>
           <pre class="fragment"><code class="hljs javascript">var names = ["Kasia", "Basia", "Asia"];</code></pre>
@@ -186,7 +186,7 @@
         </section>
         <section>
           <h3 style="font-size: 3rem">Jak odczytać wartość z tablicy?</h3>
-          <p>Przypomnijmy sobie jak odczytać wartość zmiennej:</p>
+          <p>Przypomnijmy sobie, jak odczytać wartość zmiennej:</p>
           <pre class="fragment"><code class="hljs javascript">console.log(name);</code></pre>
           <p class="fragment">Wykorzystajmy numerki w tablicy:</p>
           <pre class="fragment"><code class="hljs javascript">console.log(names[1]);</code></pre>
@@ -249,7 +249,7 @@ console.log(names[4]);</code></pre>
           <pre><code class="hljs javascript">for (var i=0; i<10; i++) {...}</code></pre>
           <ul>
             <li class="fragment">słowo kluczowe <b>for</b></li>
-            <li class="fragment">warunek początkowy -tworzenie zmiennej <br />
+            <li class="fragment">warunek początkowy - tworzenie zmiennej <br />
               <span style="font-size: 0.7em">(pętla potrzebuje informacji o samej sobie)</span></li>
             <li class="fragment">warunek trwania pętli <br />
               <span style="font-size: 0.7em">(kiedy mamy przestać)</span></li>
@@ -383,7 +383,7 @@ for (var i=0; i&lt;names.length; i++) {
         <section>
           <h3>Tworzenie nowego elementu</h3>
           <p>Aby utworzyć nowy element, należy użyć metody <b>document.createElement()</b></p>
-          <p class="fragment">Jako argument podajemy co to ma być za element (p, div, h1...)</p>
+          <p class="fragment">Jako argument podajemy, co to ma być za element (p, div, h1...)</p>
           <pre class="fragment"><code class="hljs javascript">var p = document.createElement('p');</code></pre>
         </section>
 
@@ -398,13 +398,13 @@ p.innerText = 'mój napis';
 
         <section>
           <h3>Tak utworzony element jest wirtualny</h3>
-          <p class="fragment">Istnieje w pamięci przeglądarki, ale nie jest nigdzie umieszczony w drzewie DOM</p>
+          <p class="fragment">Istnieje w pamięci przeglądarki, ale nie jest umieszczony nigdzie w drzewie DOM</p>
           <p class="fragment">Jak go doczepić?</p>
         </section>
 
         <section>
           <h3>Gdzie?</h3>
-          <p>Najpierw musimy znaleźć element do którego chcemy go doczepić</p>
+          <p>Najpierw musimy znaleźć element, do którego chcemy go doczepić.</p>
           <p class="fragment">Jak znaleźć element, kto pamięta?</p>
         </section>
 
@@ -433,7 +433,7 @@ p.innerText = 'mój napis';
           <p>Nie wszystkie elementy HTML potrzebują <b>innerText</b></p>
           <p class="fragment">Niektóre mają inne właściwości, na przykład obrazek (<b>img</b>)</p>
           <pre class="fragment"><code class="hljs javascript">&#x3C;img src=&#x22;img/1.jpg&#x22; /&#x3E;</code></pre>
-          <p class="fragment">Aby utworzyć element obrazka potrzebna jest właściwość <b>src</b></p>
+          <p class="fragment">Aby utworzyć element obrazka, potrzebna jest właściwość <b>src</b></p>
           <pre class="fragment"><code class="hljs javascript">var img = document.createElement('img')
 img.src = 'img/1.jpg'
 
