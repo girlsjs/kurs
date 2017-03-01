@@ -1,0 +1,460 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Girls.js - tablice i pętle</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/solarized.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="icon" href="img/kaczucha.png">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!-- facebook meta -->
+    <meta property="og:description" content="Materiały do kursu girls.js: tablice i pętle" />
+    <meta property="og:image" content="https://girlsjs.github.io/www/assets/logo.png" />
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <img style="height: 400px;" src="img/kaczucha.svg"/>
+            <h3 class="fragment grow">Cześć!</h3>
+            <p>(naciśnij spację, żeby kontynuować)</p>
+            <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+            <h1 style="font-size: 3rem">Pętle i tablice</h1>
+            <figure>
+              <img src="img/loop.jpg" />
+              <figcaption style="font-size: 0.5rem">
+                Grafika zapożyczona z serwisu 3dno.pl
+              </figcaption>
+            </figure>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Pętle</h3>
+          <p>W dzisiejszym ćwiczeniu poznamy pętle.</p>
+          <p class="fragment">
+            Pętle, podobnie jak instrukcja warunkowa "if", należą do podstawowych konstrukcji w językach programowania.
+          </p>
+          <p class="fragment">Pętle pozwalają na wykonanie danej czynności kilka razy (bez potrzeby kopiowania i wklejania kodu)</p>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Przykład?</h3>
+          <p>Wyobraźmy sobie, że mamy plik 200 kartek do skserowania na starej, biurowej maszynie, która obsłuży tylko jedną stronę naraz.</p>
+          <figure>
+            <img src="img/copy.png" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu kaizenprint.co.uk
+            </figcaption>
+          </figure>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Przykład</h3>
+          <p>Chętnie zlecilibyśmy to zadanie praktykantowi, bo mamy ciekawsze rzeczy do roboty.</p>
+          <p class="fragment">Zakładając, że praktykant nigdy nie widział wcześniej ksero na oczy i zrobi tylko to, o co go wyraźnie poprosimy na piśmie, jak możemy przekazać mu co jest do zrobienia?</p>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Zróbmy to ćwiczenie razem</h3>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Pewnie wyszło nam coś takiego:</h3>
+          <pre class="fragment"><code>
+1. Otwórz wieko kserokopiarki.
+2. Weź pierwszą kartkę ze stosu.
+3. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu.
+4. Zamknij wieko.
+5. Naciśnij przycisk kopiowania.
+6. Otwórz wieko
+7. Wyjmij kartkę z kserokopiarki i odłóż ją na stertę obok
+   (zadrukowaną stroną do dołu)
+8. Weź drugą kartkę ze stosu.
+9. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu.
+10. (...)
+
+</code></pre>
+          <p class="fragment">Nie chcemy chyba rozpisywać szczegółowych instrukcji dla każdej kartki z osobna?</p>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Spróbujmy to usprawnić!</h3>
+	        <p>Widzimy, że sporo instrukcji się powtarza. Możemy połączyć te instrukcje we wspólny blok i udzielić instrukcji ile razy go trzeba wykonać.</p>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Jak zapiszemy instrukcje dla naszego praktykanta?</h3>
+          <pre class="fragment"><code>
+1. Otwórz wieko kserokopiarki.
+2. Weź pierwszą kartkę ze stosu.
+3. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu.
+4. Zamknij wieko.
+5. Naciśnij przycisk kopiowania.
+6. Powtórz dla kartek o numerach od 2 do 200:
+    6.1. Otwórz wieko
+    6.2. Wyjmij kartkę z kserokopiarki i odłóż ją na stertę obok
+         (zadrukowaną stroną do dołu)
+    6.3. Weź kartkę o aktualnym numerze ze stosu.
+    6.4. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu.
+    6.5. Zamknij wieko
+    6.6. Naciśnij przycisk kopiowania
+7. (Kiedy zrobimy to wszystko dla dwusetnej kartki)
+   Otwórz wieko kserokopiarki
+8. Wyjmij kartkę z kserokopiarki i odłóż ją na stertę obok
+   (zadrukowaną stroną do dołu)
+9. Wyjmij plik skserowanych kartek z szuflady na dole kserokopiarki.
+10. Zabierz oba stosy kartek i przynieś do mojego biura.
+
+</code></pre>
+        </section>
+        <section id="elements">
+          <h3 style="font-size: 3rem">Instrukcja 6. w naszym schemacie to właśnie pętla</h3>
+          <p>Składają się nam na nią cztery elementy:</p>
+          <ul>
+            <li class="fragment"><strong>Warunki początkowe</strong> - od czego zaczynamy. Nasza pętla w przykładzie powyżej zaczyna się od drugiej kartki. </li>
+            <li class="fragment"><strong>Warunek trwania pętli</strong> - kiedy mamy przestać. Tutaj kończymy kserować po dwusetnej kartce.</li>
+            <li class="fragment"><strong>Instrukcje do wykonania w pętli</strong> - wszystko co jest zawarte podpunktach 6.x.</li>
+            <li class="fragment"><strong>Instrukcja przejścia do następnego kroku</strong>. Tutaj za każdym razem kiedy wykonamy instrukcje pętli, zwiększamy numer aktualnej kartki o jeden. Gdyby z jakiegoś powodu trzeba było skserować tylko nieparzyste strony, zwiększałybyśmy ten numer o 2.</li>
+          </ul>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Jakieś pytania?</h3>
+          <p class="fragment">Jeżeli rozumiemy już jak działają pętle, możemy przejść dalej.</p>
+        </section>
+        <section>
+          <h1 style="font-size: 3rem">Ale...</h1>
+        </section>
+        <section>
+          <p>Żeby nasze ćwiczenie miało sens, najpierw musimy się dowiedzieć trochę o tablicach.</p>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Tablice</h3>
+          <p>Tablice to po prostu zmienne, które mogą przechowywać wiele wartości.</p>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Zmienna</h3>
+          <p>Jak pamiętamy z naszego warsztatu, zmienna to taki schowek, do którego możemy włożyć jakąś wartość.</p>
+            <figure>
+              <img src="img/drawer.jpg" style="height: 12em" />
+              <figcaption style="font-size: 0.5rem">
+                Grafika z serwisu lernpfadprismen.wordpress.com
+              </figcaption>
+            </figure>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Tablica</h3>
+          <p>Więc tablica to taki zbiór schowków, z numerkami. Do każdego z nich też można włożyć jakąś wartość.</p>
+            <figure>
+              <img src="img/locker.jpg" style="height: 12em" />
+              <figcaption style="font-size: 0.5rem">
+                Grafika z serwisu maxpixel.freegreatpicture.com
+              </figcaption>
+            </figure>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Po co to?</h3>
+          <p>Żeby w ładny sposób przechowywać wiele podobnych danych<br /></p>
+          <p class="fragment">
+            Przykład: Jeżeli mamy 10 użytkowników na stronie, to znacznie łatwiej przechować ich imiona w jednej
+            tablicy niż w 10 oddzielnych zmiennych.
+          </p>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Jak to wygląda?</h3>
+          <p>Przypomnijmy sobie najpierw jak definiujemy zmienne:</p>
+          <pre class="fragment"><code class="hljs javascript">var name = "Kasia";</code></pre>
+          <p class="fragment">A tak wygląda tablica:</p>
+          <pre class="fragment"><code class="hljs javascript">var names = ["Kasia", "Basia", "Asia"];</code></pre>
+          <p class="fragment">Lub tak:</p>
+          <pre class="fragment"><code class="hljs javascript">var names = [
+  "Kasia",
+  "Basia",
+  "Asia"
+];</code></pre>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Jak odczytać wartość z tablicy?</h3>
+          <p>Żeby odczytać wartość zmiennej wystarczy użyć jej nazwy. Na przykład, tak wypiszemy w konsoli pozdrowienia dla osoby ktorej imię zapisaliśmy w `name`;</p>
+          <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + name + "!" );</code></pre>          
+          <p class="fragment">Podobnie, żeby odczytać element z tablicy, potrzebujemy użyć jej nazwy i numeru elementu:</p>
+          <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + names[1] + "!" );</code></pre>   
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Uwaga! Dziwne numerowanie ;)</h3>
+          <p>W tablicach zaczynamy numerować od wartości 0:</p>
+          <pre class="fragment"><code class="hljs javascript">var names = [
+  "Kasia", // To jest wartość o numerze 0
+  "Basia", // To jest wartość o numerze 1
+  "Asia"   // To jest wartość o numerze 2
+];</code></pre>
+        </section>
+        <section>
+          <h2>Do maszyn!</h2>
+          <figure>
+              <img style="height: 400px;" src="img/F-15_Eagle_female_pilots,_3rd_Wing.jpg"/>
+              <figcaption style="font-size: 0.5rem;"><a href="https://commons.wikimedia.org/wiki/File:F-15_Eagle_female_pilots,_3rd_Wing.jpg">Zdjęcie w domenie publicznej. Autorem jest Tech. Sgt. Keith Brown</a></figcaption>
+            </figure>
+            <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <h3>Spróbujcie utworzyć tablicę w konsoli</h3>
+          <ul>
+            <li>Otwórzcie przeglądarkę Chrome</li>
+            <li>Otwórzcie narzędzia programistyczne <br /><i>(F12 lub Cmd+Opt+I)</i></li>
+            <li>Zobaczcie, czy możecie utworzyć tablicę <i>names</i> jak z poprzednich slajdów, ale z 5 imionami.</li>
+            <li>Spróbujcie wypisać kolejne elementy tej tablicy do konsoli, używając funkcji <code>console.log</code>.</li>
+          </ul>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Udało się?</h3>
+          <p>Pewnie wyszło wam coś takiego?</p>
+          <pre class="fragment"><code class="hljs javascript">var names = ["Michał", "Jaromir", "Gracjan", "Hipolit", "Maksym"];
+
+console.log(names[0]);
+console.log(names[1]);
+console.log(names[2]);
+console.log(names[3]);
+console.log(names[4]);</code></pre>
+        </section>
+        <section>
+          <h3>A co jeśli...</h3>
+          <p>Będziemy mieli 100 użytkowników?<br /> Jak wypisać imiona wszystkich?</p>
+          <p class="fragment">Nie ma sensu robić tego ręcznie, prawda?</p>
+          <p class="fragment">Co nam pomoże?</p>
+        </section>
+        <section>
+          <h3>Pętle!</h3>
+          <p class="fragment">(nareszcie)</p>
+        </section>
+        <section>
+          <h3>Pętle</h3>
+          <p>Jest kilka rodzajów pętli. <br /> Ale dziś skupimy się na jednej - pętli <b>for</b>.</p>
+          <p>Jest to najczęściej używana pętla.</p>
+        </section>
+        <section>
+          <h3>Anatomia pętli for</h3>
+<p><em style="font-size: 0.7em">Pamiętacie nasz <a href="#elements">przykład z praktykantem?</a></em></p>
+          <pre><code class="hljs javascript">for (var i=0; i<10; i++) {...}</code></pre>
+          <ul>
+            <li class="fragment">słowo kluczowe <b>for</b></li>
+            <li class="fragment">warunek początkowy -tworzenie zmiennej <br />
+              <span style="font-size: 0.7em">(pętla potrzebuje informacji o samej sobie)</span></li>
+            <li class="fragment">warunek trwania pętli <br />
+              <span style="font-size: 0.7em">(kiedy mamy przestać)</span></li>
+            <li class="fragment">instrukcja przejścia do następnego kroku<br />
+              <span style="font-size: 0.7em">(jaka ma być wartość zmiennej w następnym cyklu)</span><br/>
+            </li>
+            <li class="fragment">instrukcje do wykonania w pętli<br />
+              <span style="font-size: 0.7em">(w klamrach)</span><br/>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Porównajcie do instrukcji warunkowej if</h3>
+          <p>if</p>
+          <pre><code class="hljs javascript">if (warunek) {
+  // wykonaj ten kod jeżeli warunek jest prawdziwy
+}</code></pre>
+          <p>for</p>
+          <pre><code class="hljs javascript">for (var i=0; i<10; i++) {
+  // wykonaj ten kod tak długo jak warunek trwania pętli jest prawdziwy
+}</code></pre>
+        </section>
+        <section>
+          <h3>Spróbujcie wpisać w konsolę następujący kod:</h3>
+          <pre><code class="hljs javascript">for (var i=0; i<5; i++) { console.log(i) }</code></pre>
+          <p class="fragment">Co wyszło?</p>
+          <pre class="fragment"><code class="hljs javascript">0
+1
+2
+3
+4</code></pre>
+          <p class="fragment">A dlaczego?</p>
+        </section>
+        <section>
+          <h3>Ćwiczenie</h3>
+          <figure>
+            <img src="img/excercise.png" style="border: none; box-shadow: none" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu pixabay.com
+            </figcaption>
+          </figure>
+        </section>
+        <section>
+          <h3>Ćwiczenie</h3>
+          <p>Wykorzystując zdobytą dziś wiedzę:</p>
+          <ul>
+            <li>Utwórzcie tablicę z 6 imionami</li>
+            <li>Wypiszcie, używając pętli, wszystkie imiona</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Prawdopodobnie wyszło Wam coś takiego:</h3>
+          <pre class="fragment"><code class="hljs javascript">var names = ["Ala", "Ela", "Ola", "Ula", "Ila", "Yla"];
+
+for (var i=0; i<6; i++) {
+  console.log(names[i]);
+}</code></pre>
+        </section>
+        <section>
+          <h3>Problem z takim rozwiązaniem</h3>
+          <p>Nasze rozwiązanie działa tylko dla tablicy z 6 imionami.</p>
+          <p class="fragment">Co jeżeli będzie ich mniej lub więcej?</p>
+        </section>
+        <section>
+          <h3>"length" na ratunek!</h3>
+          <p>Każda tablica ma właściwość <b>length</b></p>
+          <p class="fragment"><b>length</b> zawiera zawsze aktualną liczbę elementów w tablicy</p>
+          <pre class="fragment"><code class="hljs javascript">names.length // wypisze liczbę elementów</code></pre>
+        </section>
+        <section>
+          <h3>Wracamy do ćwiczenia</h3>
+          <p>Rozwiążcie poprzednie zadanie tak, żeby działało dla dowolnej liczby imion w tablicy <b>names</b></p>
+        </section>
+        <section>
+          <h3>Zgadza się?</h3>
+          <pre class="fragment"><code class="hljs javascript">var names = ["Ala", "Ela", "Ola", "Ula", "Ila", "Yla"];
+
+for (var i=0; i&lt;names.length; i++) {
+  console.log(names[i]);
+}</code></pre>
+        </section>
+        <section>
+          <h3>Sukces!</h3>
+          <figure>
+            <img src="img/Happy-Free.jpg" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu tinybuddha.com
+            </figcaption>
+          </figure>
+        </section>
+        <section>
+          <h3>Wykorzystajmy to w praktyce</h3>
+          <figure class>
+            <img src="http://i.giphy.com/l0MYzAwMPl8s0jtSg.gif" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu giphy.com
+            </figcaption>
+          </figure>
+        </section> 
+        <section>
+          <p>W pliku <b>excercise1.html</b> mamy zapisaną tablicę obrazkow. Będziemy chcieli dodać te obrazki na stronie przy użyciu kodu JavaScript.</p>  
+          <p class="fragment">Funkcja, która tworzy obrazek o podanym adresie i go dodaje na stronie, jest już gotowa. Naszym zadaniem będzie odpowiednio wywołać ją w pętli.</p>
+        </section>
+        <section>
+          <p>Otwórzmy plik <b>excercise1.html</b> w przeglądarce</p>
+        </section>
+
+        <section>
+          <img src="img/excercise2.png" />
+        </section>
+
+        <section>
+          <h3>Zobaczmy kod</h3>
+          <p>Otwórzcie plik <b>excercise1.html</b> w edytorze</p>
+        </section>
+
+        <section>
+          <h3>Nasz kod</h3>
+          <pre><code class="hljs javascript">&#x3C;body&#x3E;
+  &#x3C;section id=&#x22;section1&#x22;&#x3E;
+    &#x3C;img src=&#x22;img/1.jpg&#x22; /&#x3E;
+  &#x3C;/section&#x3E;
+
+    &#x3C;script&#x3E;
+      var section = document.querySelector(&#x22;#section1&#x22;);
+      function dodajObrazek (url) {
+        var img = document.createElement(&#x22;img&#x22;);
+        img.src = url;
+        section.appendChild(img);
+      }
+
+      var photos = [&#x27;img/2.jpg&#x27;,&#x27;img/3.jpg&#x27;,&#x27;img/4.jpg&#x27;,&#x27;img/5.jpg&#x27;,
+                    &#x27;img/6.jpg&#x27;,&#x27;img/7.jpg&#x27;,&#x27;img/8.jpg&#x27;,&#x27;img/9.jpg&#x27;,
+                    &#x27;img/10.jpg&#x27;,&#x27;img/11.jpg&#x27;,&#x27;img/12.jpg&#x27;];
+      
+      // a tutaj miejsce na Wasz skrypt ;-)
+
+    &#x3C;/script&#x3E;
+&#x3C;/body&#x3E;
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Zadanie</h3>
+          <p>Korzystając z funkcji <code>dodajObrazek</code>, dodaj wszystkie obrazki z tablicy na stronie.</p>
+        </section>
+
+
+        <section>
+          <h3>Powodzenia!</h3>
+          <figure class>
+            <img src="http://i.giphy.com/IUjaKjjPPbGaQ.gif" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu giphy.com
+            </figcaption>
+          </figure>
+        </section>
+          
+        <section>
+          <h3>Udało się?</h3>
+          <pre class="fragment"><code class="hljs javascript">
+  for (var i = 0; i &lt; photos.length; i++) {
+    dodajObrazek(photos[i]);
+  }
+  </code></pre>
+        </section>
+        <section>
+          <h3>Wielki sukces!</h3>
+          <figure class>
+            <img src="http://i.giphy.com/8x1eIoGIrFrG.gif" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu giphy.com
+            </figcaption>
+          </figure>
+        </section>
+
+        <section data-transition="zoom" data-transition-speed="slow">
+            <p>Dzięki za wspólnie spędzony czas i do zobaczenia!</p>
+            <img src="img/kaczucha.svg" style="border: none; box-shadow: none;"/>
+        </section>
+    </div>
+    <div class="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/"><img alt="Licencja Creative Commons" style="border-width:0;vertical-align:bottom" src="./img/cc.png" /></a> <span>Ta prezentacja jest dostępna na <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">licencji Creative Commons Uznanie autorstwa-Użycie niekomercyjne-Na tych samych warunkach 3.0 Polska</a>.</span></div>
+</div>
+
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+        controls: false,
+        progress: false,
+        transition: 'convex',
+        slideNumber: 'true',
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
