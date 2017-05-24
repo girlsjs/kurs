@@ -6,6 +6,84 @@
   font-style: normal;
 }
 
+.left-bar {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #006fdc;
+  z-index: 0;
+}
+
+.slides {
+  width: 100% !important;
+}
+
+.reveal section img {
+  background: none !important;
+}
+
+.slides > section {
+  background: rgba(255, 255, 255, 0.9);
+  padding-left: 15% !important;
+  padding-right: 15% !important;
+  box-sizing: border-box;
+}
+
+.slides > section.no-background {
+  background: none;
+}
+
+.slides > section.no-background  h1,
+.slides > section.no-background  h2,
+.slides > section.no-background  h3,
+.slides > section.no-background  h4,
+.slides > section.no-background  h5,
+.slides > section.no-background  h6,
+.slides > section.no-background  p,
+.slides > section.no-background  i {
+  color: white;
+  text-shadow: black 1px 2px 2px;
+}
+
+.slides > section.no-background img {
+  border: none;
+  box-shadow: black 7px 7px 0px;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: 'Lato', sans-serif;
+}
+
+.left-bar-photo {
+  height: 100%;
+  background: url("../img/header-photo.png");
+  width: 100%;
+  filter: grayscale(100%);
+  opacity: 0.48;
+  background-position: center bottom;
+  background-size: 160%;
+}
+
+.left-bar::before {
+  display: block;
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: url("../img/header-mosaic.png");
+  opacity: 0.60;
+}
+
+.reveal .note.side-note {
+  background: rgba(245, 236, 92, 0.4);
+}
+
+
 .reveal section img,
 .reveal pre code {
 	max-height: 500px;
@@ -17,7 +95,7 @@
 }
 
 .reveal .slides section .fragment.highlight-green.visible {
-	color: #78a978;
+  color: #5475c5;
 	font-weight: bold;
 }
 
@@ -88,18 +166,42 @@ i.fa {
 	content: "\f005";
 }
 
+.reveal .small-duck {
+  width: 60px;
+  height: 60px;
+  background: url("../img/small-duck.png");
+  position: absolute;
+  z-index: 32;
+  bottom: 6px;
+  left: 20px;
+  background-size: contain;
+}
+
 .reveal .footer {
 	text-align: center;
 	font-size: 1vw;
 	position: absolute;
-	left: 8px;
-	bottom: 8px;
+	left: 0px;
+	bottom: 0px;
 	z-index: 31;
+  padding: 10px;
+
+  width: 100%;
+  background: #3b3b3b;
 }
 
-.reveal .footer a[rel='license'] + span { display: none; }
-.reveal .footer a[rel='license']:hover + span { display: inline; }
-.reveal .footer a[rel='license'] + span:hover { display: inline; }
+.reveal .footer a[rel='license'] + span {
+  display: none;
+  position: absolute;
+  bottom: 36px;
+  text-align: center;
+  width: 80%;
+  margin: 0 10%;
+  background: #3b3b3b;
+  padding: 10px 20px;
+}
+.reveal .footer a[rel='license']:hover + span { display: block; }
+.reveal .footer a[rel='license'] + span:hover { display: block; }
 
 code {
 	background: rgba(255, 255, 255, 0.4);
