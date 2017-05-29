@@ -1,5 +1,5 @@
 /* Warunki początkowe */
-var currentNumber = 1;
+let currentNumber = 1;
 document.querySelector( '#slide' + currentNumber ).classList.add( 'show' );	
 document.querySelector( '#pin' + currentNumber ).classList.add( 'selected' );
 
@@ -42,7 +42,7 @@ function showSlide5 ( ) {
 document.querySelector('#pin5').addEventListener( 'click', showSlide5 );
 
 function showNextSlide ( ) {
-	var newNumber = currentNumber + 1;
+	let newNumber = currentNumber + 1;
 	if( newNumber > 5 ) {
 		newNumber = 1;
 	}
@@ -51,7 +51,7 @@ function showNextSlide ( ) {
 document.querySelector('#next').addEventListener( 'click', showNextSlide );
 
 function showPreviousSlide ( ) {
-	var newNumber = currentNumber - 1;
+	let newNumber = currentNumber - 1;
 	if( newNumber < 1 ) {
 		newNumber = 5;
 	}
