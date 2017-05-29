@@ -19,7 +19,7 @@
 
     <!-- Printing and PDF exports -->
     <script>
-        var link = document.createElement('link');
+        let link = document.createElement('link');
         link.rel = 'stylesheet';
         link.type = 'text/css';
         link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
@@ -479,13 +479,13 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Żeby stworzyć <strong>zmienną</strong> w JavaScript używamy słowa kluczowego <code>var</code>:</p>
+            <p>Żeby stworzyć <strong>zmienną</strong> w JavaScript używamy słowa kluczowego <code>let</code>:</p>
             <pre class="fragment fade-left"><code>//zmienna tekstowa
-var courseTitle = 'Galeria JavaScript';</code></pre>
+let courseTitle = 'Galeria JavaScript';</code></pre>
             <p class="fragment fade-right">Tak stworzonej zmiennej możemy potem używać dalej w kodzie po prostu podając
                 jej nazwę, na przykład:</p>
             <pre class="fragment fade-left"><code>//zmienna liczbowa - długość tekstu
-var titleLength = courseTitle.length;</code></pre>
+let titleLength = courseTitle.length;</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -535,7 +535,7 @@ var titleLength = courseTitle.length;</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <pre><code>var currentNumber = 1;</code></pre>
+            <pre><code>let currentNumber = 1;</code></pre>
             <p class="fragment fade-right">Świetnie, mamy naszą pierwszą zmienną!</p>
             <p class="fragment fade-left">Teraz chcemy dodać do niej 1 i zapamiętać tę wartość. W tym celu możemy
                 stworzyć sobie dodatkową zmienną do pomocy.</p>
@@ -547,7 +547,7 @@ var titleLength = courseTitle.length;</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <pre><code>var newNumber = currentNumber + 1;</code></pre>
+            <pre><code>let newNumber = currentNumber + 1;</code></pre>
             <p class="fragment fade-left">Bardzo dobrze. Teraz skoro mamy już obliczony nowy numer, potrzebujemy znaleźć
                 element o tym numerze.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -578,11 +578,11 @@ var titleLength = courseTitle.length;</code></pre>
         </section>
         <section>
             <p>Jeżeli wszystko poszło zgodnie z planem, nasz kod powinien wyglądać mniej więcej tak:</p>
-            <pre class="fragment fade-left"><code>var currentNumber = 1;
+            <pre class="fragment fade-left"><code>let currentNumber = 1;
 
 function showNextSlide( ) {
     document.querySelector( '.show' ).classList.remove( 'show' );
-    var newNumber = currentNumber + 1;
+    let newNumber = currentNumber + 1;
     document.querySelector( '#slide' + newNumber ).classList.add( 'show' );
     currentNumber = newNumber;
 }
@@ -642,11 +642,11 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
         </section>
         <section>
             <p>Na tym etapie nasz kod wygląda tak:</p>
-            <pre class="fragment fade-left"><code>var currentNumber = 1;
+            <pre class="fragment fade-left"><code>let currentNumber = 1;
 
 function showNextSlide( ) {
     document.querySelector( '.show' ).classList.remove( 'show' );
-    var newNumber = currentNumber + 1;
+    let newNumber = currentNumber + 1;
     if( newNumber > 5 ) {
         newNumber = 1;
     }
@@ -668,7 +668,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
             <p>Przykładowy kod funkcji <code>showPreviousSlide</code>:</p>
             <pre class="fragment fade-left"><code>function showPreviousSlide( ) {
     document.querySelector( '.show' ).classList.remove( 'show' );
-    var newNumber = currentNumber - 1;
+    let newNumber = currentNumber - 1;
     if( newNumber < 1 ) {
         newNumber = 5;
     }
@@ -812,7 +812,7 @@ document.querySelector( '#pin1' ).addEventListener( 'click', showSlide1 );</code
         <section data-transition="convex-in zoom-out">
             <p>Kod dla strzałki w prawo po zmianach:</p>
             <pre class="fragment fade-left"><code>function showNextSlide( ) {
-var newNumber = currentNumber + 1;
+let newNumber = currentNumber + 1;
 if( newNumber > 5 ) {
     newNumber = 1;
 }
@@ -911,7 +911,7 @@ selectPin( newNumber );
         </section>
         <section data-transition="convex-in zoom-out">
             <p>Tutaj mamy przykład jak to rozwiązać:</p>
-            <pre class="fragment fade-left"><code>var currentNumber = 1;
+            <pre class="fragment fade-left"><code>let currentNumber = 1;
 document.querySelector( '#slide' + currentNumber ).classList.add( 'show' );
 document.querySelector( '#pin' + currentNumber ).classList.add( 'selected' );</code></pre>
             <p class="fragment fade-right">Jak tym razem wyszły testy?</p>
@@ -964,13 +964,13 @@ document.querySelector( '#pin' + currentNumber ).classList.add( 'selected' );</c
                 możemy jej przypisać <strong>wartość logiczną</strong> (prawda lub fałsz).</p>
             <p class="fragment fade-left"><strong>Prawdę</strong> zapisujemy w JavaScript jako <code>true</code>,
                 dla <strong>fałszu</strong> używamy słowa <code>false</code>:</p>
-            <pre class="fragment fade-right"><code>var isJavaScriptAwesome = true;</code></pre>
+            <pre class="fragment fade-right"><code>let isJavaScriptAwesome = true;</code></pre>
             <i class="fragment fade-down fa fa-angle-down"></i>
         </section>
         <section>
             <p class="">Wartości logiczne porównujemy używając potrójnego znaku równości, np:</p>
             <pre class="fragment fade-right"><code>if ( isJavaScriptAwesome === true ) {
-var doWeHaveEnoughYet = false;
+let doWeHaveEnoughYet = false;
 }</code></pre>
             <i class="fragment fade-down fa fa-angle-down"></i>
         </section>
@@ -981,7 +981,7 @@ var doWeHaveEnoughYet = false;
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <pre><code>var playing = false;</code></pre>
+            <pre><code>let playing = false;</code></pre>
             <p class="fragment fade-left">Świetnie! Teraz możemy przejść do szkieletu naszej funkcji. Przejrzyjmy
                 szybko kod napisany na poprzednich etapach, żeby przypomnieć sobie jak powiązać funkcję z
                 kliknięciem myszy na elemencie.</p>
@@ -1132,7 +1132,7 @@ setInterval( showNextSlide, 3000 );
         </section>
         <section>
             <p>Tym razem powinno nam wyjść mniej więcej coś takiego:</p>
-            <pre><code>var slideshowInterval;
+            <pre><code>let slideshowInterval;
 // (...)
 function startSlideshow( ) {
 document.querySelector( '#play' ).classList.add( 'on' );

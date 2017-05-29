@@ -1,11 +1,11 @@
 /* Warunki początkowe */
-var currentNumber = 1;
+let currentNumber = 1;
 document.querySelector( '#slide' + currentNumber ).classList.add( 'show' );	
 document.querySelector( '#pin' + currentNumber ).classList.add( 'selected' );
 
-var playing = false;
-var slideDuration = 3500;
-var slideshowInterval = null;
+let playing = false;
+let slideDuration = 3500;
+let slideshowInterval = null;
 
 function playButtonClicked ( event ) {
 	if ( playing === true ) {
@@ -67,7 +67,7 @@ function showSlide5 ( ) {
 document.querySelector('#pin5').addEventListener( 'click', showSlide5 );
 
 function showNextSlide ( ) {
-	var newNumber = currentNumber + 1;
+	let newNumber = currentNumber + 1;
 	if( newNumber > 5 ) {
 		newNumber = 1;
 	}
@@ -76,7 +76,7 @@ function showNextSlide ( ) {
 document.querySelector('#next').addEventListener( 'click', showNextSlide );
 
 function showPreviousSlide ( ) {
-	var newNumber = currentNumber - 1;
+	let newNumber = currentNumber - 1;
 	if( newNumber < 1 ) {
 		newNumber = 5;
 	}
