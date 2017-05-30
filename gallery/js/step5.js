@@ -16,10 +16,12 @@ function selectPin ( newNumber ) {
     document.querySelector( '#pin' + newNumber ).classList.add( 'selected' );
 }
 
-for (let slideNumber = 1; slideNumber <= 5; slideNumber++) {
-  document.querySelector('#pin' + slideNumber).addEventListener( 'click', function() {
-    showSlide( slideNumber )
-  } );  
+for (let numerPinu = 1; numerPinu <= 5; numerPinu++) {
+  document
+    .querySelector('#pin' + numerPinu)
+    .addEventListener( 'click', function () {
+      showSlide(numerPinu)
+    } );
 }
 
 function showNextSlide ( ) {
