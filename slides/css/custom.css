@@ -10,7 +10,7 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  background: #006fdc;
+  /*background: #006fdc;*/
   z-index: 0;
 }
 
@@ -59,7 +59,7 @@
   font-family: 'Lato', sans-serif;
 }
 
-.left-bar-photo {
+/*.left-bar-photo {
   height: 100%;
   background: url("../img/header-photo.png");
   width: 100%;
@@ -77,7 +77,7 @@
   position: absolute;
   background: url("../img/header-mosaic.png");
   opacity: 0.60;
-}
+}*/
 
 .reveal .note.side-note {
   background: rgba(245, 236, 92, 0.4);
