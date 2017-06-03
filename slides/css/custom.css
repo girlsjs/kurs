@@ -6,6 +6,14 @@
   font-style: normal;
 }
 
+body{
+	background-color: #f2f2f2;
+}
+
+.reveal, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+	color: #275e96;
+}
+
 .left-bar {
   height: 100%;
   width: 100%;
@@ -23,7 +31,7 @@
 }
 
 .slides > section {
-  background: rgba(255, 255, 255, 0.9);
+  background: #f2f2f2;
   padding-left: 15% !important;
   padding-right: 15% !important;
   box-sizing: border-box;
