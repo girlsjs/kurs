@@ -36,7 +36,7 @@
 </div>
 <div class="reveal">
     <div class="slides">
-        <section class="no-background">
+        <section>
             <img style="height: 400px; border: none; box-shadow: none;" src="img/logo.svg"/>
             <h3 class="fragment grow">Cześć!</h3>
             <p>(naciśnij spację, żeby kontynuować)</p>
@@ -275,7 +275,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
                 niedługo przy programowaniu nawigacji.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
-        <section data-background-image="img/coffee.gif" data-transition="zoom">
+        <section data-background-image="img/coffee.gif" data-transition="zoom" class="no-background">
         </section>
         <section data-transition="zoom-in convex-out">
             <p>Na dole mamy 5 białych guziczków. Oprogramujemy każdy z nich tak, żeby pokazywał odpowiedni
@@ -302,13 +302,13 @@ document.querySelector( '#artykul-1' ) </code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Tym razem zaczniemy od końca. Ostatnie dwie instrukcje powinny wykonywać się razem, więc porzebujemy
+            <p>Tym razem zaczniemy od końca. Ostatnie dwie instrukcje powinny wykonywać się razem, więc potrzebujemy
                 znaleźć jakiś sposób, żeby je ze sobą powiązać.</p>
             <p class="fragment fade-right">Do tego potrzebne nam będą <strong>funkcje</strong>.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note more"><strong>Funkcja</strong> to ciąg kilku poleceń które tworzą logiczną całość, i powinny
+            <p class="note more"><strong>Funkcja</strong> to ciąg kilku poleceń, które tworzą logiczną całość i powinny
                 wykonywać się razem jedno po drugim.</p>
             <p class="fragment fade-left">W JavaScript możemy budować funkcje na kilka różnych sposobów, z czego
                 najprostszy to:</p>
@@ -319,7 +319,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
         </section>
         <section>
             <p class="note task">W pliku <code>gallery.js</code> stwórz funkcję o nazwie <code>showSlide5</code>. W jej
-                treści dodaj kod, który pokazuje piąty slajd (tak, jak zrobiłyśmy to na poprzednim etapie).</p>
+                treści dodaj kod, który pokazuje piąty slajd (tak, jak zrobiłaś to na poprzednim etapie).</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -678,7 +678,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
 document.querySelector( '#prev' ).addEventListener( 'click', showPreviousSlide );</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
-        <section data-transition="zoom" class="no-background">
+        <section data-transition="zoom">
             <p>Udało się! Mamy już zaprogramowane podstawowe funkcje galerii.</p>
             <img src="img/wedidit.gif"/>
             <p class="fragment fade-up">Chcecie jeszcze? Jest jeszcze parę bonusów dla chętnych.</p>
@@ -822,7 +822,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
             <p class="fragment fade-right">Wszystko jasne? Czas na testy!</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
-        <section data-transition="zoom" class="no-background">
+        <section data-transition="zoom">
             <p>Dobra robota!</p>
             <img src="img/highfive.gif"/>
             <p class="fragment grow">I dobra wiadomość - bonusów jest jeszcze więcej!</p>
@@ -917,7 +917,7 @@ document.querySelector( '#pin' + currentNumber ).classList.add( 'selected' );</c
             <p class="fragment fade-right">Jak tym razem wyszły testy?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
-        <section data-transition="zoom" class="no-background">
+        <section data-transition="zoom">
             <img src="img/happydance.gif"/>
             <p class="fragment fade-right">Jeżeli nie macie jeszcze dosyć, to zapraszamy po przerwie :-)</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -952,16 +952,16 @@ document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</co
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Aż prosi się o to, żeby jakoś zautomatyzować ten proces.</p>
-          <p class="fragment fade-left">W końcu do tego są komputery, żeby nam ułatwiać życie</p>
+          <p class="fragment fade-left">W końcu do tego są komputery, żeby nam ułatwiać życie! ;-)</p>
           <div class="fragment fade-left">
-            <p>Wyobraźmy sobie coś takiego</p>
+            <p>Wyobraźmy sobie coś takiego:</p>
             <pre><code>podstawiając pod zmienną numerPinu liczby od 1 do 5 chcę wykonać poniższe {
   document
     .querySelector('#pin' + numerPinu)
     .addEventListener( 'click', showSlide(numerPinu) );
 }</code></pre>
           </div>
-          <p class="note fragment fade-left">W JavaSkrypcie możemy połamać długie instrukcje na kilka linijek dla lepszej czytelności</p>
+          <p class="note fragment fade-left">W JavaSkrypcie możemy połamać długie instrukcje na kilka linijek dla lepszej czytelności.</p>
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Jak się okazuje, jest to bardzo proste!</p>
@@ -975,10 +975,10 @@ document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</co
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Chyba coś nie tak :(</p>
-          <p class="fragment fade-left">Od razu wyświetla nam się ostatnia fotografia, a piny nie działają</p>
+          <p class="fragment fade-left">Od razu wyświetla nam się ostatnia fotografia, a piny nie działają...</p>
         </section>
         <section data-transition="zoom-in convex-out">
-          <p>Spójrzmy jeszcze raz, na naszą pętlę</p>
+          <p>Spójrzmy jeszcze raz na naszą pętlę:</p>
           <pre><code>for (let numerPinu = 1; numerPinu <= 5; numerPinu++) {
   document
     .querySelector('#pin' + numerPinu)
@@ -1270,7 +1270,7 @@ slideshowInterval = setInterval( showNextSlide, 3000 );
             <p class="fragment fade-right">Co mówią nam testy?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
-        <section data-transition="zoom" data-transition-speed="slow" class="no-background" id="theend">
+        <section data-transition="zoom" data-transition-speed="slow" id="theend">
             <h3>Gratulacje!</h3>
             <img src="img/confetti.gif" style="height: 350px;"/>
             <p class="fragment fade-up">To już koniec naszego kursu. Mamy za sobą kawał dobrej roboty, ale to
@@ -1300,7 +1300,7 @@ slideshowInterval = setInterval( showNextSlide, 3000 );
         </section>
         <section data-transition="zoom" data-transition-speed="slow">
             <p>Dzięki za wspólnie spędzony czas i do zobaczenia!</p>
-            <img src="img/kaczucha.svg" style="border: none; box-shadow: none;"/>
+            <img src="img/logo.svg" style="border: none; box-shadow: none;"/>
         </section>
     </div>
     <div class="small-duck"></div>
