@@ -190,7 +190,7 @@
         </section>
         <section>
             <p>Pewnie wygląda to mniej więcej tak:</p>
-            <pre class="fragment fade-left"><code>1. Znajdź slajd nr 5 w&nbsp;dokumencie.
+            <pre class="fragment fade-left"><code class="lang-html">1. Znajdź slajd nr 5 w&nbsp;dokumencie.
 2. Dodaj do niego klasę `show`.</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -218,7 +218,7 @@
         </section>
         <section>
             <p>Jeżeli znasz CSS, to świetnie. Selektory w&nbsp;tym przypadku działają dokładnie tak samo, na przykład:</p>
-            <pre><code>// wybiera pierwszy nagłówek 3 stopnia
+            <pre><code class="lang-javascript">// wybiera pierwszy nagłówek 3 stopnia
 document.querySelector( 'h3' )
 // wybiera pierwszy artykuł
 document.querySelector( 'article' )
@@ -236,7 +236,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <pre><code>document.querySelector( '#slide5' )</code></pre>
+            <pre><code class="lang-javascript">document.querySelector( '#slide5' )</code></pre>
             <p>To, co dostałyśmy z&nbsp;powrotem to element drzewa dokumentu. Chcemy teraz znaleźć metody, które pozwolą na
                 dodanie lub zabranie mu klasy CSS. </p>
             <p class="fragment fade-down">W tym celu pomogą nam:</p>
@@ -254,12 +254,12 @@ document.querySelector( '#artykul-1' ) </code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <pre><code>document.querySelector( '#slide5' ).classList.add( 'show' );</code></pre>
+            <pre><code class="lang-javascript">document.querySelector( '#slide5' ).classList.add( 'show' );</code></pre>
             <p>Działa? Teraz zróbmy to samo dla slajdu 4.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <pre><code>document.querySelector( '#slide4' ).classList.add( 'show' );</code></pre>
+            <pre><code class="lang-javascript">document.querySelector( '#slide4' ).classList.add( 'show' );</code></pre>
             <p class="fragment fade-right note question">Kod dla slajdu 4 nie zadziałał, chociaż jest zbudowany
                 praktycznie tak samo jak poprzedni. Jakieś pomysły dlaczego tak się stało?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -270,7 +270,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="convex-in zoom-out">
-            <pre><code>document.querySelector( '#slide5' ).classList.remove( 'show' );</code></pre>
+            <pre><code class="lang-javascript">document.querySelector( '#slide5' ).classList.remove( 'show' );</code></pre>
             <p>Super! Skopiujmy wszystkie trzy fragmenty do naszego pliku <code>gallery.js</code>. Przydadzą nam się
                 niedługo przy programowaniu nawigacji.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -293,7 +293,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
             <p>Gotowe?</p>
             <div class="fragment fade-up">
                 <p>Wyszło nam pewnie coś takiego:</p>
-                <pre><code>1. Znajdź piąty guziczek.
+                <pre><code class="lang-html">1. Znajdź piąty guziczek.
 2. Sprawdzaj, kiedy zostanie kliknięty.
 3. Kiedy jest kliknięty wykonaj akcję:
 	3.1. Schowaj aktualnie widoczny slajd.
@@ -312,7 +312,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
                 wykonywać się razem jedno po drugim.</p>
             <p class="fragment fade-left">W JavaScript możemy budować funkcje na kilka różnych sposobów, z&nbsp;czego
                 najprostszy to:</p>
-            <pre class="fragment fade-right"><code>function nazwafunkcji( ) {
+            <pre class="fragment fade-right"><code class="lang-javascript">function nazwafunkcji( ) {
    /* treść funkcji */
 }</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -323,7 +323,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-          <pre><code>function showSlide5( ) {
+          <pre><code class="lang-javascript">function showSlide5( ) {
   document.querySelector( '#slide5' ).classList.add( 'show' );
   }</code></pre>
               <p class="fragment fade-right">Mamy naszą pierwszą funkcję! Teraz chcemy powiązać ją z&nbsp;guziczkiem nr 5,
@@ -336,7 +336,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
               <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <pre><code>document.querySelector( '#pin5' )</code></pre>
+            <pre><code class="lang-javascript">document.querySelector( '#pin5' )</code></pre>
             <p>Teraz potrzebujemy jakiejś <strong>metody</strong>, która pozwoli nam powiązać naszą funkcję z
                 kliknięciem w&nbsp;ten element.</p>
             <div class="fragment fade-left">
@@ -364,7 +364,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <pre><code>document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code></pre>
+            <pre><code class="lang-javascript">document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code></pre>
             <p class="fragment fade-right">Co teraz? Odświeżamy stronę i&nbsp;patrzymy, czy działa ;-)</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -384,7 +384,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
         </section>
         <section>
             <p>Po schowaniu aktualnego slajdu całość przedstawi nam się następująco:</p>
-            <pre><code>function showSlide5( ) {
+            <pre><code class="lang-javascript">function showSlide5( ) {
    document.querySelector( '.show' ).classList.remove( 'show' );
    document.querySelector( '#slide5' ).classList.add( 'show' );
 }
@@ -411,7 +411,7 @@ document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code
         </section>
         <section>
             <p>Jest kilka sposobów, na jaki można to zapisać. Tutaj mamy przykładowy:</p>
-            <pre class="fragment fade-left"><code>1. Znajdź prawą strzałkę,
+            <pre class="fragment fade-left"><code class="lang-html">1. Znajdź prawą strzałkę,
 2. Sprawdzaj, kiedy zostanie kliknięta.
 3. Kiedy zostanie kliknięta wykonaj zdarzenie:
 	3.1. Znajdź slajd, który aktualnie ma przypisaną klasę `show`,
@@ -453,7 +453,7 @@ document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code
         </section>
         <section>
             <p>Przykład rozwiązania:</p>
-            <pre class="fragment fade-left"><code>function showNextSlide( ) {
+            <pre class="fragment fade-left"><code class="lang-javascript">function showNextSlide( ) {
    document.querySelector( '.show' ).classList.remove( 'show' );
    // tutaj będzie reszta naszego kodu
 }
@@ -480,11 +480,11 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
         </section>
         <section>
             <p>Żeby stworzyć <strong>zmienną</strong> w&nbsp;JavaScript używamy słowa kluczowego <code>let</code>:</p>
-            <pre class="fragment fade-left"><code>//zmienna tekstowa
+            <pre class="fragment fade-left"><code class="lang-javascript">//zmienna tekstowa
 let courseTitle = 'Galeria JavaScript';</code></pre>
             <p class="fragment fade-right">Tak stworzonej zmiennej możemy potem używać dalej w&nbsp;kodzie po prostu podając
                 jej nazwę, na przykład:</p>
-            <pre class="fragment fade-left"><code>//zmienna liczbowa - długość tekstu
+            <pre class="fragment fade-left"><code class="lang-javascript">//zmienna liczbowa - długość tekstu
 let titleLength = courseTitle.length;</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -503,7 +503,7 @@ let titleLength = courseTitle.length;</code></pre>
         </section>
         <section>
             <p>Wygląda to pewnie tak:</p>
-            <pre class="fragment fade-left"><code>1. Znajdź prawą strzałkę,
+            <pre class="fragment fade-left"><code class="lang-html">1. Znajdź prawą strzałkę,
 2. Sprawdzaj, kiedy zostanie kliknięta.
 3. Kiedy zostanie kliknięta wykonaj zdarzenie:
 	3.1. Znajdź slajd, który aktualnie ma przypisaną klasę `show`,
@@ -535,7 +535,7 @@ let titleLength = courseTitle.length;</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <pre><code>let currentNumber = 1;</code></pre>
+            <pre><code class="lang-javascript">let currentNumber = 1;</code></pre>
             <p class="fragment fade-right">Świetnie, mamy naszą pierwszą zmienną!</p>
             <p class="fragment fade-left">Teraz chcemy dodać do niej 1 i&nbsp;zapamiętać tę wartość. W tym celu możemy
                 stworzyć sobie dodatkową zmienną do pomocy.</p>
@@ -547,7 +547,7 @@ let titleLength = courseTitle.length;</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <pre><code>let newNumber = currentNumber + 1;</code></pre>
+            <pre><code class="lang-javascript">let newNumber = currentNumber + 1;</code></pre>
             <p class="fragment fade-left">Bardzo dobrze. Teraz skoro mamy już obliczony nowy numer, potrzebujemy znaleźć
                 element o&nbsp;tym numerze.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -556,7 +556,7 @@ let titleLength = courseTitle.length;</code></pre>
             <p>Wszystkie nasze slajdy mają ID w&nbsp;postaci <code>#slide</code> + kolejny numer (1, 2, 3, ...).</p>
             <p class="fragment fade-right">Dzięki temu możemy wykorzystać możliwości JavaScript i&nbsp;skleić tekst z&nbsp;liczbą
                 używając tego samego znaku +, na przykład:</p>
-            <pre class="fragment fade-left"><code>'#slide' + 1</code></pre>
+            <pre class="fragment fade-left"><code class="lang-javascript">'#slide' + 1</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -565,7 +565,7 @@ let titleLength = courseTitle.length;</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <pre><code>    document.querySelector( '#slide' + newNumber ).classList.add( 'show' );</code></pre>
+            <pre><code class="lang-javascript">    document.querySelector( '#slide' + newNumber ).classList.add( 'show' );</code></pre>
             <p class="fragment fade-left">Została nam jeszcze jedna rzecz - zapisanie nowego numeru jako
                 aktualny.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -578,7 +578,7 @@ let titleLength = courseTitle.length;</code></pre>
         </section>
         <section>
             <p>Jeżeli wszystko poszło zgodnie z&nbsp;planem, nasz kod powinien wyglądać mniej więcej tak:</p>
-            <pre class="fragment fade-left"><code>let currentNumber = 1;
+            <pre class="fragment fade-left"><code class="lang-javascript">let currentNumber = 1;
 
 function showNextSlide( ) {
     document.querySelector( '.show' ).classList.remove( 'show' );
@@ -605,7 +605,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-        <pre><code>	3.1. Znajdź slajd, który aktualnie ma przypisaną klasę `show`,
+        <pre><code class="lang-html">	3.1. Znajdź slajd, który aktualnie ma przypisaną klasę `show`,
 3.2. Zabierz mu tę klasę,
 3.3. Odczytaj numer aktualnego elementu zapisany w&nbsp;zmiennej,
 3.4. Dodaj do niego 1,
@@ -622,7 +622,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
                 wtedy, kiedy jest spełniony dany warunek.</p>
             <div class="fragment fade-up">
                 <p>Najprostsza z&nbsp;nich wygląda tak:</p>
-                <pre><code>if ( warunek ) {
+                <pre><code class="lang-javascript">if ( warunek ) {
     //wykonaj kod, który jest tutaj.
 }</code></pre>
             </div>
@@ -642,7 +642,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
         </section>
         <section>
             <p>Na tym etapie nasz kod wygląda tak:</p>
-            <pre class="fragment fade-left"><code>let currentNumber = 1;
+            <pre class="fragment fade-left"><code class="lang-javascript">let currentNumber = 1;
 
 function showNextSlide( ) {
     document.querySelector( '.show' ).classList.remove( 'show' );
@@ -666,7 +666,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
         </section>
         <section data-transition="convex-in zoom-out">
             <p>Przykładowy kod funkcji <code>showPreviousSlide</code>:</p>
-            <pre class="fragment fade-left"><code>function showPreviousSlide( ) {
+            <pre class="fragment fade-left"><code class="lang-javascript">function showPreviousSlide( ) {
     document.querySelector( '.show' ).classList.remove( 'show' );
     let newNumber = currentNumber - 1;
     if( newNumber < 1 ) {
@@ -705,8 +705,7 @@ document.querySelector( '#prev' ).addEventListener( 'click', showPreviousSlide )
         </section>
         <section>
             <p class="note side-note">Hurra! Mamy nasz pierwszy efekt uboczny ;-) Takie rzeczy często dzieją się
-                przy dodawaniu nowych funkcjonalności do starego kodu. Żeby temu zapobiec, przydają się testy i
-                upraszczanie kodu tak bardzo, jak tylko to możliwe.</p>
+                przy dodawaniu nowych funkcjonalności do starego kodu. Żeby temu zapobiec, przydają się testy i&nbsp;upraszczanie kodu tak bardzo, jak tylko to możliwe.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -744,11 +743,11 @@ document.querySelector( '#prev' ).addEventListener( 'click', showPreviousSlide )
         <section>
             <p>Prosty przykład - funkcja, która bierze imię jako <strong>parametr</strong>, i&nbsp;wypisuje w&nbsp;konsoli
                 pozdrowienia dla osoby o&nbsp;danym imieniu:</p>
-            <pre class="fragment fade-left"><code>function hej( imie ) {
+            <pre class="fragment fade-left"><code class="lang-javascript">function hej( imie ) {
     console.log( 'Hej ' + imie + '! Miło Cię widzieć!' );
 }</code></pre>
             <p class="fragment fade-right">Teraz możemy wywołać tę funkcję, na przykład:</p>
-            <pre class="fragment fade-left"><code>hej( 'Magda' );</code></pre>
+            <pre class="fragment fade-left"><code class="lang-javascript">hej( 'Magda' );</code></pre>
             <p class="fragment fade-right note question">Co się stanie jeżeli wywołamy fukcję <code>hej</code> w&nbsp;ten
                 sposób?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -760,7 +759,7 @@ document.querySelector( '#prev' ).addEventListener( 'click', showPreviousSlide )
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-        <pre><code>1. Dla podanego numeru slajdu
+        <pre><code class="lang-html">1. Dla podanego numeru slajdu
 1.1. Znajdź aktualnie pokazywany element,
 1.2. Zabierz mu klasę `show`,
 1.3. Znajdź element o&nbsp;podanym numerze,
@@ -779,7 +778,7 @@ document.querySelector( '#prev' ).addEventListener( 'click', showPreviousSlide )
         </section>
         <section>
             <p>Przykładowy kod, jak można to zrobić:</p>
-            <pre class="fragment fade-left"><code>function showSlide( newNumber ) {
+            <pre class="fragment fade-left"><code class="lang-javascript">function showSlide( newNumber ) {
 document.querySelector( '.show' ).classList.remove( 'show' );
 document.querySelector( '#slide' + newNumber ).classList.add( 'show' );
 currentNumber = newNumber;
@@ -796,7 +795,7 @@ currentNumber = newNumber;
         </section>
         <section>
             <p>Kod dla guziczka nr 1 - pozostałe wyglądają analogicznie:</p>
-            <pre class="fragment fade-left"><code>function showSlide1( ) {
+            <pre class="fragment fade-left"><code class="lang-javascript">function showSlide1( ) {
   showSlide( 1 );
 }
 document.querySelector( '#pin1' ).addEventListener( 'click', showSlide1 );</code></pre>
@@ -811,7 +810,7 @@ document.querySelector( '#pin1' ).addEventListener( 'click', showSlide1 );</code
         </section>
         <section data-transition="convex-in zoom-out">
             <p>Kod dla strzałki w&nbsp;prawo po zmianach:</p>
-            <pre class="fragment fade-left"><code>function showNextSlide( ) {
+            <pre class="fragment fade-left"><code class="lang-javascript">function showNextSlide( ) {
   let newNumber = currentNumber + 1;
   if( newNumber > 5 ) {
     newNumber = 1;
@@ -850,7 +849,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
         </section>
         <section>
             <p>Zrobione? Tutaj mamy przykład jak taka funkcja może wyglądać:</p>
-            <pre class="fragment fade-left"><code>function selectPin( newNumber ) {
+            <pre class="fragment fade-left"><code class="lang-javascript">function selectPin( newNumber ) {
   document.querySelector( '.selected' ).classList.remove( 'selected' );
   document.querySelector( '#pin' + newNumber ).classList.add( 'selected' );
 }</code></pre>
@@ -911,7 +910,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
         </section>
         <section data-transition="convex-in zoom-out">
             <p>Tutaj mamy przykład jak to rozwiązać:</p>
-            <pre class="fragment fade-left"><code>let currentNumber = 1;
+            <pre class="fragment fade-left"><code class="lang-javascript">let currentNumber = 1;
 document.querySelector( '#slide' + currentNumber ).classList.add( 'show' );
 document.querySelector( '#pin' + currentNumber ).classList.add( 'selected' );</code></pre>
             <p class="fragment fade-right">Jak tym razem wyszły testy?</p>
@@ -932,11 +931,11 @@ document.querySelector( '#pin' + currentNumber ).classList.add( 'selected' );</c
         <section data-transition="zoom-in convex-out">
             <p>W naszym kodzie znajduje się teraz pięć, bardzo podobnych do siebie kawałków kodu</p>
             <div class="fragment fade-left">
-              <pre><code>function showSlide1 ( ) {
+              <pre><code class="lang-javascript">function showSlide1 ( ) {
      showSlide( 1 );
   }
   document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code></pre>
-              <pre><code>function showSlide2 ( ) {
+              <pre><code class="lang-javascript">function showSlide2 ( ) {
      showSlide( 2 );
   }
   document.querySelector('#pin1').addEventListener( 'click', showSlide2 );</code></pre>
@@ -945,7 +944,7 @@ document.querySelector( '#pin' + currentNumber ).classList.add( 'selected' );</c
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Wyobraźmy sobie, jak by nasz kod wyglądał, gdyby nasza galeria miała więcej, niż pięć zdjęć</p>
-          <pre class="fragment fade-left"><code>function showSlide312 ( ) {
+          <pre class="fragment fade-left"><code class="lang-javascript">function showSlide312 ( ) {
    showSlide( 312 );
 }
 document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</code></pre>
@@ -955,7 +954,7 @@ document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</co
           <p class="fragment fade-left">W końcu do tego są komputery, żeby nam ułatwiać życie! ;-)</p>
           <div class="fragment fade-left">
             <p>Wyobraźmy sobie coś takiego:</p>
-            <pre><code>podstawiając pod zmienną numerPinu liczby od 1 do 5 chcę wykonać poniższe {
+            <pre><code class="lang-javascript">podstawiając pod zmienną numerPinu liczby od 1 do 5 chcę wykonać poniższe {
   document
     .querySelector('#pin' + numerPinu)
     .addEventListener( 'click', showSlide(numerPinu) );
@@ -966,7 +965,7 @@ document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</co
         <section data-transition="zoom-in convex-out">
           <p>Jak się okazuje, jest to bardzo proste!</p>
           <p class="fragment fade-left">Posłużymy się do tego pętlą for:</p>
-          <pre class="fragment fade-left"><code>for (let numerPinu = 1; numerPinu <= 5; numerPinu++) {
+          <pre class="fragment fade-left"><code class="lang-javascript">for (let numerPinu = 1; numerPinu <= 5; numerPinu++) {
   document
     .querySelector('#pin' + numerPinu)
     .addEventListener( 'click', showSlide(numerPinu) );
@@ -979,7 +978,7 @@ document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</co
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Spójrzmy jeszcze raz na naszą pętlę:</p>
-          <pre><code>for (let numerPinu = 1; numerPinu <= 5; numerPinu++) {
+          <pre><code class="lang-javascript">for (let numerPinu = 1; numerPinu <= 5; numerPinu++) {
   document
     .querySelector('#pin' + numerPinu)
     .addEventListener( 'click', showSlide(numerPinu) );
@@ -988,7 +987,7 @@ document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</co
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Przypomnijmy sobie jak wyglądał nasz pierwotny kod</p>
-          <pre><code>function showSlide1 ( ) {
+          <pre><code class="lang-javascript">function showSlide1 ( ) {
   showSlide( 1 );
 }
 document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code></pre>
@@ -996,12 +995,12 @@ document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code><
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Ten kod:</p>
-          <pre><code>function showSlide1 ( ) {
+          <pre><code class="lang-javascript">function showSlide1 ( ) {
   showSlide( 1 );
 }
 document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code></pre>
           <p>Można zapisać odrobinę inaczej</p>        
-          <pre><code>document.querySelector('#pin1').addEventListener( 'click', function () {
+          <pre><code class="lang-javascript">document.querySelector('#pin1').addEventListener( 'click', function () {
   showSlide( 1 );
 } );</code></pre>
           <p class="fragment fade-left">Przenieśliśmy definicję funkcji bezpośrednio do miejsca, w&nbsp;którym chcemy ją przypisać do event listenera</p>
@@ -1009,7 +1008,7 @@ document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code><
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Wróćmy teraz do naszej pętli. Z nowo zdobytą wiedzą powinniśmy sobie poradzić z&nbsp;prawidłowym jej napisaniem</p>
-          <pre class="fragment fade-left"><code>for (let numerPinu = 1; numerPinu <= 5; numerPinu++) {
+          <pre class="fragment fade-left"><code class="lang-javascript">for (let numerPinu = 1; numerPinu <= 5; numerPinu++) {
   document
     .querySelector('#pin' + numerPinu)
     .addEventListener( 'click', function () {
@@ -1039,7 +1038,7 @@ document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code><
         </section>
         <section>
             <p>Pewnie wyszło nam mniej więcej coś takiego:</p>
-            <pre class="fragment fade-left"><code>1. Znajdź przycisk play,
+            <pre class="fragment fade-left"><code class="lang-html">1. Znajdź przycisk play,
 2. Sprawdzaj, kiedy zostanie kliknięty.
 3. Kiedy zostanie kliknięty wykonaj zdarzenie:
     3.1. Sprawdź, czy pokaz slajdów się obecnie odtwarza:
@@ -1064,12 +1063,12 @@ document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code><
                 możemy jej przypisać <strong>wartość logiczną</strong> (prawda lub fałsz).</p>
             <p class="fragment fade-left"><strong>Prawdę</strong> zapisujemy w&nbsp;JavaScript jako <code>true</code>,
                 dla <strong>fałszu</strong> używamy słowa <code>false</code>:</p>
-            <pre class="fragment fade-right"><code>let isJavaScriptAwesome = true;</code></pre>
+            <pre class="fragment fade-right"><code class="lang-javascript">let isJavaScriptAwesome = true;</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <p class="">Wartości logiczne porównujemy używając potrójnego znaku równości, np:</p>
-            <pre class="fragment fade-right"><code>if ( isJavaScriptAwesome === true ) {
+            <pre class="fragment fade-right"><code class="lang-javascript">if ( isJavaScriptAwesome === true ) {
 let doWeHaveEnoughYet = false;
 }</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -1081,7 +1080,7 @@ let doWeHaveEnoughYet = false;
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <pre><code>let playing = false;</code></pre>
+            <pre><code class="lang-javascript">let playing = false;</code></pre>
             <p class="fragment fade-left">Świetnie! Teraz możemy przejść do szkieletu naszej funkcji. Przejrzyjmy
                 szybko kod napisany na poprzednich etapach, żeby przypomnieć sobie jak powiązać funkcję z
                 kliknięciem myszy na elemencie.</p>
@@ -1096,7 +1095,7 @@ let doWeHaveEnoughYet = false;
         </section>
         <section>
             <p>Najprawdopodobniej otrzymamy coś takiego:</p>
-            <pre class="fragment fade-left"><code>function playButtonClicked( ) {
+            <pre class="fragment fade-left"><code class="lang-javascript">function playButtonClicked( ) {
 if ( playing === true ) {
     playing = false;
 } else {
@@ -1133,7 +1132,7 @@ document.querySelector( '#play' ).addEventListener( 'click', playButtonClicked )
         </section>
         <section>
             <p>Dużo nowego kodu! Sprawdźmy, jak nam poszło tym razem:</p>
-            <pre class="fragment fade-left"><code>function playButtonClicked( ) {
+            <pre class="fragment fade-left"><code class="lang-javascript">function playButtonClicked( ) {
     if ( playing === true ) {
         stopSlideshow();
     } else {
@@ -1167,7 +1166,7 @@ function stopSlideshow( ) {
         </section>
         <section>
             <p>Jest kilka sposobów, żeby to zapisać, ale idea jest mniej więcej ta sama:</p>
-            <pre><code>Funkcja Włącz Pokaz Slajdów:
+            <pre><code class="lang-html">Funkcja Włącz Pokaz Slajdów:
 1. Dodaj klasę playing do przycisku play
 2. Zapisz stan pokazu slajdów w&nbsp;zmiennej playing
 3. Poczekaj 3 sekundy,
@@ -1202,7 +1201,7 @@ function stopSlideshow( ) {
         </section>
         <section>
             <p>Po dopisaniu nowego kodu funkcja prezentuje nam się następująco:</p>
-            <pre class="fragment fade-left"><code>function startSlideshow( ) {
+            <pre class="fragment fade-left"><code class="lang-javascript">function startSlideshow( ) {
 document.querySelector( '#play' ).classList.add( 'on' );
 playing = true;
 setInterval( showNextSlide, 3000 );
@@ -1232,7 +1231,7 @@ setInterval( showNextSlide, 3000 );
         </section>
         <section>
             <p>Tym razem powinno nam wyjść mniej więcej coś takiego:</p>
-            <pre><code>let slideshowInterval;
+            <pre><code class="lang-javascript">let slideshowInterval;
 // (...)
 function startSlideshow( ) {
 document.querySelector( '#play' ).classList.add( 'on' );
@@ -1262,7 +1261,7 @@ slideshowInterval = setInterval( showNextSlide, 3000 );
         </section>
         <section data-transition="convex-in zoom-out">
             <p>Całość funkcji <code>stopSlideshow</code> wygląda teraz tak:</p>
-            <pre class="fragment fade-left"><code>function stopSlideshow( ) {
+            <pre class="fragment fade-left"><code class="lang-javascript">function stopSlideshow( ) {
     document.querySelector( '#play' ).classList.remove( 'on' );
     playing = false;
     clearInterval( slideshowInterval );
