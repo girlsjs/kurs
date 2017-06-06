@@ -324,7 +324,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
         <section>
           <pre><code class="lang-javascript">function showSlide5( ) {
   document.querySelector( '#slide5' ).classList.add( 'show' );
-  }</code></pre>
+}</code></pre>
               <p class="fragment fade-right">Mamy naszą pierwszą funkcję! Teraz chcemy powiązać ją z&nbsp;guziczkiem nr 5,
                   tak żeby wykonywała się za każdym razem, kiedy ktoś go kliknie. </p>
               <i class="fragment fade-down fa fa-angle-right"></i>
@@ -604,7 +604,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-        <pre><code class="lang-html">	3.1. Znajdź slajd, który aktualnie ma przypisaną klasę `show`,
+        <pre><code class="lang-html">3.1. Znajdź slajd, który aktualnie ma przypisaną klasę `show`,
 3.2. Zabierz mu tę klasę,
 3.3. Odczytaj numer aktualnego elementu zapisany w&nbsp;zmiennej,
 3.4. Dodaj do niego 1,
@@ -777,9 +777,9 @@ document.querySelector( '#prev' ).addEventListener( 'click', showPreviousSlide )
         <section>
             <p>Przykładowy kod, jak można to zrobić:</p>
             <pre class="fragment fade-left"><code class="lang-javascript">function showSlide( newNumber ) {
-document.querySelector( '.show' ).classList.remove( 'show' );
-document.querySelector( '#slide' + newNumber ).classList.add( 'show' );
-currentNumber = newNumber;
+    document.querySelector( '.show' ).classList.remove( 'show' );
+    document.querySelector( '#slide' + newNumber ).classList.add( 'show' );
+    currentNumber = newNumber;
 }</code></pre>
             <p class="fragment fade-right">Co dalej? Potrzebujemy zmodyfikować funkcje które już mamy tak, żeby
                 korzystały z&nbsp;tej uniwersalnej.</p>
@@ -931,12 +931,12 @@ document.querySelector( '#pin' + currentNumber ).classList.add( 'selected' );</c
             <div class="fragment fade-left">
               <pre><code class="lang-javascript">function showSlide1 ( ) {
      showSlide( 1 );
-  }
-  document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code></pre>
+}
+document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code></pre>
               <pre><code class="lang-javascript">function showSlide2 ( ) {
      showSlide( 2 );
-  }
-  document.querySelector('#pin1').addEventListener( 'click', showSlide2 );</code></pre>
+}
+document.querySelector('#pin1').addEventListener( 'click', showSlide2 );</code></pre>
               <p>...</p>
             </div>
         </section>
@@ -1068,7 +1068,7 @@ let isJavaScriptComplicated = false;</code></pre>
         <section>
             <p class="">Wartości logiczne porównujemy używając potrójnego znaku równości, np:</p>
             <pre class="fragment fade-right"><code class="lang-javascript">if ( isJavaScriptAwesome === true ) {
-let doWeHaveEnoughYet = false;
+    let doWeHaveEnoughYet = false;
 }</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -1094,11 +1094,11 @@ let doWeHaveEnoughYet = false;
         <section>
             <p>Najprawdopodobniej otrzymamy coś takiego:</p>
             <pre class="fragment fade-left"><code class="lang-javascript">function playButtonClicked( ) {
-if ( playing === true ) {
-    playing = false;
-} else {
-    playing = true;
-}
+    if ( playing === true ) {
+        playing = false;
+    } else {
+        playing = true;
+    }
 }
 document.querySelector( '#play' ).addEventListener( 'click', playButtonClicked );</code></pre>
             <p class="fragment fade-right">Jak możemy na tym etapie przetestować czy nasz kod działa poprawnie?</p>
@@ -1200,9 +1200,9 @@ function stopSlideshow( ) {
         <section>
             <p>Po dopisaniu nowego kodu funkcja prezentuje nam się następująco:</p>
             <pre class="fragment fade-left"><code class="lang-javascript">function startSlideshow( ) {
-document.querySelector( '#play' ).classList.add( 'on' );
-playing = true;
-setInterval( showNextSlide, 3000 );
+    document.querySelector( '#play' ).classList.add( 'on' );
+    playing = true;
+    setInterval( showNextSlide, 3000 );
 }</code></pre>
             <p class="fragment fade-right">Co tym razem pokazują nam testy?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -1232,9 +1232,9 @@ setInterval( showNextSlide, 3000 );
             <pre><code class="lang-javascript">let slideshowInterval;
 // (...)
 function startSlideshow( ) {
-document.querySelector( '#play' ).classList.add( 'on' );
-playing = true;
-slideshowInterval = setInterval( showNextSlide, 3000 );
+    document.querySelector( '#play' ).classList.add( 'on' );
+    playing = true;
+    slideshowInterval = setInterval( showNextSlide, 3000 );
 }</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
