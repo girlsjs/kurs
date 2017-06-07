@@ -180,8 +180,8 @@
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="zoom-in convex-out">
-            <h3 class="note question">Skąd komputer wie, co ma robić?</h3>
-            <p class="fragment fade-left">Była taka zabawa na samym początku zajęć...</p>
+            <p class="note question">Skąd komputer wie, co ma robić?</p>
+            <p class="fragment fade-left">Była taka zabawa wczoraj...</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -961,7 +961,7 @@ document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</co
     .addEventListener( 'click', showSlide(numerPinu) );
 }</code></pre>
           </div>
-          <p class="note fragment fade-left">W JavaSkrypcie możemy połamać długie instrukcje na kilka linijek dla lepszej czytelności.</p>
+          <p class="note fragment side-note fade-left">W JavaSkrypcie możemy połamać długie instrukcje na kilka linijek dla lepszej czytelności.</p>
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Jak się okazuje, jest to bardzo proste!</p>
@@ -984,7 +984,7 @@ document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</co
     .querySelector('#pin' + numerPinu)
     .addEventListener( 'click', showSlide(numerPinu) );
 }</code></pre>
-        <p class="fragment fade-left">Problemem jest funkcja showSlide(), która jest wywoływana w momencie gdy wykonywana jest pętla, zamiast po kliknięciu na pin</p>
+        <p class="fragment fade-left">Problemem jest funkcja <code>showSlide()</code>, która jest wywoływana w momencie gdy wykonywana jest pętla, zamiast po kliknięciu na pin</p>
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Przypomnijmy sobie jak wyglądał nasz pierwotny kod</p>
@@ -992,7 +992,7 @@ document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</co
   showSlide( 1 );
 }
 document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code></pre>
-          <p class="fragment fade-left">Wywołanie funkcji showSlide było zamknięte w funkcji showSlide1, co pozwoliło nam na wywołanie jej w odpowiednim momencie (czyli po kliknięciu)</p>
+          <p class="fragment fade-left">Wywołanie funkcji <code>showSlide</code> było zamknięte w funkcji <code>showSlide1</code>, co pozwoliło nam na wywołanie jej w odpowiednim momencie (czyli po kliknięciu)</p>
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Ten kod:</p>
@@ -1000,7 +1000,7 @@ document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code><
   showSlide( 1 );
 }
 document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code></pre>
-          <p>Można zapisać odrobinę inaczej</p>        
+          <p>Można zapisać odrobinę inaczej</p>
           <pre><code>document.querySelector('#pin1').addEventListener( 'click', function () {
   showSlide( 1 );
 } );</code></pre>
@@ -1019,7 +1019,7 @@ document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code><
           <p class="fragment fade-left">No to zobaczmy, jak nam to wyszło</p>
         </section>
         <section>
-          <p>Piny działają i mamy (+-) pięć razy mniej kodu!</p>        
+          <p>Piny działają i mamy (+-) pięć razy mniej kodu!</p>
           <img src="img/happierdance.gif"/>
         </section>
         <section data-transition="zoom-in convex-out">
