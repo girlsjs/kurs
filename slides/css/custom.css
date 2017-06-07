@@ -56,6 +56,11 @@ body{
   position: absolute;
   background: #006fdc;
   z-index: 0;
+  transition: height 0.5s;
+}
+
+.left-bar.big {
+  height: 150px;
 }
 
 .reveal section img {

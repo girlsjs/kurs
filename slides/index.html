@@ -37,7 +37,9 @@
 <div class="reveal">
     <div class="slides">
         <section>
-            <img style="height: 400px; border: none; box-shadow: none;" src="img/logo.svg"/>
+            <div class="big-logo">
+              <img style="height: 400px; border: none; box-shadow: none;" src="img/logo.svg"/>
+            </div>
             <h3 class="fragment grow">Cześć!</h3>
             <p>(naciśnij spację, żeby kontynuować)</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -1325,23 +1327,38 @@ function startSlideshow( ) {
 <script src="js/reveal.js"></script>
 
 <script>
-    // More info https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-        history: true,
-        controls: false,
-        progress: false,
-        center: true,
-        transition: 'convex',
-        slideNumber: 'true',
-        // More info https://github.com/hakimel/reveal.js#dependencies
-        dependencies: [
-            {
-                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
-                hljs.initHighlightingOnLoad();
-            }
-            }
-        ]
-    });
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+      history: true,
+      controls: false,
+      progress: false,
+      center: true,
+      transition: 'convex',
+      slideNumber: 'true',
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+          {
+              src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+              hljs.initHighlightingOnLoad();
+          }
+          }
+      ]
+  });
+
+  function changeTopBar(slideNumber) {
+    console.log(slideNumber)
+    if (slideNumber === 0) {
+      document.querySelector('.left-bar').classList.add('big')
+    } else {
+      document.querySelector('.left-bar').classList.remove('big')
+    }
+  }
+
+  Reveal.addEventListener('slidechanged', function( event ) {
+    changeTopBar(event.indexh)
+  });
+
+  setTimeout(changeTopBar(Reveal.getIndices()['h']), 100)
 </script>
 </body>
 </html>
