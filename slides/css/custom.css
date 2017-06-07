@@ -36,10 +36,18 @@ body{
   color: #fd991d !important;
 }
 
+.reveal a img {
+  border: none;
+}
+
 .reveal a::before {
   font-family: 'FontAwesome';
   content: '\f0c1';
   margin-right: 8px;
+}
+
+.reveal a.no-chain::before {
+  content: none;
 }
 
 .left-bar {
@@ -259,6 +267,10 @@ i.fa {
   background: #3b3b3b;
   padding: 10px 20px;
 }
+.reveal .footer a[rel='license']::before {
+  content: none;
+}
+
 .reveal .footer a[rel='license']:hover + span { display: block; }
 .reveal .footer a[rel='license'] + span:hover { display: block; }
 

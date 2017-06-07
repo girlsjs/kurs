@@ -44,7 +44,7 @@
         </section>
         <section>
             <p>Dzisiaj nauczymy się, jak za pomocą języka JavaScript stworzyć interaktywną galerię obrazków.</p>
-            <a href="../gallery/demo.html" target="_blank">
+            <a class="no-chain" href="../gallery/demo.html" target="_blank">
                 <figure>
                     <img style="height: 400px;" src="img/demo.jpg"/>
                     <figcaption class="fragment fade-right">(kliknij, żeby zobaczyć demo)</figcaption>
@@ -99,8 +99,8 @@
         <section>
             <h3>Źródła</h3>
             <p><a href="download/gallery.zip">Stąd pobierzesz paczkę z kodem źródłowym</a></p>
-            <p class="fragment fade-up">Po wypakowaniu znajdziesz w głównym folderze dwa pliki HTML - <strong>demo.html</strong>
-                będzie nam służyć jako przykład, <strong>index.html</strong> to plik na którym pracujemy.</p>
+            <p class="fragment fade-up">Po wypakowaniu znajdziesz w głównym folderze dwa pliki HTML - <code>demo.html</code>
+                będzie nam służyć jako przykład, <code>index.html</code> to plik na którym pracujemy.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -111,7 +111,7 @@
         <section>
             <h3>Struktura dokumentu</h3>
             <p class="note question">Jakie elementy są widoczne na stronie?</p>
-            <p class="fragment fade-up">Obrazki, tekst, akapity, nagłówki, ikonki, itp. - <span
+            <p class="fragment fade-up">Obrazki, tekst, akapity, nagłówki, ikonki, itp. <br /> - <span
                     class="fragment highlight-green">za to wszystko odpowiedzialny jest HTML.</span></p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -119,7 +119,7 @@
             <h3>Prezentacja</h3>
             <p class="note question">Jak wyglądają poszczególne elementy?</p>
             <p class="fragment fade-up">Rozmiar, kształt, kolor, rodzaj czcionki, pozycja względem innych elementów
-                - na te pytania odpowiada <span class="fragment highlight-green">CSS.</span></p>
+                - <span class="fragment highlight-green">na te pytania odpowiada CSS.</span></p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -143,7 +143,7 @@
         </section>
         <section>
             <!-- screencast -->
-            <p>Opcja <span class="fragment highlight-green">Zbadaj</span> pozwala nam podejrzeć szczegóły.</p>
+            <p>Opcja <strong>zbadaj</strong> pozwala nam podejrzeć szczegóły.</p>
             <img src="img/zbadaj.gif"/>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -203,7 +203,7 @@
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note more">Obiekt <strong>document</strong> zawiera całą strukturę pliku HTML. Dzięki niemu
+            <p class="note more">Obiekt <code>document</code> zawiera całą strukturę pliku HTML. Dzięki niemu
                 możemy znaleźć dowolny element dokumentu i zmienić go przy pomocy kodu.</p>
             <p class="fragment fade-up note side-note">Dla ciekawych jak to działa - lektura na potem: <a
                     href="https://css-tricks.com/dom/">What is the DOM? - on CSS Tricks</a></p>
@@ -212,7 +212,7 @@
         <section>
             <p>Obiekt <code>document</code> ma wiele <strong>metod</strong> do operowania na elementach strony. W tym
                 momencie poznamy jedną z nich:</p>
-            <p class="fragment fade-in note more"><strong><code>querySelector( warunek )</code></strong> - wybiera
+            <p class="fragment fade-in note more"><code>querySelector( warunek )</code> - wybiera
                 pierwszy element, które spełnia dany warunek.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -241,8 +241,8 @@ document.querySelector( '#artykul-1' ) </code></pre>
                 dodanie lub zabranie mu klasy CSS. </p>
             <p class="fragment fade-down">W tym celu pomogą nam:</p>
             <ul class="fragment fade-down note more">
-                <li><strong><code>classList.add( nazwa-klasy )</code></strong> - dodaje klasę o podanej nazwie,</li>
-                <li><strong><code>classList.remove( nazwa-klasy )</code></strong> - zabiera daną klasę z elementu.</li>
+                <li><code>classList.add( nazwa-klasy )</code> - dodaje klasę o podanej nazwie,</li>
+                <li><code>classList.remove( nazwa-klasy )</code> - zabiera daną klasę z elementu.</li>
             </ul>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -342,7 +342,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
             <div class="fragment fade-left">
                 <p>Wszystkie elementy dokumentu mają taką metodę i jest to:</p>
                 <ul class="note more">
-                    <li><strong><code>addEventListener( wydarzenie, akcja-do-wykonania )</code></strong> - wykonuje
+                    <li><code>addEventListener( wydarzenie, akcja-do-wykonania )</code> - wykonuje
                         podaną akcję, gdy z elementem stanie się coś konkretnego.
                     </li>
                 </ul>
@@ -390,7 +390,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
 }
 document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code></pre>
             <p class="fragment fade-right">Działa? Teraz możemy na tej podstawie stworzyć kod dla pozostałych slajdów i
-                przycisków. Najprostszym sposobem będzie metoda <em>kopiuj-wklej-zmień co trzeba</em>.</p>
+                przycisków. Najprostszym sposobem będzie metoda <strong>kopiuj-wklej-zmień co trzeba</strong> :)</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="convex-in zoom-out">
@@ -555,7 +555,7 @@ let titleLength = courseTitle.length;</code></pre>
         <section>
             <p>Wszystkie nasze slajdy mają ID w postaci <code>#slide</code> + kolejny numer (1, 2, 3, ...).</p>
             <p class="fragment fade-right">Dzięki temu możemy wykorzystać możliwości JavaScript i skleić tekst z liczbą
-                używając tego samego znaku +, na przykład:</p>
+                używając tego samego znaku <code>+</code>, na przykład:</p>
             <pre class="fragment fade-left"><code>'#slide' + 1</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -605,7 +605,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-        <pre><code>	3.1. Znajdź slajd, który aktualnie ma przypisaną klasę `show`,
+        <pre><code>3.1. Znajdź slajd, który aktualnie ma przypisaną klasę `show`,
 3.2. Zabierz mu tę klasę,
 3.3. Odczytaj numer aktualnego elementu zapisany w zmiennej,
 3.4. Dodaj do niego 1,
@@ -826,7 +826,6 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
             <p>Dobra robota!</p>
             <img src="img/highfive.gif"/>
             <p class="fragment grow">I dobra wiadomość - bonusów jest jeszcze więcej!</p>
-            <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="zoom-in convex-out">
             <h3>Bonus 2 - podświetlanie guziczków</h3>
@@ -1070,7 +1069,7 @@ document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code><
         <section>
             <p class="">Wartości logiczne porównujemy używając potrójnego znaku równości, np:</p>
             <pre class="fragment fade-right"><code>if ( isJavaScriptAwesome === true ) {
-let doWeHaveEnoughYet = false;
+  let doWeHaveEnoughYet = false;
 }</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -1097,11 +1096,11 @@ let doWeHaveEnoughYet = false;
         <section>
             <p>Najprawdopodobniej otrzymamy coś takiego:</p>
             <pre class="fragment fade-left"><code>function playButtonClicked( ) {
-if ( playing === true ) {
+  if ( playing === true ) {
     playing = false;
-} else {
+  } else {
     playing = true;
-}
+  }
 }
 document.querySelector( '#play' ).addEventListener( 'click', playButtonClicked );</code></pre>
             <p class="fragment fade-right">Jak możemy na tym etapie przetestować czy nasz kod działa poprawnie?</p>
@@ -1186,7 +1185,7 @@ function stopSlideshow( ) {
             <div class="fragment fade-left">
                 <p>Można go stworzyć poprzez funkcję:</p>
                 <ul class="note more">
-                    <li><strong><code>setInterval( akcja, odstep )</code></strong> - wykonuje akcję za każdym kolejnym
+                    <li><code>setInterval( akcja, odstep )</code> - wykonuje akcję za każdym kolejnym
                         razem, kiedy upłynie określony odstęp czasu (podany w milisekundach).
                     </li>
                 </ul>
@@ -1203,9 +1202,9 @@ function stopSlideshow( ) {
         <section>
             <p>Po dopisaniu nowego kodu funkcja prezentuje nam się następująco:</p>
             <pre class="fragment fade-left"><code>function startSlideshow( ) {
-document.querySelector( '#play' ).classList.add( 'on' );
-playing = true;
-setInterval( showNextSlide, 3000 );
+  document.querySelector( '#play' ).classList.add( 'on' );
+  playing = true;
+  setInterval( showNextSlide, 3000 );
 }</code></pre>
             <p class="fragment fade-right">Co tym razem pokazują nam testy?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -1233,11 +1232,12 @@ setInterval( showNextSlide, 3000 );
         <section>
             <p>Tym razem powinno nam wyjść mniej więcej coś takiego:</p>
             <pre><code>let slideshowInterval;
-// (...)
+// trochę kodu
+
 function startSlideshow( ) {
-document.querySelector( '#play' ).classList.add( 'on' );
-playing = true;
-slideshowInterval = setInterval( showNextSlide, 3000 );
+  document.querySelector( '#play' ).classList.add( 'on' );
+  playing = true;
+  slideshowInterval = setInterval( showNextSlide, 3000 );
 }</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -1246,7 +1246,7 @@ slideshowInterval = setInterval( showNextSlide, 3000 );
             <div class="fragment fade-left">
                 <p>W tym celu pomoże nam funkcja:</p>
                 <ul class="note more">
-                    <li><strong><code>clearInterval( interwal )</code></strong> - wyłącza interwał zapisany
+                    <li><code>clearInterval( interwal )</code> - wyłącza interwał zapisany
                         wcześniej w podanej zmiennej.
                     </li>
                 </ul>
@@ -1331,7 +1331,7 @@ slideshowInterval = setInterval( showNextSlide, 3000 );
         controls: false,
         progress: false,
         center: true,
-        transition: 'slide',
+        transition: 'convex',
         slideNumber: 'true',
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
