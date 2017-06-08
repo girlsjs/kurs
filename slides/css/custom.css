@@ -171,7 +171,7 @@ i.fa {
 	border-radius: 5px;
 }
 
-.reveal .note::after {
+/*.reveal .note::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -182,7 +182,7 @@ i.fa {
   filter: contrast(200%) brightness(300%);
   right: 0;
   z-index: 0;
-}
+}*/
 
 .reveal .note > * {
   position: relative;
