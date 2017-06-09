@@ -37,14 +37,16 @@
 <div class="reveal">
     <div class="slides">
         <section>
-            <img style="height: 400px; border: none; box-shadow: none;" src="img/logo.svg"/>
+            <div class="big-logo">
+              <img style="height: 400px; border: none; box-shadow: none;" src="img/logo.svg"/>
+            </div>
             <h3 class="fragment grow">Cześć!</h3>
             <p>(naciśnij spację, żeby kontynuować)</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <p>Dzisiaj nauczymy się, jak za pomocą języka JavaScript stworzyć interaktywną galerię obrazków.</p>
-            <a href="../gallery/demo.html" target="_blank">
+            <a class="no-chain" href="../gallery/demo.html" target="_blank">
                 <figure>
                     <img style="height: 400px;" src="img/demo.jpg"/>
                     <figcaption class="fragment fade-right">(kliknij, żeby zobaczyć demo)</figcaption>
@@ -98,8 +100,8 @@
         <section>
             <h3>Źródła</h3>
             <p><a href="download/gallery.zip" target="_blank">Stąd pobierzesz paczkę z&nbsp;kodem źródłowym</a></p>
-            <p class="fragment fade-up">Po wypakowaniu znajdziesz w&nbsp;głównym folderze dwa pliki HTML - <strong>demo.html</strong>
-                będzie nam służyć jako przykład, <strong>index.html</strong> to plik na którym pracujemy.</p>
+            <p class="fragment fade-up">Po wypakowaniu znajdziesz w&nbsp;głównym folderze dwa pliki HTML - <code>demo.html</code>
+                będzie nam służyć jako przykład, <code>index.html</code> to plik na którym pracujemy.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -110,7 +112,7 @@
         <section>
             <h3>Struktura dokumentu</h3>
             <p class="note question">Jakie elementy są widoczne na stronie?</p>
-            <p class="fragment fade-up">Obrazki, tekst, akapity, nagłówki, ikonki, itp. - <span
+            <p class="fragment fade-up">Obrazki, tekst, akapity, nagłówki, ikonki, itp. <br /> - <span
                     class="fragment highlight-green">za to wszystko odpowiedzialny jest HTML.</span></p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -118,7 +120,7 @@
             <h3>Prezentacja</h3>
             <p class="note question">Jak wyglądają poszczególne elementy?</p>
             <p class="fragment fade-up">Rozmiar, kształt, kolor, rodzaj czcionki, pozycja względem innych elementów
-                - na te pytania odpowiada <span class="fragment highlight-green">CSS.</span></p>
+                - <span class="fragment highlight-green">na te pytania odpowiada CSS.</span></p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -142,7 +144,7 @@
         </section>
         <section>
             <!-- screencast -->
-            <p>Opcja <span class="fragment highlight-green">Zbadaj</span> pozwala nam podejrzeć szczegóły.</p>
+            <p>Opcja <strong>zbadaj</strong> pozwala nam podejrzeć szczegóły.</p>
             <img src="img/zbadaj.gif"/>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -179,8 +181,8 @@
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="zoom-in convex-out">
-            <h3 class="note question">Skąd komputer wie, co ma robić?</h3>
-            <p class="fragment fade-left">Była taka zabawa na samym początku zajęć...</p>
+            <p class="note question">Skąd komputer wie, co ma robić?</p>
+            <p class="fragment fade-left">Była taka zabawa wczoraj...</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -202,7 +204,7 @@
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note more">Obiekt <strong>document</strong> zawiera całą strukturę pliku HTML. Dzięki niemu
+            <p class="note more">Obiekt <code>document</code> zawiera całą strukturę pliku HTML. Dzięki niemu
                 możemy znaleźć dowolny element dokumentu i&nbsp;zmienić go przy pomocy kodu.</p>
             <p class="fragment fade-up note side-note">Dla ciekawych jak to działa - lektura na potem: <a
                     href="https://css-tricks.com/dom/">What is the DOM? - on CSS Tricks</a></p>
@@ -211,7 +213,7 @@
         <section>
             <p>Obiekt <code>document</code> ma wiele <strong>metod</strong> do operowania na elementach strony. W&nbsp;tym
                 momencie poznamy jedną z&nbsp;nich:</p>
-            <p class="fragment fade-in note more"><strong><code>querySelector( warunek )</code></strong> - wybiera
+            <p class="fragment fade-in note more"><code>querySelector( warunek )</code> - wybiera
                 pierwszy element, które spełnia dany warunek.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -240,8 +242,8 @@ document.querySelector( '#artykul-1' ) </code></pre>
                 dodanie lub zabranie mu klasy CSS. </p>
             <p class="fragment fade-down">W&nbsp;tym celu pomogą nam:</p>
             <ul class="fragment fade-down note more">
-                <li><strong><code>classList.add( nazwa-klasy )</code></strong> - dodaje klasę o&nbsp;podanej nazwie,</li>
-                <li><strong><code>classList.remove( nazwa-klasy )</code></strong> - zabiera daną klasę z&nbsp;elementu.</li>
+                <li><code>classList.add( nazwa-klasy )</code> - dodaje klasę o&nbsp;podanej nazwie,</li>
+                <li><code>classList.remove( nazwa-klasy )</code> - zabiera daną klasę z&nbsp;elementu.</li>
             </ul>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -341,7 +343,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
             <div class="fragment fade-left">
                 <p>Wszystkie elementy dokumentu mają taką metodę i&nbsp;jest to:</p>
                 <ul class="note more">
-                    <li><strong><code>addEventListener( wydarzenie, akcja-do-wykonania )</code></strong> - wykonuje
+                    <li><code>addEventListener( wydarzenie, akcja-do-wykonania )</code> - wykonuje
                         podaną akcję, gdy z&nbsp;elementem stanie się coś konkretnego.
                     </li>
                 </ul>
@@ -389,7 +391,7 @@ document.querySelector( '#artykul-1' ) </code></pre>
 }
 document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code></pre>
             <p class="fragment fade-right">Działa? Teraz możemy na tej podstawie stworzyć kod dla pozostałych slajdów
-                i&nbsp;przycisków. Najprostszym sposobem będzie metoda <em>kopiuj-wklej-zmień co trzeba</em>.</p>
+                i&nbsp;przycisków. Najprostszym sposobem będzie metoda <strong>kopiuj-wklej-zmień co trzeba</strong> :)</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="convex-in zoom-out">
@@ -554,7 +556,7 @@ let titleLength = courseTitle.length;</code></pre>
         <section>
             <p>Wszystkie nasze slajdy mają ID w&nbsp;postaci <code>#slide</code> + kolejny numer (1, 2, 3, ...).</p>
             <p class="fragment fade-right">Dzięki temu możemy wykorzystać możliwości JavaScript i&nbsp;skleić tekst z&nbsp;liczbą
-                używając tego samego znaku +, na przykład:</p>
+                używając tego samego znaku <code>+</code>, na przykład:</p>
             <pre class="fragment fade-left"><code class="lang-javascript">'#slide' + 1</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -823,7 +825,6 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
             <p>Dobra robota!</p>
             <img src="img/highfive.gif"/>
             <p class="fragment grow">I dobra wiadomość - bonusów jest jeszcze więcej!</p>
-            <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="zoom-in convex-out">
             <h3>Bonus 2 - podświetlanie guziczków</h3>
@@ -958,7 +959,7 @@ document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</co
     .addEventListener( 'click', showSlide(numerPinu) );
 }</code></pre>
           </div>
-          <p class="note fragment fade-left">W&nbsp;JavaSkrypcie możemy połamać długie instrukcje na kilka linijek dla lepszej czytelności.</p>
+          <p class="note fragment side-note fade-left">W&nbsp;JavaSkrypcie możemy połamać długie instrukcje na kilka linijek dla lepszej czytelności.</p>
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Jak się okazuje, jest to bardzo proste!</p>
@@ -981,7 +982,7 @@ document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</co
     .querySelector('#pin' + numerPinu)
     .addEventListener( 'click', showSlide(numerPinu) );
 }</code></pre>
-        <p class="fragment fade-left">Problemem jest funkcja showSlide(), która jest wywoływana w&nbsp;momencie gdy wykonywana jest pętla, zamiast po kliknięciu na pin</p>
+        <p class="fragment fade-left">Problemem jest funkcja <code>showSlide()</code>, która jest wywoływana w&nbsp;momencie gdy wykonywana jest pętla, zamiast po kliknięciu na pin</p>
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Przypomnijmy sobie jak wyglądał nasz pierwotny kod</p>
@@ -989,7 +990,7 @@ document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</co
   showSlide( 1 );
 }
 document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code></pre>
-          <p class="fragment fade-left">Wywołanie funkcji showSlide było zamknięte w&nbsp;funkcji showSlide1, co pozwoliło nam na wywołanie jej w&nbsp;odpowiednim momencie (czyli po kliknięciu)</p>
+          <p class="fragment fade-left">Wywołanie funkcji <code>showSlide</code> było zamknięte w&nbsp;funkcji <code>showSlide1</code>, co pozwoliło nam na wywołanie jej w&nbsp;odpowiednim momencie (czyli po kliknięciu)</p>
         </section>
         <section data-transition="zoom-in convex-out">
           <p>Ten kod:</p>
@@ -1183,7 +1184,7 @@ function stopSlideshow( ) {
             <div class="fragment fade-left">
                 <p>Można go stworzyć poprzez funkcję:</p>
                 <ul class="note more">
-                    <li><strong><code>setInterval( akcja, odstep )</code></strong> - wykonuje akcję za każdym kolejnym
+                    <li><code>setInterval( akcja, odstep )</code> - wykonuje akcję za każdym kolejnym
                         razem, kiedy upłynie określony odstęp czasu (podany w&nbsp;milisekundach).
                     </li>
                 </ul>
@@ -1231,6 +1232,7 @@ function stopSlideshow( ) {
             <p>Tym razem powinno nam wyjść mniej więcej coś takiego:</p>
             <pre><code class="lang-javascript">let slideshowInterval;
 // (...)
+
 function startSlideshow( ) {
     document.querySelector( '#play' ).classList.add( 'on' );
     playing = true;
@@ -1243,7 +1245,7 @@ function startSlideshow( ) {
             <div class="fragment fade-left">
                 <p>W&nbsp;tym celu pomoże nam funkcja:</p>
                 <ul class="note more">
-                    <li><strong><code>clearInterval( interwal )</code></strong> - wyłącza interwał zapisany
+                    <li><code>clearInterval( interwal )</code> - wyłącza interwał zapisany
                         wcześniej w&nbsp;podanej zmiennej.
                     </li>
                 </ul>
@@ -1322,23 +1324,38 @@ function startSlideshow( ) {
 <script src="js/reveal.js"></script>
 
 <script>
-    // More info https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-        history: true,
-        controls: false,
-        progress: false,
-        center: true,
-        transition: 'slide',
-        slideNumber: 'true',
-        // More info https://github.com/hakimel/reveal.js#dependencies
-        dependencies: [
-            {
-                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
-                hljs.initHighlightingOnLoad();
-            }
-            }
-        ]
-    });
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+      history: true,
+      controls: false,
+      progress: false,
+      center: true,
+      transition: 'convex',
+      slideNumber: 'true',
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+          {
+              src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+              hljs.initHighlightingOnLoad();
+          }
+          }
+      ]
+  });
+
+  function changeTopBar(slideNumber) {
+    console.log(slideNumber)
+    if (slideNumber === 0) {
+      document.querySelector('.left-bar').classList.add('big')
+    } else {
+      document.querySelector('.left-bar').classList.remove('big')
+    }
+  }
+
+  Reveal.addEventListener('slidechanged', function( event ) {
+    changeTopBar(event.indexh)
+  });
+
+  setTimeout(changeTopBar(Reveal.getIndices()['h']), 100)
 </script>
 </body>
 </html>
