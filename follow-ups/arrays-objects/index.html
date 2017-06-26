@@ -48,7 +48,171 @@
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
 
-        
+        <section>
+            <h1 style="font-size: 3rem">Tablice i obiekty</h1>
+            <figure>
+              <img src="img/loop.jpg" />
+              <figcaption style="font-size: 0.5rem">
+                Grafika zapożyczona z serwisu 3dno.pl
+              </figcaption>
+            </figure>
+        </section>
+
+
+        <section>
+            <h3 style="font-size: 3rem">Tablice i obiekty</h3>
+            <p>
+              Dzisiaj poznamy 2 bardzo ważne koncepty dla programowania w języku JavaScript - są
+              to <br />tablice oraz obiekty.
+            </p>
+        </section>
+
+
+        <section>
+          <h3 style="font-size: 3rem">Tablice</h3>
+          <p>Tablice to po prostu zmienne, które mogą przechowywać wiele wartości.</p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Zmienna</h3>
+          <p>Jak pamiętamy z naszego warsztatu, zmienna to taki schowek, do którego możemy włożyć jakąś wartość.</p>
+            <figure>
+              <img src="img/drawer.jpg" style="height: 12em" />
+              <figcaption style="font-size: 0.5rem">
+                Grafika z serwisu lernpfadprismen.wordpress.com
+              </figcaption>
+            </figure>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Tablica</h3>
+          <p>Więc tablica to taki zbiór schowków, z numerkami. Do każdego z nich też można włożyć jakąś wartość.</p>
+            <figure>
+              <img src="img/locker.jpg" style="height: 12em" />
+              <figcaption style="font-size: 0.5rem">
+                Grafika z serwisu maxpixel.freegreatpicture.com
+              </figcaption>
+            </figure>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Po co to?</h3>
+          <p>Żeby w ładny sposób przechowywać wiele podobnych danych<br /></p>
+          <p class="fragment">
+            Przykład: Jeżeli mamy 10 użytkowników na stronie, to znacznie łatwiej przechować ich imiona w jednej
+            tablicy niż w 10 oddzielnych zmiennych.
+          </p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Jak to wygląda?</h3>
+          <p>Przypomnijmy sobie najpierw jak definiujemy zmienne:</p>
+          <pre class="fragment"><code class="hljs javascript">let name = "Kasia";</code></pre>
+          <p class="fragment">A tak wygląda tablica:</p>
+          <pre class="fragment"><code class="hljs javascript">let names = ["Kasia", "Basia", "Asia"];</code></pre>
+          <p class="fragment">Lub tak:</p>
+          <pre class="fragment"><code class="hljs javascript">let names = [
+  "Kasia",
+  "Basia",
+  "Asia"
+];</code></pre>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Jak odczytać wartość z tablicy?</h3>
+          <p>Żeby odczytać wartość zmiennej wystarczy użyć jej nazwy. Na przykład, tak wypiszemy w konsoli pozdrowienia dla osoby ktorej imię zapisaliśmy w <code>name</code></p>
+          <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + name + "!" );</code></pre>
+          <p class="fragment">Podobnie, żeby odczytać element z tablicy, potrzebujemy użyć jej nazwy i numeru elementu:</p>
+          <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + names[1] + "!" );</code></pre>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Uwaga! Dziwne numerowanie ;)</h3>
+          <p>W tablicach zaczynamy numerować od wartości 0:</p>
+          <pre class="fragment"><code class="hljs javascript">let names = [
+  "Kasia", // To jest wartość o numerze 0
+  "Basia", // To jest wartość o numerze 1
+  "Asia"   // To jest wartość o numerze 2
+];</code></pre>
+        </section>
+
+        <section>
+          <h2>Do maszyn!</h2>
+          <figure>
+              <img style="height: 400px;" src="img/F-15_Eagle_female_pilots,_3rd_Wing.jpg"/>
+              <figcaption style="font-size: 0.5rem;"><a href="https://commons.wikimedia.org/wiki/File:F-15_Eagle_female_pilots,_3rd_Wing.jpg">Zdjęcie w domenie publicznej. Autorem jest Tech. Sgt. Keith Brown</a></figcaption>
+            </figure>
+            <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+
+        <section>
+          <h3>Spróbujcie utworzyć tablicę w konsoli</h3>
+          <ul>
+            <li>Otwórzcie przeglądarkę Chrome</li>
+            <li>Otwórzcie narzędzia programistyczne <br /><i>(F12 lub Cmd+Opt+I)</i></li>
+            <li>Zobaczcie, czy możecie utworzyć tablicę <i>names</i> jak z poprzednich slajdów, ale z 5 imionami.</li>
+            <li>Spróbujcie wypisać kolejne elementy tej tablicy do konsoli, używając funkcji <code>console.log</code>.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Udało się?</h3>
+          <p>Pewnie wyszło wam coś takiego?</p>
+          <pre class="fragment"><code class="hljs javascript">let names = ["Michał", "Jaromir", "Gracjan", "Hipolit", "Maksym"];
+
+console.log(names[0]);
+console.log(names[1]);
+console.log(names[2]);
+console.log(names[3]);
+console.log(names[4]);</code></pre>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Rozmiar tablicy</h3>
+          <p>Tablica może mieć dowolną liczbę elementów.</p>
+          <p class="fragment">Aby w dowolnym momencie sprawdzić, ile elementów zawiera, wystarczy użyć wartości <code>.length</code></p>
+          <pre class="fragment"><code class="hljs javascript">console.log( names.length );
+// wyświetli 5  </code></pre>
+        </section>
+
+        <section>
+          <h3>A co jeśli...</h3>
+          <p>Będziemy mieli 100 użytkowników?<br /> Jak wypisać imiona wszystkich?</p>
+          <p class="fragment">Nie ma sensu robić tego ręcznie, prawda?</p>
+          <p class="fragment">Co nam pomoże?</p>
+        </section>
+
+        <section>
+          <h3>Pętle!</h3>
+          <p class="fragment">Przypomnijmy sobie pętle z warsztatu.</p>
+          <pre class="fragment"><code class="hljs javascript">for (let i=0; i<10; i++) {
+  // wykonaj ten kod tak długo jak warunek trwania pętli jest prawdziwy
+}</code></pre>
+        </section>
+
+        <section>
+          <h3>Spróbujcie wpisać w konsolę następujący kod:</h3>
+          <pre><code class="hljs javascript">for (var i=0; i<5; i++) { console.log(i) }</code></pre>
+          <p class="fragment">Co wyszło?</p>
+          <pre class="fragment"><code class="hljs javascript">0
+1
+2
+3
+4</code></pre>
+        </section>
+
+
+        <section>
+          <h3>Czas połączyć tablice i pętle</h3>
+          <p>Używając pętli, wypiszcie wszystkie imiona</p>
+          <p class="fragment">Nie zapomnijcie o <code>names.length</code></p>
+        </section>
+
+
+        <section>
+          <h3>Wynik:</h3>
+          <pre class="fragment"><code class="hljs javascript">for (let i=0; i < names.length; i++) { console.log(names[i]) }</code></pre>
+        </section>
+
 
 
         <section data-transition="zoom" data-transition-speed="slow">
