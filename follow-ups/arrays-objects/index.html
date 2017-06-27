@@ -51,9 +51,9 @@
         <section>
             <h1 style="font-size: 3rem">Tablice i obiekty</h1>
             <figure>
-              <img src="img/loop.jpg" />
+              <img src="img/octopus.jpg" />
               <figcaption style="font-size: 0.5rem">
-                Grafika zapożyczona z serwisu 3dno.pl
+                Grafika zapożyczona z serwisu eloquentjavascript.net
               </figcaption>
             </figure>
         </section>
@@ -246,6 +246,109 @@ console.log(names[4]);</code></pre>
           </ul>
           <p class="fragment">Więcej metod znajdziecie <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype">tu</a></p>
         </section>
+
+
+        <section>
+          <h3 style="font-size: 3rem">Obiekty</h3>
+          <p>Obiekty, podobnie jak tablice, są również zbiorami zmiennych. Z tym, że w obiektach, zmienne nazywamy.</p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Przypadek z życia</h3>
+          <p>Wyobraźcie sobie, że mamy wiele danych użytkownika: Imię, nazwisko, wiek, płeć, adres email, miasto itp...</p>
+          <p class="fragment">Jak przechować je w kodzie?</p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">W osobnych zmiennych?</h3>
+          <pre class="fragment"><code class="hljs javascript">let userFirstName = 'Ewa';
+let userLastName = 'Kowalska';
+let userAge = 27;
+let userGender = 'k';
+let userEmailAddress = 'ewa.kowalska@poczta.pl';
+let userCity = 'Gdańsk';
+// ...
+</code></pre>
+          <p class="fragment">Mało to przyjazne, prawda?</p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Tablice?</h3>
+          <pre class="fragment"><code class="hljs javascript">let user =
+  'Ewa', 'Kowalska', 27, 'k', 'ewa.kowalska@poczta.pl', 'Gdańsk'
+];</code></pre>
+          <p class="fragment">To wygląda już lepiej, ale dobranie się do np adresu email oznacza coś takiego:</p>
+          <pre class="fragment"><code class="hljs javascript">console.log( user[4] )</code></pre>
+          <p class="fragment">Pamiętanie numerków to nie jest dobry pomysł.</p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Dlatego mamy obiekty</h3>
+          <pre class="fragment"><code class="hljs javascript">let user = {
+  firstName: 'Ewa',
+  lastName: 'Kowalska',
+  age: 27,
+  gender: 'k',
+  emailAddress: 'ewa.kowalska@poczta.pl',
+  userCity: 'Gdańsk';
+}
+</code></pre>
+          <p class="fragment">A dobieramy się do wartości w ten sposób</p>
+          <pre class="fragment"><code class="hljs javascript">console.log(user.emailAddress)</code></pre>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Anatomia obiektów</h3>
+          <pre class="fragment"><code class="hljs javascript">let user = { nazwa: 'wartość1', nazwa: 'wartość2'}</pre></code>
+          <p class="fragment">Porównajmy z tablicą</p>
+          <pre class="fragment"><code class="hljs javascript">let names = ["Asia", "Basia", "Kasia"]</code></pre>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Wartości wewnątrz obiektów</h3>
+          <p class="fragment">Aby dostać się do wartości używamy następującej notacji</p>
+          <pre class="fragment"><code class="hljs javascript">user.nazwa</pre></code>
+          <p class="fragment">Lub, podobnie jak w przypadku tablicy</p>
+          <pre class="fragment"><code class="hljs javascript">user['nazwa']</code></pre>
+          <p class="fragment">Ale ta notacja jest rzadziej używana, tylko w specyficznych przypadkach.</p>
+        </section>
+
+
+        <section>
+          <h3 style="font-size: 3rem">Wartości wewnątrz obiektów</h3>
+          <p>Nazywane są <b>własnościami</b> lub <b>polami</b> obiektu. W angielskiej nomenklaturze określa się je jako <b>properties</b>.</p>
+          <p class="fragment">Pamiętacie <code>length</code> z tablic? To jest również pole tablic!</p>
+          <pre class="fragment"><code class="hljs javascript">console.log( names.length );</code></pre>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Właściwości obiektów</h3>
+          <p>Można powiedzieć, że właściwości obiektów są takimi zmiennymi wewnątrz obiektów</p>
+
+          <p class="note side-note fragment">
+            Pamiętacie, że zmienne mogą przyjmować dowolne wartości, w tym nawet funkcje?
+          </p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Funkcje wewnątrz obiektów</h3>
+          <p>Funkcje wewnątrz obiektów nazywamy <b>metodami</b>. Tworzy się je tak:</p>
+          <pre class="fragment"><code class="hljs javascript">let myObject = {
+  sayHi: function () {
+    console.log('Hi!')
+  }
+}</code></pre>
+          <p class="fragment">A wywołuje tak:</p>
+          <pre class="fragment"><code class="hljs javascript">myObject.sayHi();
+// Wypisze: Hi!</code></pre>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Ale o funkcjach innym razem</h3>
+          <p>Na następnym follow-upie zajmiemy się tematyką funkcji. Dziś wracamy do obiektów.</p>
+        </section>
+
+
 
 
 
