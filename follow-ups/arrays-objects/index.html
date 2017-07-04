@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>girls.js - interaktywna galeria obrazków</title>
+    <title>girls.js - Tablice i obiekty</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/simple.css">
@@ -217,7 +217,7 @@ console.log(names[4]);</code></pre>
         <section>
           <h3>Więcej zabawy z tablicami</h3>
           <p>Same, statyczne tablice są nudne</p>
-          <p class="fragment">Zabawa zaczyna się, kiedy dodajemy, usuwamy, lub modyfikujemy zawartość tabeli.</p>
+          <p class="fragment">Zabawa zaczyna się, kiedy dodajemy, usuwamy, lub modyfikujemy zawartość tablic.</p>
         </section>
 
         <section>
@@ -274,7 +274,7 @@ let userCity = 'Gdańsk';
 
         <section>
           <h3 style="font-size: 3rem">Tablice?</h3>
-          <pre class="fragment"><code class="hljs javascript">let user =
+          <pre class="fragment"><code class="hljs javascript">let user = [
   'Ewa', 'Kowalska', 27, 'k', 'ewa.kowalska@poczta.pl', 'Gdańsk'
 ];</code></pre>
           <p class="fragment">To wygląda już lepiej, ale dobranie się do np adresu email oznacza coś takiego:</p>
@@ -348,6 +348,78 @@ let userCity = 'Gdańsk';
           <p>Na następnym follow-upie zajmiemy się tematyką funkcji. Dziś wracamy do obiektów.</p>
         </section>
 
+        <section>
+          <h2>Sprawdźmy obiekty w boju!</h2>
+          <figure>
+              <img style="height: 400px;" src="./img/army.jpg" />
+              <figcaption style="font-size: 0.5rem;"><a href="https://commons.wikimedia.org/wiki/File:Flickr_-_Israel_Defense_Forces_-_Karakal_Winter_Training_(1).jpg">Zdjęcie w domenie publicznej. Autorem jest Tech. Sgt. Keith Brown</a></figcaption>
+            </figure>
+        </section>
+
+        <section>
+          <h3>Ćwiczenie</h3>
+          <p>Otwórzcie plik <code>excercise1.html</code></p>
+        </section>
+
+        <section>
+          <h3>Struktura</h3>
+          <p>Plik wygląda z grubsza tak</p>
+          <pre class="fragment"><code class="hljs javascript">&#x3C;html&#x3E;
+&#x3C;head&#x3E;
+  ...
+&#x3C;/head&#x3E;
+&#x3C;body&#x3E;
+  ...
+
+  &#x3C;div class="shelf"&#x3E;
+  &#x3C;div&#x3E;
+
+  &#x3C;script type="text/javascript"&#x3E;
+    // Tutaj miejsce na Twój skrypt
+  &#x3C;script&#x3E;
+
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+</code></pre>
+        </section>
+
+
+
+        <section>
+          <h3>Sprawdźcie co jest w przeglądarce.</h3>
+          <p class="fragment">Nic specjalnego.</p>
+          <p class="fragment">To jest pusta półka na książki.</p>
+        </section>
+
+        <section>
+          <h3>Ale to nie wszystko.</h3>
+          <p class="fragment">
+            Dodatkowo dostępna jest przygotowana funkcja <code>renderBook</code>,
+            którą napisaliśmy dla Was.
+          </p>
+          <p class="fragment">
+            Funkcja ta stworzy pojedyńczą książkę i umieści ją na półce.
+          </p>
+        </section>
+
+        <section>
+          <p>
+            Funkcja <code>renderBook</code> przyjmuje jako jedyny argument obiekt,
+            o następujących wartościach:
+          </p>
+          <ul>
+            <li class="fragment"><code>title</code> - tytuł</li>
+            <li class="fragment"><code>author</code> - autor</li>
+            <li class="fragment"><code>year</code> - rok wydania</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Zadanie.</h3>
+          <p>
+            Używając naszej funkcji, dodajcie na półkę 5 dowolnych książek.
+          </p>
+        </section>
 
 
 
