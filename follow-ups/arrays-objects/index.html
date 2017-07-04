@@ -407,7 +407,7 @@ let userCity = 'Gdańsk';
             Funkcja <code>renderBook</code> przyjmuje jako jedyny argument obiekt,
             o następujących wartościach:
           </p>
-          <ul>
+          <ul class="fragment">
             <li class="fragment"><code>title</code> - tytuł</li>
             <li class="fragment"><code>author</code> - autor</li>
             <li class="fragment"><code>year</code> - rok wydania</li>
@@ -420,6 +420,109 @@ let userCity = 'Gdańsk';
             Używając naszej funkcji, dodajcie na półkę 5 dowolnych książek.
           </p>
         </section>
+
+        <section>
+          <h3>Rozwiązanie</h3>
+          <p>Pewnie wyszło Wam coś takiego:</p>
+          <pre class="fragment"><code class="hljs javascript">let book1 = {
+  author: 'Janina Kowalska',
+  title: 'Mój pamiętnik',
+  year: 2017
+};
+
+renderBook(book1);</code></pre>
+          <p class="fragment">(i tak 5 razy)</p>
+        </section>
+
+        <section>
+          <h3>Prościej</h3>
+          <p>Ale nie trzeba obiektu przypisywać do zmiennej.</p>
+          <p class="fragment">Można go przekazać bezpośrednio:</p>
+          <pre class="fragment"><code class="hljs javascript">renderBook({
+  author: 'Janina Kowalska',
+  title: 'Mój pamiętnik',
+  year: 2017
+});</code></pre>
+        </section>
+
+        <section>
+          <h3>To teraz łączymy</h3>
+          <figure>
+            <img style="height: 400px;" src="./img/merge.png" />
+            <figcaption style="font-size: 0.5rem;"><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/MUTCD_W4-1R.svg/2000px-MUTCD_W4-1R.svg.png">
+              Zdjęcie w domenie publicznej.
+            </a></figcaption>
+          </figure>
+          <p>Obiekty i tablice razem.</p>
+        </section>
+
+        <section>
+          <h3>Przypomnijmy sobie</h3>
+          <ul>
+            <li class="fragment">W zmiennej można przechowywać tablicę albo obiekt</li>
+            <li class="fragment">Tablica to zbiór ponumerowanych zmiennych</li>
+            <li class="fragment">Obiekt to zbiór nazwanych zmiennych</li>
+          </ul>
+          <p class="fragment">więc...</p>
+        </section>
+
+        <section>
+          <h3>Możemy je zagnieżdżać w sobie</h3>
+        </section>
+
+        <section>
+          <h3>Tablice w tablicy</h3>
+          <pre class="fragment"><code class="hljs javascript"> let ultraArray = [
+  [1, 2, 3],
+  ['red', 'blue', 'green'],
+  ['small', 'medium', 'big']
+];</code></pre>
+          <p class="fragment">Aby dostać się do wartości:</p>
+          <pre class="fragment"><code class="hljs javascript">ultraArray[1][0] // 'red'</code></pre>
+        </section>
+
+        <section>
+          <h3>Tablice w tablicy</h3>
+          <p class="note side-note fragment">
+            Tablice w tablicy są raczej rzadko spotykane, ze względu na
+            problemy z czytelnością.
+          </p>
+        </section>
+
+        <section>
+          <h3>Obiekty w tablicy</h3>
+          <pre class="fragment"><code class="hljs javascript">let books = [
+  {author: 'Douglas Adams', title: 'Hitchhickers guide ...', year: 1979},
+  {author: 'Douglas Adams', title: 'Restaurant at the end ...', year: 1982},
+  {author: 'Douglas Adams', title: 'Life, the Universe and ...', year: 1985},
+];</code></pre>
+          <p class="fragment">Aby dostać się do wartości:</p>
+          <pre class="fragment"><code class="hljs javascript">books[0].author // 'Douglas Adams'</code></pre>
+        </section>
+
+        <section>
+          <h3></h3>
+          <pre class="fragment"><code class="hljs javascript">
+</code></pre>
+        </section>
+
+        <section>
+          <h3></h3>
+          <pre class="fragment"><code class="hljs javascript">
+</code></pre>
+        </section>
+
+        <section>
+          <h3></h3>
+          <p></p>
+        </section>
+
+
+
+
+
+
+
 
 
 
