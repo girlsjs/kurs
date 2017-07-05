@@ -12,9 +12,9 @@ let randomBackgrounds = [
 ]
 
 function renderBook(options) {
-  let shelf = document.querySelector('.shelf')
+  let shelfElement = document.querySelector('.shelf')
   let random = Math.floor(Math.random() * randomBackgrounds.length)
-  let cover = randomBackgrounds[random]
+  let cover = options.url || randomBackgrounds[random]
 
   let html = `<a class="book"
       href=""
@@ -24,5 +24,5 @@ function renderBook(options) {
     <div class="year">${options.year}</div>
   </a>`
 
-  shelf.innerHTML = shelf.innerHTML + html
+  shelfElement.innerHTML = shelf.innerHTML + html
 }

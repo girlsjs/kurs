@@ -75,9 +75,10 @@
 
         <section>
           <h3 style="font-size: 3rem">Zmienna</h3>
-          <p>Jak pamiętamy z naszego warsztatu, zmienna to taki schowek, do którego możemy włożyć jakąś wartość.</p>
+          <p>Jeżeli byłyście na warsztatach, to pewnie pamiętacie, że zmienna
+            to taki schowek, do którego możemy włożyć jakąś wartość.</p>
             <figure>
-              <img src="img/drawer.jpg" style="height: 12em" />
+              <img src="img/drawer.jpg" style="height: 10em" />
               <figcaption style="font-size: 0.5rem">
                 Grafika z serwisu lernpfadprismen.wordpress.com
               </figcaption>
@@ -483,7 +484,7 @@ renderBook(book1);</code></pre>
 
         <section>
           <h3>Tablice w tablicy</h3>
-          <p class="note side-note fragment">
+          <p class="note side-note">
             Tablice w tablicy są raczej rzadko spotykane, ze względu na
             problemy z czytelnością.
           </p>
@@ -492,39 +493,94 @@ renderBook(book1);</code></pre>
         <section>
           <h3>Obiekty w tablicy</h3>
           <pre class="fragment"><code class="hljs javascript">let books = [
-  {author: 'Douglas Adams', title: 'Hitchhickers guide ...', year: 1979},
-  {author: 'Douglas Adams', title: 'Restaurant at the end ...', year: 1982},
-  {author: 'Douglas Adams', title: 'Life, the Universe and ...', year: 1985},
+  {author: 'Douglas Adams', title: 'Hitchhickers ...', year: 1979},
+  {author: 'Douglas Adams', title: 'Restaurant at ...', year: 1982},
+  {author: 'Douglas Adams', title: 'Life, the Uni ...', year: 1985},
 ];</code></pre>
           <p class="fragment">Aby dostać się do wartości:</p>
           <pre class="fragment"><code class="hljs javascript">books[0].author // 'Douglas Adams'</code></pre>
         </section>
 
         <section>
-          <h3></h3>
-          <pre class="fragment"><code class="hljs javascript">
-</code></pre>
+          <h3>Obiekty w obiektach</h3>
+          <pre class="fragment"><code class="hljs javascript">let author = {
+  name: 'Mario Puzo',
+  books: {
+    gotfather1: 'The Gotfather, part 1',
+    gotfather2: 'The Gotfather, part 2',
+    gotfather3: 'The Gotfather, part 3'
+  }
+}</code></pre>
+          <p class="fragment">Aby dostać się do wartości:</p>
+          <pre class="fragment"><code class="hljs javascript">author.books.gotfather2; // The Gotfather, part 2</code></pre>
         </section>
 
         <section>
-          <h3></h3>
-          <pre class="fragment"><code class="hljs javascript">
-</code></pre>
+          <h3>Tablice w obiektach</h3>
+          <pre class="fragment"><code class="hljs javascript">let book = {
+  name: 'Harry Potter',
+  languages: ['en', 'ge', 'pl', 'fr', 'it']
+}</code></pre>
+          <p class="fragment">Dobieramy się do wartości:</p>
+          <pre class="fragment"><code class="hljs javascript">book.languages[2] // 'pl'</code></pre>
         </section>
 
         <section>
-          <h3></h3>
-          <p></p>
+          <h3>Tablice w obiektach</h3>
+          <p class="note side-note">
+            Pamiętajcie, że po tablicach wewnątrz obiektów, najczęściej
+            poruszamy się przy użyciu pętli.
+          </p>
         </section>
 
+        <section>
+          <h3>Mając bardzo skomplikowane obiekty...</h3>
+          <p>... mogą powstać takie oto potworki</p>
+          <pre class="fragment"><code class="hljs javascript">author.books.novels[17].translations[3].title</code></pre>
+        </section>
 
+        <section>
+          <h3>Dlatego czasem warto...</h3>
+          <p>... używać zmiennych po drodze</p>
+          <pre class="fragment"><code class="hljs javascript">let novels = author.books.novels
+let title = novels[17].translations[3].title</code></pre>
+        </section>
 
+        <section>
+          <h2>Finalne zadanie</h2>
+          <img src="https://media.giphy.com/media/Nx85vtTY70T3W/giphy.gif" />
+        </section>
 
+        <section>
+          <h3>Opis zadania</h3>
+          <p>
+            W dobrze nam znanym pliku <code>excercise1.html</code> mamy również
+            dostępne bardziej skomplikowane dane pod zmienną <code>shelf</code>.
+          </p>
+          <p class="fragment">
+            Waszym zadaniem będzie napisanie kodu, który te książki umieści na
+            naszej półce.
+          </p>
+        </section>
 
+        <section>
+          <h3>Opis zadania</h3>
+          <p class="note side-note">
+            Uwaga, nie wszystkie wartości z <code>shelf</code> muszą zostać użyte.
+          </p>
+        </section>
 
-
-
-
+        <section>
+          <h3>Opis zadania</h3>
+          <p>
+            Strukturę danych możecie podejrzeć w pliku
+            <code>shelf.js</code> lub w konsoli przeglądarki poprzez
+            wpisanie <code>shelf</code>.
+          </p>
+          <p class="fragment">
+            Powodzenia!
+          </p>
+        </section>
 
 
         <section data-transition="zoom" data-transition-speed="slow">
