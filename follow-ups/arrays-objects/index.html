@@ -62,15 +62,15 @@
         <section>
             <h3 style="font-size: 3rem">Tablice i obiekty</h3>
             <p>
-              Dzisiaj poznamy 2 bardzo ważne koncepty dla programowania w języku JavaScript - są
-              to <br />tablice oraz obiekty.
+              Dzisiaj poznamy 2 bardzo ważne koncepty dla programowania w języku JavaScript:<br />
+              <em>tablice</em> oraz <em>obiekty</em>.
             </p>
         </section>
 
 
         <section>
           <h3 style="font-size: 3rem">Tablice</h3>
-          <p>Tablice to po prostu zmienne, które mogą przechowywać wiele wartości.</p>
+          <p>Tablice to zmienne, które mogą przechowywać wiele wartości.</p>
         </section>
 
         <section>
@@ -109,9 +109,9 @@
           <h3 style="font-size: 3rem">Jak to wygląda?</h3>
           <p>Przypomnijmy sobie najpierw jak definiujemy zmienne:</p>
           <pre class="fragment"><code class="hljs javascript">let name = "Kasia";</code></pre>
-          <p class="fragment">A tak wygląda tablica:</p>
+          <p class="fragment">Tak wygląda tablica:</p>
           <pre class="fragment"><code class="hljs javascript">let names = ["Kasia", "Basia", "Asia"];</code></pre>
-          <p class="fragment">Lub tak:</p>
+          <p class="fragment">A tak ta sama tablica, tylko zapisana inaczej:</p>
           <pre class="fragment"><code class="hljs javascript">let names = [
   "Kasia",
   "Basia",
@@ -123,12 +123,12 @@
           <h3 style="font-size: 3rem">Jak odczytać wartość z tablicy?</h3>
           <p>Żeby odczytać wartość zmiennej wystarczy użyć jej nazwy. Na przykład, tak wypiszemy w konsoli pozdrowienia dla osoby ktorej imię zapisaliśmy w <code>name</code></p>
           <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + name + "!" );</code></pre>
-          <p class="fragment">Podobnie, żeby odczytać element z tablicy, potrzebujemy użyć jej nazwy i numeru elementu:</p>
+          <p class="fragment">Żeby odczytać element z tablicy, potrzebujemy użyć jej nazwy i numeru (<em>indeksu</em>) elementu:</p>
           <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + names[1] + "!" );</code></pre>
         </section>
         <section>
           <h3 style="font-size: 3rem">Uwaga! Dziwne numerowanie ;)</h3>
-          <p>W tablicach zaczynamy numerować od wartości 0:</p>
+          <p>W tablicach zaczynamy numerować od wartości 0</p>
           <pre class="fragment"><code class="hljs javascript">let names = [
   "Kasia", // To jest wartość o numerze 0
   "Basia", // To jest wartość o numerze 1
@@ -170,7 +170,10 @@ console.log(names[4]);</code></pre>
         <section>
           <h3 style="font-size: 3rem">Rozmiar tablicy</h3>
           <p>Tablica może mieć dowolną liczbę elementów.</p>
-          <p class="fragment">Aby w dowolnym momencie sprawdzić, ile elementów zawiera, wystarczy użyć wartości <code>.length</code></p>
+          <p class="fragment">
+            Aby w dowolnym momencie sprawdzić,<br />
+            ile elementów jest w tablicy,<br />
+            wystarczy użyć wartości <code>.length</code></p>
           <pre class="fragment"><code class="hljs javascript">console.log( names.length );
 // wyświetli 5  </code></pre>
         </section>
@@ -186,13 +189,16 @@ console.log(names[4]);</code></pre>
           <h3>Pętle!</h3>
           <p class="fragment">Przypomnijmy sobie pętle z warsztatu.</p>
           <pre class="fragment"><code class="hljs javascript">for (let i=0; i<10; i++) {
-  // wykonaj ten kod tak długo jak warunek trwania pętli jest prawdziwy
+  // wykonaj ten kod tak długo
+  // jak długo warunek trwania pętli jest prawdziwy
 }</code></pre>
         </section>
 
         <section>
           <h3>Spróbujcie wpisać w konsolę następujący kod:</h3>
-          <pre><code class="hljs javascript">for (var i=0; i<5; i++) { console.log(i) }</code></pre>
+          <pre><code class="hljs javascript">for (var i=0; i<5; i++) {
+  console.log(i);
+}</code></pre>
           <p class="fragment">Co wyszło?</p>
           <pre class="fragment"><code class="hljs javascript">0
 1
@@ -211,7 +217,9 @@ console.log(names[4]);</code></pre>
 
         <section>
           <h3>Wynik:</h3>
-          <pre class="fragment"><code class="hljs javascript">for (let i=0; i < names.length; i++) { console.log(names[i]) }</code></pre>
+          <pre class="fragment"><code class="hljs javascript">for (let i=0; i < names.length; i++) {
+  console.log(names[i])
+}</code></pre>
         </section>
 
 
@@ -223,7 +231,10 @@ console.log(names[4]);</code></pre>
 
         <section>
           <h3>Dodawanie elementu</h3>
-          <p>Aby dodać nowy element, wystarczy użyć metody <code>.push()</code></p>
+          <p>
+            Aby dodać nowy element na końcu tablicy,<br />
+            wystarczy użyć metody <code>.push()</code>
+          </p>
           <pre class="fragment"><code class="hljs javascript">names.push("Jan")</code></pre>
         </section>
 
@@ -238,7 +249,7 @@ console.log(names[4]);</code></pre>
 
         <section>
           <h3>Więcej możliwości</h3>
-          <p><code>push</code> to nie jedyna metoda. Jest ich więcej, przykładowo</p>
+          <p><code>push</code> to nie jedyna metoda. Jest ich więcej, przykładowo:</p>
           <ul>
             <li class="fragment"><code>pop</code> - usuwa ostatni element</li>
             <li class="fragment"><code>shift</code> - usuwa pierwszy element i przesuwa indeksy pozostałych elementów</li>
@@ -251,17 +262,22 @@ console.log(names[4]);</code></pre>
 
         <section>
           <h3 style="font-size: 3rem">Obiekty</h3>
-          <p>Obiekty, podobnie jak tablice, są również zbiorami zmiennych. Z tym, że w obiektach, zmienne nazywamy.</p>
+          <p>
+            Obiekty, podobnie jak tablice, służą do przechowywania wielu zmiennych,
+            z tą jednak różnicą, że zmienne w obiektach są nazywane, a nie numerowane.</p>
         </section>
 
         <section>
           <h3 style="font-size: 3rem">Przypadek z życia</h3>
-          <p>Wyobraźcie sobie, że mamy wiele danych użytkownika: Imię, nazwisko, wiek, płeć, adres email, miasto itp...</p>
+          <p>
+            Wyobraźcie sobie, że mamy wiele danych użytkownika:<br />
+            Imię, nazwisko, wiek, płeć, adres email, miasto itp...
+          </p>
           <p class="fragment">Jak przechować je w kodzie?</p>
         </section>
 
         <section>
-          <h3 style="font-size: 3rem">W osobnych zmiennych?</h3>
+          <h3 style="font-size: 3rem">Możemy użyć osobnych zmiennych</h3>
           <pre class="fragment"><code class="hljs javascript">let userFirstName = 'Ewa';
 let userLastName = 'Kowalska';
 let userAge = 27;
@@ -270,21 +286,24 @@ let userEmailAddress = 'ewa.kowalska@poczta.pl';
 let userCity = 'Gdańsk';
 // ...
 </code></pre>
-          <p class="fragment">Mało to przyjazne, prawda?</p>
+          <p class="fragment">Ale mało to przyjazne, prawda?</p>
         </section>
 
         <section>
-          <h3 style="font-size: 3rem">Tablice?</h3>
+          <h3 style="font-size: 3rem">Możemy użyć tablicy</h3>
           <pre class="fragment"><code class="hljs javascript">let user = [
   'Ewa', 'Kowalska', 27, 'k', 'ewa.kowalska@poczta.pl', 'Gdańsk'
 ];</code></pre>
-          <p class="fragment">To wygląda już lepiej, ale dobranie się do np adresu email oznacza coś takiego:</p>
+          <p class="fragment">
+            To wygląda już lepiej, ale aby dobrać się np. do adresu email,
+            musimy pamiętać jego indeks:
+          </p>
           <pre class="fragment"><code class="hljs javascript">console.log( user[4] )</code></pre>
           <p class="fragment">Pamiętanie numerków to nie jest dobry pomysł.</p>
         </section>
 
         <section>
-          <h3 style="font-size: 3rem">Dlatego mamy obiekty</h3>
+          <h3 style="font-size: 3rem">Obiekt na ratunek!</h3>
           <pre class="fragment"><code class="hljs javascript">let user = {
   firstName: 'Ewa',
   lastName: 'Kowalska',
@@ -311,15 +330,16 @@ let userCity = 'Gdańsk';
           <pre class="fragment"><code class="hljs javascript">user.nazwa</pre></code>
           <p class="fragment">Lub, podobnie jak w przypadku tablicy</p>
           <pre class="fragment"><code class="hljs javascript">user['nazwa']</code></pre>
-          <p class="fragment">Ale ta notacja jest rzadziej używana, tylko w specyficznych przypadkach.</p>
+          <p class="fragment">Obie notacje są równoważne, ale częściej używa się pierwszej z nich.</p>
         </section>
 
 
         <section>
           <h3 style="font-size: 3rem">Wartości wewnątrz obiektów</h3>
           <p>Nazywane są <b>własnościami</b> lub <b>polami</b> obiektu. W angielskiej nomenklaturze określa się je jako <b>properties</b>.</p>
-          <p class="fragment">Pamiętacie <code>length</code> z tablic? To jest również pole tablic!</p>
+          <p class="fragment">Pamiętacie <code>length</code> z tablic?</p>
           <pre class="fragment"><code class="hljs javascript">console.log( names.length );</code></pre>
+          <p class="fragment">To jest pole tablicy!</p>
         </section>
 
         <section>
