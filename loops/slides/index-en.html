@@ -74,17 +74,18 @@
         </section>
         <section>
           <h3 style="font-size: 3rem">Most probably we've come up with something like</h3>
-          <pre class="fragment"><code>
-1. Open the photocopier lid.
-2. Take the first sheet of paper from the stack.
-3. Insert it into the photocopier, printed side down.
-4. Close the lid.
-5. Press the copy button.
-6. Open the lid.
-7. Take the sheet out of the photocopier and put it aside on a second stack (printed side down).
-8. Take the second sheet of paper.
-9. Insert it into the photocopier, printed side down.
-10. (...)
+          <pre class="fragment"><code>1. Put the file on the left side of the photocopier
+2. Open the photocopier lid
+3. Take the first sheet of paper from the stack on the left
+4. Insert it into the photocopier, printed side down
+5. Close the lid
+6. Press the copy button
+7. Open the lid
+8. Take the page out of the photocopier and lay it on the stack to the right
+   (printed side down)
+9. Take the second sheet of paper from the stack on the left
+10. Insert it into the photocopier, printed side down
+11. (...)
 </code></pre>
           <p class="fragment">We're not going to repeat these instructions for all 200 pages, now are we?</p>
         </section>
@@ -95,32 +96,29 @@
         <section>
           <h3 style="font-size: 3rem">How do we write this dowm for our intern?</h3>
           <pre class="fragment"><code>
-1. Open the photocopier lid.
-2. Take the first sheet of paper.
-3. Insert it into the photocopier, printed side down.
-4. Close the lid.
-5. Press the copy button.
-6. Repeat the following for all pages 2 to 200:
-  6.1. Open the lid.
-  6.2. Take the sheet out of the photocopier and put it aside on a second stack (printed side down).
-  6.3. Take the next sheet of paper from the stack.
-  6.4. Insert it into the photocopier, printed side down.
-  6.5. Close the lid.
-  6.6. Press the copy button.
-7. (Once we are done with page 200) Open the lid
-8. Take the sheet out of the photocopier and put it aside on a second stack (printed side down).
-9. Take the file of copied documents out of the photocopier drawer.
-10. Bring both files to my office.
-
+1. Put the file on the left side of the photocopier
+2. Open the photocopier lid
+3. Repeat the following for all pages from 1 to 200:
+    3.1. Take a page with the current number from the stack on the left
+    3.2. Insert it into the photocopier, printed side down
+    3.3. Close the lid
+    3.4. Press the copy button
+    3.5. Open the lid
+    3.6. Take the page out of the photocopier and lay it on the stack to the right
+         (printed side down)
+4. (Once we are done with page 200)
+   Close the photocopier lid
+5. Take the file of copied documents out of the photocopier drawer
+6. Bring both files to my office
 </code></pre>
         </section>
         <section id="elements">
-          <h3 style="font-size: 3rem">Step 6. in our algorithm is a loop</h3>
+          <h3 style="font-size: 3rem">Step 3. in our algorithm is a loop</h3>
           <p>It consists of four elements:</p>
           <ul>
-            <li class="fragment"><strong>Start conditions</strong> - In this example, our loop starts at the second page. </li>
+            <li class="fragment"><strong>Start conditions</strong> - In this example, our loop starts at the second page.</li>
             <li class="fragment"><strong>Stop conditions</strong> - Here we stop copying after page 200.</li>
-            <li class="fragment"><strong>Looped instructions</strong> - everything covered by steps 6.x.</li>
+            <li class="fragment"><strong>Looped instructions</strong> - everything covered by steps 3.x.</li>
             <li class="fragment"><strong>Transition to next step</strong> - Here we move from one page to another by increasing the number by one. This is not mandatory - if we copied only the even pages, we'd increase the number by 2.</li>
           </ul>
         </section>
@@ -181,7 +179,7 @@
         <section>
           <h3 style="font-size: 3rem">How do we use it?</h3>
           <p>To read a regular variable, it's enough to use variable name. For example, this is how we'll send greetings to the console for the person whose name is stored in `username`:</p>
-          <pre class="fragment"><code class="hljs javascript">console.log( "Hey " + username + "!" );</code></pre>          
+          <pre class="fragment"><code class="hljs javascript">console.log( "Hey " + username + "!" );</code></pre>
           <p class="fragment">Similarly, to read the value of an array element, we'll need the array name and element number:</p>
           <pre class="fragment"><code class="hljs javascript">console.log( "Hey " + usernames[1] + "!" );</code>
         </section>
@@ -342,12 +340,12 @@ for (var i=0; i&lt;names.length; i++) {
               Image source: giphy.com
             </figcaption>
           </figure>
-        </section> 
+        </section>
         <section>
           <p>We can download our source code package from <a href="../exercise.zip">here</a>.</p>
-        </section>          
+        </section>
         <section>
-          <p>File <b>exercise1.html</b> contains an array with image addresses. We'd like to display the images in browser, using JavaScript.</p>  
+          <p>File <b>exercise1.html</b> contains an array with image addresses. We'd like to display the images in browser, using JavaScript.</p>
           <p class="fragment">The function that creates image element and adds it to the page is already prepared. The only thing we need to do is to call it from within a loop.</p>
         </section>
         <section>
@@ -381,7 +379,7 @@ for (var i=0; i&lt;names.length; i++) {
       var photos = [&#x27;img/2.jpg&#x27;,&#x27;img/3.jpg&#x27;,&#x27;img/4.jpg&#x27;,&#x27;img/5.jpg&#x27;,
                     &#x27;img/6.jpg&#x27;,&#x27;img/7.jpg&#x27;,&#x27;img/8.jpg&#x27;,&#x27;img/9.jpg&#x27;,
                     &#x27;img/10.jpg&#x27;,&#x27;img/11.jpg&#x27;,&#x27;img/12.jpg&#x27;];
-      
+
       // a tutaj miejsce na Wasz skrypt ;-)
 
     &#x3C;/script&#x3E;
@@ -404,7 +402,7 @@ for (var i=0; i&lt;names.length; i++) {
             </figcaption>
           </figure>
         </section>
-          
+
         <section>
           <h3>Did you do it?</h3>
           <pre class="fragment"><code class="hljs javascript">
