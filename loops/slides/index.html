@@ -74,19 +74,18 @@
         </section>
         <section>
           <h3 style="font-size: 3rem">Pewnie wyszło nam coś takiego:</h3>
-          <pre class="fragment"><code>
-1. Otwórz wieko kserokopiarki.
-2. Weź pierwszą kartkę ze stosu.
-3. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu.
-4. Zamknij wieko.
-5. Naciśnij przycisk kopiowania.
-6. Otwórz wieko
-7. Wyjmij kartkę z kserokopiarki i odłóż ją na stertę obok
-   (zadrukowaną stroną do dołu)
-8. Weź drugą kartkę ze stosu.
-9. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu.
-10. (...)
-
+          <pre class="fragment"><code>1. Połóż plik kartek do skserowania po lewej stronie kserokopiarki
+2. Otwórz wieko kserokopiarki
+3. Weź pierwszą kartkę ze stosu po lewej stronie
+4. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu
+5. Zamknij wieko
+6. Naciśnij przycisk kopiowania
+7. Otwórz wieko
+8. Wyjmij kartkę z kserokopiarki i odłóż ją na stertę po prawej stronie,
+   zadrukowaną stroną do dołu
+9. Weź drugą kartkę ze stosu po lewej stronie
+10. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu
+11. (...)
 </code></pre>
           <p class="fragment">Nie chcemy chyba rozpisywać szczegółowych instrukcji dla każdej kartki z osobna?</p>
         </section>
@@ -96,36 +95,29 @@
         </section>
         <section>
           <h3 style="font-size: 3rem">Jak zapiszemy instrukcje dla naszego praktykanta?</h3>
-          <pre class="fragment"><code>
-1. Otwórz wieko kserokopiarki.
-2. Weź pierwszą kartkę ze stosu.
-3. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu.
-4. Zamknij wieko.
-5. Naciśnij przycisk kopiowania.
-6. Powtórz dla kartek o numerach od 2 do 200:
-    6.1. Otwórz wieko
-    6.2. Wyjmij kartkę z kserokopiarki i odłóż ją na stertę obok
-         (zadrukowaną stroną do dołu)
-    6.3. Weź kartkę o aktualnym numerze ze stosu.
-    6.4. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu.
-    6.5. Zamknij wieko
-    6.6. Naciśnij przycisk kopiowania
-7. (Kiedy zrobimy to wszystko dla dwusetnej kartki)
-   Otwórz wieko kserokopiarki
-8. Wyjmij kartkę z kserokopiarki i odłóż ją na stertę obok
-   (zadrukowaną stroną do dołu)
-9. Wyjmij plik skserowanych kartek z szuflady na dole kserokopiarki.
-10. Zabierz oba stosy kartek i przynieś do mojego biura.
-
+          <pre class="fragment"><code>1. Połóż plik kartek do skserowania po lewej stronie kserokopiarki
+2. Otwórz wieko kserokopiarki
+3. Powtórz dla kartek o numerach od 1 do 200:
+    3.1. Weź kartkę o aktualnym numerze ze stosu po lewej stronie
+    3.2. Włóż kartkę do kserokopiarki zadrukowaną stroną do dołu
+    3.3. Zamknij wieko
+    3.4. Naciśnij przycisk kopiowania
+    3.5. Otwórz wieko
+    3.6. Wyjmij kartkę z kserokopiarki i odłóż ją na stertę
+         po prawej stronie, zadrukowaną stroną do dołu
+4. (Kiedy zrobimy to wszystko dla dwusetnej kartki)
+   Zamknij wieko kserokopiarki
+5. Wyjmij plik skserowanych kartek z szuflady na dole kserokopiarki
+6. Zabierz oba stosy kartek i przynieś do mojego biura
 </code></pre>
         </section>
         <section id="elements">
-          <h3 style="font-size: 3rem">Instrukcja 6. w naszym schemacie to właśnie pętla</h3>
+          <h3 style="font-size: 3rem">Instrukcja 3. w naszym schemacie to właśnie pętla</h3>
           <p>Składają się nam na nią cztery elementy:</p>
           <ul>
-            <li class="fragment"><strong>Warunki początkowe</strong> - od czego zaczynamy. Nasza pętla w przykładzie powyżej zaczyna się od drugiej kartki. </li>
+            <li class="fragment"><strong>Warunki początkowe</strong> - od czego zaczynamy. Nasza pętla w przykładzie powyżej zaczyna się od drugiej kartki.</li>
             <li class="fragment"><strong>Warunek trwania pętli</strong> - kiedy mamy przestać. Tutaj kończymy kserować po dwusetnej kartce.</li>
-            <li class="fragment"><strong>Instrukcje do wykonania w pętli</strong> - wszystko co jest zawarte podpunktach 6.x.</li>
+            <li class="fragment"><strong>Instrukcje do wykonania w pętli</strong> - wszystko co jest zawarte podpunktach 3.x.</li>
             <li class="fragment"><strong>Instrukcja przejścia do następnego kroku</strong>. Tutaj za każdym razem kiedy wykonamy instrukcje pętli, zwiększamy numer aktualnej kartki o jeden. Gdyby z jakiegoś powodu trzeba było skserować tylko nieparzyste strony, zwiększałybyśmy ten numer o 2.</li>
           </ul>
         </section>
@@ -187,9 +179,9 @@
         <section>
           <h3 style="font-size: 3rem">Jak odczytać wartość z tablicy?</h3>
           <p>Żeby odczytać wartość zmiennej wystarczy użyć jej nazwy. Na przykład, tak wypiszemy w konsoli pozdrowienia dla osoby ktorej imię zapisaliśmy w `name`;</p>
-          <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + name + "!" );</code></pre>          
+          <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + name + "!" );</code></pre>
           <p class="fragment">Podobnie, żeby odczytać element z tablicy, potrzebujemy użyć jej nazwy i numeru elementu:</p>
-          <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + names[1] + "!" );</code></pre>   
+          <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + names[1] + "!" );</code></pre>
         </section>
         <section>
           <h3 style="font-size: 3rem">Uwaga! Dziwne numerowanie ;)</h3>
@@ -348,12 +340,12 @@ for (var i=0; i&lt;names.length; i++) {
               Grafika zapożyczona z serwisu giphy.com
             </figcaption>
           </figure>
-        </section> 
+        </section>
         <section>
           <p><a href="../exercise.zip">Stąd</a> możemy pobrać paczkę z kodem źródłowym.</p>
-        </section>          
+        </section>
         <section>
-          <p>W pliku <b>exercise1.html</b> mamy zapisaną tablicę obrazkow. Będziemy chcieli dodać te obrazki na stronie przy użyciu kodu JavaScript.</p>  
+          <p>W pliku <b>exercise1.html</b> mamy zapisaną tablicę obrazkow. Będziemy chcieli dodać te obrazki na stronie przy użyciu kodu JavaScript.</p>
           <p class="fragment">Funkcja, która tworzy obrazek o podanym adresie i go dodaje na stronie, jest już gotowa. Naszym zadaniem będzie odpowiednio wywołać ją w pętli.</p>
         </section>
         <section>
@@ -387,7 +379,7 @@ for (var i=0; i&lt;names.length; i++) {
       var photos = [&#x27;img/2.jpg&#x27;,&#x27;img/3.jpg&#x27;,&#x27;img/4.jpg&#x27;,&#x27;img/5.jpg&#x27;,
                     &#x27;img/6.jpg&#x27;,&#x27;img/7.jpg&#x27;,&#x27;img/8.jpg&#x27;,&#x27;img/9.jpg&#x27;,
                     &#x27;img/10.jpg&#x27;,&#x27;img/11.jpg&#x27;,&#x27;img/12.jpg&#x27;];
-      
+
       // a tutaj miejsce na Wasz skrypt ;-)
 
     &#x3C;/script&#x3E;
@@ -410,7 +402,7 @@ for (var i=0; i&lt;names.length; i++) {
             </figcaption>
           </figure>
         </section>
-          
+
         <section>
           <h3>Udało się?</h3>
           <pre class="fragment"><code class="hljs javascript">
