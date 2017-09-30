@@ -1,0 +1,48 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background: #eee;
+}
+
+.shelf {
+  border: solid 1px #ccc;
+  background: white;
+  margin: 20px;
+  padding: 6px;
+}
+
+.book {
+  display: inline-block;
+  width: 150px;
+  height: 220px;
+  margin: 6px;
+  box-sizing: border-box;
+  padding: 12px;
+  background-size: cover;
+  color: white;
+  text-shadow: black 1px 1px 3px;
+  box-shadow: #555 3px 3px 12px;
+  font-size: 16px;
+  position: relative;
+  text-decoration: none;
+  vertical-align: top;
+}
+
+.book .title {
+  text-align: center;
+  font-size: 18px;
+}
+
+.book .author {
+  text-align: center;
+  position: absolute;
+  width: 126px;
+  bottom: 30px;
+}
+
+.book .year {
+  text-align: center;
+  width: 126px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 12px;
+}
