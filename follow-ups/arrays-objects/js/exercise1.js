@@ -24,5 +24,5 @@ function renderBook(options) {
     <div class="year">${options.year}</div>
   </a>`
 
-  shelfElement.innerHTML = shelf.innerHTML + html
+  shelfElement.innerHTML = shelfElement.innerHTML + html
 }
