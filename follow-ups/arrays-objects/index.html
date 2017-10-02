@@ -192,7 +192,7 @@ console.log(names[4]);</code></pre>
 
         <section>
           <h3>Spróbujcie wpisać w konsolę następujący kod:</h3>
-          <pre><code class="hljs javascript">for (var i=0; i<5; i++) { console.log(i) }</code></pre>
+          <pre><code class="hljs javascript">for (let i=0; i<5; i++) { console.log(i) }</code></pre>
           <p class="fragment">Co wyszło?</p>
           <pre class="fragment"><code class="hljs javascript">0
 1
@@ -230,10 +230,10 @@ console.log(names[4]);</code></pre>
 
         <section>
           <h3>Dodawanie elementu</h3>
-          <p>Spróbujcie dodać imię do naszej tablicy <code>names</code>, a następnie wypisać ją pętlą, jak przed chwilą.</p>
+          <p>Spróbujcie dodać imię do naszej tablicy <code>names</code>, a następnie wypisać ją w pętli, jak przed chwilą.</p>
           <p class="fragment">
             Ponieważ w pętli używamy własności <code>.length</code>, nie ma znaczeniam jak duża jest
-            tablica ani, ile razy została zmieniona - zawsze wypiszemy wszystkie elementy.
+            tablica, ani ile razy została zmieniona - zawsze wypiszemy wszystkie elementy.
           </p>
         </section>
 
@@ -252,7 +252,7 @@ console.log(names[4]);</code></pre>
 
         <section>
           <h3 style="font-size: 3rem">Obiekty</h3>
-          <p>Obiekty, podobnie jak tablice, są również zbiorami wartości. Z tym, że w obiektach, wartości nazywamy.</p>
+          <p>Obiekty, podobnie jak tablice, są również zbiorami wartości. Z tym, że w obiektach, każda wartość ma swoją nazwę.</p>
         </section>
 
         <section>
@@ -292,7 +292,7 @@ let userCity = 'Gdańsk';
   age: 27,
   gender: 'k',
   emailAddress: 'ewa.kowalska@poczta.pl',
-  userCity: 'Gdańsk';
+  userCity: 'Gdańsk'
 }
 </code></pre>
           <p class="fragment">A tak można odczytać wartość adresu email:</p>
@@ -358,7 +358,7 @@ let userCity = 'Gdańsk';
 
         <section>
           <h3>Ćwiczenie</h3>
-          <p>Otwórzcie plik <code>excercise1.html</code></p>
+          <p>Otwórzcie plik <code>exercise1.html</code></p>
         </section>
 
         <section>
@@ -496,7 +496,7 @@ renderBook(book1);</code></pre>
           <pre class="fragment"><code class="hljs javascript">let books = [
   {author: 'Douglas Adams', title: 'Hitchhickers ...', year: 1979},
   {author: 'Douglas Adams', title: 'Restaurant at ...', year: 1982},
-  {author: 'Douglas Adams', title: 'Life, the Uni ...', year: 1985},
+  {author: 'Douglas Adams', title: 'Life, the Uni ...', year: 1985}
 ];</code></pre>
           <p class="fragment">Aby dostać się do wartości:</p>
           <pre class="fragment"><code class="hljs javascript">books[0].author // 'Douglas Adams'</code></pre>
@@ -555,11 +555,11 @@ let title = novels[17].translations[3].title</code></pre>
         <section>
           <h3>Opis zadania</h3>
           <p>
-            W dobrze nam znanym pliku <code>excercise1.html</code> mamy również
+            W dobrze nam znanym pliku <code>exercise1.html</code> mamy również
             dostępne bardziej skomplikowane dane pod zmienną <code>shelf</code>.
           </p>
           <p class="fragment">
-            Waszym zadaniem będzie napisanie kodu, który te książki umieści na
+            Waszym zadaniem będzie napisanie kodu, który pobierze informacje o książkach ze zmiennej <code>shelf</code>, i użyje funkcji <code>renderBook</code> żeby umieścić te książki na
             naszej półce.
           </p>
         </section>
@@ -578,6 +578,9 @@ let title = novels[17].translations[3].title</code></pre>
             <code>shelf.js</code> lub w konsoli przeglądarki poprzez
             wpisanie <code>shelf</code>.
           </p>
+          <p class="fragment">
+            Korzystając ze wszystkiego, co wiemy do tej pory o tablicach, obiektach i pętlach, chcemy wydobyć informacje o poszczegolnych książkach, i przekazać je do funkcji <code>renderBook</code> w takiej formie, w jakiej je zaakceptuje.
+          </p>          
           <p class="fragment">
             Powodzenia!
           </p>
