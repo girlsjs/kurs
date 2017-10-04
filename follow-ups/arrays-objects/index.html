@@ -1,0 +1,651 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>girls.js - Tablice i obiekty</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/simple.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        let link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!-- facebook meta -->
+    <meta property="og:description" content="Materiały do kursu girls.js: poznawanie języka JavaScript na przykładzie tworzenia interaktywnej galerii obrazków." />
+    <meta property="og:image" content="https://girlsjs.github.io/www/assets/logo.png" />
+</head>
+<body>
+<div class="left-bar">
+  <div class="left-bar-photo"></div>
+</div>
+<div class="help">
+  <a href="help.html">?</a>
+</div>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <div class="big-logo">
+              <img style="height: 400px; border: none; box-shadow: none;" src="img/logo.svg"/>
+            </div>
+            <h3 class="fragment grow">Cześć!</h3>
+            <p>(naciśnij spację, żeby kontynuować)</p>
+            <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+
+        <section>
+            <h1 style="font-size: 3rem">Tablice i obiekty</h1>
+            <figure>
+              <img src="img/octopus.jpg" />
+              <figcaption style="font-size: 0.5rem">
+                Grafika zapożyczona z serwisu eloquentjavascript.net
+              </figcaption>
+            </figure>
+        </section>
+
+
+        <section>
+            <h3 style="font-size: 3rem">Tablice i obiekty</h3>
+            <p>
+              Dzisiaj poznamy dwa bardzo ważne koncepty dla programowania w języku JavaScript - są
+              to <br />tablice oraz obiekty.
+            </p>
+        </section>
+
+
+        <section>
+          <h3 style="font-size: 3rem">Tablice</h3>
+          <p>Tablice to po prostu zmienne, które mogą przechowywać wiele wartości.</p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Zmienna</h3>
+          <p>Jeżeli byłyście na warsztatach, to pewnie pamiętacie, że zmienna
+            to taki schowek, do którego możemy włożyć jakąś wartość.</p>
+            <figure>
+              <img src="img/drawer.jpg" style="height: 10em" />
+              <figcaption style="font-size: 0.5rem">
+                Grafika z serwisu lernpfadprismen.wordpress.com
+              </figcaption>
+            </figure>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Tablica</h3>
+          <p>Tablica to taki zbiór schowków, z numerkami. Do każdego z nich też można włożyć jakąś wartość.</p>
+            <figure>
+              <img src="img/locker.jpg" style="height: 12em" />
+              <figcaption style="font-size: 0.5rem">
+                Grafika z serwisu maxpixel.freegreatpicture.com
+              </figcaption>
+            </figure>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Po co to?</h3>
+          <p>Żeby w ładny sposób przechowywać wiele podobnych danych.<br /></p>
+          <p class="fragment">
+            Przykład: Jeżeli mamy 10 użytkowników na stronie, to znacznie łatwiej przechować ich imiona w jednej
+            tablicy niż w 10 oddzielnych zmiennych.
+          </p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Jak to wygląda?</h3>
+          <p>Przypomnijmy sobie najpierw jak definiujemy zmienne:</p>
+          <pre class="fragment"><code class="hljs javascript">let name = "Kasia";</code></pre>
+          <p class="fragment">A tak wygląda tablica:</p>
+          <pre class="fragment"><code class="hljs javascript">let names = ["Kasia", "Basia", "Asia"];</code></pre>
+          <p class="fragment">Lub tak:</p>
+          <pre class="fragment"><code class="hljs javascript">let names = [
+  "Kasia",
+  "Basia",
+  "Asia"
+];</code></pre>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Jak odczytać wartość z tablicy?</h3>
+          <p>Żeby odczytać wartość zmiennej wystarczy użyć jej nazwy. Na przykład, tak wypiszemy w konsoli pozdrowienia dla osoby ktorej imię zapisaliśmy w <code>name</code></p>
+          <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + name + "!" );</code></pre>
+          <p class="fragment">Żeby odczytać element z tablicy, potrzebujemy użyć jej nazwy i numeru elementu:</p>
+          <pre class="fragment"><code class="hljs javascript">console.log( "Hej " + names[1] + "!" );</code></pre>
+        </section>
+        <section>
+          <h3 style="font-size: 3rem">Uwaga! Inne numerowanie ;)</h3>
+          <p>W tablicach zaczynamy numerować od wartości 0:</p>
+          <pre class="fragment"><code class="hljs javascript">let names = [
+  "Kasia", // To jest wartość o numerze 0
+  "Basia", // To jest wartość o numerze 1
+  "Asia"   // To jest wartość o numerze 2
+];</code></pre>
+        </section>
+
+        <section>
+          <h2>Do maszyn!</h2>
+          <figure>
+              <img style="height: 400px;" src="img/F-15_Eagle_female_pilots,_3rd_Wing.jpg"/>
+              <figcaption style="font-size: 0.5rem;"><a href="https://commons.wikimedia.org/wiki/File:F-15_Eagle_female_pilots,_3rd_Wing.jpg">Zdjęcie w domenie publicznej. Autorem jest Tech. Sgt. Keith Brown</a></figcaption>
+            </figure>
+            <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+
+        <section>
+          <h3>Spróbujcie utworzyć tablicę w konsoli</h3>
+          <ul>
+            <li>Otwórzcie przeglądarkę Chrome</li>
+            <li>Otwórzcie narzędzia programistyczne <br /><i>(F12 lub Cmd+Opt+I)</i></li>
+            <li>Zobaczcie, czy możecie utworzyć tablicę <i>names</i> jak z poprzednich slajdów, ale z 5 imionami.</li>
+            <li>Spróbujcie wypisać kolejne elementy tej tablicy do konsoli, używając funkcji <code>console.log</code>.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Udało się?</h3>
+          <p>Pewnie wyszło wam coś takiego?</p>
+          <pre class="fragment"><code class="hljs javascript">let names = ["Michał", "Jaromir", "Gracjan", "Hipolit", "Maksym"];
+
+console.log(names[0]);
+console.log(names[1]);
+console.log(names[2]);
+console.log(names[3]);
+console.log(names[4]);</code></pre>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Rozmiar tablicy</h3>
+          <p>Tablica może mieć dowolną liczbę elementów.</p>
+          <p class="fragment">Aby w dowolnym momencie sprawdzić, ile elementów zawiera, wystarczy użyć wartości <code>.length</code></p>
+          <pre class="fragment"><code class="hljs javascript">console.log( names.length );
+// wyświetli 5  </code></pre>
+        </section>
+
+        <section>
+          <h3>A co jeśli...</h3>
+          <p>Będziemy mieli 100 użytkowników?<br /> Jak wypisać imiona wszystkich?</p>
+          <p class="fragment">Nie ma sensu robić tego ręcznie, prawda?</p>
+          <p class="fragment">Co nam pomoże?</p>
+        </section>
+
+        <section>
+          <h3>Pętle!</h3>
+          <p class="fragment">Przypomnijmy sobie pętle z warsztatu.</p>
+          <pre class="fragment"><code class="hljs javascript">for (let i=0; i<10; i++) {
+  // wykonaj ten kod tak długo jak warunek trwania pętli jest prawdziwy
+}</code></pre>
+        </section>
+
+        <section>
+          <h3>Spróbujcie wpisać w konsolę następujący kod:</h3>
+          <pre><code class="hljs javascript">for (let i=0; i<5; i++) { console.log(i) }</code></pre>
+          <p class="fragment">Co wyszło?</p>
+          <pre class="fragment"><code class="hljs javascript">0
+1
+2
+3
+4</code></pre>
+        </section>
+
+
+        <section>
+          <h3>Czas połączyć tablice i pętle</h3>
+          <p>Używając pętli, wypiszcie wszystkie imiona.</p>
+          <p class="fragment">Nie zapomnijcie o <code>names.length</code></p>
+        </section>
+
+
+        <section>
+          <h3>Wynik:</h3>
+          <pre class="fragment"><code class="hljs javascript">for (let i=0; i < names.length; i++) { console.log(names[i]) }</code></pre>
+        </section>
+
+
+        <section>
+          <h3>Więcej zabawy z tablicami</h3>
+          <p>Same, statyczne tablice są nudne.</p>
+          <p class="fragment">Zabawa zaczyna się, kiedy dodajemy, usuwamy, lub modyfikujemy zawartość tablic.</p>
+        </section>
+
+        <section>
+          <h3>Dodawanie elementu</h3>
+          <p>Poza własnością <code>length</code>, tablice mają różne metody, które pozwalają manipulować ich zawartością.</p>
+          <p>Przykładowo, aby dodać element na końcu tablicy, wystarczy użyć metody <code>push</code></p>
+          <pre class="fragment"><code class="hljs javascript">names.push("Jan")</code></pre>
+        </section>
+
+        <section>
+          <h3>Dodawanie elementu</h3>
+          <p>Spróbujcie dodać imię do naszej tablicy <code>names</code>, a następnie wypisać ją w pętli, jak przed chwilą.</p>
+          <p class="fragment">
+            Ponieważ w pętli używamy własności <code>.length</code>, nie ma znaczenia, jak duża jest
+            tablica, ani ile razy została zmieniona - zawsze wypiszemy wszystkie elementy.
+          </p>
+        </section>
+
+        <section>
+          <h3>Więcej możliwości</h3>
+          <p><code>push</code> to nie jedyna metoda. Jest ich więcej, przykładowo</p>
+          <ul>
+            <li class="fragment"><code>pop</code> - usuwa ostatni element</li>
+            <li class="fragment"><code>shift</code> - usuwa pierwszy element i przesuwa indeksy pozostałych elementów</li>
+            <li class="fragment"><code>unshift</code> - dodaje element jako pierwszy i przesuwa pozostałe indeksy</li>
+            <li class="fragment"><code>concat</code> - pozwala łączyć kilka tablic w jedną</li>
+          </ul>
+          <p class="fragment">Więcej metod znajdziecie <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype">tu</a></p>
+        </section>
+
+
+        <section>
+          <h3 style="font-size: 3rem">Obiekty</h3>
+          <p>Obiekty, podobnie jak tablice, są również zbiorami wartości. Z tym, że w obiektach każda wartość ma swoją nazwę.</p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Przypadek z życia</h3>
+          <p>Wyobraźcie sobie, że mamy wiele danych użytkownika: Imię, nazwisko, wiek, płeć, adres email, miasto itp...</p>
+          <p class="fragment">Jak przechować je w kodzie?</p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">W osobnych zmiennych?</h3>
+          <pre class="fragment"><code class="hljs javascript">let userFirstName = 'Ewa';
+let userLastName = 'Kowalska';
+let userAge = 27;
+let userGender = 'k';
+let userEmailAddress = 'ewa.kowalska@poczta.pl';
+let userCity = 'Gdańsk';
+// ...
+</code></pre>
+          <p class="fragment">Mało to przyjazne, prawda?</p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Tablice?</h3>
+          <pre class="fragment"><code class="hljs javascript">let user = [
+  'Ewa', 'Kowalska', 27, 'k', 'ewa.kowalska@poczta.pl', 'Gdańsk'
+];</code></pre>
+          <p class="fragment">To wygląda już lepiej, ale odczytywanie np. adresu email oznacza coś takiego:</p>
+          <pre class="fragment"><code class="hljs javascript">console.log( user[4] )</code></pre>
+          <p class="fragment">Pamiętanie numerków nie jest łatwe.</p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Dlatego mamy obiekty</h3>
+          <pre class="fragment"><code class="hljs javascript">let user = {
+  firstName: 'Ewa',
+  lastName: 'Kowalska',
+  age: 27,
+  gender: 'k',
+  emailAddress: 'ewa.kowalska@poczta.pl',
+  userCity: 'Gdańsk'
+}
+</code></pre>
+          <p class="fragment">A tak można odczytać wartość adresu email:</p>
+          <pre class="fragment"><code class="hljs javascript">console.log(user.emailAddress)</code></pre>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Anatomia obiektów</h3>
+          <pre class="fragment"><code class="hljs javascript">let user = { nazwa: 'wartość1', nazwa: 'wartość2'}</pre></code>
+          <p class="fragment">Porównajmy z tablicą</p>
+          <pre class="fragment"><code class="hljs javascript">let names = ["Asia", "Basia", "Kasia"]</code></pre>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Wartości wewnątrz obiektów</h3>
+          <p class="fragment">Aby dostać się do wartości używamy następującej notacji:</p>
+          <pre class="fragment"><code class="hljs javascript">user.nazwa</pre></code>
+          <p class="fragment">Lub, podobnie jak w przypadku tablicy:</p>
+          <pre class="fragment"><code class="hljs javascript">user['nazwa']</code></pre>
+          <p class="fragment">Ale ta notacja jest rzadziej używana, tylko w specyficznych przypadkach.</p>
+        </section>
+
+
+        <section>
+          <h3 style="font-size: 3rem">Wartości wewnątrz obiektów</h3>
+          <p>Nazywane są <b>własnościami</b> lub <b>polami</b> obiektu. W angielskiej nomenklaturze określa się je jako <b>properties</b>.</p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Właściwości obiektów</h3>
+          <p>Można powiedzieć, że właściwości obiektów są takimi zmiennymi wewnątrz obiektów</p>
+
+          <p class="note side-note fragment">
+            Pamiętacie, że zmienne mogą przyjmować dowolne wartości, w tym nawet funkcje?
+          </p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Funkcje wewnątrz obiektów</h3>
+          <p>Funkcje wewnątrz obiektów nazywamy <b>metodami</b>. Tworzy się je tak:</p>
+          <pre class="fragment"><code class="hljs javascript">let myObject = {
+  sayHi: function () {
+    console.log('Hi!')
+  }
+}</code></pre>
+          <p class="fragment">A wywołuje tak:</p>
+          <pre class="fragment"><code class="hljs javascript">myObject.sayHi();
+// Wypisze: Hi!</code></pre>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Ale o funkcjach innym razem</h3>
+          <p>Na następnym follow-upie zajmiemy się tematyką funkcji. Dziś wracamy do obiektów.</p>
+        </section>
+
+        <section>
+          <h2>Sprawdźmy obiekty w boju!</h2>
+          <figure>
+              <img style="height: 400px;" src="./img/army.jpg" />
+              <figcaption style="font-size: 0.5rem;"><a href="https://commons.wikimedia.org/wiki/File:Flickr_-_Israel_Defense_Forces_-_Karakal_Winter_Training_(1).jpg">Zdjęcie w domenie publicznej. Autorem jest Tech. Sgt. Keith Brown</a></figcaption>
+            </figure>
+        </section>
+
+        <section>
+          <h3>Ćwiczenie</h3>
+          <p>Otwórzcie plik <code>exercise1.html</code></p>
+        </section>
+
+        <section>
+          <h3>Struktura</h3>
+          <p>Plik wygląda z grubsza tak:</p>
+          <pre class="fragment"><code class="hljs javascript">&#x3C;html&#x3E;
+&#x3C;head&#x3E;
+  ...
+&#x3C;/head&#x3E;
+&#x3C;body&#x3E;
+  ...
+
+  &#x3C;div class="shelf"&#x3E;
+  &#x3C;div&#x3E;
+
+  &#x3C;script type="text/javascript"&#x3E;
+    // Tutaj miejsce na Twój skrypt
+  &#x3C;script&#x3E;
+
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+</code></pre>
+        </section>
+
+
+
+        <section>
+          <h3>Sprawdźcie, co jest w przeglądarce.</h3>
+          <p class="fragment">Nic specjalnego.</p>
+          <p class="fragment">To jest pusta półka na książki.</p>
+        </section>
+
+        <section>
+          <h3>Ale to nie wszystko.</h3>
+          <p class="fragment">
+            Dodatkowo dostępna jest przygotowana funkcja <code>renderBook</code>,
+            którą napisaliśmy dla Was.
+          </p>
+          <p class="fragment">
+            Funkcja ta stworzy pojedynczą książkę i umieści ją na półce.
+          </p>
+        </section>
+
+        <section>
+          <p>
+            Funkcja <code>renderBook</code> przyjmuje jako jedyny argument obiekt,
+            o następujących wartościach:
+          </p>
+          <ul class="fragment">
+            <li class="fragment"><code>title</code> - tytuł</li>
+            <li class="fragment"><code>author</code> - autor</li>
+            <li class="fragment"><code>year</code> - rok wydania</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Zadanie.</h3>
+          <p>
+            Używając naszej funkcji, dodajcie na półkę 5 dowolnych książek.
+          </p>
+        </section>
+
+        <section>
+          <h3>Rozwiązanie</h3>
+          <p>Pewnie wyszło Wam coś takiego:</p>
+          <pre class="fragment"><code class="hljs javascript">let book1 = {
+  author: 'Janina Kowalska',
+  title: 'Mój pamiętnik',
+  year: 2017
+};
+
+renderBook(book1);</code></pre>
+          <p class="fragment">(i tak 5 razy)</p>
+        </section>
+
+        <section>
+          <h3>Prościej</h3>
+          <p>Nie trzeba obiektu przypisywać do zmiennej.</p>
+          <p class="fragment">Można go przekazać bezpośrednio:</p>
+          <pre class="fragment"><code class="hljs javascript">renderBook({
+  author: 'Janina Kowalska',
+  title: 'Mój pamiętnik',
+  year: 2017
+});</code></pre>
+        </section>
+
+        <section>
+          <h3>To teraz łączymy</h3>
+          <figure>
+            <img style="height: 400px;" src="./img/merge.png" />
+            <figcaption style="font-size: 0.5rem;"><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/MUTCD_W4-1R.svg/2000px-MUTCD_W4-1R.svg.png">
+              Zdjęcie w domenie publicznej.
+            </a></figcaption>
+          </figure>
+          <p>Obiekty i tablice razem.</p>
+        </section>
+
+        <section>
+          <h3>Przypomnijmy sobie</h3>
+          <ul>
+            <li class="fragment">W zmiennej można przechowywać tablicę albo obiekt</li>
+            <li class="fragment">Tablica to zbiór ponumerowanych zmiennych</li>
+            <li class="fragment">Obiekt to zbiór nazwanych zmiennych</li>
+          </ul>
+          <p class="fragment">więc...</p>
+        </section>
+
+        <section>
+          <h3>Możemy je zagnieżdżać w sobie</h3>
+        </section>
+
+        <section>
+          <h3>Tablice w tablicy</h3>
+          <pre class="fragment"><code class="hljs javascript"> let ultraArray = [
+  [1, 2, 3],
+  ['red', 'blue', 'green'],
+  ['small', 'medium', 'big']
+];</code></pre>
+          <p class="fragment">Aby dostać się do wartości:</p>
+          <pre class="fragment"><code class="hljs javascript">ultraArray[1][0] // 'red'</code></pre>
+        </section>
+
+        <section>
+          <h3>Tablice w tablicy</h3>
+          <p class="note side-note">
+            Tablice w tablicy określa się mianem tablic dwuwymiarowych.
+            Często spotyka się je w grach. <br />
+            Doskonałym przykładem jest szachownica, gdzie położenie każdego
+            pionka określone jest 2 współrzędnymi.
+          </p>
+        </section>
+
+        <section>
+          <h3>Obiekty w tablicy</h3>
+          <pre class="fragment"><code class="hljs javascript">let books = [
+  {author: 'Douglas Adams', title: 'Hitchhickers ...', year: 1979},
+  {author: 'Douglas Adams', title: 'Restaurant at ...', year: 1982},
+  {author: 'Douglas Adams', title: 'Life, the Uni ...', year: 1985}
+];</code></pre>
+          <p class="fragment">Aby dostać się do wartości:</p>
+          <pre class="fragment"><code class="hljs javascript">books[0].author // 'Douglas Adams'</code></pre>
+        </section>
+
+        <section>
+          <h3>Obiekty w obiektach</h3>
+          <pre class="fragment"><code class="hljs javascript">let author = {
+  name: 'Mario Puzo',
+  books: {
+    godfather1: 'The Godfather, part 1',
+    godfather2: 'The Godfather, part 2',
+    godfather3: 'The Godfather, part 3'
+  }
+}</code></pre>
+          <p class="fragment">Aby dostać się do wartości:</p>
+          <pre class="fragment"><code class="hljs javascript">author.books.godfather2; // The Godfather, part 2</code></pre>
+        </section>
+
+        <section>
+          <h3>Tablice w obiektach</h3>
+          <pre class="fragment"><code class="hljs javascript">let book = {
+  name: 'Harry Potter',
+  languages: ['en', 'ge', 'pl', 'fr', 'it']
+}</code></pre>
+          <p class="fragment">Dobieramy się do wartości:</p>
+          <pre class="fragment"><code class="hljs javascript">book.languages[2] // 'pl'</code></pre>
+        </section>
+
+        <section>
+          <h3>Tablice w obiektach</h3>
+          <p class="note side-note">
+            Pamiętajcie, że po tablicach wewnątrz obiektów najczęściej
+            poruszamy się przy użyciu pętli.
+          </p>
+        </section>
+
+        <section>
+          <h3>Mając bardzo skomplikowane obiekty...</h3>
+          <p>... mogą powstać takie oto potworki</p>
+          <pre class="fragment"><code class="hljs javascript">author.books.novels[17].translations[3].title</code></pre>
+        </section>
+
+        <section>
+          <h3>Dlatego czasem warto...</h3>
+          <p>... używać zmiennych po drodze</p>
+          <pre class="fragment"><code class="hljs javascript">let novels = author.books.novels
+let title = novels[17].translations[3].title</code></pre>
+        </section>
+
+        <section>
+          <h2>Finalne zadanie</h2>
+          <img src="https://media.giphy.com/media/Nx85vtTY70T3W/giphy.gif" />
+        </section>
+
+        <section>
+          <h3>Opis zadania</h3>
+          <p>
+            W dobrze nam znanym pliku <code>exercise1.html</code> mamy również
+            dostępne bardziej skomplikowane dane pod zmienną <code>shelf</code>.
+          </p>
+          <p class="fragment">
+            Waszym zadaniem będzie napisanie kodu, który pobierze informacje o książkach ze zmiennej <code>shelf</code>, i użyje funkcji <code>renderBook</code> żeby umieścić te książki na
+            naszej półce.
+          </p>
+        </section>
+
+        <section>
+          <h3>Opis zadania</h3>
+          <p class="note side-note">
+            Uwaga, nie wszystkie wartości z <code>shelf</code> muszą zostać użyte.
+          </p>
+        </section>
+
+        <section>
+          <h3>Opis zadania</h3>
+          <p>
+            Strukturę danych możecie podejrzeć w pliku
+            <code>shelf.js</code> lub w konsoli przeglądarki poprzez
+            wpisanie <code>shelf</code>.
+          </p>
+          <p class="fragment">
+            Korzystając ze wszystkiego, co wiemy do tej pory o tablicach, obiektach i pętlach, chcemy wydobyć informacje o poszczególnych książkach, i przekazać je do funkcji <code>renderBook</code> w takiej formie, w jakiej je zaakceptuje.
+          </p>          
+          <p class="fragment">
+            Powodzenia!
+          </p>
+        </section>
+
+
+        <section data-transition="zoom" data-transition-speed="slow">
+            <p>Dzięki za wspólnie spędzony czas i&nbsp;do zobaczenia!</p>
+            <img src="img/logo.svg" style="border: none; box-shadow: none;"/>
+        </section>
+    </div>
+    <div class="small-duck"></div>
+    <div class="footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">
+        <img
+            alt="Licencja Creative Commons" style="border-width:0;vertical-align:bottom"
+            src="./img/cc.png" />
+      </a>
+      <span>
+        Ta prezentacja jest dostępna na
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">
+          licencji Creative Commons Uznanie autorstwa-Użycie niekomercyjne-Na tych
+          samych warunkach 3.0 Polska
+        </a>.
+      </span>
+    </div>
+</div>
+
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+      history: true,
+      controls: false,
+      progress: false,
+      center: true,
+      transition: 'convex',
+      slideNumber: 'true',
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+          {
+              src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+              hljs.initHighlightingOnLoad();
+          }
+          }
+      ]
+  });
+
+  function changeTopBar(slideNumber) {
+    console.log(slideNumber)
+    if (slideNumber === 0) {
+      document.querySelector('.left-bar').classList.add('big')
+    } else {
+      document.querySelector('.left-bar').classList.remove('big')
+    }
+  }
+
+  Reveal.addEventListener('slidechanged', function( event ) {
+    changeTopBar(event.indexh)
+  });
+
+  setTimeout(changeTopBar(Reveal.getIndices()['h']), 100)
+</script>
+</body>
+</html>

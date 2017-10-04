@@ -17,7 +17,7 @@
 
 		<!-- Printing and PDF exports -->
 		<script>
-			var link = document.createElement( 'link' );
+			let link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
@@ -40,7 +40,7 @@
 						<li><a href="#/classList-remove">classList.remove</a></li>
 						<li><a href="#/addEventListener">addEventListener</a></li>
 					</ul>
-					<p><a href="#/var">Zmienne</a></p>
+					<p><a href="#/let">Zmienne</a></p>
 					<ul>
 						<li><a href="#/number">liczby</a></li>
 						<li><a href="#/text">tekst</a></li>
@@ -95,19 +95,19 @@ document.querySelector( '#artykul-1' ) </code></pre>										<p>Selektor elemen
 					<pre><code>document.querySelector( '#button' ).addEventListener( 'click', mojaFunkcja );
 // wywołaj funkcję mojaFunkcja gdy ktoś kliknie przycisk o ID button</code></pre>
 				</section>
-				<section data-background-color="#c6d5e0" id="var">
+				<section data-background-color="#c6d5e0" id="let">
 					<p><strong>Zmienna</strong> jest to schowek, w którym możemy zapisywać informacje i odczytywać je później w innym miejscu. W JavaScript w każdej zmiennej można przechowywać praktycznie wszystko - tekst, liczbę, element dokumentu, złożony obiekt, a nawet funkcję.</p>
-					<p>Żeby stworzyć <strong>zmienną</strong> w JavaScript używamy słowa kluczowego <code>var</code>:</p>
+					<p>Żeby stworzyć <strong>zmienną</strong> w JavaScript używamy słowa kluczowego <code>let</code>:</p>
 					<pre><code>//zmienna tekstowa
-var courseTitle = 'Galeria JavaScript';</code></pre>
+let courseTitle = 'Galeria JavaScript';</code></pre>
 					<p>Tak stworzonej zmiennej możemy potem używać dalej w kodzie po prostu podając jej nazwę, na przykład:</p>
 					<pre><code>//zmienna liczbowa - długość tekstu
-var titleLength = courseTitle.length;</code></pre>
+let titleLength = courseTitle.length;</code></pre>
 				</section>
 				<section data-background-color="#c6d5e0" id="number">
 					<h3>Liczby</h3>
 					<p>Operacje matematyczne(<code>+</code>, <code>-</code>, <code>%</code> i <code>/</code>) zapisujemy w kolejności <code>wynik = działanie</code>, na przykład:</p>
-					<pre><code>var nowyNumer = staryNumer + 4;</code></pre>
+					<pre><code>let nowyNumer = staryNumer + 4;</code></pre>
 					<p>Do porównania, która liczba jest większa lub mniejsza używamy znaków <code>&gt;</code> i <code>&lt;</code>, <code>&gt;=</code> i <code>&lt;=</code>.</p>
 					<pre><code>if ( a > 1 ) {
 	//wykonaj ten kod, kiedy a jest większe od 1.
@@ -120,20 +120,20 @@ var titleLength = courseTitle.length;</code></pre>
 				<section data-background-color="#c6d5e0" id="text">
 					<h3>Tekst</h3>
 					<p>W JavaScript tekst zapisujemy w cudzysłowie, np:</p>
-					<pre><code>var imie = 'Ania';</code></pre>
+					<pre><code>let imie = 'Ania';</code></pre>
 					<p>Fragmenty tekstu możemy sklejać ze sobą przy użyciu znaku <code>+</code>, na przykład:</p>
-					<pre><code>var pozdrowienia = 'Hej ' + 'Ania' + '!';</code></pre>
+					<pre><code>let pozdrowienia = 'Hej ' + 'Ania' + '!';</code></pre>
 					<p>W ten sam sposób możemy dokleić do tekstu liczbę lub zawartość zmiennej:</p>
-					<pre><code>var pozdrowienia = 'Hej ' + imie + '!';</code></pre>
+					<pre><code>let pozdrowienia = 'Hej ' + imie + '!';</code></pre>
 				</section>
 				<section data-background-color="#c6d5e0" id="bool">
 					<h3>Wartość logiczna</h3>
 					<p><strong>Wartość logiczna</strong> to jeden z dwóch stanów (prawda lub fałsz).</p>
 					<p><strong>Prawdę</strong> zapisujemy w JavaScript jako <code>true</code>, dla  <strong>fałszu</strong> używamy słowa <code>false</code>:</p>
-					<pre><code>var isJavaScriptAwesome = true;</code></pre>
+					<pre><code>let isJavaScriptAwesome = true;</code></pre>
 					<p>Wartości logiczne porównujemy używając potrójnego znaku równości, np:</p>
 					<pre><code>if ( isJavaScriptAwesome === true ) {
-	var doWeHaveEnoughYet = false;
+	let doWeHaveEnoughYet = false;
 }</code></pre>
 				</section>
 				<section data-background-color="#c6d5e0" id="function">
@@ -189,7 +189,7 @@ hej( 'Asia' );
 						<li>zapisać interwał w zmiennej przy jego utworzeniu,</li>
 						<li>użyć tej zmiennej w funkcji <br /> <strong><code>clearInterval( nazwaZmiennej )</code></strong> - wyłącza interwał zapisany wcześniej w podanej zmiennej.</li>
 					</ol>
-					<pre><code>var zapisanyInterwal = setInterval( mojaFunkcja, 2000 );
+					<pre><code>let zapisanyInterwal = setInterval( mojaFunkcja, 2000 );
 // wywołuj funkcję mojaFunkcja co 2 sekundy.
 clearInterval( zapisanyInterwal );
 // przestań wywoływać funkcję co 2 sekundy
