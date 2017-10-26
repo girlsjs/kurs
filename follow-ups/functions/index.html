@@ -64,8 +64,8 @@
         </section>
 
         <section>
-          <h3 style="font-size: 3rem">Definicja</h3>
-          <p>Język JS jest określany jako: Obiektowy, funkcyjny i imperatywny.</p>
+          <h3 style="font-size: 3rem">Definicja:</h3>
+          <p>Język JS jest określany jako: obiektowy, funkcyjny i imperatywny.</p>
           <p class="fragment">Funkcyjność języka to coś więcej niż tylko obecność funkcji.</p>
           <p class="fragment">Ale o tym za chwilę.</p>
         </section>
@@ -74,8 +74,8 @@
           <h3 style="font-size: 3rem">Czym jest funkcja?</h3>
           <p>Jeżeli byłyście na warsztacie, to używałyście funkcji.</p>
           <p class="fragment">Funkcje to po prostu nazwane bloki kodu, które można wywoływać wielokrotnie.</p>
-          <p class="fragment">Mogą przyjmować parametry</p>
-          <p class="fragment">Mogą również zwracać wartość</p>
+          <p class="fragment">Mogą przyjmować parametry.</p>
+          <p class="fragment">Mogą również zwracać wartość.</p>
         </section>
 
         <section>
@@ -90,21 +90,21 @@
 
         <section>
           <h3>Anatomia funkcji</h3>
-          <p>Zobaczmy jak będzie wyglądała prosta funkcja dodająca 2 liczby</p>
+          <p>Zobaczmy, jak będzie wyglądała prosta funkcja dodająca 2 liczby:</p>
           <pre class="fragment"><code class="hljs javascript">function sum(x, y) {
   return x + y
 }</code></pre>
-          <p class="fragment">Po wywołaniu</p>
+          <p class="fragment">Po wywołaniu:</p>
           <pre class="fragment"><code class="hljs javascript">sum(2, 3) // zwróci 5</code></pre>
         </section>
 
         <section>
           <h3>Funkcja nazwana</h3>
-          <p>Tak zdefiniowaną funkcję nazywamy funkcją nazwaną</p>
+          <p>Tak zdefiniowaną funkcję nazywamy funkcją nazwaną:</p>
           <pre><code class="hljs javascript">function sum(x, y) {
   return x + y
 }</code></pre>
-          <p>Bo ma nazwę, po której możemy się do niej odwołać</p>
+          <p>Ma ona nazwę, po której możemy się do niej odwołać.</p>
         </section>
 
 
@@ -112,7 +112,7 @@
           <h3>Parametry funkcji</h3>
           <p>
             Parametry (czasem zwane argumentami) funkcji to zestaw danych, które funkcja
-            ma wziąć pod uwagę podczas wykonywania
+            ma wziąć pod uwagę podczas wykonywania.
           <p>
           <p class="fragment">
             Parametry mogą być wartościami, tablicami, obiektami lub funkcjami.
@@ -124,7 +124,7 @@
         </section>
 
         <section>
-          <p>Rozważmy następujący przykład (możecie sprawdzić to w konsoli)</p>
+          <p>Rozważmy następujący przykład (możecie sprawdzić to w konsoli):</p>
           <pre class="fragment"><code class="hljs javascript">function sum(x, y) {
   return x + y
 }
@@ -135,7 +135,6 @@ function doMath(x, y, operation) {
 
 doMath(2, 3, sum);</code></pre>
         </section>
-
 
         <section>
           <p>Funkcja <code>doMath</code> przyjmuje 3 parametry:</p>
@@ -178,7 +177,7 @@ sum(2, 3) // zwróci 5</code></pre>
 
         <section>
           <h3>Funkcja anonimowa</h3>
-          <p>Zobaczmy jak będzie wyglądał poprzedni przykład.</p>
+          <p>Zobaczmy jak będzie wyglądał poprzedni przykład:</p>
           <pre class="fragment"><code class="hljs javascript">function doMath(x, y, operation) {
   return operation(x, y)
 }
@@ -460,7 +459,7 @@ madness()()()() // Wypisze 'This is madness!';</code></pre>
         </section>
 
         <section>
-          <h2>Chainowanie funkcji</h2>
+          <h2>Łączenie wywołań funkcji <em>(function chaining)</em></h2>
           <figure>
             <img src="img/chains.jpg" />
             <figcaption style="font-size: 0.5rem">
@@ -470,14 +469,13 @@ madness()()()() // Wypisze 'This is madness!';</code></pre>
         </section>
 
         <section>
-          <h3>Chainowanie funkcji</h3>
+          <h3>Łączenie wywołań funkcji</h3>
           <p>
-            Chainowanie to łączenie dłuższych wywołań metod i funkcji w
+            Możemy łączyć wiele wywołań metod i funkcji w
             jeden logiczny ciąg (łańcuch) wywołań.
           </p>
           <p class="fragment">
-            Niestety, polska nomenklatura nie nadąża za rozwojem branży, więc
-            nie mamy lepszej nazwy niż "chainowanie".
+            W anglojęzycznej literaturze nazywane to jest <em>function chaining</em>.
           </p>
         </section>
 
@@ -538,7 +536,7 @@ console.log( filtered ); // [9, 7, 6, 8]</code></pre>
           <p>Teraz możemy połączyć wszystkie 3 metody.<p>
           <p class="fragment">
             Jeżeli połączymy w następującej kolejności: <code>sort, filter, shift</code>
-            To dostaniemy pierwszy (najmniejszy) element większy od 5. Czyli 6.
+            - dostaniemy pierwszy (najmniejszy) element większy od 5. Czyli 6.
           <p>
         </section>
 
@@ -560,14 +558,14 @@ console.log( first ); // 6</code></pre>
           <h3>Problem</h3>
           <p>Główny problem z tym podejściem: Produkujemy dużo zmiennych, które później się nie przydają.</p>
           <p>
-            Naszczęście ponieważ 2 pierwsze metody zwracają tablice, nie musimy ich
-            przypisywać do zmiennych, możemy od razu wywoływać kolejne metody,
-            tworzac tym samym <b>chaining</b>.
+            Można jednak zauważyć, że 2 pierwsze metody zwracają tablice. Nie musimy ich
+            więc przypisywać do zmiennych, możemy od razu wywoływać kolejne metody,
+            tworząc tym samym <b>łańcuch (chain) wywołań</b>.
           </p>
         </section>
 
         <section>
-          <h3>Chaining</h3>
+          <h3>Łączenie wywołań</h3>
           <pre class="fragment"><code class="hljs javascript">let example = [9, 2, 4, 7, 1, 3, 6, 8, 5];
 
 let first = example.sort()
@@ -580,7 +578,7 @@ console.log( first ); // 6</code></pre>
         </section>
 
         <section>
-          <h3>Chaining</h3>
+          <h3>Łączenie wywołań</h3>
           <p>
             Tak długo, jak metoda zwraca obiekt (lub tablicę), można kontynuować
             łańcuch wywołań metod.
@@ -594,13 +592,13 @@ console.log( first ); // 6</code></pre>
         </section>
 
         <section>
-          <h3>Chaining</h3>
+          <h3>Łączenie wywołań</h3>
           <pre class="fragment"><code class="hljs javascript">example.sort() // zwraca tablicę
   .filter(...)  // zwraca tablicę
   .shift()  // zwraca liczbę</code></pre>
           <p class="fragment">
             Metoda <code>shift</code> zwróci nam liczbę, wiec nie możemy dalej
-            chainować metod tablicy.
+            łączyć metod tablicy.
           </p>
           <p class="fragment">
             Ale możemy użyć jakiejś metody z repertuaru
