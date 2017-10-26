@@ -1,0 +1,674 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>girls.js - Funkcje</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/simple.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        let link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!-- facebook meta -->
+    <meta property="og:description" content="Materiały do kursu girls.js: poznawanie języka JavaScript na przykładzie tworzenia interaktywnej galerii obrazków." />
+    <meta property="og:image" content="https://girlsjs.github.io/www/assets/logo.png" />
+</head>
+<body>
+<div class="left-bar">
+  <div class="left-bar-photo"></div>
+</div>
+<div class="help">
+  <a href="help.html">?</a>
+</div>
+<div class="reveal">
+    <div class="slides">
+        <section>
+          <div class="big-logo">
+            <img style="height: 400px; border: none; box-shadow: none;" src="img/logo.svg"/>
+          </div>
+          <h3 class="fragment grow">Cześć!</h3>
+          <p>(naciśnij spację, żeby kontynuować)</p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+
+        <section>
+          <h1 style="font-size: 3rem">Funkcje</h1>
+          <figure>
+            <img src="img/graph.gif" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu media.quizizz.com
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Funkcje</h3>
+          <p>Dziś poznamy lepiej funkcje. Są one bardzo ważną częścią języka JavaScript.</p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Definicja:</h3>
+          <p>Język JS jest określany jako: obiektowy, funkcyjny i imperatywny.</p>
+          <p class="fragment">Funkcyjność języka to coś więcej niż tylko obecność funkcji.</p>
+          <p class="fragment">Ale o tym za chwilę.</p>
+        </section>
+
+        <section>
+          <h3 style="font-size: 3rem">Czym jest funkcja?</h3>
+          <p>Jeżeli byłyście na warsztacie, to używałyście funkcji.</p>
+          <p class="fragment">Funkcje to po prostu nazwane bloki kodu, które można wywoływać wielokrotnie.</p>
+          <p class="fragment">Mogą przyjmować parametry.</p>
+          <p class="fragment">Mogą również zwracać wartość.</p>
+        </section>
+
+        <section>
+          <h1 style="font-size: 3rem">Czym jest funkcja?</h1>
+          <figure>
+            <img src="img/function.png" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu wikipedia.org
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h3>Anatomia funkcji</h3>
+          <p>Zobaczmy, jak będzie wyglądała prosta funkcja dodająca 2 liczby:</p>
+          <pre class="fragment"><code class="hljs javascript">function sum(x, y) {
+  return x + y
+}</code></pre>
+          <p class="fragment">Po wywołaniu:</p>
+          <pre class="fragment"><code class="hljs javascript">sum(2, 3) // zwróci 5</code></pre>
+        </section>
+
+        <section>
+          <h3>Funkcja nazwana</h3>
+          <p>Tak zdefiniowaną funkcję nazywamy funkcją nazwaną:</p>
+          <pre><code class="hljs javascript">function sum(x, y) {
+  return x + y
+}</code></pre>
+          <p>Ma ona nazwę, po której możemy się do niej odwołać.</p>
+        </section>
+
+
+        <section>
+          <h3>Parametry funkcji</h3>
+          <p>
+            Parametry (czasem zwane argumentami) funkcji to zestaw danych, które funkcja
+            ma wziąć pod uwagę podczas wykonywania.
+          <p>
+          <p class="fragment">
+            Parametry mogą być wartościami, tablicami, obiektami lub funkcjami.
+          <p>
+          <p class="fragment">
+            To właśnie możliwość podania funkcji jako parametru sprawia, że JavaScript
+            staje się językiem funkcyjnym.
+          <p>
+        </section>
+
+        <section>
+          <p>Rozważmy następujący przykład (możecie sprawdzić to w konsoli):</p>
+          <pre class="fragment"><code class="hljs javascript">function sum(x, y) {
+  return x + y
+}
+
+function doMath(x, y, operation) {
+  return operation(x, y)
+}
+
+doMath(2, 3, sum);</code></pre>
+        </section>
+
+        <section>
+          <p>Funkcja <code>doMath</code> przyjmuje 3 parametry:</p>
+          <ul>
+            <li class="fragment">wartość <code>x</code></li>
+            <li class="fragment">wartość <code>y</code></li>
+            <li class="fragment">oraz operację do wykonania na tych liczbach <code>operation</code></li>
+          </ul>
+          <p class="fragment">To prowadzi nas do...</p>
+        </section>
+
+
+        <section>
+          <h3>Funkcja anonimowa</h3>
+          <p>Możemy również mieć funkcję anonimową:</p>
+          <pre class="fragment"><code class="hljs javascript">function (x, y) {
+  return x + y
+}</code></pre>
+          <p class="fragment">Ale nie odwołamy się do niej po nazwie (bo jej nie ma).</p>
+        </section>
+
+        <section>
+          <h3>Funkcja anonimowa</h3>
+          <p>Po co więc nam funkcje anonimowe?</p>
+          <p class="fragment">Możemy je przypisać do zmiennej:</p>
+          <pre class="fragment"><code class="hljs javascript">let sum = function (x, y) {
+  return x + y
+}
+
+sum(2, 3) // zwróci 5</code></pre>
+          <p class="fragment">Ale to wiele nie różni się od funkcji nazwanej.</p>
+        </section>
+
+        <section>
+          <h3>Funkcja anonimowa</h3>
+          <p>
+             Prawdziwy użytek można zrobić z funkcji anonimowych przy
+             przekazywaniu jej jako parametr do innej funkcji.</p>
+        </section>
+
+        <section>
+          <h3>Funkcja anonimowa</h3>
+          <p>Zobaczmy jak będzie wyglądał poprzedni przykład:</p>
+          <pre class="fragment"><code class="hljs javascript">function doMath(x, y, operation) {
+  return operation(x, y)
+}
+
+doMath(2, 3, function (x, y) { return x + y });</code></pre>
+        </section>
+
+        <section>
+          <h3>Funkcja jako parametr</h3>
+          <p>Bardzo często spotyka się przekazywanie funkcji jako parametru.</p>
+          <p class="fragment">
+            Taki sposób programowania sprawdza się przy funkcjach, które muszą wykonać
+            operacje trwające trochę dłużej. Po wykonaniu swojej logiki, funkcja wywołuje
+            przekazaną funkcję w parametrze.
+          </p>
+          <p class="fragment">
+            Wówczas tą funkcję z parametru nazywa się <b>callbackiem</b>.
+          </p>
+        </section>
+
+        <section>
+          <h3>Callback</h3>
+          <p>Możemy sobie wyobrazić następującą, przykładową funkcję, która pobiera dane użytkownika:<p>
+          <pre class="fragment"><code class="hljs javascript">function loadData(callback) {
+  // logika trwająca
+  callback(data) // przekazanie wyniku logiki
+}</code></pre>
+          <p class="fragment">Następujący kod uruchomimy o tak:<p>
+          <pre class="fragment"><code class="hljs javascript">loadData(function (data) {
+  console.log(data)
+})</code></pre>
+        </section>
+
+
+        <section>
+          <h3>Callback</h3>
+          <p>Na warsztacie mieliśmy coś podobnego.<p>
+          <p class="fragment">Podpięcie się na zdarzenie kliknięcia<p>
+          <pre class="fragment"><code class="hljs javascript">addEventListener('click', function () { ... })</code></pre>
+          <p class="fragment">Automatyczne wykonanie kodu po określonym czasie<p>
+          <pre class="fragment"><code class="hljs javascript">setTimeout(function () { ... }, 3000)</code></pre>
+        </section>
+
+
+        <section>
+          <h3>Callback</h3>
+          <p>
+            Żeby callbacki miały sens, musimy zrozumieć co to jest kod <b>synchroniczny</b>
+            oraz <b>asynchroniczny</b>.
+          </p>
+          <p class="fragment">Tak, brzmi to nieco skomplikowane, ale tak naprawdę nie jest :-)</p>
+        </section>
+
+        <section>
+          <h3>Kod synchroniczny</h3>
+          <p class="fragment">To taki, jaki pisałyście do tej pory<p>
+          <pre class="fragment"><code class="hljs javascript">console.log('A')
+console.log('B')
+console.log('C')
+console.log('D')</code></pre>
+          <p class="fragment">W jakiej kolejności wypiszą się litery?<p>
+          <p class="fragment">A, B, C, D<p>
+        </section>
+
+        <section>
+          <h3>Kod synchroniczny</h3>
+          <pre><code class="hljs javascript">console.log('A')
+console.log('B')
+console.log('C')
+console.log('D')</code></pre>
+          <p>Kolejność wykonania instrukcji jest taka sama jak zapisana w kodzie.<p>
+          <p class="fragment">Dlatego nazywamy go <b>synchronicznym</b>.<p>
+        </section>
+
+        <section>
+          <h3>Kod asynchroniczny</h3>
+          <p>Przanalizujcie poniższy kawałek kodu<p>
+          <pre class="fragment"><code class="hljs javascript">console.log('A')
+setTimeout(function() {
+  console.log('B')
+  console.log('C')
+}, 1000)
+console.log('D')</code></pre>
+          <p class="fragment">W jakiej kolejności pojawią się litery? Dlaczego?<p>
+          <p class="fragment">A, D ... B, C</p>
+        </section>
+
+        <section>
+          <h3>Kod asynchroniczny</h3>
+          <p>
+            Taki kod nazywamy <b>asynchronicznym</b>, ponieważ wykona się w innej kolejności,
+            niż ta w której został zapisany.
+          <p>
+          <p class="fragment">
+            Poza <code>setTimeout</code> i <code>addEventListener</code>, jest znacznie
+            więcej asynchronicznych funkcji w JavaScripcie.
+          <p>
+          <p class="fragment">
+            Wszelkie interakcje użytkownika ze stroną, wysyłanie i pobieranie danych itp,
+            to wszystko są operacje asynchroniczne.
+          </p>
+        </section>
+
+        <section>
+          <h3>Czemu asynchroniczność</h3>
+          <p>Żeby jeden kawałek kodu nie był zablokowany przez inny.</p>
+          <p class="fragment">Gdyby nie było asynchroniczności, jak działał by poniższy kod?<p>
+          <pre class="fragment"><code class="hljs javascript">element1.addEventListener('click', function () {
+  console.log('Element 1 kliknięty')
+})
+element2.addEventListener('click', function () {
+  console.log('Element 2 kliknięty')
+})</code></pre>
+          <p class="fragment">
+            Najpierw użytkownik musiałby kliknąć w <code>element1</code>, a potem w <code>element2</code>.
+            Wszelkie inne scenariusze byłyby nieoprogramowane.
+          <p>
+        </section>
+
+        <section>
+          <h3>TU jakieś ćwiczenie</h3>
+        </section>
+
+        <section>
+          <h3>Metody obiektów</h3>
+          <p>
+            Jeśli byłyście na poprzednim follow-upie, to zapewne pamiętacie obiekty.
+          </p>
+          <p class="fragment">
+            W skrócie obiekt to zbiór nazwanych zmiennych:
+          </p>
+
+          <pre class="fragment"><code class="hljs javascript">let obj = {
+  name: 'Kasia',
+  age: 32,
+  job: 'Frontend Developer'
+};
+
+console.log( obj.name ); // Wypisze 'Kasia'</code></pre>
+        </section>
+
+        <section>
+          <h3>Metody obiektów</h3>
+          <p>
+            Metody, to funkcje wewnątrz obiektów.
+          </p>
+          <p>
+            Możemy je utworzyć za pomocą funkcji anonimowej.
+          </p>
+          <pre class="fragment"><code class="hljs javascript">let obj = {
+  name: 'Kasia',
+  age: 32,
+  job: 'Frontend Developer',
+  sayHi: function () {
+    console.log('Hi!')
+  }
+};
+
+obj.sayHi(); // Wypisze 'Hi!'</code></pre>
+        </section>
+
+        <section>
+          <p>Gotowe na coś ambitnego? :-)</p>
+        </section>
+
+        <section>
+          <h2>Funkcja zwracająca funkcję</h2>
+        </section>
+
+        <section>
+          <h3>Funkcja zwracająca funkcję</h3>
+          <p>Tak jak wiemy, funkcja może zwrócić dowolną wartość (dowolny typ).</p>
+          <p class="fragment">
+            Funkcja również jest typem i może być przypisana
+            do zmiennej, przekazana jako argument itp...
+          </p>
+          <p class="fragment">
+            Łącząc powyższe stwierdzenia, dochodzimy do wniosku, że funkcja może zwrócić funkcję.
+          </p>
+        </section>
+
+        <section>
+          <h3>Funkcja zwracająca funkcję</h3>
+          <p>Zilustrujmy to zwracając funkcję anonimową (ale można też użyć funkcji nazwanej).</p>
+          <pre class="fragment"><code class="hljs javascript">function myFunction() {
+  return function () {
+    console.log('Hurra!')
+  }
+}
+</code></pre>
+          <p class="fragment">Ok, jak teraz sprawić, aby pojawił się napis Hurra! w konsoli?</p>
+        </section>
+
+        <section>
+          <p>Czy zadziała coś takiego?</p>
+          <pre><code class="hljs javascript">myFunction()</code></pre>
+          <p class="fragment">Nie. Dlaczego?</p>
+
+          <p class="fragment">Co musimy zatem zrobić?</p>
+          <pre class="fragment"><code class="hljs javascript">myFunction()()</code></pre>
+        </section>
+
+        <section>
+          <h3>Czas na małe zadanie ;-)</h3>
+          <p>Pamiętacie naszą funkcję <code>sum</code>?</p>
+          <pre class="fragment"><code class="hljs javascript">function sum() {
+  return x + y;
+}
+
+sum(2, 3) // zwróci 5</code></pre>
+          <p class="fragment">
+            Spróbujcie napisać nową funkcję <code>sum</code>, która będzie działać w
+            następujący sposób:
+          </p>
+          <pre class="fragment"><code class="hljs javascript">sum(2)(3) // zwróci 5 </code></pre>
+        </section>
+
+        <section>
+          <h3>Rozwiązanie</h3>
+          <pre class="fragment"><code class="hljs javascript">function sum(x) {
+  return function(y) {
+    return x + y
+  }
+}
+
+sum(2)(3) // zwróci 5</code></pre>
+        </section>
+
+        <section>
+          <h3>Zastosowania</h3>
+          <p>Funkcja zwracająca funkcję jest bardzo często spotykanym wzorcem.</p>
+          <p class="fragment">
+            Pozwala na przykład dodać parametr do callbacka, którego callback zazwyczaj nie przyjmuje.
+          </p>
+          <p class="fragment">
+            Zobaczmy jak to ma miejsce w przypadku dodaniu callbacka obsługującego kliknięcie.
+          </p>
+        </section>
+
+        <section>
+          <p>Zwyczajowo, użycie <code>addEventListener</code> wygląda tak:</p>
+          <pre class="fragment"><code class="hljs javascript">function welcome() {
+  console.log('Hej');
+}
+
+button.addEventListener(welcome);</code></pre>
+          <p class="fragment">Co zrobić, żeby móc dodać parametr (np. imię) do wywołania funkcji?</p>
+          <p class="fragment">
+            Funkcja <code>welcome</code> jest wywoływana automatycznie wewnątrz
+            <code>addEventListener</code>, więc do wywołania nie mamy dostępu.
+          </p>
+        </section>
+
+        <section>
+          <p>Używając funkcji zwracającej funkcję, łatwo możemy rozwiązać ten problem:</p>
+          <pre class="fragment"><code class="hljs javascript">function welcome(name) {
+  return function () {
+    console.log('Hej, ' + name);
+  }
+}
+
+button.addEventListener(welcome('Zosia'));</code></pre>
+        </section>
+
+        <section>
+          <h3>Można i bardziej</h3>
+          <p>W razie potrzeb, możecie robić więcej zagnieżdżeń zwracanych funkcji:</p>
+          <pre class="fragment"><code class="hljs javascript">function madness() {
+  return function () {
+    return function () {
+      return function () {
+        console.log('This is madness!');
+      }
+    }
+  }
+}
+
+madness()()()() // Wypisze 'This is madness!';</code></pre>
+        </section>
+
+        <section>
+          <h2>Łączenie wywołań funkcji <em>(function chaining)</em></h2>
+          <figure>
+            <img src="img/chains.jpg" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu wikipedia.org
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h3>Łączenie wywołań funkcji</h3>
+          <p>
+            Możemy łączyć wiele wywołań metod i funkcji w
+            jeden logiczny ciąg (łańcuch) wywołań.
+          </p>
+          <p class="fragment">
+            W anglojęzycznej literaturze nazywane to jest <em>function chaining</em>.
+          </p>
+        </section>
+
+        <section>
+          <h3>Jak to wygląda?</h3>
+          <p>Najlepiej zobaczyć to w praktyce na przykładzie tablicy.</p>
+          <p>
+            Przypomnienie z poprzedniego follow-upu: Tablica to po prostu
+            zmienna mogąca przechowywać wiele wartości, do których dostajemy się
+            za pomocą numerów (od 0, nie od 1)
+          </p>
+          <pre class="fragment"><code class="hljs javascript">let myArray = ['Asia', 'Kasia', 'Basia'];
+
+console.log( myArray[0] ); // Wypisze 'Asia'</code></pre>
+        </section>
+
+        <section>
+          <h3>Metody</h3>
+          <p>
+            Tablica jest specjalnym przypadkiem obiektu, więc jak każdy obiekt
+            posiada szereg metod.
+          </p>
+          <p>
+            Niektóre z nich przyjmują jako argument funkcję do wykonania operacji.
+          </p>
+        </section>
+
+        <section>
+          <h3>Metoda <code>filter</code></h3>
+          <p>
+            Zwraca <b>nową</b> tablicę z odfiltrowanymi danymi spełniającymi
+            podaną funkcję.
+          </p>
+          <pre class="fragment"><code class="hljs javascript">let example = [9, 2, 4, 7, 1, 3, 6, 8, 5];
+
+let filtered = example.filter(function (item) {
+  return item > 5
+})
+
+console.log( filtered ); // [9, 7, 6, 8]</code></pre>
+        </section>
+
+        <section>
+          <h3><code>sort</code> i <code>shift</code></h3>
+          <p>
+            Metoda <code>sort</code> pozwala posortować zawartość tablicy.
+            Podobnie jak <code>filter</code>, zwraca nową tablicę, ale nie
+            wymaga podawania argumentu.
+          </p>
+          <p class="fragment">
+            Natomiast metoda <code>shift</code> pozwala na pobranie pierwszej
+            wartości z tablicy (aczkolwiek usuwa ją z tablicy).
+          </p>
+        </section>
+
+        <section>
+          <h3>Łączenie metod</h3>
+          <p>Teraz możemy połączyć wszystkie 3 metody.<p>
+          <p class="fragment">
+            Jeżeli połączymy w następującej kolejności: <code>sort, filter, shift</code>
+            - dostaniemy pierwszy (najmniejszy) element większy od 5. Czyli 6.
+          <p>
+        </section>
+
+        <section>
+          <h3>Łączenie metod</h3>
+          <p>Pierwsze podejście</p>
+          <pre class="fragment"><code class="hljs javascript">let example = [9, 2, 4, 7, 1, 3, 6, 8, 5];
+
+let sorted = example.sort()
+let filtered = sorted.filter(function (item) {
+  return item > 5
+})
+let first = filtered.shift()
+
+console.log( first ); // 6</code></pre>
+        </section>
+
+        <section>
+          <h3>Problem</h3>
+          <p>Główny problem z tym podejściem: Produkujemy dużo zmiennych, które później się nie przydają.</p>
+          <p>
+            Można jednak zauważyć, że 2 pierwsze metody zwracają tablice. Nie musimy ich
+            więc przypisywać do zmiennych, możemy od razu wywoływać kolejne metody,
+            tworząc tym samym <b>łańcuch (chain) wywołań</b>.
+          </p>
+        </section>
+
+        <section>
+          <h3>Łączenie wywołań</h3>
+          <pre class="fragment"><code class="hljs javascript">let example = [9, 2, 4, 7, 1, 3, 6, 8, 5];
+
+let first = example.sort()
+  .filter(function (item) {
+    return item > 5
+  })
+  .shift()
+
+console.log( first ); // 6</code></pre>
+        </section>
+
+        <section>
+          <h3>Łączenie wywołań</h3>
+          <p>
+            Tak długo, jak metoda zwraca obiekt (lub tablicę), można kontynuować
+            łańcuch wywołań metod.
+          </p>
+          <p class="note more fragment fade-left">
+            Trzeba uważać bardzo na to, co zwracają metody. Jeżeli metoda zwróci
+            inny obiekt, niż ten który się spodziewacie, możecie próbować na nim
+            wywołać nieistniejącą metodę, co zakończy się błędem.
+          </p>
+
+        </section>
+
+        <section>
+          <h3>Łączenie wywołań</h3>
+          <pre class="fragment"><code class="hljs javascript">example.sort() // zwraca tablicę
+  .filter(...)  // zwraca tablicę
+  .shift()  // zwraca liczbę</code></pre>
+          <p class="fragment">
+            Metoda <code>shift</code> zwróci nam liczbę, wiec nie możemy dalej
+            łączyć metod tablicy.
+          </p>
+          <p class="fragment">
+            Ale możemy użyć jakiejś metody z repertuaru
+            metod liczbowych.
+          </p>
+        </section>
+
+        <section>
+          <h3>Ćwiczenie na podsumowanie chainowania lub/i całego follow-upu.</h3>
+        </section>
+
+
+        <section data-transition="zoom" data-transition-speed="slow">
+            <p>Dzięki za wspólnie spędzony czas i&nbsp;do zobaczenia!</p>
+            <img src="img/logo.svg" style="border: none; box-shadow: none;"/>
+        </section>
+    </div>
+    <div class="small-duck"></div>
+    <div class="footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">
+        <img
+            alt="Licencja Creative Commons" style="border-width:0;vertical-align:bottom"
+            src="./img/cc.png" />
+      </a>
+      <span>
+        Ta prezentacja jest dostępna na
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">
+          licencji Creative Commons Uznanie autorstwa-Użycie niekomercyjne-Na tych
+          samych warunkach 3.0 Polska
+        </a>.
+      </span>
+    </div>
+</div>
+
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+      history: true,
+      controls: false,
+      progress: false,
+      center: true,
+      transition: 'convex',
+      slideNumber: 'true',
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+          {
+              src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+              hljs.initHighlightingOnLoad();
+          }
+          }
+      ]
+  });
+
+  function changeTopBar(slideNumber) {
+    if (slideNumber === 0) {
+      document.querySelector('.left-bar').classList.add('big')
+    } else {
+      document.querySelector('.left-bar').classList.remove('big')
+    }
+  }
+
+  Reveal.addEventListener('slidechanged', function( event ) {
+    changeTopBar(event.indexh)
+  });
+
+  setTimeout(changeTopBar(Reveal.getIndices()['h']), 100)
+</script>
+</body>
+</html>
