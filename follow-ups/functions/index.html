@@ -60,157 +60,220 @@
 
         <section>
           <h3 style="font-size: 3rem">Funkcje</h3>
-          <p>Dziś poznamy lepiej funkcje. Są one bardzo ważną częścią języka JavaScript.</p>
+          <p>Dziś poznamy lepiej funkcje. Są one bardzo ważną częścią języka JavaScript (i programowania w ogole).</p>
         </section>
-
         <section>
-          <h3 style="font-size: 3rem">Definicja:</h3>
-          <p>Język JS jest określany jako: obiektowy, funkcyjny i imperatywny.</p>
-          <p class="fragment">Funkcyjność języka to coś więcej niż tylko obecność funkcji.</p>
-          <p class="fragment">Ale o tym za chwilę.</p>
+          <h3 style="font-size: 3rem">Do czego przydają się funkcje?</h3>
+          <p>Jeżeli byłyście na warsztacie, pisałyście tam własne funkcje do obsługi przyciskow na stronie.</p>
+          <p class="fragment">Funkcje przydają się, gdy chcemy ten sam kawałek kodu wykonać kilka razy.</p>
+          <p class="fragment">Można wykonywać go za każdym razem <strong>na innych danych</strong>.</p>
+          <p class="fragment">Funkcja może też zwracać wynik swojego działania, na ktorym reszta kodu będzie działać dalej.</p>
         </section>
-
         <section>
-          <h3 style="font-size: 3rem">Czym jest funkcja?</h3>
-          <p>Jeżeli byłyście na warsztacie, to używałyście funkcji.</p>
-          <p class="fragment">Funkcje to po prostu nazwane bloki kodu, które można wywoływać wielokrotnie.</p>
-          <p class="fragment">Mogą przyjmować parametry.</p>
-          <p class="fragment">Mogą również zwracać wartość.</p>
+          <h3 style="font-size: 3rem">Więc czym to się właściwie rożni od pętli?</h3>
+          <p>Na ostatnich zajęciach używałyśmy przecież pętli, żeby wykonywać ten sam kod kilka razy...</p>
         </section>
-
+        <section>    
+          <p>Pętlę wykonujemy kilka razy jedno po drugim, i na tym koniec. Funkcję możemy wywołać w dowolnym momencie, z dowolnego miejsca w kodzie.</p>
+          <p class="fragment">Pętla musi mieć z gory przygotowane dane i działa na nich w ściśle  określonej kolejności (0, 1, 2, ...). Funkcja za każdym razem może dostać nowy zestaw danych, niezależny od tego co było wcześniej.</p>
+          <p class="fragment">Podział na funkcje sprawia, że kod staje się bardziej przejrzysty, i łatwiej szukać w nim błędow.</p>
+        </section>
         <section>
-          <h1 style="font-size: 3rem">Czym jest funkcja?</h1>
+          <h3 style="font-size: 3rem">A w praktyce?</h3>
           <figure>
-            <img src="img/function.png" />
+            <img src="img/postit.jpg" />
             <figcaption style="font-size: 0.5rem">
-              Grafika zapożyczona z serwisu wikipedia.org
+              Grafika zapożyczona z <a href="https://www.orsgroup.com.au/blog/how-to-stress-down-for-stress-down-day/">orsgroup.com</a>
             </figcaption>
           </figure>
+        </section>    
+        <section>    
+          <h3 style="font-size: 3rem">A w praktyce?</h3> 
+          <p>Żeby wypisać karteczki w pętli, musimy z gory pamiętać, co na ktorej będzie, w jakiej idą kolejności, i wypisać je wszystkie jedna po drugiej.</p>
+          <p class="fragment">Używając funkcji możemy pojedynczo dodawać nowe karteczki, kiedy tylko nam coś wpadnie do głowy - nawet kiedy zajmujemy się właśnie czymś zupełnie innym.</p>
+        </section>  
+        <section>    
+          <h3 style="font-size: 3rem">Na razie bez komputerow...</h3> 
+          <p class="note task fragment fade-left">
+            Załozmy, że chcemy dodać nową karteczkę do tablicy z poprzedniego slajdu. Zastanowmy się razem, jakie czynności będziemy musiały wykonać?
+          </p>
+        </section>             
+        <section>
+          <h3 style="font-size: 3rem">Dodawanie nowej karteczki - na sucho :-)</h3>
+          <pre><code class="hljs javascript">1. Weź samoprzylepną karteczkę.
+2. Weź długopis.
+3. Napisz na karteczce tekst.
+4. Przyklej karteczkę na tablicy.
+5. Odłoż długopis (?)</code></pre>
         </section>
-
+         <section>    
+          <h3 style="font-size: 3rem">Czegoś tu brakuje?</h3> 
+          <p class="note task fragment fade-left">
+            Skąd wiemy, jaki tekst napisać na karteczce?
+          </p>
+        </section> 
+        <section>
+          <h3 style="font-size: 3rem">Dodawanie nowej karteczki - na sucho :-)</h3>
+          <pre><code class="hljs javascript">Funkcja: Dodaj nową karteczkę ( dany_tekst ):
+1. Weź samoprzylepną karteczkę.
+2. Weź długopis.
+3. Napisz na karteczce dany_tekst.
+4. Przyklej karteczkę na tablicy.
+5. Odłoż długopis (?)</code></pre>
+        </section>      
+        <section>
+          <h1 style="font-size: 3rem">Wszystko jasne do tej pory?</h1>
+          <figure>
+            <img src="img/llama.gif" />
+          </figure>
+        </section>
         <section>
           <h3>Anatomia funkcji</h3>
-          <p>Zobaczmy, jak będzie wyglądała prosta funkcja dodająca 2 liczby:</p>
+          <p>Funkcję w JavaScript deklarujemy przy użyciu słowa <code>function</code>:</p>
           <pre class="fragment"><code class="hljs javascript">function sum(x, y) {
-  return x + y
+  return x + y; 
 }</code></pre>
-          <p class="fragment">Po wywołaniu:</p>
-          <pre class="fragment"><code class="hljs javascript">sum(2, 3) // zwróci 5</code></pre>
-        </section>
-
+          <p class="fragment">Wartości w nawiasie to są <strong>parametry</strong> - dane na ktorych funkcja operuje.</p>
+          <p class="fragment">Słowem <code>return</code> oznaczamy wartość zwracaną przez funkcję, na ktorej możemy operować dalej:</p>
+          <pre class="fragment"><code class="hljs javascript">let result = sum(2, 3) // result = 5</code></pre>
+        </section>      
         <section>
-          <h3>Funkcja nazwana</h3>
-          <p>Tak zdefiniowaną funkcję nazywamy funkcją nazwaną:</p>
-          <pre><code class="hljs javascript">function sum(x, y) {
-  return x + y
-}</code></pre>
-          <p>Ma ona nazwę, po której możemy się do niej odwołać.</p>
+          <h3>Otworzmy teraz plik exercise.html</h3>
+          <figure>
+            <a href="exercise.html" target="_blank"><img src="img/screenshot.png" /></a>
+          </figure>
         </section>
-
-
         <section>
-          <h3>Parametry funkcji</h3>
-          <p>
-            Parametry (czasem zwane argumentami) funkcji to zestaw danych, które funkcja
-            ma wziąć pod uwagę podczas wykonywania.
-          <p>
-          <p class="fragment">
-            Parametry mogą być wartościami, tablicami, obiektami lub funkcjami.
-          <p>
-          <p class="fragment">
-            To właśnie możliwość podania funkcji jako parametru sprawia, że JavaScript
-            staje się językiem funkcyjnym.
-          <p>
+          <h3>Zadanie 1</h3>
+          <p>W pliku mamy tablicę korkową z dodaną na niej karteczką.</p>    
+          <p class="fragment">Naszym zadaniem będzie napisać funkcję, ktora doda do tablicy nową karteczkę, z dowolnym, podanym przez nas tekstem.</p>  
         </section>
-
         <section>
-          <p>Rozważmy następujący przykład (możecie sprawdzić to w konsoli):</p>
-          <pre class="fragment"><code class="hljs javascript">function sum(x, y) {
-  return x + y
-}
-
-function doMath(x, y, operation) {
-  return operation(x, y)
-}
-
-doMath(2, 3, sum);</code></pre>
-        </section>
-
-        <section>
-          <p>Funkcja <code>doMath</code> przyjmuje 3 parametry:</p>
+          <h3>Zadanie 1 - funkcje pomocnicze</h3>
+          <p>W tym celu możemy wykorzystać dwie napisane już funkcje pomocnicze:</p>
           <ul>
-            <li class="fragment">wartość <code>x</code></li>
-            <li class="fragment">wartość <code>y</code></li>
-            <li class="fragment">oraz operację do wykonania na tych liczbach <code>operation</code></li>
+          <li class="fragment"><code>getNote()</code> - ktora tworzy nową karteczkę i zwraca ją jako wynik działania,</li>
+          <li class="fragment"><code>addNoteToBoard( note )</code> - bierze karteczkę przekazaną jako parametr i dodaje ją do tablicy.</li>
           </ul>
-          <p class="fragment">To prowadzi nas do...</p>
+        </section>     
+        <section>
+          <h3>Coś jeszcze?</h3>
+          <p>Zastanawiacie się pewnie, w jaki sposob napiszemy tekst na karteczce?</p>
+          <p class="fragment">Nasza karteczka, jak każdy element <a href="help.html#/document" target="_blank">dokumentu</a> HTML ma właściwość <code>innerHTML</code>. Cokolwiek w niej zapiszemy, stanie się treścią karteczki, np:</p>  
+          <pre class="fragment"><code class="hljs javascript">element.innerHTML = 'Kodowanie jest fajne!'</code></pre>                
+        </section>     
+        <section>    
+          <h3>Do dzieła!</h3> 
+          <p class="note task fade-left">
+            Napiszmy funkcję <code>createNewNote</code>, ktora przyjmie jako parametr tekst, pobierze nową karteczkę korzystając z funkcji <code>getNote()</code>, napisze tekst na karteczce - zapisując go w <code>innerHTML</code>, a następnie karteczkę do tablicy przy użyciu funkcji <code>addNoteToBoard( note )</code>.
+          </p>
+        </section> 
+        <section>
+          <h3>Gotowe?</h3>
+          <p>Powinno nam wyjść coś takiego:</p>
+          <pre class="fragment"><code class="hljs javascript">function createNewNote( text ) {
+    let newNote = getNote();
+    newNote.innerHTML = text;
+    addNoteToBoard( newNote );
+}</code></pre>
+        </section>   
+        <section>
+          <h1 style="font-size: 3rem">Wszystko się zgadza?</h1>
+          <p>Przetestujmy teraz tę funkcję w konsoli.</p>
+          <p class="fragment">Jak to zrobimy?</p>  
+          <pre class="fragment"><code class="hljs javascript">createNewNote( "Zaprosić koleżankę na następne warsztaty" );</code></pre>
+         </section>
+        <section>         
+          <h3>Bonus: sprobuj kliknąć na długopis i zobacz, co się wtedy stanie. </h3>
+          <p class="fragment">Jeżeli twoja funkcja nazywa się <code>createNewNote</code> i działa jak trzeba, powinnaś mieć wygodną opcję dodawania nowych karteczek.</p> 
         </section>
-
-
+        <section>         
+          <h3>A co jeśli nie podamy żadnego tekstu?</h3>
+          <p>Żeby karteczka nie była pusta, można zaproponować domyślny tekst, ktory pojawi się tam, kiedy nie przekażemy żadnego parametru.</p> 
+          <p class="fragment">W tym celu możemy użyć <strong>parametrow domyślnych</strong>.</p> 
+        </section> 
+        <section>         
+          <h3>Jak działają parametry domyślne?</h3>
+          <p>Przy deklarowaniu funkcji i jej parametrow możemy podać domyślną wartość po znaku <code>=</code>. Na przykład:</p> 
+           <pre class="fragment"><code class="hljs javascript">function setColor( color = 'yellow' ) {
+    // jeżeli podasz kolor w nawiasie, funkcja użyje tego, ktory podałaś
+    // jeżeli nie podasz żadnego, automatycznie ustawi się żołty
+}</code></pre>         
+        </section>  
+        <section>    
+          <h3>Wykorzystajmy to w praktyce.</h3> 
+          <p class="note task fade-left">
+            W funkcji <code>createNewNote</code>, ktorą wcześniej napisałaś, dodaj domyślną treść, ktora ma się pojawić, kiedy nie podamy żadnego tekstu.
+          </p>
+        </section>       
+        <section>
+          <h3>Proste, prawda?</h3>
+          <pre class="fragment"><code class="hljs javascript">function createNewNote( text = "Dokupić więcej żoltych karteczek" ) {
+    let newNote = getNote();
+    newNote.innerHTML = text;
+    addNoteToBoard( newNote );
+}</code></pre>
+        </section>        
+        <section>
+          <h3>No to lecimy dalej :-)</h3>          
+          <figure class="fragment">
+            <img src="img/lets-do-this.gif" />
+          </figure>
+        </section>      
         <section>
           <h3>Funkcja anonimowa</h3>
-          <p>Możemy również mieć funkcję anonimową:</p>
+          <p>To funkcja ktora nie ma swojej nazwy. Wygląda na przykład tak:</p>
           <pre class="fragment"><code class="hljs javascript">function (x, y) {
-  return x + y
+  return x + y;
 }</code></pre>
-          <p class="fragment">Ale nie odwołamy się do niej po nazwie (bo jej nie ma).</p>
         </section>
-
         <section>
           <h3>Funkcja anonimowa</h3>
           <p>Po co więc nam funkcje anonimowe?</p>
           <p class="fragment">Możemy je przypisać do zmiennej:</p>
           <pre class="fragment"><code class="hljs javascript">let sum = function (x, y) {
-  return x + y
+  return x + y;
 }
-
-sum(2, 3) // zwróci 5</code></pre>
-          <p class="fragment">Ale to wiele nie różni się od funkcji nazwanej.</p>
+</code></pre>
+          <p class="fragment">Ale to wiele nie różni się od funkcji nazwanej:</p>
+          <pre class="fragment"><code class="hljs javascript">sum( 2, 3 ) // zwroci 5
+</code></pre>          
         </section>
-
         <section>
           <h3>Funkcja anonimowa</h3>
-          <p>
-             Prawdziwy użytek można zrobić z funkcji anonimowych przy
-             przekazywaniu jej jako parametr do innej funkcji.</p>
+          <p>Prawdziwy użytek można zrobić z funkcji anonimowych przy
+             przekazywaniu jej jako parametr do innej funkcji, albo przy tworzeniu ich dynamicznie.</p>
         </section>
-
         <section>
-          <h3>Funkcja anonimowa</h3>
-          <p>Zobaczmy jak będzie wyglądał poprzedni przykład:</p>
-          <pre class="fragment"><code class="hljs javascript">function doMath(x, y, operation) {
-  return operation(x, y)
-}
-
-doMath(2, 3, function (x, y) { return x + y });</code></pre>
-        </section>
-
+          <h3>Czyli że o co chodzi?</h3>
+          <p>Otworzmy teraz plik z drugim zadaniem, exercise2.html</p>
+          <figure>
+            <a href="exercise2.html" target="_blank"><img src="img/screenshot2.png" /></a>
+          </figure>
+        </section>  
         <section>
-          <h3>Funkcja jako parametr</h3>
-          <p>Bardzo często spotyka się przekazywanie funkcji jako parametru.</p>
-          <p class="fragment">
-            Taki sposób programowania sprawdza się przy funkcjach, które muszą wykonać
-            operacje trwające trochę dłużej. Po wykonaniu swojej logiki, funkcja wywołuje
-            przekazaną funkcję w parametrze.
-          </p>
-          <p class="fragment">
-            Wówczas tą funkcję z parametru nazywa się <b>callbackiem</b>.
-          </p>
-        </section>
-
+          <h3>Zadanie 2</h3>
+          <p>Większość kodu kalkulatora jest już napisana. Mamy na przykład już gotową funkcję <code>numberKeyPressed( number )</code>, ktora wykonuje wszystkie operacje potrzebne przy naciśnięciu guziczka od 0 do 9.</p>
+          <p class="fragment">To, czego potrzebujemy teraz to powiązać tę funkcję z akcją, kiedy ktoś naciśnie na jeden z tych przyciskow.</p>
+        </section>      
         <section>
-          <h3>Callback</h3>
-          <p>Możemy sobie wyobrazić następującą, przykładową funkcję, która pobiera dane użytkownika:<p>
-          <pre class="fragment"><code class="hljs javascript">function loadData(callback) {
-  // logika trwająca
-  callback(data) // przekazanie wyniku logiki
-}</code></pre>
-          <p class="fragment">Następujący kod uruchomimy o tak:<p>
-          <pre class="fragment"><code class="hljs javascript">loadData(function (data) {
-  console.log(data)
-})</code></pre>
+          <h3>Pamiętacie nasze warsztaty?</h3>
+          <p>Poznałyśmy tam metodę <code>addEventListener</code>, ktora pozwala powiązać funkcję z wydarzeniem na elemencie. </p>
+          <ul class="note more">
+            <li><code>element.addEventListener( wydarzenie, akcja-do-wykonania )</code> - wykonuje
+              podaną akcję, gdy z elementem stanie się coś konkretnego.
+            </li>
+          </ul>         
         </section>
-
+        <section>
+          <h3>addEventListener - przykład</h3>
+          <pre class="fragment"><code class="hljs javascript">document.querySelector( '#button' ).addEventListener( 'click',
+function () {
+    console.log('Wciśnięty przycisk!');
+});</code></pre>
+          <p class="fragment">CDN<p>
+        </section>
+<!--
 
         <section>
           <h3>Callback</h3>
@@ -441,174 +504,7 @@ button.addEventListener(welcome);</code></pre>
 
 button.addEventListener(welcome('Zosia'));</code></pre>
         </section>
-
-        <section>
-          <h3>Można i bardziej</h3>
-          <p>W razie potrzeb, możecie robić więcej zagnieżdżeń zwracanych funkcji:</p>
-          <pre class="fragment"><code class="hljs javascript">function madness() {
-  return function () {
-    return function () {
-      return function () {
-        console.log('This is madness!');
-      }
-    }
-  }
-}
-
-madness()()()() // Wypisze 'This is madness!';</code></pre>
-        </section>
-
-        <section>
-          <h2>Łączenie wywołań funkcji <em>(function chaining)</em></h2>
-          <figure>
-            <img src="img/chains.jpg" />
-            <figcaption style="font-size: 0.5rem">
-              Grafika zapożyczona z serwisu wikipedia.org
-            </figcaption>
-          </figure>
-        </section>
-
-        <section>
-          <h3>Łączenie wywołań funkcji</h3>
-          <p>
-            Możemy łączyć wiele wywołań metod i funkcji w
-            jeden logiczny ciąg (łańcuch) wywołań.
-          </p>
-          <p class="fragment">
-            W anglojęzycznej literaturze nazywane to jest <em>function chaining</em>.
-          </p>
-        </section>
-
-        <section>
-          <h3>Jak to wygląda?</h3>
-          <p>Najlepiej zobaczyć to w praktyce na przykładzie tablicy.</p>
-          <p>
-            Przypomnienie z poprzedniego follow-upu: Tablica to po prostu
-            zmienna mogąca przechowywać wiele wartości, do których dostajemy się
-            za pomocą numerów (od 0, nie od 1)
-          </p>
-          <pre class="fragment"><code class="hljs javascript">let myArray = ['Asia', 'Kasia', 'Basia'];
-
-console.log( myArray[0] ); // Wypisze 'Asia'</code></pre>
-        </section>
-
-        <section>
-          <h3>Metody</h3>
-          <p>
-            Tablica jest specjalnym przypadkiem obiektu, więc jak każdy obiekt
-            posiada szereg metod.
-          </p>
-          <p>
-            Niektóre z nich przyjmują jako argument funkcję do wykonania operacji.
-          </p>
-        </section>
-
-        <section>
-          <h3>Metoda <code>filter</code></h3>
-          <p>
-            Zwraca <b>nową</b> tablicę z odfiltrowanymi danymi spełniającymi
-            podaną funkcję.
-          </p>
-          <pre class="fragment"><code class="hljs javascript">let example = [9, 2, 4, 7, 1, 3, 6, 8, 5];
-
-let filtered = example.filter(function (item) {
-  return item > 5
-})
-
-console.log( filtered ); // [9, 7, 6, 8]</code></pre>
-        </section>
-
-        <section>
-          <h3><code>sort</code> i <code>shift</code></h3>
-          <p>
-            Metoda <code>sort</code> pozwala posortować zawartość tablicy.
-            Podobnie jak <code>filter</code>, zwraca nową tablicę, ale nie
-            wymaga podawania argumentu.
-          </p>
-          <p class="fragment">
-            Natomiast metoda <code>shift</code> pozwala na pobranie pierwszej
-            wartości z tablicy (aczkolwiek usuwa ją z tablicy).
-          </p>
-        </section>
-
-        <section>
-          <h3>Łączenie metod</h3>
-          <p>Teraz możemy połączyć wszystkie 3 metody.<p>
-          <p class="fragment">
-            Jeżeli połączymy w następującej kolejności: <code>sort, filter, shift</code>
-            - dostaniemy pierwszy (najmniejszy) element większy od 5. Czyli 6.
-          <p>
-        </section>
-
-        <section>
-          <h3>Łączenie metod</h3>
-          <p>Pierwsze podejście</p>
-          <pre class="fragment"><code class="hljs javascript">let example = [9, 2, 4, 7, 1, 3, 6, 8, 5];
-
-let sorted = example.sort()
-let filtered = sorted.filter(function (item) {
-  return item > 5
-})
-let first = filtered.shift()
-
-console.log( first ); // 6</code></pre>
-        </section>
-
-        <section>
-          <h3>Problem</h3>
-          <p>Główny problem z tym podejściem: Produkujemy dużo zmiennych, które później się nie przydają.</p>
-          <p>
-            Można jednak zauważyć, że 2 pierwsze metody zwracają tablice. Nie musimy ich
-            więc przypisywać do zmiennych, możemy od razu wywoływać kolejne metody,
-            tworząc tym samym <b>łańcuch (chain) wywołań</b>.
-          </p>
-        </section>
-
-        <section>
-          <h3>Łączenie wywołań</h3>
-          <pre class="fragment"><code class="hljs javascript">let example = [9, 2, 4, 7, 1, 3, 6, 8, 5];
-
-let first = example.sort()
-  .filter(function (item) {
-    return item > 5
-  })
-  .shift()
-
-console.log( first ); // 6</code></pre>
-        </section>
-
-        <section>
-          <h3>Łączenie wywołań</h3>
-          <p>
-            Tak długo, jak metoda zwraca obiekt (lub tablicę), można kontynuować
-            łańcuch wywołań metod.
-          </p>
-          <p class="note more fragment fade-left">
-            Trzeba uważać bardzo na to, co zwracają metody. Jeżeli metoda zwróci
-            inny obiekt, niż ten który się spodziewacie, możecie próbować na nim
-            wywołać nieistniejącą metodę, co zakończy się błędem.
-          </p>
-
-        </section>
-
-        <section>
-          <h3>Łączenie wywołań</h3>
-          <pre class="fragment"><code class="hljs javascript">example.sort() // zwraca tablicę
-  .filter(...)  // zwraca tablicę
-  .shift()  // zwraca liczbę</code></pre>
-          <p class="fragment">
-            Metoda <code>shift</code> zwróci nam liczbę, wiec nie możemy dalej
-            łączyć metod tablicy.
-          </p>
-          <p class="fragment">
-            Ale możemy użyć jakiejś metody z repertuaru
-            metod liczbowych.
-          </p>
-        </section>
-
-        <section>
-          <h3>Ćwiczenie na podsumowanie chainowania lub/i całego follow-upu.</h3>
-        </section>
+-->
 
 
         <section data-transition="zoom" data-transition-speed="slow">

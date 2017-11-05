@@ -344,3 +344,7 @@ pre {
 	width: 55%;
 	float: left;
 }
+
+figure a:before {
+  display: none;
+}
