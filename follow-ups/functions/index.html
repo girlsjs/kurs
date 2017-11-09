@@ -67,16 +67,16 @@
           <p>Jeżeli byłyście na warsztacie, pisałyście tam własne funkcje do obsługi przyciskow na stronie.</p>
           <p class="fragment">Funkcje przydają się, gdy chcemy ten sam kawałek kodu wykonać kilka razy.</p>
           <p class="fragment">Można wykonywać go za każdym razem <strong>na innych danych</strong>.</p>
-          <p class="fragment">Funkcja może też zwracać wynik swojego działania, na ktorym reszta kodu będzie działać dalej.</p>
+          <p class="fragment">Funkcja może też zwracać wynik swojego działania, na którym reszta kodu będzie działać dalej.</p>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Więc czym to się właściwie rożni od pętli?</h3>
+          <h3 style="font-size: 3rem">Więc czym to się właściwie różni od pętli?</h3>
           <p>Na ostatnich zajęciach używałyśmy przecież pętli, żeby wykonywać ten sam kod kilka razy...</p>
         </section>
         <section>    
           <p>Pętlę wykonujemy kilka razy jedno po drugim, i na tym koniec. Funkcję możemy wywołać w dowolnym momencie, z dowolnego miejsca w kodzie.</p>
-          <p class="fragment">Pętla musi mieć z gory przygotowane dane i działa na nich w ściśle  określonej kolejności (0, 1, 2, ...). Funkcja za każdym razem może dostać nowy zestaw danych, niezależny od tego co było wcześniej.</p>
-          <p class="fragment">Podział na funkcje sprawia, że kod staje się bardziej przejrzysty, i łatwiej szukać w nim błędow.</p>
+          <p class="fragment">Pętla musi mieć z góry przygotowane dane i działa na nich w ściśle określonej kolejności (0, 1, 2, ...). Funkcja za każdym razem może dostać nowy zestaw danych, niezależny od tego co było wcześniej.</p>
+          <p class="fragment">Podział na funkcje sprawia, że kod staje się bardziej przejrzysty, i łatwiej szukać w nim błędów.</p>
         </section>
         <section>
           <h3 style="font-size: 3rem">A w praktyce?</h3>
@@ -95,7 +95,7 @@
         <section>    
           <h3 style="font-size: 3rem">Na razie bez komputerow...</h3> 
           <p class="note task fragment fade-left">
-            Załozmy, że chcemy dodać nową karteczkę do tablicy z poprzedniego slajdu. Zastanowmy się razem, jakie czynności będziemy musiały wykonać?
+            Załóżmy, że chcemy dodać nową karteczkę do tablicy z poprzedniego slajdu. Zastanówmy się razem, jakie czynności będziemy musiały wykonać?
           </p>
         </section>             
         <section>
@@ -104,7 +104,7 @@
 2. Weź długopis.
 3. Napisz na karteczce tekst.
 4. Przyklej karteczkę na tablicy.
-5. Odłoż długopis (?)</code></pre>
+5. Odłóż długopis (?)</code></pre>
         </section>
          <section>    
           <h3 style="font-size: 3rem">Czegoś tu brakuje?</h3> 
@@ -119,7 +119,7 @@
 2. Weź długopis.
 3. Napisz na karteczce dany_tekst.
 4. Przyklej karteczkę na tablicy.
-5. Odłoż długopis (?)</code></pre>
+5. Odłóż długopis (?)</code></pre>
         </section>      
         <section>
           <h1 style="font-size: 3rem">Wszystko jasne do tej pory?</h1>
@@ -133,12 +133,12 @@
           <pre class="fragment"><code class="hljs javascript">function sum(x, y) {
   return x + y; 
 }</code></pre>
-          <p class="fragment">Wartości w nawiasie to są <strong>parametry</strong> - dane na ktorych funkcja operuje.</p>
-          <p class="fragment">Słowem <code>return</code> oznaczamy wartość zwracaną przez funkcję, na ktorej możemy operować dalej:</p>
+          <p class="fragment">Wartości w nawiasie to są <strong>parametry</strong> - dane, na których funkcja operuje.</p>
+          <p class="fragment">Słowem <code>return</code> oznaczamy wartość zwracaną przez funkcję, na której możemy operować dalej:</p>
           <pre class="fragment"><code class="hljs javascript">let result = sum(2, 3) // result = 5</code></pre>
         </section>      
         <section>
-          <h3>Otworzmy teraz plik exercise.html</h3>
+          <h3>Otwórzmy teraz plik exercise.html</h3>
           <figure>
             <a href="exercise.html" target="_blank"><img src="img/screenshot.png" /></a>
           </figure>
@@ -146,26 +146,26 @@
         <section>
           <h3>Zadanie 1</h3>
           <p>W pliku mamy tablicę korkową z dodaną na niej karteczką.</p>    
-          <p class="fragment">Naszym zadaniem będzie napisać funkcję, ktora doda do tablicy nową karteczkę, z dowolnym, podanym przez nas tekstem.</p>  
+          <p class="fragment">Naszym zadaniem będzie napisać funkcję, która doda do tablicy nową karteczkę, z dowolnym, podanym przez nas tekstem.</p>
         </section>
         <section>
           <h3>Zadanie 1 - funkcje pomocnicze</h3>
           <p>W tym celu możemy wykorzystać dwie napisane już funkcje pomocnicze:</p>
           <ul>
-          <li class="fragment"><code>getNote()</code> - ktora tworzy nową karteczkę i zwraca ją jako wynik działania,</li>
+          <li class="fragment"><code>getNote()</code> - która tworzy nową karteczkę i zwraca ją jako wynik działania,</li>
           <li class="fragment"><code>addNoteToBoard( note )</code> - bierze karteczkę przekazaną jako parametr i dodaje ją do tablicy.</li>
           </ul>
         </section>     
         <section>
           <h3>Coś jeszcze?</h3>
-          <p>Zastanawiacie się pewnie, w jaki sposob napiszemy tekst na karteczce?</p>
+          <p>Zastanawiacie się pewnie, w jaki sposób napiszemy tekst na karteczce?</p>
           <p class="fragment">Nasza karteczka, jak każdy element <a href="help.html#/document" target="_blank">dokumentu</a> HTML ma właściwość <code>innerHTML</code>. Cokolwiek w niej zapiszemy, stanie się treścią karteczki, np:</p>  
           <pre class="fragment"><code class="hljs javascript">element.innerHTML = 'Kodowanie jest fajne!'</code></pre>                
         </section>     
         <section>    
           <h3>Do dzieła!</h3> 
           <p class="note task fade-left">
-            Napiszmy funkcję <code>createNewNote</code>, ktora przyjmie jako parametr tekst, pobierze nową karteczkę korzystając z funkcji <code>getNote()</code>, napisze tekst na karteczce - zapisując go w <code>innerHTML</code>, a następnie karteczkę do tablicy przy użyciu funkcji <code>addNoteToBoard( note )</code>.
+            Napiszmy funkcję <code>createNewNote</code>, która przyjmie jako parametr tekst, pobierze nową karteczkę korzystając z funkcji <code>getNote()</code>, napisze tekst na karteczce - zapisując go w <code>innerHTML</code>, a następnie doda karteczkę do tablicy przy użyciu funkcji <code>addNoteToBoard( note )</code>.
           </p>
         </section> 
         <section>
@@ -184,26 +184,26 @@
           <pre class="fragment"><code class="hljs javascript">createNewNote( "Zaprosić koleżankę na następne warsztaty" );</code></pre>
          </section>
         <section>         
-          <h3>Bonus: sprobuj kliknąć na długopis i zobacz, co się wtedy stanie. </h3>
+          <h3>Bonus: spróbuj kliknąć na długopis i zobacz, co się wtedy stanie. </h3>
           <p class="fragment">Jeżeli twoja funkcja nazywa się <code>createNewNote</code> i działa jak trzeba, powinnaś mieć wygodną opcję dodawania nowych karteczek.</p> 
         </section>
         <section>         
           <h3>A co jeśli nie podamy żadnego tekstu?</h3>
-          <p>Żeby karteczka nie była pusta, można zaproponować domyślny tekst, ktory pojawi się tam, kiedy nie przekażemy żadnego parametru.</p> 
-          <p class="fragment">W tym celu możemy użyć <strong>parametrow domyślnych</strong>.</p> 
-        </section> 
+          <p>Żeby karteczka nie była pusta, można zaproponować domyślny tekst, który pojawi się tam, kiedy nie przekażemy żadnego parametru.</p> 
+          <p class="fragment">W tym celu możemy użyć <strong>parametrów domyślnych</strong>.</p> 
+        </section>
         <section>         
           <h3>Jak działają parametry domyślne?</h3>
-          <p>Przy deklarowaniu funkcji i jej parametrow możemy podać domyślną wartość po znaku <code>=</code>. Na przykład:</p> 
+          <p>Przy deklarowaniu funkcji i jej parametrów możemy podać domyślną wartość po znaku <code>=</code>. Na przykład:</p> 
            <pre class="fragment"><code class="hljs javascript">function setColor( color = 'yellow' ) {
-    // jeżeli podasz kolor w nawiasie, funkcja użyje tego, ktory podałaś
-    // jeżeli nie podasz żadnego, automatycznie ustawi się żołty
+    // jeżeli podasz kolor w nawiasie, funkcja użyje tego, który podałaś
+    // jeżeli nie podasz żadnego, automatycznie ustawi się żółty
 }</code></pre>         
         </section>  
         <section>    
           <h3>Wykorzystajmy to w praktyce.</h3> 
           <p class="note task fade-left">
-            W funkcji <code>createNewNote</code>, ktorą wcześniej napisałaś, dodaj domyślną treść, ktora ma się pojawić, kiedy nie podamy żadnego tekstu.
+            W funkcji <code>createNewNote</code>, którą wcześniej napisałaś, dodaj domyślną treść, która ma się pojawić, kiedy nie podamy żadnego tekstu.
           </p>
         </section>       
         <section>
@@ -222,7 +222,7 @@
         </section>      
         <section>
           <h3>Funkcja anonimowa</h3>
-          <p>To funkcja ktora nie ma swojej nazwy. Wygląda na przykład tak:</p>
+          <p>To funkcja która nie ma swojej nazwy. Wygląda na przykład tak:</p>
           <pre class="fragment"><code class="hljs javascript">function (x, y) {
   return x + y;
 }</code></pre>
@@ -236,8 +236,8 @@
 }
 </code></pre>
           <p class="fragment">Ale to wiele nie różni się od funkcji nazwanej:</p>
-          <pre class="fragment"><code class="hljs javascript">sum( 2, 3 ) // zwroci 5
-</code></pre>          
+          <pre class="fragment"><code class="hljs javascript">sum( 2, 3 ) // zwróci 5
+</code></pre>
         </section>
         <section>
           <h3>Funkcja anonimowa</h3>
@@ -246,18 +246,18 @@
         </section>
         <section>
           <h3>Czyli że o co chodzi?</h3>
-          <p>Otworzmy teraz plik z drugim zadaniem, exercise2.html</p>
+          <p>Otwórzmy teraz plik z drugim zadaniem, exercise2.html</p>
           <figure>
             <a href="exercise2.html" target="_blank"><img src="img/screenshot2.png" /></a>
           </figure>
         </section>  
         <section>
           <h3>Zadanie 2</h3>
-          <p>Mamy przed sobą częściowo oprogramowany kalkulator. W tym momencie jeszcze żaden guziczek nie działa - żeby go ożywić musimy napisać kilka nowych funkcji, i podłączyć je pod odpowiednie guziki.</p>
+          <p>Mamy przed sobą częściowo oprogramowany kalkulator. W tym momencie jeszcze żaden guziczek nie działa - żeby go ożywić, musimy napisać kilka nowych funkcji, i podłączyć je pod odpowiednie guziki.</p>
         </section>  
         <section>
           <h3>Czyszczenie ekranu</h3>          
-          <p class="fragment">Zacznijmy od w miarę prostego przypadku. Przycisk <strong>C</strong> zazwyczaj służy do wyczyszczenia ekranu - zmiany tego, co na nim jest na zero. Zastanowmy się (na razie po polsku) co powinno się wydarzyć, kiedy ktoś wciśnie ten przycisk.</p>          
+          <p class="fragment">Zacznijmy od w miarę prostego przypadku. Przycisk <strong>C</strong> zazwyczaj służy do wyczyszczenia ekranu - zmiany tego, co na nim jest na zero. Zastanówmy się (na razie po polsku) co powinno się wydarzyć, kiedy ktoś wciśnie ten przycisk.</p>          
         </section>  
         <section>        
           <h2>Gotowe?</h2>
@@ -268,7 +268,7 @@
 </code></pre>           
         </section>   
         <section>        
-          <p>Do wyświetlenia liczby na ekranie możemy użyć właściwości <code>innerHTML</code>, ktorą poznałyśmy już wcześniej. Tylko jak podpiąć ją do ekranu kalkulatora?</p>
+          <p>Do wyświetlenia liczby na ekranie możemy użyć właściwości <code>innerHTML</code>, którą poznałyśmy już wcześniej. Tylko jak podpiąć ją do ekranu kalkulatora?</p>
         </section>     
         <section>            
           <p>
@@ -285,14 +285,14 @@
           </figure>                       
         </section>  
         <section>        
-          <p>Używając tego selektora możemy teraz dobrać się do elementu, używając <a href="help.html#/querySelector">document.querySelector</a>, np:</p>
+          <p>Używając tego selektóra możemy teraz dobrać się do elementu, używając <a href="help.html#/querySelector">document.querySelector</a>, np:</p>
           <pre class="fragment"><code class="hljs javascript">document.querySelector('#screen').innerHTML = "Siemanko!";</code></pre>                     
         </section>         
         <section>        
           <h2>Wszystko jasne?</h2>
           <p class="note task fragment fade-left">
-            W pliku <code>exercise2.html</code> dodaj nową funkcję o nazwie <code>reset</code>. Funkcja ta powinna zrobić dwie rzeczy: zapisać 0 w zmiennej <code>currentNumber</code>, oraz złapać element <code>'#screen'</code> i podmienić jego zawartość, na to co mamy w tej zmiennej. Pamiętaj, żeby użyć tych samych nazw funkcji i zmiennych, inaczej nasz kod nie będzie wspolpracował z resztą.
-          </p>        
+            W pliku <code>exercise2.html</code> dodaj nową funkcję o nazwie <code>reset</code>. Funkcja ta powinna zrobić dwie rzeczy: zapisać 0 w zmiennej <code>currentNumber</code>, oraz złapać element <code>'#screen'</code> i podmienić jego zawartość, na to co mamy w tej zmiennej. Pamiętaj, żeby użyć tych samych nazw funkcji i zmiennych, inaczej nasz kod nie będzie współpracował z resztą.
+          </p>
         </section>  
         <section>        
           <h2>I jak nam poszło?</h2>
@@ -302,13 +302,13 @@
 }
 </code></pre>     
           <p class="fragment">Przetestujmy, jak to działa w konsoli. </p>          
-        </section>       
+        </section>
         <section>        
           <p>To, czego potrzebujemy teraz to powiązać tę funkcję z akcją, kiedy ktoś naciśnie na jeden z tych przyciskow.</p>
         </section>      
         <section>
           <h3>Pamiętacie nasze warsztaty?</h3>
-          <p>Poznałyśmy tam metodę <code>addEventListener</code>, ktora pozwala powiązać funkcję z wydarzeniem na elemencie. </p>
+          <p>Poznałyśmy tam metodę <code>addEventListener</code>, która pozwala powiązać funkcję z wydarzeniem na elemencie. </p>
           <ul class="note more fragment">
             <li><code>element.addEventListener( wydarzenie, akcja-do-wykonania )</code> - wykonuje
               podaną akcję, gdy z elementem stanie się coś konkretnego.
@@ -325,7 +325,7 @@ function () {
         <section>
           <h3>No to do dzieła!</h3>
           <p class="note task fragment fade-left">
-            Powiąż teraz funkcję <code>reset</code>, ktorą napisałaś, z przyciskiem <code>C</code>. Do przycisku możesz odnieść się przy użyciu <code>document.querySelector</code>. Jeżeli nie jesteś pewna jaki jest selektor elementu, sprawdź w narzędziach przeglądarki.Użyj <code>addEventListener</code> żeby powiązać kliknięcie na tym przycisku z funkcją <code>reset</code>.
+            Powiąż teraz funkcję <code>reset</code>, którą napisałaś, z przyciskiem <code>C</code>. Do przycisku możesz odnieść się przy użyciu <code>document.querySelector</code>. Jeżeli nie jesteś pewna jaki jest selektor elementu, sprawdź w narzędziach przeglądarki.Użyj <code>addEventListener</code> żeby powiązać kliknięcie na tym przycisku z funkcją <code>reset</code>.
           </p>  
         </section>      
         <section>
