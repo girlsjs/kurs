@@ -242,7 +242,7 @@
         <section>
           <h3>Funkcja anonimowa</h3>
           <p>Prawdziwy użytek można zrobić z funkcji anonimowych przy
-             przekazywaniu jej jako parametr do innej funkcji, albo przy tworzeniu ich dynamicznie.</p>
+             przekazywaniu jej jako parametr do innej funkcji, albo przy tworzeniu ich dynamicznie (czytaj: na bieżąco).</p>
         </section>
         <section>
           <h3>Czyli że o co chodzi?</h3>
@@ -253,13 +253,63 @@
         </section>  
         <section>
           <h3>Zadanie 2</h3>
-          <p>Większość kodu kalkulatora jest już napisana. Mamy na przykład już gotową funkcję <code>numberKeyPressed( number )</code>, ktora wykonuje wszystkie operacje potrzebne przy naciśnięciu guziczka od 0 do 9.</p>
-          <p class="fragment">To, czego potrzebujemy teraz to powiązać tę funkcję z akcją, kiedy ktoś naciśnie na jeden z tych przyciskow.</p>
+          <p>Mamy przed sobą częściowo oprogramowany kalkulator. W tym momencie jeszcze żaden guziczek nie działa - żeby go ożywić musimy napisać kilka nowych funkcji, i podłączyć je pod odpowiednie guziki.</p>
+        </section>  
+        <section>
+          <h3>Czyszczenie ekranu</h3>          
+          <p class="fragment">Zacznijmy od w miarę prostego przypadku. Przycisk <strong>C</strong> zazwyczaj służy do wyczyszczenia ekranu - zmiany tego, co na nim jest na zero. Zastanowmy się (na razie po polsku) co powinno się wydarzyć, kiedy ktoś wciśnie ten przycisk.</p>          
+        </section>  
+        <section>        
+          <h2>Gotowe?</h2>
+          <p>Zobaczmy, co nam wyszło:</p>
+          <pre class="fragment"><code class="hljs javascript">Kiedy wciśnięto przycisk C:
+1. Zapisz 0 jako aktualny numer,
+2. Wyświetl aktualny numer na ekranie.
+</code></pre>           
+        </section>   
+        <section>        
+          <p>Do wyświetlenia liczby na ekranie możemy użyć właściwości <code>innerHTML</code>, ktorą poznałyśmy już wcześniej. Tylko jak podpiąć ją do ekranu kalkulatora?</p>
+        </section>     
+        <section>            
+          <p>
+            Kto był na warsztatach, ten może pamięta - dowolny element na stronie możemy "zbadać" narzędziami przeglądarki:
+          </p>    
+          <figure>
+            <img src="img/inspect.png" />
+          </figure>          
+        </section>     
+        <section>        
+          <p>A następnie pobrać jego selektor w drzewie po prawej:</p>
+          <figure>
+            <img src="img/inspect2.png" />
+          </figure>                       
+        </section>  
+        <section>        
+          <p>Używając tego selektora możemy teraz dobrać się do elementu, używając <a href="help.html#/querySelector">document.querySelector</a>, np:</p>
+          <pre class="fragment"><code class="hljs javascript">document.querySelector('#screen').innerHTML = "Siemanko!";</code></pre>                     
+        </section>         
+        <section>        
+          <h2>Wszystko jasne?</h2>
+          <p class="note task fragment fade-left">
+            W pliku <code>exercise2.html</code> dodaj nową funkcję o nazwie <code>reset</code>. Funkcja ta powinna zrobić dwie rzeczy: zapisać 0 w zmiennej <code>currentNumber</code>, oraz złapać element <code>'#screen'</code> i podmienić jego zawartość, na to co mamy w tej zmiennej. Pamiętaj, żeby użyć tych samych nazw funkcji i zmiennych, inaczej nasz kod nie będzie wspolpracował z resztą.
+          </p>        
+        </section>  
+        <section>        
+          <h2>I jak nam poszło?</h2>
+          <pre class="fragment"><code class="hljs javascript">function reset() {
+    currentNumber = 0;
+    document.querySelector('#screen').innerHTML = currentNumber;
+}
+</code></pre>     
+          <p class="fragment">Przetestujmy, jak to działa w konsoli. </p>          
+        </section>       
+        <section>        
+          <p>To, czego potrzebujemy teraz to powiązać tę funkcję z akcją, kiedy ktoś naciśnie na jeden z tych przyciskow.</p>
         </section>      
         <section>
           <h3>Pamiętacie nasze warsztaty?</h3>
           <p>Poznałyśmy tam metodę <code>addEventListener</code>, ktora pozwala powiązać funkcję z wydarzeniem na elemencie. </p>
-          <ul class="note more">
+          <ul class="note more fragment">
             <li><code>element.addEventListener( wydarzenie, akcja-do-wykonania )</code> - wykonuje
               podaną akcję, gdy z elementem stanie się coś konkretnego.
             </li>
@@ -271,8 +321,28 @@
 function () {
     console.log('Wciśnięty przycisk!');
 });</code></pre>
-          <p class="fragment">CDN<p>
         </section>
+        <section>
+          <h3>No to do dzieła!</h3>
+          <p class="note task fragment fade-left">
+            Powiąż teraz funkcję <code>reset</code>, ktorą napisałaś, z przyciskiem <code>C</code>. Do przycisku możesz odnieść się przy użyciu <code>document.querySelector</code>. Jeżeli nie jesteś pewna jaki jest selektor elementu, sprawdź w narzędziach przeglądarki.Użyj <code>addEventListener</code> żeby powiązać kliknięcie na tym przycisku z funkcją <code>reset</code>.
+          </p>  
+        </section>      
+        <section>
+          <h3>Gotowe?</h3>
+          <p class="fragment">
+            Tak powinna wyglądać całość:
+          </p>  
+          <pre class="fragment"><code class="hljs javascript">function reset() {
+    currentNumber = 0;
+    document.querySelector('#screen').innerHTML = currentNumber;
+}
+
+document.querySelector('#C').addEventListener( 'click', reset );
+</code></pre>            
+          <p class="fragment">Sprawdźmy, jak to teraz działa.</p>
+   
+        </section>           
 <!--
 
         <section>

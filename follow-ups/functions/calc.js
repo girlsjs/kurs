@@ -5,7 +5,7 @@ let decimals = false;
 let isResetNeeded = false;
 
 function reset() {
-  currentNumber = "0";
+  currentNumber = 0;
   refreshScreen();
 }
 
@@ -46,7 +46,10 @@ function processOperation( operation ) {
 }
 
 function scheduleNextOperation( operation ) { 
-  if( nextOperation ) {
+  if( isResetNeeded && operation ) {
+    lastNumber = lastNumber.toString();    
+    isResetNeeded = false;
+  } else if( nextOperation ) {
     lastNumber = processOperation( nextOperation );
     lastNumber = lastNumber.toString();
   } else {
@@ -65,10 +68,10 @@ function numberKeyPressed( number ) {
   if( isResetNeeded === true ) {
     hardReset();
   }
-  if( currentNumber === "0" ) {
+  if( currentNumber === 0 || currentNumber === "0" ) {
     currentNumber = number.toString();
   }
-  else {
+  else if ( currentNumber.length < 11 ) {
     currentNumber += number.toString();
   }
   refreshScreen();
