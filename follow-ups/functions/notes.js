@@ -9,12 +9,6 @@ function addNoteToBoard( note ) {
   document.querySelector( '#board' ).appendChild( note );  
 }
 
-function createNewNote( text ) {
-    let newNote = getNote();
-    newNote.innerHTML = text;
-    addNoteToBoard( newNote );
-}
-
 function showNewNoteForm () {
   document.querySelector("#overlay").classList.add('active');
 }

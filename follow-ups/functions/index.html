@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/custom.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato"; rel="stylesheet">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -28,7 +28,7 @@
 
     <!-- facebook meta -->
     <meta property="og:description" content="Materiały do kursu girls.js: poznawanie języka JavaScript na przykładzie tworzenia interaktywnej galerii obrazków." />
-    <meta property="og:image" content="https://girlsjs.github.io/www/assets/logo.png" />
+    <meta property="og:image" content="https://girlsjs.github.io/www/assets/logo.png"; />
 </head>
 <body>
 <div class="left-bar">
@@ -83,7 +83,7 @@
           <figure>
             <img src="img/postit.jpg" />
             <figcaption style="font-size: 0.5rem">
-              Grafika zapożyczona z <a href="https://www.orsgroup.com.au/blog/how-to-stress-down-for-stress-down-day/">orsgroup.com</a>
+              Grafika zapożyczona z <a href="https://www.orsgroup.com.au/blog/how-to-stress-down-for-stress-down-day/">orsgroup.com</a>;
             </figcaption>
           </figure>
         </section>    
@@ -221,31 +221,46 @@
           </figure>
         </section>      
         <section>
-          <h3>Funkcja anonimowa</h3>
-          <p>To funkcja która nie ma swojej nazwy. Wygląda na przykład tak:</p>
-          <pre class="fragment"><code class="hljs javascript">function (x, y) {
-  return x + y;
-}</code></pre>
-        </section>
+          <h3>Funkcja jako parametr innej funkcji</h3>
+          <p>W JavaScripcie parametrem funkcji może być praktycznie wszystko - włącznie z inną funkcją.</p>
+          <p class="fragment">Przydaje się to na przykład, kiedy chcemy powiązać funkcję z jakimś zdarzeniem, na przykład naciśnięciem klawisza.</p>
+          <p class="fragment">Albo zapamiętać zadanie do zrobienia na potem, zupełnie jak na żółtej karteczce.</p>
+        </section>      
         <section>
-          <h3>Funkcja anonimowa</h3>
-          <p>Po co więc nam funkcje anonimowe?</p>
-          <p class="fragment">Możemy je przypisać do zmiennej:</p>
-          <pre class="fragment"><code class="hljs javascript">let sum = function (x, y) {
-  return x + y;
-}
-</code></pre>
-          <p class="fragment">Ale to wiele nie różni się od funkcji nazwanej:</p>
-          <pre class="fragment"><code class="hljs javascript">sum( 2, 3 ) // zwróci 5
+          <h3>Przekazywanie funkcji jako parametr</h3>          
+          <p>Żeby przekazać funkcję jako parametr podajemy w nawiasach jej nazwę:</p>      
+          <pre class="fragment"><code class="hljs javascript">function cleanUpSomething () {
+  // funkcja ktorą chcemy wykonać za minutę
+}    
+
+setTimeout( cleanUpSomething, 60000 );
+// wykonaj funkcję cleanUpSomething za 60 sekund
 </code></pre>
         </section>
         <section>
-          <h3>Funkcja anonimowa</h3>
-          <p>Prawdziwy użytek można zrobić z funkcji anonimowych przy
-             przekazywaniu jej jako parametr do innej funkcji, albo przy tworzeniu ich dynamicznie (czytaj: na bieżąco).</p>
+          <h3>Przekazywanie funkcji jako parametr</h3>            
+          <p>Możemy też zapisać całą funkcję jako parametr innej funkcji:</p>          
+          <pre class="fragment"><code class="hljs javascript">setTimeout( function cleanUpSomething () {
+  // funkcja ktorą chcemy wykonać za minutę
+}, 60000 );
+// wykonaj funkcję cleanUpSomething za 60 sekund
+</code></pre>
         </section>
         <section>
-          <h3>Czyli że o co chodzi?</h3>
+          <h3>Przekazywanie funkcji jako parametr</h3>            
+          <p>To czego nie możemy, to podać w nawiasach nazwę funkcji wraz z nawiasami:</p>                 
+          <pre class="fragment"><code class="hljs javascript">function cleanUpSomething ( data = '' ) {
+  // funkcja ktorą chcemy wykonać za minutę
+}    
+
+setTimeout( cleanUpSomething(), 60000 );
+setTimeout( cleanUpSomething( someData ), 60000 );
+// w obu przypadkach funkcja cleanUpSomething wykona nam się od razu
+</code></pre>
+        <p class="fragment">Jeżeli tak zrobimy, funkcja wykona nam się na miejscu zamiast być przekazana dalej.</p>   
+        </section>        
+        <section>
+          <h3>Do czego nam to potrzebne?</h3>
           <p>Otwórzmy teraz plik z drugim zadaniem, exercise2.html</p>
           <figure>
             <a href="exercise2.html" target="_blank"><img src="img/screenshot2.png" /></a>
@@ -285,9 +300,17 @@
           </figure>                       
         </section>  
         <section>        
-          <p>Używając tego selektóra możemy teraz dobrać się do elementu, używając <a href="help.html#/querySelector">document.querySelector</a>, np:</p>
+          <p>Używając tego selektora możemy teraz dobrać się do elementu, używając <a href="help.html#/querySelector">document.querySelector</a>, np:</p>
           <pre class="fragment"><code class="hljs javascript">document.querySelector('#screen').innerHTML = "Siemanko!";</code></pre>                     
-        </section>         
+        </section>     
+        <section>        
+          <p>Możemy uzupełnić nasz pseudokod o bardziej szczegółowe instrukcje:</p>
+          <pre class="fragment"><code class="hljs javascript">Kiedy naciśnięto przycisk C:
+1. Zapisz 0 jako aktualny numer,
+2. Znajdź element o selektorze '#screen',
+3. Podmień jego zawartość na aktualny numer.
+</code></pre>           
+        </section>       
         <section>        
           <h2>Wszystko jasne?</h2>
           <p class="note task fragment fade-left">
@@ -304,7 +327,7 @@
           <p class="fragment">Przetestujmy, jak to działa w konsoli. </p>          
         </section>
         <section>        
-          <p>To, czego potrzebujemy teraz to powiązać tę funkcję z akcją, kiedy ktoś naciśnie na jeden z tych przyciskow.</p>
+          <p>To, czego potrzebujemy teraz to powiązać tę funkcję z akcją, kiedy ktoś naciśnie na przycisk <strong>C</strong></p>
         </section>      
         <section>
           <h3>Pamiętacie nasze warsztaty?</h3>
@@ -313,19 +336,29 @@
             <li><code>element.addEventListener( wydarzenie, akcja-do-wykonania )</code> - wykonuje
               podaną akcję, gdy z elementem stanie się coś konkretnego.
             </li>
-          </ul>         
-        </section>
+          </ul>             
+        </section>     
         <section>
           <h3>addEventListener - przykład</h3>
           <pre class="fragment"><code class="hljs javascript">document.querySelector( '#button' ).addEventListener( 'click',
-function () {
-    console.log('Wciśnięty przycisk!');
-});</code></pre>
+nazwaMojejFunkcji );</code></pre>
+          <p class="fragment">Czyli jak to wszystko razem będzie po polsku?</p>            
         </section>
+        <section>        
+          <p>Dopiszmy brakujące fragmenty pseudokodu:</p>
+          <pre class="fragment"><code class="hljs javascript">Funkcja reset:
+    1. Zapisz 0 jako aktualny numer,
+    2. Znajdź element o selektorze '#screen',
+    3. Podmień jego zawartość na aktualny numer.
+
+1. Znajdź element o selektorze '#C',
+2. Powiąż wydarzenie 'click' na tym elemencie z funkcją reset.
+</code></pre>           
+        </section>        
         <section>
           <h3>No to do dzieła!</h3>
           <p class="note task fragment fade-left">
-            Powiąż teraz funkcję <code>reset</code>, którą napisałaś, z przyciskiem <code>C</code>. Do przycisku możesz odnieść się przy użyciu <code>document.querySelector</code>. Jeżeli nie jesteś pewna jaki jest selektor elementu, sprawdź w narzędziach przeglądarki.Użyj <code>addEventListener</code> żeby powiązać kliknięcie na tym przycisku z funkcją <code>reset</code>.
+            Powiąż teraz funkcję <code>reset</code>, którą napisałaś, z przyciskiem <code>C</code>. Do przycisku możesz odnieść się przy użyciu <code>document.querySelector</code>. Jeżeli nie jesteś pewna jaki jest selektor elementu, sprawdź w narzędziach przeglądarki. Użyj <code>addEventListener</code> żeby powiązać kliknięcie na tym przycisku z funkcją <code>reset</code>.
           </p>  
         </section>      
         <section>
@@ -341,257 +374,229 @@ function () {
 document.querySelector('#C').addEventListener( 'click', reset );
 </code></pre>            
           <p class="fragment">Sprawdźmy, jak to teraz działa.</p>
-   
-        </section>           
-<!--
-
+        </section>   
         <section>
-          <h3>Callback</h3>
-          <p>Na warsztacie mieliśmy coś podobnego.<p>
-          <p class="fragment">Podpięcie się na zdarzenie kliknięcia<p>
-          <pre class="fragment"><code class="hljs javascript">addEventListener('click', function () { ... })</code></pre>
-          <p class="fragment">Automatyczne wykonanie kodu po określonym czasie<p>
-          <pre class="fragment"><code class="hljs javascript">setTimeout(function () { ... }, 3000)</code></pre>
-        </section>
-
-
-        <section>
-          <h3>Callback</h3>
-          <p>
-            Żeby callbacki miały sens, musimy zrozumieć co to jest kod <b>synchroniczny</b>
-            oraz <b>asynchroniczny</b>.
-          </p>
-          <p class="fragment">Tak, brzmi to nieco skomplikowane, ale tak naprawdę nie jest :-)</p>
-        </section>
-
-        <section>
-          <h3>Kod synchroniczny</h3>
-          <p class="fragment">To taki, jaki pisałyście do tej pory<p>
-          <pre class="fragment"><code class="hljs javascript">console.log('A')
-console.log('B')
-console.log('C')
-console.log('D')</code></pre>
-          <p class="fragment">W jakiej kolejności wypiszą się litery?<p>
-          <p class="fragment">A, B, C, D<p>
-        </section>
-
-        <section>
-          <h3>Kod synchroniczny</h3>
-          <pre><code class="hljs javascript">console.log('A')
-console.log('B')
-console.log('C')
-console.log('D')</code></pre>
-          <p>Kolejność wykonania instrukcji jest taka sama jak zapisana w kodzie.<p>
-          <p class="fragment">Dlatego nazywamy go <b>synchronicznym</b>.<p>
-        </section>
-
-        <section>
-          <h3>Kod asynchroniczny</h3>
-          <p>Przanalizujcie poniższy kawałek kodu<p>
-          <pre class="fragment"><code class="hljs javascript">console.log('A')
-setTimeout(function() {
-  console.log('B')
-  console.log('C')
-}, 1000)
-console.log('D')</code></pre>
-          <p class="fragment">W jakiej kolejności pojawią się litery? Dlaczego?<p>
-          <p class="fragment">A, D ... B, C</p>
-        </section>
-
-        <section>
-          <h3>Kod asynchroniczny</h3>
-          <p>
-            Taki kod nazywamy <b>asynchronicznym</b>, ponieważ wykona się w innej kolejności,
-            niż ta w której został zapisany.
-          <p>
-          <p class="fragment">
-            Poza <code>setTimeout</code> i <code>addEventListener</code>, jest znacznie
-            więcej asynchronicznych funkcji w JavaScripcie.
-          <p>
-          <p class="fragment">
-            Wszelkie interakcje użytkownika ze stroną, wysyłanie i pobieranie danych itp,
-            to wszystko są operacje asynchroniczne.
-          </p>
-        </section>
-
-        <section>
-          <h3>Czemu asynchroniczność</h3>
-          <p>Żeby jeden kawałek kodu nie był zablokowany przez inny.</p>
-          <p class="fragment">Gdyby nie było asynchroniczności, jak działał by poniższy kod?<p>
-          <pre class="fragment"><code class="hljs javascript">element1.addEventListener('click', function () {
-  console.log('Element 1 kliknięty')
-})
-element2.addEventListener('click', function () {
-  console.log('Element 2 kliknięty')
-})</code></pre>
-          <p class="fragment">
-            Najpierw użytkownik musiałby kliknąć w <code>element1</code>, a potem w <code>element2</code>.
-            Wszelkie inne scenariusze byłyby nieoprogramowane.
-          <p>
-        </section>
-
-        <section>
-          <h3>TU jakieś ćwiczenie</h3>
-        </section>
-
-        <section>
-          <h3>Metody obiektów</h3>
-          <p>
-            Jeśli byłyście na poprzednim follow-upie, to zapewne pamiętacie obiekty.
-          </p>
-          <p class="fragment">
-            W skrócie obiekt to zbiór nazwanych zmiennych:
-          </p>
-
-          <pre class="fragment"><code class="hljs javascript">let obj = {
-  name: 'Kasia',
-  age: 32,
-  job: 'Frontend Developer'
-};
-
-console.log( obj.name ); // Wypisze 'Kasia'</code></pre>
-        </section>
-
-        <section>
-          <h3>Metody obiektów</h3>
-          <p>
-            Metody, to funkcje wewnątrz obiektów.
-          </p>
-          <p>
-            Możemy je utworzyć za pomocą funkcji anonimowej.
-          </p>
-          <pre class="fragment"><code class="hljs javascript">let obj = {
-  name: 'Kasia',
-  age: 32,
-  job: 'Frontend Developer',
-  sayHi: function () {
-    console.log('Hi!')
-  }
-};
-
-obj.sayHi(); // Wypisze 'Hi!'</code></pre>
-        </section>
-
-        <section>
-          <p>Gotowe na coś ambitnego? :-)</p>
-        </section>
-
-        <section>
-          <h2>Funkcja zwracająca funkcję</h2>
-        </section>
-
-        <section>
-          <h3>Funkcja zwracająca funkcję</h3>
-          <p>Tak jak wiemy, funkcja może zwrócić dowolną wartość (dowolny typ).</p>
-          <p class="fragment">
-            Funkcja również jest typem i może być przypisana
-            do zmiennej, przekazana jako argument itp...
-          </p>
-          <p class="fragment">
-            Łącząc powyższe stwierdzenia, dochodzimy do wniosku, że funkcja może zwrócić funkcję.
-          </p>
-        </section>
-
-        <section>
-          <h3>Funkcja zwracająca funkcję</h3>
-          <p>Zilustrujmy to zwracając funkcję anonimową (ale można też użyć funkcji nazwanej).</p>
-          <pre class="fragment"><code class="hljs javascript">function myFunction() {
-  return function () {
-    console.log('Hurra!')
-  }
-}
+          <h3>Przyciski z liczbami</h3>          
+          <p>Teraz zajmiemy się oprogramowaniem przycisków od 0 do 9.</p>   
+        </section>   
+        <section>  
+          <p>Nie będziemy szczegółowo wszystkiego same programować, bo dzieje się tu sporo:</p>  
+          <ul>
+            <li class="fragment">Musimy wiedzieć, czy dopisujemy cyfry do kolejnej liczby, czy zaczynamy nową,</li>
+            <li class="fragment">Uważamy, żeby nie dopisać cyfr do zera z przodu (bo wyszłoby nam 05),</li>
+            <li class="fragment">Uważamy, żeby nie przekroczyć 11 znaków, ktore mieszczą się na wyświetlaczu,</li>
+            <li class="fragment">Zapamiętujemy całą liczbę jako tekst, żeby łatwiej nam było wprowadzać ułamki. </li>
+          </ul>
+        </section>  
+        <section>  
+          <p>Tym wszystkim zajmuje się gotowa już funkcja <code>numberKeyPressed( number )</code>, zapisana w pliku <code>calc.js</code> (w domu możecie sprawdzić, jak ta funkcja działa).</p>  
+          <p class="fragment">Bierze ona liczbę od 0 do 9 jako parametr, i robi wszystko co potrzeba, żeby w odpowiedni sposob dopisać ją na ekranie.</p>  
+        </section>    
+        <section>  
+          <p>Naszym zadaniem będzie powiązać funkcję <code>numberKeyPressed</code> z naciśnięciem kolejnych guziczków. Przykładowo, po wciśnięciu guziczka 1 chcemy wywołać tę funkcję z parametrem 1. </p>  
+          <p>Tradycyjnie, zapiszmy najpierw po polsku, co chcemy, żeby się stało.</p>  
+        </section>       
+        <section>        
+          <h3>Gotowe?</h3>
+          <pre class="fragment"><code class="hljs javascript">1. Znajdź przycisk z numerem 1 (selektor '#number1')
+2. Powiąż wydarzenie 'click' na tym elemencie z funkcją numberKeyPressed.
+3. Przekaż do tej funkcji parametr 1.
 </code></pre>
-          <p class="fragment">Ok, jak teraz sprawić, aby pojawił się napis Hurra! w konsoli?</p>
-        </section>
-
+          <p class="fragment">Jest tylko jeden haczyk...</p>          
+        </section> 
+        <section>        
+          <p>Nie możemy tak po prostu przekazać jako parametr funkcji <code>numberKeyPressed</code> z własnym parametrem.</p>          
+          <p class="fragment">Jeżeli zapiszemy to jako <code>numberKeyPressed( 1 )</code>, funkcja wykona nam się od razu, zamiast powiązać z przyciskiem.</p>            
+          <p class="fragment">Co z tym zrobimy? Na ratunek przyjdzie nam <strong>funkcja anonimowa</strong>.</p>            
+        </section>            
         <section>
-          <p>Czy zadziała coś takiego?</p>
-          <pre><code class="hljs javascript">myFunction()</code></pre>
-          <p class="fragment">Nie. Dlaczego?</p>
-
-          <p class="fragment">Co musimy zatem zrobić?</p>
-          <pre class="fragment"><code class="hljs javascript">myFunction()()</code></pre>
+          <h3>Funkcja anonimowa</h3>
+          <p>To funkcja która nie ma swojej nazwy. Wygląda na przykład tak:</p>
+          <pre class="fragment"><code class="hljs javascript">function (x, y) {
+  return x + y;
+}</code></pre>
         </section>
-
         <section>
-          <h3>Czas na małe zadanie ;-)</h3>
-          <p>Pamiętacie naszą funkcję <code>sum</code>?</p>
-          <pre class="fragment"><code class="hljs javascript">function sum() {
+          <h3>Po co więc nam funkcje anonimowe?</h3>
+          <p class="fragment">Możemy je przypisać do zmiennej:</p>
+          <pre class="fragment"><code class="hljs javascript">let sum = function (x, y) {
   return x + y;
 }
-
-sum(2, 3) // zwróci 5</code></pre>
-          <p class="fragment">
-            Spróbujcie napisać nową funkcję <code>sum</code>, która będzie działać w
-            następujący sposób:
-          </p>
-          <pre class="fragment"><code class="hljs javascript">sum(2)(3) // zwróci 5 </code></pre>
+</code></pre>
+          <p class="fragment">Ale to wiele nie różni się od funkcji nazwanej:</p>
+          <pre class="fragment"><code class="hljs javascript">sum( 2, 3 ) // zwróci 5
+</code></pre>
         </section>
-
         <section>
-          <h3>Rozwiązanie</h3>
-          <pre class="fragment"><code class="hljs javascript">function sum(x) {
-  return function(y) {
-    return x + y
-  }
+          <h3>Funkcja anonimowa</h3>
+          <p>Prawdziwy użytek można zrobić z funkcji anonimowych przy przekazywaniu jej jako parametr do innej funkcji, albo przy tworzeniu ich dynamicznie (czytaj: na bieżąco).</p>
+        </section>
+        <section>
+          <h3>Pamiętacie nasz przykład z odkładaniem zadania na potem?</h3>
+          <pre class="fragment"><code class="hljs javascript">function cleanUpSomething ( data = '' ) {
+  // funkcja ktorą chcemy wykonać za minutę
+}    
+
+setTimeout( cleanUpSomething( someData ), 60000 );
+// funkcja cleanUpSomething wykona nam się od razu
+
+setTimeout( function () {
+    cleanUpSomething( someData );
+}, 60000 );
+// funkcja cleanUpSomething wykona się za minutę, 
+// i będzie miała dostęp do zmiennej someData
+</code></pre>
+        </section>      
+        <section>
+          <h3>Wszystko w miarę jasne?</h3>
+          <figure>
+            <img src="img/mindblown.gif" />
+          </figure>
+        </section> 
+        <section>
+          <h3>To sprobujmy to wykorzystać w praktyce :-)</h3>
+          <p class="note task fragment fade-left">
+            Napisz kod, ktory powiąże przycisk 1 z wywołaniem funkcji <code>numberKeyPressed</code> z odpowiednim parametrem. Potrzebna ci będzie funkcja anonimowa, żeby moc jej ten parametr przekazać. Tradycyjnie przyda nam się <code>document.querySelector</code> do złapania elementu, i <code>addEventListener</code> żeby powiązać kliknięcie na tym przycisku z naszą funkcją.
+          </p>  
+        </section>   
+        <section>
+          <h3>Co nam wyszło?</h3>
+          <pre class="fragment"><code class="hljs javascript">document.querySelector('#number1').addEventListener( 'click', 
+function () {
+    numberKeyPressed( 1 );
+});</code></pre>
+          <p class="fragment">Działa?</p>
+        </section>       
+        <section>
+          <h3>To zróbmy teraz to samo dla pozostałych 9 przycisków</h3>
+          <p>Najlepiej do tego celu będzie użyć pętli.</p>           
+        </section>   
+        <section>
+          <h3>Szybka ściągawka jak wygląda pętla</h3>
+          <pre class="fragment"><code class="hljs javascript">for (warunek początkowy; warunek trwania pętli; instrukcja przejścia) {
+  // wykonaj ten kod tak długo jak warunek trwania pętli jest prawdziwy
+}</code></pre>
+        </section>   
+        <section>   
+          <p>Czyli przy 10 elementach od 0 do 9 będziemy miały:</p>          
+          <pre class="fragment"><code class="hljs javascript">for (let i=0; i&lt;10; i++) {
+  // wykonaj ten kod tak długo jak warunek trwania pętli jest prawdziwy
+}</code></pre>          
+        </section>  
+        <section>
+          <h3>Składamy wszystko razem do kupy...</h3>
+          <p class="note task fragment fade-left">
+            Przerób kod z poprzedniego etapu, tak żeby przypisywał wywołanie funkcji <code>numberKeyPressed</code> z odpowiednim parametrem do każdego z przycisków od 0 do 9. Wykorzystaj w tym celu pętlę, i pamiętaj o użyciu odpowiednich selektorów.
+          </p>  
+        </section>
+        <section>
+          <h3>Sprawdzamy czy działa:</h3>
+          <pre class="fragment"><code class="hljs javascript">for( let i = 0; i &lt; 10; i++ ) {
+    document.querySelector('#number' + i).addEventListener( 'click', 
+    function () {
+        numberKeyPressed( i );
+    });          
+} </code></pre>
+          <p class="fragment">Jak wyszły testy?</p>
+        </section>  
+        <section>
+          <h3>To teraz przed nami najtrudniejsze zadanie</h3>
+          <p>Zostały nam do oprogramowania jeszcze guziczki <code>+</code>, <code>-</code>, <code>x</code> i <code>/</code>. Zastanówmy się przez chwilę, jaką funkcję pełnią w kalkulatorze (możemy otworzyć standardową aplikację kalkulatora do pomocy).</p>  
+        </section>    
+        <section>
+          <h3>Zapamiętanie funkcji na potem</h3>
+          <p>W momencie, gdy naciśniemy przycisk <code>+</code>, nie wykonujemy jeszcze operacji dodawania. Kalkulator zapamiętuje wtedy liczbę, jaką do tej pory wpisałyśmy, zapamiętuje, że następną operacją będzie dodawanie, i czeka na drugą liczbę, ktorą należy do niej dodać.</p>  
+        </section>    
+        <section>
+          <h3>To jeszcze nie wszystko!</h3>
+          <p>Jeżeli miałyśmy już wcześniej zapamiętaną jakąś operację, to wykona się ona rownież w momencie naciśnięcia znaku <code>+</code>. Niekoniecznie musi być to dodawanie - może to być zupełnie inna, zapamiętana wcześniej operacja.</p>  
+        </section>
+        <section>
+          <h3>Zapamiętanie funkcji na potem</h3>
+          <p>Szczegóły tego, jak zapamiętujemy funkcję i kolejne liczby sobie dzisiaj darujemy - kto chce, może poczytać sobie plik <code>calc.js</code> w domu.</p> 
+          <p class="fragment">Dzisiaj skorzystamy z gotowej funkcji <code>scheduleNextOperation( operation )</code>, ktora przyjmuje jako parametr funkcję operującą na dwóch liczbach, i robi wszystko co trzeba, żeby potem to dodawanie mogło się wykonać.</p>
+        </section>   
+        <section>
+          <h3>Funkcja sumy</h3>          
+          <p class="note task">Na początek napiszemy samą funkcję <code>sum( x, y )</code>, ktora przyjmuje 2 liczby i zwraca ich sumę jako wynik.</p>  
+        </section>  
+        <section>
+          <h3>Proste, prawda?</h3>
+          <pre class="fragment"><code class="hljs javascript">function sum ( x, y ) {
+    return x + y;          
+} </code></pre>
+          <p class="fragment">Możemy sprawdzić, czy wszystko dobrze działa w konsoli.</p>
+        </section>
+        <section>
+          <p>Teraz pozostaje nam oprogramować guziczek <code>+</code> - jeżeli ktoś go naciśnie, chcemy wywołać funkcję <code>scheduleNextOperation</code> i przekazać do niej funkcję, ktorą właśnie napisałyśmy.</p>          
+          <p class="fragment">Żeby móc przekazać parametr do funkcji ktora obsługuje zdarzenie, musimy posłużyć się funkcją anonimową.</p>           
+        </section>    
+        <section>
+          <h3>No to do dzieła!</h3>
+          <p class="note task fragment fade-left">
+            Znajdź selektor przycisku <code>+</code>, i powiąż wydarzenie <code>click</code> na tym elemencie z wywołaniem funkcji  <code>scheduleNextOperation</code> z funkcją <code>sum</code> jako parametrem. Użyj w tym celu metody <code>addEventListener</code> i funkcji anonimowej.
+          </p>  
+        </section>
+        <section>
+          <h3>Mamy pewnie coś takiego:</h3>
+          <pre class="fragment"><code class="hljs javascript">function sum( x, y ) {
+    return x + y;
 }
 
-sum(2)(3) // zwróci 5</code></pre>
-        </section>
-
+document.querySelector("#plus").addEventListener( 'click' , function() {
+  scheduleNextOperation ( sum );
+});</code></pre>
+          <p class="fragment">Skoro mamy już oprogramowane guziczki z liczbami i znak plus, możemy przetestować jak to wszystko działa :-)</p>
+        </section>    
         <section>
-          <h3>Zastosowania</h3>
-          <p>Funkcja zwracająca funkcję jest bardzo często spotykanym wzorcem.</p>
-          <p class="fragment">
-            Pozwala na przykład dodać parametr do callbacka, którego callback zazwyczaj nie przyjmuje.
-          </p>
-          <p class="fragment">
-            Zobaczmy jak to ma miejsce w przypadku dodaniu callbacka obsługującego kliknięcie.
-          </p>
-        </section>
-
+          <p>Wszystko działa dobrze? To została nam jeszcze jedna rzecz - zrobić to samo dla przycisków <code>-</code>, <code>x</code> i <code>/</code>.</p>          
+          <p class="fragment">Na tej samej zasadzie, napiszmy funkcję, ktora wykona nam działanie matematyczne, i zapamiętajmy ją na potem po naciśnięciu odpowiedniego przycisku.</p>           
+        </section>     
         <section>
-          <p>Zwyczajowo, użycie <code>addEventListener</code> wygląda tak:</p>
-          <pre class="fragment"><code class="hljs javascript">function welcome() {
-  console.log('Hej');
+          <h3>Teraz to już będzie proste</h3>
+          <p class="note task fragment fade-left">
+            Dopisz brakujące funkcje odejmowania, mnożenia i dzielenia, i powiąż każdą z odpowiednim przyciskiem. Uwaga, znak mnożenia w JavaScript to wcale nie jest <code>x</code>! 
+          </p>  
+        </section> 
+        <section>
+          <h3>Sprawdzamy</h3>
+          <pre class="fragment"><code class="hljs javascript">function substract( x, y ) {
+    return x - y;
 }
-
-button.addEventListener(welcome);</code></pre>
-          <p class="fragment">Co zrobić, żeby móc dodać parametr (np. imię) do wywołania funkcji?</p>
-          <p class="fragment">
-            Funkcja <code>welcome</code> jest wywoływana automatycznie wewnątrz
-            <code>addEventListener</code>, więc do wywołania nie mamy dostępu.
-          </p>
-        </section>
-
-        <section>
-          <p>Używając funkcji zwracającej funkcję, łatwo możemy rozwiązać ten problem:</p>
-          <pre class="fragment"><code class="hljs javascript">function welcome(name) {
-  return function () {
-    console.log('Hej, ' + name);
-  }
+document.querySelector("#minus").addEventListener( 'click' , function() {
+  scheduleNextOperation ( substract );
+});
+function multiply( x, y ) {
+    return x * y;
 }
-
-button.addEventListener(welcome('Zosia'));</code></pre>
+document.querySelector("#multiply").addEventListener( 'click' , function() {
+  scheduleNextOperation ( multiply );
+});
+function divide( x, y ) {
+    return x / y;
+}
+document.querySelector("#divide").addEventListener( 'click' , function() {
+  scheduleNextOperation ( divide );
+});</code></pre>
         </section>
--->
-
-
+        <section>
+          <h3>Najwyższa pora potestować nasz kalkulator :-)</h3> 
+        </section>      
         <section data-transition="zoom" data-transition-speed="slow">
-            <p>Dzięki za wspólnie spędzony czas i&nbsp;do zobaczenia!</p>
+            <p>To już wszystko, co przygotowaliśmy na dzisiaj. Dzięki za wspólnie spędzony czas i do zobaczenia!</p>
             <img src="img/logo.svg" style="border: none; box-shadow: none;"/>
         </section>
     </div>
     <div class="small-duck"></div>
     <div class="footer">
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">;
         <img
             alt="Licencja Creative Commons" style="border-width:0;vertical-align:bottom"
             src="./img/cc.png" />
       </a>
       <span>
         Ta prezentacja jest dostępna na
-        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">;
           licencji Creative Commons Uznanie autorstwa-Użycie niekomercyjne-Na tych
           samych warunkach 3.0 Polska
         </a>.
