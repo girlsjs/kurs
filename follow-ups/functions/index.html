@@ -60,11 +60,11 @@
 
         <section>
           <h3 style="font-size: 3rem">Funkcje</h3>
-          <p>Dziś poznamy lepiej funkcje. Są one bardzo ważną częścią języka JavaScript (i programowania w ogole).</p>
+          <p>Dziś poznamy lepiej funkcje. Są one bardzo ważną częścią języka JavaScript (i programowania w ogóle).</p>
         </section>
         <section>
           <h3 style="font-size: 3rem">Do czego przydają się funkcje?</h3>
-          <p>Jeżeli byłyście na warsztacie, pisałyście tam własne funkcje do obsługi przyciskow na stronie.</p>
+          <p>Jeżeli byłyście na warsztacie, pisałyście tam własne funkcje do obsługi przycisków na stronie.</p>
           <p class="fragment">Funkcje przydają się, gdy chcemy ten sam kawałek kodu wykonać kilka razy.</p>
           <p class="fragment">Można wykonywać go za każdym razem <strong>na innych danych</strong>.</p>
           <p class="fragment">Funkcja może też zwracać wynik swojego działania, na którym reszta kodu będzie działać dalej.</p>
@@ -89,11 +89,11 @@
         </section>    
         <section>    
           <h3 style="font-size: 3rem">A w praktyce?</h3> 
-          <p>Żeby wypisać karteczki w pętli, musimy z gory pamiętać, co na ktorej będzie, w jakiej idą kolejności, i wypisać je wszystkie jedna po drugiej.</p>
+          <p>Żeby wypisać karteczki w pętli, musimy z góry pamiętać, co na której będzie, w jakiej idą kolejności, i wypisać je wszystkie jedna po drugiej.</p>
           <p class="fragment">Używając funkcji możemy pojedynczo dodawać nowe karteczki, kiedy tylko nam coś wpadnie do głowy - nawet kiedy zajmujemy się właśnie czymś zupełnie innym.</p>
         </section>  
         <section>    
-          <h3 style="font-size: 3rem">Na razie bez komputerow...</h3> 
+          <h3 style="font-size: 3rem">Na razie bez komputerów...</h3> 
           <p class="note task fragment fade-left">
             Załóżmy, że chcemy dodać nową karteczkę do tablicy z poprzedniego slajdu. Zastanówmy się razem, jakie czynności będziemy musiały wykonać?
           </p>
@@ -106,7 +106,7 @@
 4. Przyklej karteczkę na tablicy.
 5. Odłóż długopis (?)</code></pre>
         </section>
-         <section>    
+         <section>
           <h3 style="font-size: 3rem">Czegoś tu brakuje?</h3> 
           <p class="note task fragment fade-left">
             Skąd wiemy, jaki tekst napisać na karteczce?
@@ -131,7 +131,7 @@
           <h3>Anatomia funkcji</h3>
           <p>Funkcję w JavaScript deklarujemy przy użyciu słowa <code>function</code>:</p>
           <pre class="fragment"><code class="hljs javascript">function sum(x, y) {
-  return x + y; 
+  return x + y;
 }</code></pre>
           <p class="fragment">Wartości w nawiasie to są <strong>parametry</strong> - dane, na których funkcja operuje.</p>
           <p class="fragment">Słowem <code>return</code> oznaczamy wartość zwracaną przez funkcję, na której możemy operować dalej:</p>
@@ -198,7 +198,7 @@
            <pre class="fragment"><code class="hljs javascript">function setColor( color = 'yellow' ) {
     // jeżeli podasz kolor w nawiasie, funkcja użyje tego, który podałaś
     // jeżeli nie podasz żadnego, automatycznie ustawi się żółty
-}</code></pre>         
+}</code></pre>    
         </section>  
         <section>    
           <h3>Wykorzystajmy to w praktyce.</h3> 
@@ -208,7 +208,7 @@
         </section>       
         <section>
           <h3>Proste, prawda?</h3>
-          <pre class="fragment"><code class="hljs javascript">function createNewNote( text = "Dokupić więcej żoltych karteczek" ) {
+          <pre class="fragment"><code class="hljs javascript">function createNewNote( text = "Dokupić więcej żółtych karteczek" ) {
     let newNote = getNote();
     newNote.innerHTML = text;
     addNoteToBoard( newNote );
@@ -238,7 +238,7 @@ setTimeout( cleanUpSomething, 60000 );
 </code></pre>
         </section>
         <section>
-          <h3>Przekazywanie funkcji jako parametr</h3>            
+          <h3>Przekazywanie funkcji jako parametr</h3>
           <p>Możemy też zapisać całą funkcję jako parametr innej funkcji:</p>          
           <pre class="fragment"><code class="hljs javascript">setTimeout( function cleanUpSomething () {
   // funkcja ktorą chcemy wykonać za minutę
@@ -411,7 +411,7 @@ document.querySelector('#C').addEventListener( 'click', reset );
         </section>            
         <section>
           <h3>Funkcja anonimowa</h3>
-          <p>To funkcja która nie ma swojej nazwy. Wygląda na przykład tak:</p>
+          <p>To funkcja, która nie ma swojej nazwy. Wygląda na przykład tak:</p>
           <pre class="fragment"><code class="hljs javascript">function (x, y) {
   return x + y;
 }</code></pre>
@@ -454,9 +454,9 @@ setTimeout( function () {
           </figure>
         </section> 
         <section>
-          <h3>To sprobujmy to wykorzystać w praktyce :-)</h3>
+          <h3>To spróbujmy to wykorzystać w praktyce :-)</h3>
           <p class="note task fragment fade-left">
-            Napisz kod, ktory powiąże przycisk 1 z wywołaniem funkcji <code>numberKeyPressed</code> z odpowiednim parametrem. Potrzebna ci będzie funkcja anonimowa, żeby moc jej ten parametr przekazać. Tradycyjnie przyda nam się <code>document.querySelector</code> do złapania elementu, i <code>addEventListener</code> żeby powiązać kliknięcie na tym przycisku z naszą funkcją.
+            Napisz kod, który powiąże przycisk 1 z wywołaniem funkcji <code>numberKeyPressed</code> z odpowiednim parametrem. Potrzebna ci będzie funkcja anonimowa, żeby móc jej ten parametr przekazać. Tradycyjnie przyda nam się <code>document.querySelector</code> do złapania elementu, i <code>addEventListener</code> żeby powiązać kliknięcie na tym przycisku z naszą funkcją.
           </p>  
         </section>   
         <section>
@@ -470,7 +470,7 @@ function () {
         <section>
           <h3>To zróbmy teraz to samo dla pozostałych 9 przycisków</h3>
           <p>Najlepiej do tego celu będzie użyć pętli.</p>           
-        </section>   
+        </section>
         <section>
           <h3>Szybka ściągawka jak wygląda pętla</h3>
           <pre class="fragment"><code class="hljs javascript">for (warunek początkowy; warunek trwania pętli; instrukcja przejścia) {
@@ -495,7 +495,7 @@ function () {
     document.querySelector('#number' + i).addEventListener( 'click', 
     function () {
         numberKeyPressed( i );
-    });          
+    });
 } </code></pre>
           <p class="fragment">Jak wyszły testy?</p>
         </section>  
@@ -509,7 +509,7 @@ function () {
         </section>    
         <section>
           <h3>To jeszcze nie wszystko!</h3>
-          <p>Jeżeli miałyśmy już wcześniej zapamiętaną jakąś operację, to wykona się ona rownież w momencie naciśnięcia znaku <code>+</code>. Niekoniecznie musi być to dodawanie - może to być zupełnie inna, zapamiętana wcześniej operacja.</p>  
+          <p>Jeżeli miałyśmy już wcześniej zapamiętaną jakąś operację, to wykona się ona również w momencie naciśnięcia znaku <code>+</code>. Niekoniecznie musi być to dodawanie - może to być zupełnie inna, zapamiętana wcześniej operacja.</p>  
         </section>
         <section>
           <h3>Zapamiętanie funkcji na potem</h3>
@@ -518,7 +518,7 @@ function () {
         </section>   
         <section>
           <h3>Funkcja sumy</h3>          
-          <p class="note task">Na początek napiszemy samą funkcję <code>sum( x, y )</code>, ktora przyjmuje 2 liczby i zwraca ich sumę jako wynik.</p>  
+          <p class="note task">Na początek napiszemy samą funkcję <code>sum( x, y )</code>, która przyjmuje 2 liczby i zwraca ich sumę jako wynik.</p>  
         </section>  
         <section>
           <h3>Proste, prawda?</h3>
@@ -528,8 +528,8 @@ function () {
           <p class="fragment">Możemy sprawdzić, czy wszystko dobrze działa w konsoli.</p>
         </section>
         <section>
-          <p>Teraz pozostaje nam oprogramować guziczek <code>+</code> - jeżeli ktoś go naciśnie, chcemy wywołać funkcję <code>scheduleNextOperation</code> i przekazać do niej funkcję, ktorą właśnie napisałyśmy.</p>          
-          <p class="fragment">Żeby móc przekazać parametr do funkcji ktora obsługuje zdarzenie, musimy posłużyć się funkcją anonimową.</p>           
+          <p>Teraz pozostaje nam oprogramować guziczek <code>+</code> - jeżeli ktoś go naciśnie, chcemy wywołać funkcję <code>scheduleNextOperation</code> i przekazać do niej funkcję, którą właśnie napisałyśmy.</p>          
+          <p class="fragment">Żeby móc przekazać parametr do funkcji, która obsługuje zdarzenie, musimy posłużyć się funkcją anonimową.</p>           
         </section>    
         <section>
           <h3>No to do dzieła!</h3>
@@ -550,7 +550,7 @@ document.querySelector("#plus").addEventListener( 'click' , function() {
         </section>    
         <section>
           <p>Wszystko działa dobrze? To została nam jeszcze jedna rzecz - zrobić to samo dla przycisków <code>-</code>, <code>x</code> i <code>/</code>.</p>          
-          <p class="fragment">Na tej samej zasadzie, napiszmy funkcję, ktora wykona nam działanie matematyczne, i zapamiętajmy ją na potem po naciśnięciu odpowiedniego przycisku.</p>           
+          <p class="fragment">Na tej samej zasadzie napiszmy funkcję, która wykona nam działanie matematyczne i zapamiętajmy ją na potem po naciśnięciu odpowiedniego przycisku.</p>           
         </section>     
         <section>
           <h3>Teraz to już będzie proste</h3>
