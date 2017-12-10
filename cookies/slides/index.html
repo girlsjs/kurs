@@ -4,16 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Girls.js - powiadomienie o ciasteczkach</title>
+    <title>girls.js - Powiadomienie o ciasteczkach</title>
 
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/solarized.css">
+    <link rel="stylesheet" href="css/theme/simple.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
-    <link rel="icon" href="img/kaczucha.png">
+    <link rel="icon" href="img/logo.svg">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato"; rel="stylesheet"> 
 
     <!-- Printing and PDF exports -->
     <script>
@@ -29,12 +31,20 @@
     <meta property="og:image" content="https://girlsjs.github.io/www/assets/logo.png" />
 </head>
 <body>
+<div class="left-bar">
+  <div class="left-bar-photo"></div>
+</div>
+<div class="help">
+  <a href="help.html">?</a>
+</div>
 <div class="reveal">
     <div class="slides">
         <section>
-            <img style="height: 400px;" src="img/kaczucha.svg"/>
+            <div class="big-logo">
+              <img style="height: 400px; border: none; box-shadow: none;" src="img/logo.svg"/>
+            </div>
             <h3 class="fragment grow">Cześć!</h3>
-<p>(naciśnij spację, żeby kontynuować)</p>
+            <p>(naciśnij spację, żeby kontynuować)</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -66,7 +76,7 @@
           <p>Ciastko (profesjonalnie nazywa się "HTTP Cookie") to po prostu fragment danych, które są zapisywane przez stronę internetową w przeglądarce i które mogą być odczytane przez serwer, który tę stronę wygenerował</p>
           <p class="fragment fade-down">Po co ktoś miałby zapisywać dane w mojej przeglądarce? Nie stać ich na twarde dyski?</p>
           <ul>
-            <li class="fragment fade-down">statystyki odwiedzin (nie liczymy tego samego użytkownika wiele razy, albo sprawdzamy czy użytkownicy do nas wracają)</li>
+            <li class="fragment fade-down">statystyki odwiedzin</li>
             <li class="fragment fade-down">zakupy internetowe bez zakładania konta</li>
             <li class="fragment fade-down">automatyczny login</li>
             <li class="fragment fade-down">przechowywanie informacji w formularzu, żeby nie zniknęły po odświeżeniu strony</li>
@@ -92,7 +102,7 @@
           <p class="fragment fade-down">Spośród tych atrybutów najbardziej nas zazwyczaj interesuje tym razem nie liczba kalorii, ale data ważności</p>
         </section>
         <section>
-          <h2>Dlaczego informuje się użytkowników o tym, że strona używa ciastek?</h2>
+          <h2>Dlaczego informuje się o używaniu ciastek?</h2>
           <p class="fragment fade-down">Jednym z zastosowań ciastek jest śledzenie naszych poczynań w sieci</p>
           <p class="fragment fade-down">UE uznała, że jeżeli będzie wymagana zgoda użytkownika na zapisanie ciastka, to problem będzie rozwiązany</p>
           <p class="fragment fade-down"><a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2009:337:0011:0036:en:PDF">Dyrektywa 2009/136/EC Rady Europy</a> nakłada na dostawców treści internetowych, którzy chcą zapisywać dane w przeglądarce (nie tylko przez cookie, ale też przez inne mechanizmy, jak localStorage) obowiązek uzyskania zgody na taką czynność</p>
@@ -207,8 +217,11 @@ function hideNotice() {
         </section>
         <section>
           <p>Kto pamięta co zrobić, żeby kliknięcie w przycisk uruchomiło naszą funkcję? Ręka do góry!<p>
-          <pre class="fragment fade-down"><code>document.querySelector( '#cookie-notice-button' ).addEventListener( 'click', hideNotice );</code></pre>
-          <p>Umieszczamy to pod wywołaniem naszej funkcji <i>showNotice()</i> i ...</p>
+          <div class="fragment fade-down">
+            <pre><code>document.querySelector( '#cookie-notice-button' )
+        .addEventListener( 'click', hideNotice );</code></pre>
+            <p>Umieszczamy to pod wywołaniem naszej funkcji <i>showNotice()</i> i ...</p>
+          </div>
           <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -237,7 +250,7 @@ function hideNotice() {
         <section>
           <p>Ciastka są jak najbardziej odpowiednim mechanizmem na przechowanie takiej informacji</p>
           <p class="fragment fade-down">Dzisiaj jednak użyjemy innego, a to dlatego, że ciastka do działania wymagają, aby strona została zaserwowana z serwera www, a nie wczytana z dysku. Nie mamy dzisiaj niestety czasu, żeby wykonać takie ćwiczenie</p>
-          <p class="fragment fade-down">Ale nic nie stracimy! Wręcz przeciwnie, bo dowiemy się (i nauczymy korzystać) o jeszcze jednym mechanizmie służącym do zapisywania danych w przeglądarce!</p>
+          <p class="fragment fade-down">Ale nic nie stracimy! Wręcz przeciwnie, bo dowiemy się (i&nbsp;nauczymy korzystać) o jeszcze jednym mechanizmie służącym do zapisywania danych w przeglądarce!</p>
           <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -308,10 +321,24 @@ function hideNotice() {
         </section>
         <section data-transition="zoom" data-transition-speed="slow">
             <p>Dzięki za wspólnie spędzony czas i do zobaczenia!</p>
-            <img src="img/kaczucha.svg" style="border: none; box-shadow: none;"/>
+            <img src="img/logo.svg" style="border: none; box-shadow: none;"/>
         </section>  
     </div>
-    <div class="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/"><img alt="Licencja Creative Commons" style="border-width:0;vertical-align:bottom" src="./img/cc.png" /></a> <span>Ta prezentacja jest dostępna na <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">licencji Creative Commons Uznanie autorstwa-Użycie niekomercyjne-Na tych samych warunkach 3.0 Polska</a>.</span></div>
+    <div class="small-duck"></div>
+    <div class="footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">
+        <img
+            alt="Licencja Creative Commons" style="border-width:0;vertical-align:bottom"
+            src="./img/cc.png" />
+      </a>
+      <span>
+        Ta prezentacja jest dostępna na
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">;
+          licencji Creative Commons Uznanie autorstwa-Użycie niekomercyjne-Na tych
+          samych warunkach 3.0 Polska
+        </a>.
+      </span>
+    </div>
 </div>
 
 
@@ -335,6 +362,20 @@ function hideNotice() {
             }
         ]
     });
+    
+  function changeTopBar(slideNumber) {
+    if (slideNumber === 0) {
+      document.querySelector('.left-bar').classList.add('big')
+    } else {
+      document.querySelector('.left-bar').classList.remove('big')
+    }
+  }
+
+  Reveal.addEventListener('slidechanged', function( event ) {
+    changeTopBar(event.indexh)
+  });
+
+  setTimeout(changeTopBar(Reveal.getIndices()['h']), 100)
 </script>
 </body>
 </html>
