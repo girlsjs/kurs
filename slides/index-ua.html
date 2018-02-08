@@ -429,8 +429,8 @@ document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code
                             <code>show</code>,
                         </li>
                         <li class="fragment highlight-green">3.2. Візьми його до цього класу,</li>
-                        <li>3.3. Знайдіть наступний елемент у порядку.</li>
-                        <li>3.4. Додати його <code>show</code>.</li>
+                        <li class="fragment highlight-green">3.3. Знайдіть наступний елемент у порядку.</li>
+                        <li class="fragment highlight-green">3.4. Додати його <code>show</code>.</li>
                     </ul>
                 </li>
             </ul>
@@ -561,18 +561,17 @@ let titleLength = courseTitle.length;</code></pre>
         </section>
         <section>
             <pre><code class="lang-javascript">    document.querySelector( '#slide' + newNumber ).classList.add( 'show' );</code></pre>
-            <p class="fragment fade-left">Została nam jeszcze jedna rzecz - zapisanie nowego numeru jako
-                aktualny.</p>
+            <p class="fragment fade-left">Була ще одна річ - зберегти новий номер поточним.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note task">Na końcu funkcji <code>showNextSlide</code> zapiszmy w&nbsp;zmiennej
-                <code>currentNumber</code> nowy numer aktualnego slajdu. (Obecnie jest on przechowywany w&nbsp;<code>newNumber</code>).
+            <p class="note task">В кінці функції <code>showNextSlide</code> ми зберігаємо новий поточний номер слайда в
+                <code>currentNumber</code>. (Вона в даний час зберігається в&nbsp;<code>newNumber</code>).
             </p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Jeżeli wszystko poszło zgodnie z&nbsp;planem, nasz kod powinien wyglądać mniej więcej tak:</p>
+            <p>Якщо все відбувається відповідно до плану, наш код має виглядати приблизно так:</p>
             <pre class="fragment fade-left"><code class="lang-javascript">let currentNumber = 1;
 
 function showNextSlide( ) {
@@ -582,61 +581,60 @@ function showNextSlide( ) {
     currentNumber = newNumber;
 }
 document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</code></pre>
-            <p class="fragment fade-right">Wszystko gotowe? Czas na testy! :-)</p>
+            <p class="fragment fade-right">Все готово? Час для тестів! :-)</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Zauważyłyście to? Po dojechaniu do końca pojawia nam się czarny ekran.</p>
-            <p class="note question fragment fade-left">Dlaczego tak się dzieje i&nbsp;jak możemy to naprawić?</p>
+            <p>Ви помітили це? Коли ми дійдемо до кінця, ми отримуємо чорний екран.</p>
+            <p class="note question fragment fade-left">Чому це відбувається і як ми можемо це виправити?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Mamy tylko 5 slajdów, więc po dojechaniu do końca skrypt próbuje załadować nam slajd 6 który nie
-                istnieje.</p>
-            <p class="fragment fade-right">Żeby to naprawić, możemy sprawdzać po dodawaniu jaki mamy obecny numer.
-                Jeżeli jest większy niż 5, to trzeba zmienić go z&nbsp;powrotem na 1.</p>
-            <p class="fragment fade-left note question">Jak możemy poprawić nasz algorytm pisany po polsku, żeby to
-                uwzględnił?</p>
+            <p>У нас є лише 5 слайдів, тому після закінчення сценарій намагається завантажити нам слайд 6, 
+                який не існує.</p>
+            <p class="fragment fade-right">Щоб це виправити, ми можемо перевірити після додавання поточного номера.
+                Якщо він більше 5, тоді потрібно змінити його на 1.</p>
+            <p class="fragment fade-left note question">Як ми можемо вдосконалити наш алгоритм, написаний 
+                польською мовою, щоб включити його?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-        <pre><code class="lang-html">3.1. Znajdź slajd, który aktualnie ma przypisaną klasę `show`,
-3.2. Zabierz mu tę klasę,
-3.3. Odczytaj numer aktualnego elementu zapisany w&nbsp;zmiennej,
-3.4. Dodaj do niego 1,
-3.5. Jeżeli nowy numer jest większy od 5, to zmień go na 1.
-3.6. Znajdź element o&nbsp;nowym numerze,
-3.7. Dodaj mu klasę `show`.
-3.8. Zapisz nowy numer jako aktualny element.</code></pre>
-            <p class="fragment fade-right">Żeby osiągnąć taki efekt, przydadzą nam się <strong>instrukcje
-                warunkowe</strong>.</p>
+        <pre><code class="lang-html">3.1. Знайдіть слайд, який в даний час призначений для класу `show`,
+3.2. Візьми його до цього класу,
+3.3. Прочитайте номер поточного елемента, збереженого в змінній,
+3.4. Додати до нього 1,
+3.5. Якщо новий номер більше 5, змініть його на 1.
+3.6. Знайти елемент з новим номером,
+3.7. Додайте його до класу `show`.
+3.8. Зберегти новий номер як поточний елемент.</code></pre>
+            <p class="fragment fade-right">Щоб досягти цього ефекту, нам знадобляться 
+                <strong>умовні інструкції</strong>.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note more"><strong>Instrukcje warunkowe</strong> to fragmenty kodu, które wykonują się tylko
-                wtedy, kiedy jest spełniony dany warunek.</p>
+            <p class="note more"><strong>Умовні висловлювання</strong> фрагменти коду, які виконуються лише тоді,
+                коли умова виконується.</p>
             <div class="fragment fade-up">
-                <p>Najprostsza z&nbsp;nich wygląda tak:</p>
-                <pre><code class="lang-javascript">if ( warunek ) {
-    //wykonaj kod, który jest tutaj.
+                <p>Найпростіший з них виглядає так:</p>
+                <pre><code class="lang-javascript">if ( умова ) {
+    // виконує код, який знаходиться тут.
 }</code></pre>
             </div>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note more">Do porównania, która liczba jest większa lub mniejsza używamy znaków <code>&gt;</code>
-                i&nbsp;<code>&lt;</code>.</p>
-            <p class="fragment fade-up">Jeżeli coś jest niejasne, teraz jest dobry moment na pytania.</p>
+            <p class="note more">Для порівняння, яке число більше або менше, ми використовуємо символи <code>&gt;</code>
+                і&nbsp;<code>&lt;</code>.</p>
+            <p class="fragment fade-up">Якщо щось незрозуміло, зараз чудово підходить для запитання.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note task">We właściwym miejscu funkcji <code>showNextSlide</code> dodajmy instrukcję warunkową,
-                która: sprawdza, czy nowy numer (<code>newNumber</code>) jest większy od 5, i&nbsp;jeżeli jest, to przypisuje
-                mu wartość 1.</p>
+            <p class="note task">У належному місці функції <code>showNextSlide</code> ми додаємо умовне твердження,
+                яке перевіряє на <code>newNumber</code> від 5, і, якщо це так, присвоює значення 1.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Na tym etapie nasz kod wygląda tak:</p>
+            <p>Наступний етап нашого коду:</p>
             <pre class="fragment fade-left"><code class="lang-javascript">let currentNumber = 1;
 
 function showNextSlide( ) {
@@ -649,18 +647,18 @@ function showNextSlide( ) {
     currentNumber = newNumber;
 }
 document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</code></pre>
-            <p class="fragment fade-right">Czas na testy!</p>
+            <p class="fragment fade-right">Часи на випробуванні!</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note task">Jeżeli wszystko działa jak trzeba, możemy stworzyć i&nbsp;powiązać analogiczną funkcję dla
-                lewej strzałki. Nazwijmy ją <code>showPreviousSlide</code>. Większość kodu możemy skopiować z&nbsp;funkcji
-                dla prawej strzałki, musimy tylko zmienić dodawanie na odejmowanie, a&nbsp;także warunek dotarcia do końca.
-                Po skończonej pracy przetestujmy, jak to działa.</p>
+            <p class="note task">Якщо все працює так, як треба, ми можемо створити і пов'язувати аналогічну
+                функцію для лівої стрілки. Давайте назвати це <code>showPreviousSlide</code>. Більшість кодів,
+                котрі ми можемо скопіювати з функції для стрілки праворуч, нам просто потрібно змінити додавання
+                до віднімання, а також умови досягнення кінця. Після закінчення роботи давайте перевіримо, як це працює.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="convex-in zoom-out">
-            <p>Przykładowy kod funkcji <code>showPreviousSlide</code>:</p>
+            <p>Приклад коду для функції <code>showPreviousSlide</code>:</p>
             <pre class="fragment fade-left"><code class="lang-javascript">function showPreviousSlide( ) {
     document.querySelector( '.show' ).classList.remove( 'show' );
     let newNumber = currentNumber - 1;
@@ -674,64 +672,63 @@ document.querySelector( '#prev' ).addEventListener( 'click', showPreviousSlide )
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="zoom">
-            <p>Udało się! Mamy już zaprogramowane podstawowe funkcje galerii.</p>
+            <p>Вийшло! Маємо вже запрограмовані основні функції галереї.</p>
             <img src="img/wedidit.gif"/>
-            <p class="fragment fade-up">Chcecie jeszcze? Jest jeszcze parę bonusów dla chętnych.</p>
+            <p class="fragment fade-up">Ти хочеш ще? Є ще певні бонуси для бажаючих.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="zoom-in convex-out">
-            <h3>Bonus 1 - łączenie wszystkiego razem</h3>
-            <p>Mamy już dwa sposoby nawigacji po galerii - guziczki na dole i&nbsp;strzałki. Najwyższy czas sprawdzić,
-                jak wygląda współpraca pomiędzy nimi.</p>
+            <h3>Бонус 1 - поєднувати весь час</h3>
+            <p>Є два способи навігації по галереї - кнопки внизу та стрілки. Настав час подивитися,
+                як працює співпраця.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note question">Jeżeli używamy na zmianę guziczków i&nbsp;strzałek, kolejność obrazków jest nie do
-                końca w&nbsp;porządku. Co właściwie jest nie tak? Jakieś pomysły dlaczego tak się dzieje?</p>
+            <p class="note question">Якщо ми використовуємо кнопки та стріли, порядок зображень не зовсім правий.
+                Що не так? Будь-які ідеї, чому це відбувається?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Funkcje <code>showNextSlide</code> i&nbsp;<code>showPreviousSlide</code> odczytują
-                z&nbsp;<code>currentNumber</code> numer aktualnego slajdu i&nbsp;na tej podstawie wybierają następny.</p>
-            <p class="fragment fade-up">Niestety funkcje przypisane do guziczków (<code>showSlide1</code> ... <code>showSlide5</code>)
-                nie aktualizują tej wartości, więc nasz kod ma złe dane na temat tego, który slajd jest aktualnie na
-                wierzchu.</p>
+            <p>Функції <code>showNextSlide</code> та&nbsp;<code>showPreviousSlide</code> зчитують 
+                з&nbsp;<code>currentNumber</code> поточний номер слайда, а потім вибирають наступний.</p>
+            <p class="fragment fade-up">На жаль, функції, призначені кнопкам (<code>showSlide1</code> ... <code>showSlide5</code>)
+                не оновлюють це значення, тому наш код містить погані дані про те,
+                який слайд зараз знаходиться на верху.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note side-note">Hurra! Mamy nasz pierwszy efekt uboczny ;-) Takie rzeczy często dzieją się
-                przy dodawaniu nowych funkcjonalności do starego kodu. Żeby temu zapobiec, przydają się testy i&nbsp;upraszczanie kodu tak bardzo, jak tylko to możliwe.</p>
+            <p class="note side-note">Ура! У нас є наш перший побічний ефект ;-) Такі речі часто трапляються
+                    при додаванні нової функціональності до старого коду.
+                    Щоб запобігти цьому, корисно тестувати та спростити код, наскільки це можливо.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note question">Jak możemy naprawić nasz problem i&nbsp;zapobiec podobnym sytuacjom w&nbsp;przyszłości?</p>
+            <p class="note question">Як ми можемо вирішити нашу проблему і запобігти подібним ситуаціям у майбутньому?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Najprostszym rozwiązaniem byłoby zapisanie wartości <code>currentNumber</code> we wszystkich
-                funkcjach przypisanych do guziczków.</p>
-            <p>W&nbsp;ten sposób każda z&nbsp;funkcji <code>showSlide1</code> ... <code>showSlide5</code> zapisywałaby
-                odpowiedni numer od 1 do 5.</p>
+            <p>Найпростішим рішенням буде збереження поточного значення <code>currentNumber</code> у всіх функціях,
+                призначених для кнопок.</p>
+            <p>Таким чином, кожен з функцій <code>showSlide1</code> ... <code>showSlide5</code> буде записувати
+                відповідний номер від 1 до 5.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>To rozwiązanie ma niestety poważną wadę. Za każdym razem, kiedy będziemy coś zmieniać w&nbsp;naszym
-                kodzie, potrzebujemy sprawdzić wszystkie istniejące funkcje i&nbsp;upewnić się czy są dalej aktualne.
-                Jeżeli nie, trzeba będzie poprawiać każdą z&nbsp;nich z&nbsp;osobna.</p>
+            <p>На жаль, це рішення має серйозний недолік. Кожного разу, коли ми змінюємо щось у нашому коді,
+                нам потрібно перевірити всі існуючі функції та переконатися, що вони все ще актуальні. Якщо ні,
+                вам доведеться покращувати кожен індивідуально.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Dużo lepszym rozwiązaniem będzie stworzenie uniwersalnej funkcji, która pokaże dowolny slajd
-                o&nbsp;podanym numerze. Dzięki temu logika pokazywania slajdu będzie zawsze taka sama, a&nbsp;ewentualne zmiany
-                trzeba będzie wprowadzić tylko raz.</p>
-            <p class="fragment fade-up">W&nbsp;tym celu przydadzą nam się <strong>parametry funkcji</strong>.</p>
+            <p>Набагато кращим рішенням буде створення універсальної функції, яка покаже будь-який слайд з заданим номером.
+                Це дозволить логіці слайд-шоу завжди бути однаковими, і будь-які зміни, які потрібно внести лише один раз.</p>
+            <p class="fragment fade-up">Для цього нам знадобляться <strong>параметри функції</strong>.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note more">Jak pewnie pamiętacie, funkcja to spójny ciąg poleceń, który można
-                <strong>wywołać</strong> z&nbsp;dowolnego miejsca w&nbsp;kodzie żeby wykonywały się jedno po drugim. Jeżeli
-                przekażemy do funkcji <strong>parametry</strong>, te same polecenia mogą za każdym razem działać na
-                innych danych.</p>
+            <p class="note more">Як ви, напевно, пам'ятаєте, функція - це послідовна послідовність команд, які можна
+                <strong>викликати</strong> з будь-якої точки коду, щоб вони виконувалися один за іншим. Якщо ми передаємо
+                <strong>параметри</strong> до функції, однакові команди завжди можуть працювати на інших даних.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
