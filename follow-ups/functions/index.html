@@ -64,17 +64,17 @@
         </section>
         <section>
           <h3 style="font-size: 3rem">Do czego przydają się funkcje?</h3>
-          <p>Jeżeli byłyście na warsztacie, pisałyście tam własne funkcje do obsługi przycisków na stronie.</p>
+          <p>Jeżeli byłyście na naszym warsztacie, pisałyście tam własne funkcje do obsługi przycisków na stronie.</p>
           <p class="fragment">Funkcje przydają się, gdy chcemy ten sam kawałek kodu wykonać kilka razy.</p>
           <p class="fragment">Można wykonywać go za każdym razem <strong>na innych danych</strong>.</p>
           <p class="fragment">Funkcja może też zwracać wynik swojego działania, na którym reszta kodu będzie działać dalej.</p>
         </section>
         <section>
           <h3 style="font-size: 3rem">Więc czym to się właściwie różni od pętli?</h3>
-          <p>Na ostatnich zajęciach używałyśmy przecież pętli, żeby wykonywać ten sam kod kilka razy...</p>
+          <p>Te z was, ktore znają pętle, wiedzą że też mogą wykonywać ten sam kod kilka razy...</p>
         </section>
         <section>    
-          <p>Pętlę wykonujemy kilka razy jedno po drugim, i na tym koniec. Funkcję możemy wywołać w dowolnym momencie, z dowolnego miejsca w kodzie.</p>
+          <p>Pętlę wykonujemy kilka razy jeden po drugim, i na tym koniec. Funkcję możemy wywołać w dowolnym momencie, z dowolnego miejsca w kodzie.</p>
           <p class="fragment">Pętla musi mieć z góry przygotowane dane i działa na nich w ściśle określonej kolejności (0, 1, 2, ...). Funkcja za każdym razem może dostać nowy zestaw danych, niezależny od tego co było wcześniej.</p>
           <p class="fragment">Podział na funkcje sprawia, że kod staje się bardziej przejrzysty, i łatwiej szukać w nim błędów.</p>
         </section>
@@ -136,7 +136,11 @@
           <p class="fragment">Wartości w nawiasie to są <strong>parametry</strong> - dane, na których funkcja operuje.</p>
           <p class="fragment">Słowem <code>return</code> oznaczamy wartość zwracaną przez funkcję, na której możemy operować dalej:</p>
           <pre class="fragment"><code class="hljs javascript">let result = sum(2, 3) // result = 5</code></pre>
-        </section>      
+        </section>  
+        <section>
+          <h3>Gotowe? Do dzieła</h3>
+          <p>Pliki z kodem do pobrania znajdziecie <a href="exercises.zip">tutaj</a>.</p>
+        </section>  		
         <section>
           <h3>Otwórzmy teraz plik exercise.html</h3>
           <figure>
@@ -287,7 +291,7 @@ setTimeout( cleanUpSomething( someData ), 60000 );
         </section>     
         <section>            
           <p>
-            Kto był na warsztatach, ten może pamięta - dowolny element na stronie możemy "zbadać" narzędziami przeglądarki:
+            Dowolny element na stronie możemy "zbadać" narzędziami przeglądarki:
           </p>    
           <figure>
             <img src="img/inspect.png" />
@@ -329,8 +333,11 @@ setTimeout( cleanUpSomething( someData ), 60000 );
         <section>        
           <p>To, czego potrzebujemy teraz to powiązać tę funkcję z akcją, kiedy ktoś naciśnie na przycisk <strong>C</strong></p>
         </section>      
+        <section>        
+          <p>Uwaga, będzie dużo nowych rzeczy naraz!</p>
+        </section>  		
         <section>
-          <h3>Pamiętacie nasze warsztaty?</h3>
+			<h3>Są tu absolwentki warsztatów Girls.js?</h3>
           <p>Poznałyśmy tam metodę <code>addEventListener</code>, która pozwala powiązać funkcję z wydarzeniem na elemencie. </p>
           <ul class="note more fragment">
             <li><code>element.addEventListener( wydarzenie, akcja-do-wykonania )</code> - wykonuje
