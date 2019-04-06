@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Girls.js - słowniczek pojęć</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="icon" href="img/kaczucha.png">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			let link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides" style="text-align: left;">
+				<section data-background-color="#c6d5e0" id="help">
+					<h3>Słowniczek</h3>
+					<div class="col-narrow">
+					<p><a href="#/document">document</a></p>
+					<ul>
+						<li><a href="#/querySelector">querySelector</a></li>
+					</ul>
+					<p>element</p>
+					<ul>
+						<li><a href="#/classList-add">classList.add</a></li>
+						<li><a href="#/classList-remove">classList.remove</a></li>
+						<li><a href="#/addEventListener">addEventListener</a></li>
+					</ul>
+					<p><a href="#/let">Zmienne</a></p>
+					<ul>
+						<li><a href="#/number">liczby</a></li>
+						<li><a href="#/text">tekst</a></li>
+						<li><a href="#/bool">wartość logiczna</a></li>
+					</ul>
+				</div>
+				<div class="col-wide">
+					<p>Pojęcia</p>
+					<ul>
+						<li><a href="#/function">funkcja - <code>function</code></a></li>
+						<li><a href="#/event">wydarzenie</a></li>
+						<li><a href="#/if">instrukcje warunkowe - <code>if + else</code></a></li>
+						<li><a href="#/params">parametry funkcji - <code>nazwaFunkcji( parametr )</code></a></li>
+						<li><a href="#/interval">interwały - <code>setInterval</code></a> </li>
+						<li><a href="#/clearInterval">wyłączanie interwałów - <code>clearInterval</code></a></li>
+					</ul>
+
+				</div>
+				</section>
+				<section data-background-color="#c6d5e0" id="document">
+					<p>Obiekt <strong>document</strong> zawiera całą strukturę pliku HTML. Dzięki niemu możemy znaleźć dowolny element dokumentu i zmienić go przy pomocy kodu.</p>
+					<p>Dla ciekawych jak to działa - lektura na potem: <a href="https://css-tricks.com/dom/">What is the DOM? - on CSS Tricks</a></p>
+				</section>
+				<section data-background-color="#c6d5e0" id="querySelector">
+					<p><strong><code>querySelector</code></strong> jest jedną z metod obiektu <code>document</code>  do operowania na elementach strony:</p>
+					<p><strong><code>document.querySelector( warunek )</code></strong> - wybiera pierwszy element, który spełnia dany warunek.</p>
+					<p> Selektory tej metody działają dokładnie tak samo jak dla CSS, na przykład:</p>
+					<pre><code>// wybiera nagłówek 3 stopnia
+document.querySelector( 'h3' )
+// wybiera element z klasą moja-klasa
+document.querySelector( '.moja-klasa' )
+// wybiera element z ID artykul-1
+document.querySelector( '#artykul-1' ) </code></pre>										<p>Selektor elementu można również znaleźć w narzędziach programisty pod prawym przyciskiem myszy (opcja <strong>Kopiuj > Kopiuj selektor</strong>).</p>
+				</section>
+				<section data-background-color="#c6d5e0" id="classList-add">
+					<p><strong><code>classList.add</code></strong> jest jedną z metod które ma każdy element drzewa DOM. Wywołujemy ją w następujący sposób:</p>
+					<p><strong><code>element.classList.add( 'nazwa-klasy' )</code></strong> - dodaje dla elementu klasę o podanej nazwie.</p>
+					<pre><code>document.querySelector( '#button' ).classList.add( 'big' ) );
+// dodaje klasę 'big' do elementu o ID button</code></pre>
+				</section>
+				<section data-background-color="#c6d5e0" id="classList-remove">
+					<p><strong><code>classList.remove</code></strong> jest jedną z metod które ma każdy element drzewa DOM. Wywołujemy ją w następujący sposób:</p>
+					<p><strong><code>element.classList.remove( 'nazwa-klasy' )</code></strong> - zabiera daną klasę z elementu.</p>
+					<pre><code>document.querySelector( '#button' ).classList.remove( 'big' ) );
+// zabiera klasę 'big' z elementu o ID button</code></pre>
+
+				</section>
+				<section data-background-color="#c6d5e0" id="addEventListener">
+					<p><strong><code>addEventListener</code></strong> jest <strong>metodą</strong> elementu drzewa DOM, która pozwala powiązać <a href="#/event">wydarzenie</a> związane z tym elementem z akcją która powinna się wtedy wykonać.</p>
+					<p>Wywołujemy tę metodę tak:</p>
+					<p><strong><code>addEventListener( 'wydarzenie', akcja-do-wykonania )</code></strong> - wykonuje podaną akcję, gdy z elementem stanie się coś konkretnego. Przykład:</p>
+					<pre><code>document.querySelector( '#button' ).addEventListener( 'click', mojaFunkcja );
+// wywołaj funkcję mojaFunkcja gdy ktoś kliknie przycisk o ID button</code></pre>
+				</section>
+				<section data-background-color="#c6d5e0" id="let">
+					<p><strong>Zmienna</strong> jest to schowek, w którym możemy zapisywać informacje i odczytywać je później w innym miejscu. W JavaScript w każdej zmiennej można przechowywać praktycznie wszystko - tekst, liczbę, element dokumentu, złożony obiekt, a nawet funkcję.</p>
+					<p>Żeby stworzyć <strong>zmienną</strong> w JavaScript używamy słowa kluczowego <code>let</code>:</p>
+					<pre><code>//zmienna tekstowa
+let courseTitle = 'Galeria JavaScript';</code></pre>
+					<p>Tak stworzonej zmiennej możemy potem używać dalej w kodzie po prostu podając jej nazwę, na przykład:</p>
+					<pre><code>//zmienna liczbowa - długość tekstu
+let titleLength = courseTitle.length;</code></pre>
+				</section>
+				<section data-background-color="#c6d5e0" id="number">
+					<h3>Liczby</h3>
+					<p>Operacje matematyczne(<code>+</code>, <code>-</code>, <code>%</code> i <code>/</code>) zapisujemy w kolejności <code>wynik = działanie</code>, na przykład:</p>
+					<pre><code>let nowyNumer = staryNumer + 4;</code></pre>
+					<p>Do porównania, która liczba jest większa lub mniejsza używamy znaków <code>&gt;</code> i <code>&lt;</code>, <code>&gt;=</code> i <code>&lt;=</code>.</p>
+					<pre><code>if ( a > 1 ) {
+	//wykonaj ten kod, kiedy a jest większe od 1.
+}</code></pre>
+					<p>Do porównania dwóch liczb ze sobą używamy potrójnego znaku równości <code>===</code>.</p>
+					<pre><code>if ( a === 1 ) {
+	//wykonaj ten kod, kiedy a jest równe 1.
+}</code></pre>
+				</section>
+				<section data-background-color="#c6d5e0" id="text">
+					<h3>Tekst</h3>
+					<p>W JavaScript tekst zapisujemy w cudzysłowie, np:</p>
+					<pre><code>let imie = 'Ania';</code></pre>
+					<p>Fragmenty tekstu możemy sklejać ze sobą przy użyciu znaku <code>+</code>, na przykład:</p>
+					<pre><code>let pozdrowienia = 'Hej ' + 'Ania' + '!';</code></pre>
+					<p>W ten sam sposób możemy dokleić do tekstu liczbę lub zawartość zmiennej:</p>
+					<pre><code>let pozdrowienia = 'Hej ' + imie + '!';</code></pre>
+				</section>
+				<section data-background-color="#c6d5e0" id="bool">
+					<h3>Wartość logiczna</h3>
+					<p><strong>Wartość logiczna</strong> to jeden z dwóch stanów (prawda lub fałsz).</p>
+					<p><strong>Prawdę</strong> zapisujemy w JavaScript jako <code>true</code>, dla  <strong>fałszu</strong> używamy słowa <code>false</code>:</p>
+					<pre><code>let isJavaScriptAwesome = true;</code></pre>
+					<p>Wartości logiczne porównujemy używając potrójnego znaku równości, np:</p>
+					<pre><code>if ( isJavaScriptAwesome === true ) {
+	let doWeHaveEnoughYet = false;
+}</code></pre>
+				</section>
+				<section data-background-color="#c6d5e0" id="function">
+					<p><strong>Funkcja</strong> to ciąg kilku poleceń które tworzą logiczną całość, i powinny wykonywać się razem jedno po drugim.</p>
+					<p>W JavaScript możemy budować funkcje na kilka różnych sposobów, z czego najprostszy to:</p>
+					<pre><code>function nazwafunkcji( ) {
+   /* treść funkcji */
+}</code></pre>
+					<p>Tak stworzoną funkcję możemy potem <strong>wywołać</strong> w innym miejscu kodu, podając jej nazwę + okrągłe nawiasy, na przykład:</p>
+					<pre><code>nazwafunkcji( );</code></pre>
+				</section>
+				<section data-background-color="#c6d5e0" id="event">
+					<p><strong>Wydarzeniem</strong> może być wszystko, co dzieje się na stronie: to, co robi z nią użytkownik (kliknięcie, przesunięcie myszy nad elementem, wciśnięcie klawisza, zmaksymalizowanie okna, scroll, itp), a także rzeczy, które dzieją się automatycznie, np. załadowanie strony.</p>
+					<p>Wszystkie typy wydarzeń mogą być przez nas obsłużone w kodzie, tzn. możemy do nich przypisać jakąś akcję. Służy do tego metoda <a href="#/addEventListener">addEventListener</a>.</p>
+				</section>
+				<section data-background-color="#c6d5e0" id="if">
+					<p><strong>Instrukcje warunkowe</strong> to fragmenty kodu, które wykonują się tylko wtedy, kiedy jest spełniony dany warunek.</p>
+					<p>Najprostsza z nich wygląda tak:</p>
+					<pre><code>if ( warunek ) {
+	//wykonaj kod, który jest tutaj.
+}</code></pre>
+					<p>Jeżeli dodatkowo chcemy wykonać inny fragment kodu, kiedy warunek nie jest spełniony, możemy rozbudować tę instrukcję używając słowa kluczowego <code>else</code>:</p>
+					<pre><code>if ( warunek ) {
+	//wykonaj ten kod, kiedy warunek jest spełniony.
+} else {
+	// wykonaj ten kod, kiedy warunek nie jest spełniony
+}</code></pre>
+				</section>
+				<section data-background-color="#c6d5e0" id="params">
+					<p><strong>Parametry funkcji</strong> to dane, które do niej przekazujemy przy jej wywołaniu. Dzięki temu te same polecenia mogą za każdym razem działać na innym zestawie danych. Parametry przekazujemy do funkcji w okrągłych nawiasach.</p>
+					<p>Przykład - funkcja, która bierze imię jako <strong>parametr</strong>, i wypisuje w konsoli pozdrowienia dla osoby o danym imieniu:</p>
+					<pre><code>function hej( imie ) {
+	console.log( 'Hej ' + imie + '! Miło Cię widzieć!' );
+}</code></pre>
+					<p>Wywołując tę funkcję możemy za każdym razem przekazać jej inne imię do wypisania, na przykład:</p>
+					<pre><code>hej( 'Magda' );
+// wypisuje: 'Hej Magda! Miło Cię widzieć!'
+hej( 'Asia' );
+// wypisuje: 'Hej Asia! Miło Cię widzieć!'
+					</code></pre>
+				</section>
+				<section data-background-color="#c6d5e0" id="interval">
+					<p><strong>Interwał</strong> powtarza podane mu instrukcje cyklicznie w danym mu odstępie czasu.</p>
+					<p>Można go stworzyć poprzez funkcję:</p>
+					<p><strong><code>setInterval( akcja, odstep )</code></strong> - wykonuje akcję za każdym kolejnym razem, kiedy upłynie określony odstęp czasu (podany w milisekundach).</p>
+					<pre><code>setInterval( mojaFunkcja, 2000 );
+// wywołuj funkcję mojaFunkcja co 2 sekundy.
+</code></pre>
+				</section>
+				<section  data-background-color="#c6d5e0" id="clearInterval">
+					<p>Żeby <strong>wyłączyć interwał</strong> musimy zrobić dwie rzeczy:</p>
+					<ol>
+						<li>zapisać interwał w zmiennej przy jego utworzeniu,</li>
+						<li>użyć tej zmiennej w funkcji <br /> <strong><code>clearInterval( nazwaZmiennej )</code></strong> - wyłącza interwał zapisany wcześniej w podanej zmiennej.</li>
+					</ol>
+					<pre><code>let zapisanyInterwal = setInterval( mojaFunkcja, 2000 );
+// wywołuj funkcję mojaFunkcja co 2 sekundy.
+clearInterval( zapisanyInterwal );
+// przestań wywoływać funkcję co 2 sekundy
+</code></pre>
+				</section>
+			</div>
+		</div>
+
+		<div class="help"><a href="#/help" target="help"><i class="fa fa-home"></i></a></div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				controls: true,
+				progress: false,
+				transition: 'slide',
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
