@@ -9,3 +9,4 @@ Follow-up:
 - Tablice i obiekty: [tutaj](follow-ups/arrays-objects/index.html)
 - Ciasteczka: [tutaj](follow-ups/cookies/index.html)
 - Funkcje: [tutaj](follow-ups/functions/index.html)
+- Debugowanie: [tutaj](follow-ups/debugging/index.html)
