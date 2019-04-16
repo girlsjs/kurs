@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>girls.js - Debugowanie</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/simple.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato"; rel="stylesheet">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        let link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!-- facebook meta -->
+    <meta property="og:description" content="Materiały do krótkich warsztatów z cyklu girls.js: debugowanie w JavaScript." />
+    <meta property="og:image" content="https://girlsjs.github.io/www/assets/logo.png"; />
+</head>
+<body>
+<div class="left-bar">
+  <div class="left-bar-photo"></div>
+</div>
+<div class="help">
+  <a href="help.html">?</a>
+</div>
+<div class="reveal">
+    <div class="slides">
+        <section>
+          <div class="big-logo">
+            <img style="height: 400px; border: none; box-shadow: none;" src="img/logo.svg"/>
+          </div>
+          <h3 class="fragment grow">Cześć!</h3>
+          <p>(naciśnij spację, żeby kontynuować)</p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+
+        <section>
+          <figure>
+            <img src="img/bug-or-feature.png" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu awwmemes.com
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h3>Debugowanie</h3>
+          <p>Dziś porozmawiamy o diagnozowaniu błędów.</p>
+          <p>Ale najpierw: czy istnieje program komputerowy,<br>który jest w 100% bezbłędny?</p>
+        </section>
+        <section>
+          <h3>Jak zatem diagnozować błędy?</h3>
+          <figure>
+            <img src="img/stethoscope-usb-and-heart.jpg" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z serwisu www.publicdomainpictures.net
+            </figcaption>
+          </figure>
+        </section>
+        <section>
+          <h3>Narzędzia programisty!</h3>
+          <p class="fragment fade-up">Prawie każda przeglądarka internetowa ma w&nbsp;sobie bardzo zaawansowane
+              narzędzia, które pomogą nam zrozumieć z&nbsp;czego składa się strona i&nbsp;w jaki sposób ona działa. </p>
+          <i class="fragment fade-down fa fa-angle-right"></i>
+        </section>
+        <section>
+          <h3>A konkretnie:</h3>
+          <ul>
+            <li class="fragment">Konsola: tam na bieżąco pojawiają się komunikaty o błędach</li>
+            <li class="fragment">Debugger: można sprawdzić krok po kroku, jak działa nasz skrypt</li>
+            <li class="fragment">Sieć: można sprawdzać komunikację z serwerem</li>
+            <li class="fragment">Bardziej zaawansowane narzędzia: profiler, analiza stosu, audyty itp</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Konsola</h3>
+          <figure>
+            <img src="img/robale_duze.jpg" />
+            <figcaption style="font-size: 0.5rem">
+              Grafika zapożyczona z <a href="https://www.flickr.com/photos/biodivlibrary/">flickr.com</a>;
+            </figcaption>
+          </figure>
+        </section>
+        <section>
+          <h3>Po co jest konsola?</h3>
+          <p class="fragment">Można tam wpisywać fragmenty kodu, żeby sprawdzić, co one robią.</p>
+          <p class="fragment">Taki kod zostanie natychmiast wykonany przez przeglądarkę.</p>
+          <p class="fragment">Można też wypisywać potrzebne dane.</p>
+          <p class="fragment">W konsoli pojawiają się również komunikaty o błędach!</p>
+        </section>
+        <section>
+          <h3>Przykładowe błędy</h3>
+          <figure>
+            <img src="img/referenceError.png" alt="Reference Error">
+            <figcaption>Próba odczytania własności nieistniejącego obiektu</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h3>Zauważyłaś, że użyliśmy <code>console.log</code>?</h3>
+          <p class="fragment">Obiekt <code>console</code> służy programistkom do śledzenia różnych rzeczy w tworzonym programie</p>
+        </section>
+        <section>
+          <p class="note more"><code>console</code> posiada więcej metod, niż tylko <code>log</code>. Inne metody umożliwiają wypisywanie na konsolę błędów (<code>error</code>) i ostrzeżeń (<code>warn</code>), grupowanie komunikatów, wypisywanie informacji w tabelkach, mierzenie czasu pomiędzy wywołaniami itp. Pełny opis znajdziesz <a href="https://developer.mozilla.org/en-US/docs/Web/API/Console">tutaj</a>.</p>
+        </section>
+        <section>
+          <h3>Zabawa z konsolą!</h3>
+          <p class="note task fragment fade-left">Wypisz w konsoli informację (<code>console.log</code>), ostrzeżenie (<code>console.warn</code>) oraz błąd (<code>console.error</code>). Następnie stwórz jakiś obiekt lub tablicę i wypisz jej zawartość do konsoli, używając metody <code>console.table</code>.</p>
+        </section>
+        <section>
+          <figure>
+            <img src="img/yes-kid.png" alt="Hurra!">
+            <figcaption style="font-size: 0.5rem">Grafika zapożyczona z serwisu giphy.com</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h3>No dobra, ale co z błędami?</h3>
+          <p class="fragment">One też będą pojawiać się w konsoli, jeśli się trafią.</p>
+        </section>
+        <section>
+          <h3>Spróbuj zaobserwować jakieś błędy!</h3>
+          <p class="note task fragment fade-left">
+            Otwórz (najlepiej w osobnej zakładce) <a href="./example.html">plik</a> z przykładowym kodem, a następnie otwórz tam narzędzia deweloperskie.
+          </p>
+        </section>
+        <section>
+          <h3>Anatomia błędu</h3>
+          <figure>
+              <img src="img/typeError.png" alt="Type Error">
+              <figcaption>Próba uruchomienia metody nieistniejącego obiektu</figcaption>
+            </figure>
+          </section>
+         <section>
+          <h3>Spróbuj kliknąć nazwę pliku<br>w komunikacie błędu</h3>
+          <p class="fragment fade-left">
+            Co się wydarzyło?
+          </p>
+        </section>
+        <section>
+          <h3>Narzędzia otworzyły się na zakładce "Sources"!</h3>
+          <figure>
+            <figcaption>Linia powodująca błąd została wyróżniona :-)</figcaption>
+            <img src="img/sources.png" alt="Źródło błędu!">
+          </figure>
+        </section>
+        <section>
+          <p class="fade-left">Zakładka "Sources" ("Źródła") pozwala przeglądać kod, z któego składa się badana strona internetowa, plik po pliku, tak jak programista to ułożył. Ale nie jest to jej jedyna funkcja...</p>
+        </section>
+        <section>
+          <h1 style="font-size:3rem">Debugger</h1>
+          <figure>
+            <img src="img/ghost-busters.jpg" alt="Ghost Busters!">
+          </figure>
+          <figcaption style="font-size: 0.5rem">Grafika zapożyczona z artykułu w Forbes</figcaption>
+        </section>
+        <section>
+          <h3>Gdy konsola nie wystarcza</h3>
+          <p>Bywa, że wypisywanie różnych rzeczy w konsoli nie daje oczekiwanych efektów. Spróbuj przeanalizować taki kod:</p>
+          <pre class="fragment"><code class="hljs javascript">  let podgladanyObiekt = {
+    level: 1,
+    data: {
+      level: 2,
+      data: 0
+    }
+  };
+
+  for (let i = 0; i < 10; i++) {
+    podgladanyObiekt.data.data = i;
+    console.log(podgladanyObiekt.data);
+  }</code></pre>
+        </section>
+        <section>
+          <p class="note task">Wklej kod z poprzedniego slajdu do konsoli i go uruchom. Popatrz, co pojawiło się w konsoli. Czy zauważyłaś coś dziwnego?</p>
+        </section>
+        <section>
+          <h3>Wartości <code>data</code> są niespójne :-O</h3>
+          <figure>
+            <img src="img/late-eval-1.jpg" alt="No to w końcu 0 czy 9?">
+          </figure>
+        </section>
+        <section>
+          <h3>Wartość zależy od tego, kiedy się ją ogląda!?!</h3>
+          <figure>
+            <img src="img/late-eval-2.jpg" alt="No to w końcu 0 czy 9?">
+          </figure>
+        </section>
+        <section>
+          <h1 style="font-size: 3rem">Co tu się odjavascriptowiło?</h1>
+          <figure>
+            <img src="img/llama.gif" />
+          </figure>
+        </section>
+        <section>
+          <p class="note more">Wartości wypisywane w trakcie trwania pętli wyglądają dobrze, ale po zakończeniu pętli obiekt jest w swoim stanie końcowym. W efekcie, jeśli klikniesz w konsoli, żeby rozwinąć pełny widok obiektu, wartości pól będą odzwierciedlać stan końcowy, a nie stany pośrednie.</p>
+        </section>
+        <section>
+          <p class="note side-note">W podanym tutaj przykładzie nie wygląda to jak duży problem, bo faktyczne wartości i tak pojawiły się w konsoli, dzięki użyciu API <code>console</code>. Niestety w wielu przypadkach nie jest możliwe dodanie wpisów <code>console.log</code>.</p>
+        </section>
+        <section>
+          <h3>Jak to obejść?</h3>
+          <figure>
+            <img src="img/zaczarowany-olowek.gif" alt="Trzeba pomyśleć">
+            <figcaption style="font-size: 0.5rem">Grafika zapożyczona z serwisu giphy.com</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h3>Do tego potrzebny jest debugger</h3>
+          <ul>
+            <li class="fragment">W zakładce "Sources" znajdź kod, który potrzebujesz zbadać</li>
+            <li class="fragment">Klikając obok numerów linii stwórz breakpointy</li>
+            <li class="fragment">Uruchom kod i zobacz, co się dzieje :-)</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Debugger w akcji</h3>
+          <figure><img src="img/debugger.gif" alt="Dzieje się!"></figure>
+        </section>
+        <section>
+          <h3>Co debugger umie?</h3>
+          <ul>
+            <li class="fragment">Przerywanie wykonania kodu w dowolnym momencie</li>
+            <li class="fragment">Podświetlenie kodu, który jest w danej chwili wykonywany</li>
+            <li class="fragment">Śledzenie wartości zmiennych</li>
+            <li class="fragment">Sprawdzanie zakresów zmiennych</li>
+            <li class="fragment">Sprawdzanie stosu wywołań</li>
+            <li class="fragment">Podglądanie funkcji obsługujących zdarzenia</li>
+            <li class="fragment">...</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Czas na praktykę!</h3>
+          <figure>
+            <img src="img/use-the-debugger.jpg">
+          </figure>
+        </section>
+        <section>
+          <p class="note task">Pobierz paczkę z <a href="./example-gal.zip">przykładową appką</a>. Po rozpakowaniu sprawdź, czy działa ;-)</p>
+        </section>
+        <section>
+          <h3>Ups...</h3>
+          <figure><img src="img/problem1.jpg" alt="No i klops."></figure>
+        </section>
+        <section>
+          <p class="note side-note">Pamiętasz, że w komunikaty o błędach można klikać? Zrób to teraz i zobacz, gdzie zostaniesz przeniesiona!</p>
+        </section>
+        <section>
+          <h3>Zakładka "Sources"</h3>
+          <p class="fragment">Trafiłaś ponownie do zakładki z debuggerem. Linia powodująca błąd jest podkreślona na czerwono.</p>
+          <p class="fragment note task">Załóż na tej linii <em>breakpoint</em> i przeładuj stronę. Co się wydarzyło?</p>
+        </section>
+        <section>
+          <p>Okazuje się, że zmienna <code>nav</code> ma wartość <code>null</code>. To chyba nie jest dobrze. Ona powinna zawierać coś innego - tworzona jest takim kodem:</p>
+          <pre class="fragment"><code class="lang-javascript">
+  let nav = document.querySelector('nav > ul');
+          </code></pre>
+          <p class="fragment">Przy pomocy <code>document.querySelector</code> można znajdować elementy strony w drzewie dokumentu. Ta zmienna powinna zawierać jakiś element.</p>
+        </section>
+        <section>
+          <p class="note question">Czy to możliwe, że w momencie wykonania kodu JS poszukiwany element po prostu jeszcze nie istnieje? Jeżeli rzeczywiście tak jest, jak można sobie z tym poradzić?</p>
+        </section>
+        <section>
+          <p class="note task">Zajrzyj do pliku <code>index.html</code> z paczki z zadaniem. Zwróć uwagę, w którym miejscu wczytywane są skrypty. Spróbuj przenieść je w inne miejsce dokumentu i sprawdź, co się będzie działo.</p>
+        </section>
+        <section>
+          <p>Przeniesienie elementu <code>&lt;script src="gallery.js>&lt;/script></code> na koniec dokumentu, tuż przed tag zamykający <code>&lt;/body></code>, rozwiązało problem!</p>
+          <figure><img src="img/skeletor.gif" alt="Sukces!"></figure>
+        </section>
+        <section>
+          <p class="task note">Znajdź inne błędy w przykładzie i postaraj się je samodzielnie naprawić. Nie martw się, jeśli Ci nie idzie - nasi trenerzy chętnie pomogą!</p>
+        </section>
+        <section>
+          <h3>Zrobione!</h3>
+          <figure><img src="img/we-did-it.gif" alt="We did it!"></figure>
+        </section>
+        <section>
+          <h3>Podsumowanie</h3>
+          <p class="fragment">Podstawowym narzędziem do tropienia błędów są narzędzia deweloperskie w przeglądarce.</p>
+          <p class="fragment">Narzędzia zapewniają dużo informacji o napotkanych błędach oraz oferują pomoc w ich rozwiązaniu.</p>
+          <p class="fragment">Nawet jeśli w konsoli nie widać błędu, to nie znaczy, że wszystko działa poprawnie ;-)</p>
+        </section>
+        <section>
+          <p>Wniosek: nie bój się popełniać błędów - teraz już będziesz umiała je naprawić! ;-)</p>
+        </section>
+        <section data-transition="zoom" data-transition-speed="slow">
+          <p>To już wszystko, co przygotowaliśmy na dzisiaj. Dzięki za wspólnie spędzony czas i do zobaczenia!</p>
+          <img src="img/logo.svg" style="border: none; box-shadow: none;"/>
+        </section>
+    </div>
+    <div class="small-duck"></div>
+    <div class="footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">
+        <img
+            alt="Licencja Creative Commons" style="border-width:0;vertical-align:bottom"
+            src="./img/cc.png" />
+      </a>
+      <span>
+        Ta prezentacja jest dostępna na
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">;
+          licencji Creative Commons Uznanie autorstwa-Użycie niekomercyjne-Na tych
+          samych warunkach 3.0 Polska
+        </a>.
+      </span>
+    </div>
+</div>
+
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+      history: true,
+      controls: false,
+      progress: false,
+      center: true,
+      transition: 'convex',
+      slideNumber: 'true',
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+          {
+              src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+              hljs.initHighlightingOnLoad();
+          }
+          }
+      ]
+  });
+
+  function changeTopBar(slideNumber) {
+    if (slideNumber === 0) {
+      document.querySelector('.left-bar').classList.add('big')
+    } else {
+      document.querySelector('.left-bar').classList.remove('big')
+    }
+  }
+
+  Reveal.addEventListener('slidechanged', function( event ) {
+    changeTopBar(event.indexh)
+  });
+
+  setTimeout(changeTopBar(Reveal.getIndices()['h']), 100)
+</script>
+</body>
+</html>
