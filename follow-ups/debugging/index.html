@@ -58,12 +58,12 @@
         </section>
 
         <section>
-          <h3 style="font-size: 3rem">Debugowanie</h3>
+          <h3>Debugowanie</h3>
           <p>Dziś porozmawiamy o diagnozowaniu błędów.</p>
           <p>Ale najpierw: czy istnieje program komputerowy,<br>który jest w 100% bezbłędny?</p>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Jak zatem diagnozować błędy?</h3>
+          <h3>Jak zatem diagnozować błędy?</h3>
           <figure>
             <img src="img/stethoscope-usb-and-heart.jpg" />
             <figcaption style="font-size: 0.5rem">
@@ -72,13 +72,13 @@
           </figure>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Narzędzia programisty!</h3>
+          <h3>Narzędzia programisty!</h3>
           <p class="fragment fade-up">Prawie każda przeglądarka internetowa ma w&nbsp;sobie bardzo zaawansowane
               narzędzia, które pomogą nam zrozumieć z&nbsp;czego składa się strona i&nbsp;w jaki sposób ona działa. </p>
           <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-          <h3 style="font-size: 3rem">A konkretnie:</h3>
+          <h3>A konkretnie:</h3>
           <ul>
             <li class="fragment">Konsola: tam na bieżąco pojawiają się komunikaty o błędach</li>
             <li class="fragment">Debugger: można sprawdzić krok po kroku, jak działa nasz skrypt</li>
@@ -87,7 +87,7 @@
           </ul>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Konsola</h3>
+          <h3>Konsola</h3>
           <figure>
             <img src="img/robale_duze.jpg" />
             <figcaption style="font-size: 0.5rem">
@@ -96,61 +96,61 @@
           </figure>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Po co jest konsola?</h3>
+          <h3>Po co jest konsola?</h3>
           <p class="fragment">Można tam wpisywać fragmenty kodu, żeby sprawdzić, co one robią.</p>
           <p class="fragment">Taki kod zostanie natychmiast wykonany przez przeglądarkę.</p>
           <p class="fragment">Można też wypisywać potrzebne dane.</p>
           <p class="fragment">W konsoli pojawiają się również komunikaty o błędach!</p>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Przykładowe błędy</h3>
+          <h3>Przykładowe błędy</h3>
           <figure>
             <img src="img/referenceError.png" alt="Reference Error">
             <figcaption>Próba odczytania własności nieistniejącego obiektu</figcaption>
           </figure>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Zauważyłaś, że użyliśmy <code>console.log</code>?</h3>
+          <h3>Zauważyłaś, że użyliśmy <code>console.log</code>?</h3>
           <p class="fragment">Obiekt <code>console</code> służy programistkom do śledzenia różnych rzeczy w tworzonym programie</p>
         </section>
         <section>
           <p class="note more"><code>console</code> posiada więcej metod, niż tylko <code>log</code>. Inne metody umożliwiają wypisywanie na konsolę błędów (<code>error</code>) i ostrzeżeń (<code>warn</code>), grupowanie komunikatów, wypisywanie informacji w tabelkach, mierzenie czasu pomiędzy wywołaniami itp. Pełny opis znajdziesz <a href="https://developer.mozilla.org/en-US/docs/Web/API/Console">tutaj</a>.</p>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Zabawa z konsolą!</h3>
+          <h3>Zabawa z konsolą!</h3>
           <p class="note task fragment fade-left">Wypisz w konsoli informację (<code>console.log</code>), ostrzeżenie (<code>console.warn</code>) oraz błąd (<code>console.error</code>). Następnie stwórz jakiś obiekt lub tablicę i wypisz jej zawartość do konsoli, używając metody <code>console.table</code>.</p>
         </section>
         <section>
           <figure>
-            <img src="img/fireworks.gif" alt="Hurra!">
+            <img src="img/yes-kid.png" alt="Hurra!">
             <figcaption style="font-size: 0.5rem">Grafika zapożyczona z serwisu giphy.com</figcaption>
           </figure>
         </section>
         <section>
-          <h3 style="font-size: 3rem">No dobra, ale co z błędami?</h3>
+          <h3>No dobra, ale co z błędami?</h3>
           <p class="fragment">One też będą pojawiać się w konsoli, jeśli się trafią.</p>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Spróbuj zaobserwować jakieś błędy!</h3>
+          <h3>Spróbuj zaobserwować jakieś błędy!</h3>
           <p class="note task fragment fade-left">
             Otwórz (najlepiej w osobnej zakładce) <a href="./example.html">plik</a> z przykładowym kodem, a następnie otwórz tam narzędzia deweloperskie.
           </p>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Anatomia błędu</h3>
+          <h3>Anatomia błędu</h3>
           <figure>
               <img src="img/typeError.png" alt="Type Error">
               <figcaption>Próba uruchomienia metody nieistniejącego obiektu</figcaption>
             </figure>
           </section>
          <section>
-          <h3 style="font-size: 3rem">Spróbuj kliknąć nazwę pliku<br>w komunikacie błędu</h3>
+          <h3>Spróbuj kliknąć nazwę pliku<br>w komunikacie błędu</h3>
           <p class="fragment fade-left">
             Co się wydarzyło?
           </p>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Narzędzia otworzyły się na zakładce "Sources"!</h3>
+          <h3>Narzędzia otworzyły się na zakładce "Sources"!</h3>
           <figure>
             <figcaption>Linia powodująca błąd została wyróżniona :-)</figcaption>
             <img src="img/sources.png" alt="Źródło błędu!">
@@ -167,7 +167,7 @@
           <figcaption style="font-size: 0.5rem">Grafika zapożyczona z artykułu w Forbes</figcaption>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Gdy konsola nie wystarcza</h3>
+          <h3>Gdy konsola nie wystarcza</h3>
           <p>Bywa, że wypisywanie różnych rzeczy w konsoli nie daje oczekiwanych efektów. Spróbuj przeanalizować taki kod:</p>
           <pre class="fragment"><code class="hljs javascript">  let podgladanyObiekt = {
     level: 1,
@@ -186,13 +186,13 @@
           <p class="note task">Wklej kod z poprzedniego slajdu do konsoli i go uruchom. Popatrz, co pojawiło się w konsoli. Czy zauważyłaś coś dziwnego?</p>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Wartości <code>data</code> są niespójne :-O</h3>
+          <h3>Wartości <code>data</code> są niespójne :-O</h3>
           <figure>
             <img src="img/late-eval-1.jpg" alt="No to w końcu 0 czy 9?">
           </figure>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Wartość zależy od tego, kiedy się ją ogląda!?!</h3>
+          <h3>Wartość zależy od tego, kiedy się ją ogląda!?!</h3>
           <figure>
             <img src="img/late-eval-2.jpg" alt="No to w końcu 0 czy 9?">
           </figure>
@@ -210,14 +210,14 @@
           <p class="note side-note">W podanym tutaj przykładzie nie wygląda to jak duży problem, bo faktyczne wartości i tak pojawiły się w konsoli, dzięki użyciu API <code>console</code>. Niestety w wielu przypadkach nie jest możliwe dodanie wpisów <code>console.log</code>.</p>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Jak to obejść?</h3>
+          <h3>Jak to obejść?</h3>
           <figure>
             <img src="img/zaczarowany-olowek.gif" alt="Trzeba pomyśleć">
             <figcaption style="font-size: 0.5rem">Grafika zapożyczona z serwisu giphy.com</figcaption>
           </figure>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Do tego potrzebny jest debugger</h3>
+          <h3>Do tego potrzebny jest debugger</h3>
           <ul>
             <li class="fragment">W zakładce "Sources" znajdź kod, który potrzebujesz zbadać</li>
             <li class="fragment">Klikając obok numerów linii stwórz breakpointy</li>
@@ -225,11 +225,11 @@
           </ul>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Debugger w akcji</h3>
+          <h3>Debugger w akcji</h3>
           <figure><img src="img/debugger.gif" alt="Dzieje się!"></figure>
         </section>
         <section>
-          <h3 style="font-size: 3rem">Co debugger umie?</h3>
+          <h3>Co debugger umie?</h3>
           <ul>
             <li class="fragment">Przerywanie wykonania kodu w dowolnym momencie</li>
             <li class="fragment">Podświetlenie kodu, który jest w danej chwili wykonywany</li>
@@ -245,6 +245,54 @@
           <figure>
             <img src="img/use-the-debugger.jpg">
           </figure>
+        </section>
+        <section>
+          <p class="note task">Pobierz paczkę z <a href="./example-gal.zip">przykładową appką</a>. Po rozpakowaniu sprawdź, czy działa ;-)</p>
+        </section>
+        <section>
+          <h3>Ups...</h3>
+          <figure><img src="img/problem1.jpg" alt="No i klops."></figure>
+        </section>
+        <section>
+          <p class="note side-note">Pamiętasz, że w komunikaty o błędach można klikać? Zrób to teraz i zobacz, gdzie zostaniesz przeniesiona!</p>
+        </section>
+        <section>
+          <h3>Zakładka "Sources"</h3>
+          <p class="fragment">Trafiłaś ponownie do zakładki z debuggerem. Linia powodująca błąd jest podkreślona na czerwono.</p>
+          <p class="fragment note task">Załóż na tej linii <em>breakpoint</em> i przeładuj stronę. Co się wydarzyło?</p>
+        </section>
+        <section>
+          <p>Okazuje się, że zmienna <code>nav</code> ma wartość <code>null</code>. To chyba nie jest dobrze. Ona powinna zawierać coś innego - tworzona jest takim kodem:</p>
+          <pre class="fragment"><code class="lang-javascript">
+  let nav = document.querySelector('nav > ul');
+          </code></pre>
+          <p class="fragment">Przy pomocy <code>document.querySelector</code> można znajdować elementy strony w drzewie dokumentu. Ta zmienna powinna zawierać jakiś element.</p>
+        </section>
+        <section>
+          <p class="note question">Czy to możliwe, że w momencie wykonania kodu JS poszukiwany element po prostu jeszcze nie istnieje? Jeżeli rzeczywiście tak jest, jak można sobie z tym poradzić?</p>
+        </section>
+        <section>
+          <p class="note task">Zajrzyj do pliku <code>index.html</code> z paczki z zadaniem. Zwróć uwagę, w którym miejscu wczytywane są skrypty. Spróbuj przenieść je w inne miejsce dokumentu i sprawdź, co się będzie działo.</p>
+        </section>
+        <section>
+          <p>Przeniesienie elementu <code>&lt;script src="gallery.js>&lt;/script></code> na koniec dokumentu, tuż przed tag zamykający <code>&lt;/body></code>, rozwiązało problem!</p>
+          <figure><img src="img/skeletor.gif" alt="Sukces!"></figure>
+        </section>
+        <section>
+          <p class="task note">Znajdź inne błędy w przykładzie i postaraj się je samodzielnie naprawić. Nie martw się, jeśli Ci nie idzie - nasi trenerzy chętnie pomogą!</p>
+        </section>
+        <section>
+          <h3>Zrobione!</h3>
+          <figure><img src="img/we-did-it.gif" alt="We did it!"></figure>
+        </section>
+        <section>
+          <h3>Podsumowanie</h3>
+          <p class="fragment">Podstawowym narzędziem do tropienia błędów są narzędzia deweloperskie w przeglądarce.</p>
+          <p class="fragment">Narzędzia zapewniają dużo informacji o napotkanych błędach oraz oferują pomoc w ich rozwiązaniu.</p>
+          <p class="fragment">Nawet jeśli w konsoli nie widać błędu, to nie znaczy, że wszystko działa poprawnie ;-)</p>
+        </section>
+        <section>
+          <p>Wniosek: nie bój się popełniać błędów - teraz już będziesz umiała je naprawić! ;-)</p>
         </section>
         <section data-transition="zoom" data-transition-speed="slow">
           <p>To już wszystko, co przygotowaliśmy na dzisiaj. Dzięki za wspólnie spędzony czas i do zobaczenia!</p>

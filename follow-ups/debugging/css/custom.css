@@ -206,6 +206,9 @@ i.fa {
   z-index: 1;
 }
 
+.reveal h3 {
+  font-size: 3rem;
+}
 .reveal h3.note {
 	font-style: normal;
 }
