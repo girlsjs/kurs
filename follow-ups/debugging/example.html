@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Przykłady błędów</title>
+    <meta charset="utf8">
+    <link rel="stylesheet" type="text/css" href="wrongStylesheet.css">
+  </head>
+  <body>
+    <h1>Analizowanie błędów</h1>
+    <section>
+      <h2>Błędy widoczne w konsoli</h2>
+      <pre>
+let nieistniejacyElement = document.querySelector('#badId');
+function handler() {
+  console.log('To nigdy nie zadziała');
+}
+nieistniejacyElement.addEventListener('click', handler);
+      </pre>
+      <script>
+        let nieistniejacyElement = document.querySelector('#badId');
+        function handler() { console.log('To nigdy nie zadziała'); }
+        nieistniejacyElement.addEventListener('click', handler);
+      </script>
+      <pre>
+tenObiekt.nieIstnieje = 'to prawda!';
+      </pre>
+      <script>
+        tenObiekt.nieIstnieje = 'to prawda!';
+      </script>
+      <pre>
+let objectLiteral = '{ dane: [1, 2, 3] }';
+JSON.parse(objectLiteral);
+      </pre>
+      <script>
+        let objectLiteral = '{ dane: [1, 2, 3] }';
+        JSON.parse(objectLiteral);
+      </script>
+      <pre>
+JSON.sttringify({dane:[1,2,3]});
+let zmiennaLiczbowa = 10;
+zmiennaLiczbowa();
+      </pre>
+      <script>
+        JSON.sttringify({dane:[1,2,3]});
+      </script>
+      <script>
+        let zmiennaLiczbowa = 10;
+        zmiennaLiczbowa();
+      </script>
+      <pre>
+let podgladanyObiekt = {
+  level: 1,
+  data: {
+    level: 2,
+    data: 0
+  }
+};
+for (let i = 0; i < 10; i++) {
+  podgladanyObiekt.data.data = i; console.log(podgladanyObiekt);
+}
+      </pre>
+    </section>
+  </body>
+</html>
