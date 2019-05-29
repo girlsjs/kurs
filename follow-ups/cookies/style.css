@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+  background-color: white;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+
+aside {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  background-color: #eee;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 13px -6px, rgba(0, 0, 0, 0.14) 0px 20px 31px 3px, rgba(0, 0, 0, 0.12) 0px 8px 38px 7px;
+  padding: 0 1em 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+aside.hide {
+  display: none;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 3rem;
+}
+
+p {
+  width: 90%;
+  max-width: 800px;
+}
+
+article {
+  width: 90%;
+  max-width: 800px;
+  background-color: white;
+  padding: 2rem;
+  position: relative;
+  border: 5px solid black;
+  color: black;
+}
+
+form,
+section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
+}
+
+form > div,
+section > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+form > div:not(:first-child),
+section > div:not(:first-child) {
+  margin-top: 2em;
+}
+
+label {
+  width: 30%;
+  text-align: right;
+}
+
+label::after {
+  content: ":";
+  color: red;
+  padding: 0 0.25em 0 0.1em;
+}
+
+input {
+  flex: 1;
+  line-height: 1.5em;
+  border: 1px solid #aaa;
+  border-radius: 0.5em;
+  padding: 0.2em 0.5em;
+  font-size: 16px;
+}
+
+input:disabled {
+  border: 1px solid #ddd;
+  background-color: #eee;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  border-width: 1px;
+}
+
+.save {
+  background-color: lightseagreen;
+}
+
+.restore {
+  background-color: orange;
+}
+
+.clear {
+  background-color: coral;
+}

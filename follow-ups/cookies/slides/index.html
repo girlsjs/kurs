@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>girls.js - Powiadomienie o ciasteczkach</title>
+    <title>girls.js - Przechowywanie informacji w przeglądarce</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/simple.css">
@@ -14,8 +14,8 @@
     <link rel="icon" href="img/logo.svg">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/custom.css">
-    
-    <link href="https://fonts.googleapis.com/css?family=Lato"; rel="stylesheet"> 
+
+    <link href="https://fonts.googleapis.com/css?family=Lato"; rel="stylesheet">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -29,300 +29,616 @@
     <!-- facebook meta -->
     <meta property="og:description" content="Materiały do kursu girls.js: ciastka - z czym to się je." />
     <meta property="og:image" content="https://girlsjs.github.io/www/assets/logo.png" />
+    <style>
+    .reveal sup {
+      vertical-align: initial;
+      line-height: 0;
+    }
+    </style>
 </head>
+
 <body>
-<div class="left-bar">
-  <div class="left-bar-photo"></div>
-</div>
-<div class="help">
-  <a href="help.html">?</a>
-</div>
-<div class="reveal">
+  <div class="left-bar">
+    <div class="left-bar-photo"></div>
+  </div>
+
+  <div class="help">
+    <a href="help.html">?</a>
+  </div>
+
+  <div class="reveal">
     <div class="slides">
-        <section>
-            <div class="big-logo">
-              <img style="height: 400px; border: none; box-shadow: none;" src="img/logo.svg"/>
-            </div>
-            <h3 class="fragment grow">Cześć!</h3>
-            <p>(naciśnij spację, żeby kontynuować)</p>
-            <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-            <h1 style="font-size: 3rem">Ciasteczka - z czym to się je?</h1>
-            <figure>
-                <img style="height: 400px;" src="img/2521724022_332f67d66d_o.jpg"/>
-                <figcaption style="font-size: 0.5rem;"><a href="https://www.flickr.com/photos/clunkygirl/2521724022">Autorem zdjęcia jest MICHELE</a> - <a href="https://creativecommons.org/licenses/by-sa/2.0/">Grafika na licencji Creative Commons CC BY-SA 2.0</a></figcaption>
-            </figure>
-            <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section id="cookie-notice">
-          <p>Na wielu stronach internetowych natykamy się na tzw. cookie notice, czyli informację o tym, że dana witryna używa cookies.</p>
-          <p>W dzisiejszym, krótkim ćwiczeniu, powiemy sobie</p>
-          <ul>
-            <li class="fragment fade-down">czym właściwie są te ciasteczka</li>
-            <li class="fragment fade-down">dlaczego twórcy stron internetowych muszą o nich informować swoich użytkowników</li>
-            <li class="fragment fade-down">zrobimy naszą własną ciastko-informację.</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Co w ciastku siedzi?</h2>
+
+      <section>
+        <div class="big-logo">
+          <img style="height: 400px; border: none; box-shadow: none;" src="img/logo.svg"/>
+        </div>
+        <h2>Cześć!</h2>
+        <p>(naciśnij spację, żeby kontynuować)</p>
+        <i class="fa fa-angle-right"></i>
+      </section>
+
+      <section>
+        <h3>Niewielkie wymagania na początek</h3>
+        <p>
+          Tym razem, wyjątkowo, do pełnego przetestowania omawianych zagadnień
+          będą nam potrzebne konkretne narzędzia<sup>*</sup>:
+        </p>
+        <ul>
+          <li><a href="https://www.google.com/intl/pl/chrome/" target="_blank">Przeglądarka Google Chrome</a></li>
+          <li>Rozszerzenie <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb" target="_blank">Web Server for Chrome</a></li>
+        </ul>
+        <p>
+          <small>
+            <sup>*</sup> Narzędzia te nie są absolutnie wymagane, jednak niektórych ćwiczeń nie uda się bez nich dziś zrobić.
+          </small>
+        </p>
+      </section>
+
+      <section>
+        <h3>
+          Dziś zapraszamy na ciasteczka<br />
+          z lokalnego pudełeczka
+        </h3>
+        <figure>
+          <img style="height: 400px;" src="img/2521724022_332f67d66d_o.jpg"/>
+          <figcaption style="font-size: 0.5rem;">
+            <a href="https://www.flickr.com/photos/clunkygirl/2521724022">Autorem zdjęcia jest MICHELE</a>
+            - <a href="https://creativecommons.org/licenses/by-sa/2.0/">Grafika na licencji Creative Commons CC BY-SA 2.0</a>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="cookie-notice">
+        <h4>
+          Wiele stron internetowych informuje nas o fakcie lub konieczności przechowywania swoich informacji
+          w naszej przeglądarce (np. w formie ciasteczek).
+        </h4>
+        <p class="fragment fade-down">W dzisiejszym ćwiczeniu:</p>
+        <ul>
+          <li class="fragment fade-down">powiemy sobie, dlaczego twórcy stron internetowych muszą informować swoich użytkowników o fakcie przechowywania danych</li>
+          <li class="fragment fade-down">zobaczymy, jak przechowywać dane w przeglądarce</li>
+          <li class="fragment fade-down">pobrudzimy trochę ręce kodem</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Po co ktoś miał by zapisywać dane w mojej przeglądarce?<br /> Nie stać ich na twarde dyski?</h4>
+        <ul>
+          <li class="fragment fade-down">statystyki odwiedzin</li>
+          <li class="fragment fade-down">zakupy internetowe bez zakładania konta</li>
+          <li class="fragment fade-down">automatyczny login</li>
+          <li class="fragment fade-down">przechowywanie informacji w formularzu, żeby nie zniknęły po odświeżeniu strony</li>
+          <li class="fragment fade-down">wyświetlanie informacji o ciasteczkach</li>
+          <li class="fragment fade-down">przyspieszenie uruchamiania aplikacji / strony</li>
+          <li class="fragment fade-down">śledzenie naszych zachowań w sieci / profilowanie treści</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Dlaczego informuje się o używaniu ciastek?</h4>
+        <p class="fragment fade-down">Jednym z zastosowań ciastek jest śledzenie naszych poczynań w sieci</p>
+        <p class="fragment fade-down">UE uznała, że jeżeli będzie wymagana zgoda użytkownika na zapisanie ciastka, to problem
+          będzie rozwiązany</p>
+        <p class="fragment fade-down"><a
+            href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2009:337:0011:0036:en:PDF">Dyrektywa 2009/136/EC
+            Rady Europy</a> nakłada na dostawców treści internetowych, którzy chcą zapisywać dane w przeglądarce (nie tylko
+          przez cookie, ale też przez inne mechanizmy, jak localStorage) obowiązek uzyskania zgody na taką czynność</p>
+      </section>
+
+      <section>
+        <h3>I co z tego wynikło?</h3>
+        <p class="fragment fade-down">W praktyce nic się nie zmieniło. Czy ktoś, kiedyś nie zgodził się na zapisanie ciastka?
+        </p>
+        <p class="fragment fade-down">Ale za to musimy wiedzieć, jak zrobić informację o cookies</p>
+      </section>
+
+      <section>
+        <h3>Jak można zapisać dane w przeglądarce?</h3>
+        <ul>
+          <li class="fragment fade-down">HTTP Cookies</li>
+          <li class="fragment fade-down">Web Storage</li>
+          <li class="fragment fade-down">IndexedDB <em class="fragment fade-down">(o tym nie dzisiaj)</em></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Co w ciastku siedzi?</h2>
+        <figure>
+          <img style="height: 400px;" src="img/6164957230_a4d912723a_o.jpg"/>
+          <figcaption style="font-size: 0.5rem;"><a href="https://www.flickr.com/photos/29233640@N07/6164957230">Autorem zdjęcia jest Robert Couse-Baker</a> - <a href="https://creativecommons.org/licenses/by-sa/2.0/">Grafika na licencji Creative Commons CC BY 2.0</a></figcaption>
+        </figure>
+        <i class="fa fa-angle-right"></i>
+      </section>
+
+      <section>
+        <p>
+          Ciastko (profesjonalnie nazywa się "HTTP Cookie") to po prostu fragment danych,
+          które są zapisywane przez stronę internetową w przeglądarce i które mogą być odczytane przez serwer,
+          który tę stronę wygenerował.
+        </p>
+        <p class="fragment fade-down">
+          Jest to jeden z najstarszych i najbardziej rozpowszechnionych sposobów zapisywania danych w przeglądarce.
+        </p>
+        <p class="fragment fade-down">Do działania nie wymaga JavaScript.</p>
+      </section>
+
+      <section>
+        <h4>Obejrzyjmy nasze ciastka</h4>
+        <video src="img/cookieConsole.webm" controls="controls"></video>
+        <p style="font-size: 1rem">Przypomnienie: narzędzia programisty w Chrome włączamy przez F12 (Command+Option+I na macOS)</p>
+      </section>
+
+      <section>
+        <h3>Anatomia ciastka</h3>
+        <ul>
+          <li class="fragment fade-down">Każde ciastko składa się przynajmniej z nazwy i wartości.</li>
+          <li class="fragment fade-down">Nazwa i wartość to napisy</li>
+          <li class="fragment fade-down">Dodatkowo przeglądarka zapamiętuje, do której domeny należy dane ciastko, żeby wiedzieć, któremu serwerowi może je udostępnić</li>
+          <li class="fragment fade-down">Serwer widzi tylko nazwę i wartość ciastka</li>
+          <li class="fragment fade-down">Pozostałe atrybuty są widoczne tylko dla przeglądarki i służą zarządzaniu ciastkami</li>
+          <li class="fragment fade-down">Spośród tych atrybutów tym razem najbardziej interesuje nas nie liczba kalorii, ale data ważności</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Ciasteczka w Twojej przeglądarce</h4>
+        <p>Do manipulacji ciasteczkami służy <em>document.cookie</em></p>
+        <p>Odczytanie wszystkich ciasteczek</p>
+        <pre><code>var allCookies = document.cookie;
+// np. => 'nazwa1=wartość1; nazwa2=wartość2; nazwa3=wartość3'
+        </code></pre>
+        <p>Zapisanie ciasteczka<sup>*</sup></p>
+        <pre><code>document.cookie = 'nazwa=wartosc; max-age=3600';</code></pre>
+        <p class="fragment fade-down"><small>
+          <sup>*</sup> <em>document.cookie</em> działa bardziej jak wpłatomat, niż normalna zmienna -
+          zapisanie ciasteczka nie nadpisuje innych ciasteczek.
+        </small></p>
+      </section>
+
+      <section>
+        <h3>Web Storage</h3>
+        <p class="fragment fade-down">Wprowadzony w ramach standardu HTML5, a więc stosunkowo młoda technologia (IE8+)</p>
+        <p class="fragment fade-down">Widoczny tylko dla przeglądarki (ciastka są widoczne także dla serwera)</p>
+        <p class="fragment fade-down">Można w nim przechować więcej danych, ok. 1000 razy więcej niż w ciastkach</p>
+        <p class="fragment fade-down">Duuuużo łatwiejszy w użyciu</p>
+        <p class="fragment fade-down">Do działania wymaga JavaScript</p>
+      </section>
+
+      <section>
+        <h3>Web Storage w Twojej przeglądarce</h3>
+        <dl>
+          <dt>sessionStorage</dt>
+          <dd>
+            Oddzielna przestrzeń na dane dla każdego <em>źródła dokumentów<sup>*</sup></em>, dostępna podczas sesji przeglądarki
+            (tak długo jak przeglądarka jest otwarta, wliczając przeładowania strony i odtwarzanie stron po zamknięciu przeglądarki).
+          </dd>
+          <dt>localStorage</dt>
+          <dd>Robi to samo, ale dane przechowywane są nawet po zamknięciu przeglądarki.</dd>
+        </dl>
+        <p><small>* protokół://domena:port (np: https://www.mojadomena.pl:6666)</small></p>
+      </section>
+
+      <section>
+        <h4>Podstawowe użycie local storage</h4>
+
+        <p>Zapisywanie danych do local storage</p>
+        <pre><code>localStorage.setItem('nazwa', 'wartość');</code></pre>
+
+        <p>Odczyt z local storage i zapisanie do zmiennej</p>
+        <pre><code>var zmienna = localStorage.getItem('nazwa');</code></pre>
+
+        <p>Usuwanie danych z local storage</p>
+        <pre><code>localStorage.removeItem('nazwa');</code></pre>
+
+        <p>Usuwanie całej zawartości local storage</p>
+        <pre><code>localStorage.clear();</code></pre>
+      </section>
+
+      <section>
+        <h2>Do maszyn!</h2>
+        <figure>
+          <img style="height: 400px;" src="img/F-15_Eagle_female_pilots,_3rd_Wing.jpg"/>
+          <figcaption style="font-size: 0.5rem;"><a href="https://commons.wikimedia.org/wiki/File:F-15_Eagle_female_pilots,_3rd_Wing.jpg">Zdjęcie w domenie publicznej. Autorem jest Tech. Sgt. Keith Brown</a></figcaption>
+        </figure>
+        <i class="fa fa-angle-right"></i>
+      </section>
+
+      <section>
+        <h3>Przygotujmy miejsce do pracy</h3>
+        <h4>Źródła</h4>
+        <p><a href="../cookies.zip">Stąd pobierzesz paczkę z kodem źródłowym</a></p>
+        <p class="fragment fade-up">
+          Po wypakowaniu znajdziesz w głównym folderze kilka plików. Nas w tej chwili interesuje <strong>webstorage.html</strong>.
+        </p>
+      </section>
+
+      <section>
+        <h4>Nasz własny serwer 1/2</h4>
+        <p>Jeśli używasz narzędzi zaproponowanych na początku, otwórz przeglądarkę Chrome i wybierz zakładkę <em>Apps</em></p>
+        <figure>
+          <img style="height: 350px;" src="img/chrome-apps.png"/>
+        </figure>
+        <p>Następnie wybierz aplikację <em>Web Server</em></p>
+      </section>
+
+      <section>
+        <h4>Nasz własny serwer 2/2</h4>
+        <p>Otworzy się nowe okienko, a w nim wybieramy katalog, w którym mamy rozpakowane pliki z kodami źródłowymi.</p>
+        <figure>
+          <img style="height: 300px;" src="img/chrome-webserver.png" />
+        </figure>
+        <p>Przy domyślnych ustawieniach wystarczy w nowej zakładce otworzyć stronę o adresie <a href="http://127.0.0.1:8887" target="_blank" >http://127.0.0.1:8887</a></p>
+      </section>
+
+      <section>
+        <h4>Bez serwera</h4>
+        <p>Przejdź do katalogu, w którym mamy rozpakowane pliki z kodami źródłowymi.</p>
+        <p>Otwórz w przeglądarce plik <strong>webstorage.html</strong></p>
+        <i class="fragment fade-down fa fa-angle-right"></i>
+      </section>
+
+      <section>
+        <h3>Na razie bez zaglądania do kodu</h3>
+        <p>
+          Otwarta strona <strong>webstorage.html</strong> zawiera prosty formularz,
+          za pomocą którego możemy zmieniać kolor tła i tekstu.
+        </p>
+        <p class="fragment fade-up"> Sprawdźmy przez chwilę, jak to działa. </p>
+        <p class="fragment fade-up">
+          Są tu również dwa przyciski, które nic nie robią <span class="fragment fade-up">(na razie)</span>
+        </p>
+        <p class="fragment fade-up">
+          Otwórzmy plik <strong>webstorage.html</strong> w swoim ulubionym edytorze i popatrzmy przez chwilę na kod.
+        </p>
+      </section>
+
+      <section>
+        <h3>Pierwsze zadanie</h3>
+        <p>
+          Celem naszego pierwszego zadania będzie zapisanie po naciśnięciu przycisku <code>Save</code> aktualnie ustawionych kolorów w localStorage i sessionStorage
+        </p>
+        <ul class="fragment fade-up">
+          <li>kolor tła zapiszmy w localStorage</li>
+          <li>kolor tekstu zapiszmy w sessionStorage</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Jak się do tego zabrać?</h4>
+
+        <div class="fragment fade-up">
+          <p>Może tak:</p>
+          <ol>
+            <li>Pobierz aktualny kolor tła</li>
+            <li>Zapisz wartość w lokalStorage</li>
+            <li>Pobierz aktualny kolor tekstu</li>
+            <li>Zapisz wartość w sessionStorage</li>
+          </ol>
+        </div>
+
+        <p class="fragment fade-up">To nie było trudne, tylko skąd wziąć aktualne wartości kolorów?</p>
+        <p class="fragment fade-up">Spróbujmy napisać funkcję <em>saveColors</em>, która realizuje pierwsze zadanie!</p>
+        <p class="fragment fade-up">Czy możemy wykorzystać istniejący już kod?</p>
+      </section>
+
+      <section>
+        <p>Gotowe?</p>
+        <div class="fragment fade-up">
+          <p>Wyszło nam pewnie coś takiego:</p>
+          <pre><code>function saveColors() {
+  localStorage.setItem(
+    'backgroundColor',
+    document.body.style.backgroundColor
+  );
+  sessionStorage.setItem('color', document.body.style.color);
+}</code></pre>
+        </div>
+        <i class="fragment fade-down fa fa-angle-right"></i>
+      </section>
+
+      <section>
+        <p>Kto pamięta co zrobić, żeby kliknięcie w przycisk uruchomiło naszą funkcję? Ręka do góry!</p>
+        <div class="fragment fade-down">
+          <pre><code>document
+  .querySelector('#save')
+  .addEventListener('click', saveColors);</code></pre>
+          <p>Dodajmy ten kod poniżej naszej funkcji i sprawdźmy...</p>
+        </div>
+        <i class="fragment fade-down fa fa-angle-right"></i>
+      </section>
+
+      <section>
+        <p>No dobrze, ale jak właściwie sprawdzić, czy coś się wydarzyło?</p>
+        <div class="fragment fade-down">
+          <p>Otwórzmy narzędzia programisty i zajrzyjmy do zakładki <em>Aplikacja</em><p>
           <figure>
-            <img style="height: 400px;" src="img/6164957230_a4d912723a_o.jpg"/>
-            <figcaption style="font-size: 0.5rem;"><a href="https://www.flickr.com/photos/29233640@N07/6164957230">Autorem zdjęcia jest Robert Couse-Baker</a> - <a href="https://creativecommons.org/licenses/by-sa/2.0/">Grafika na licencji Creative Commons CC BY 2.0</a></figcaption>
+            <img style="height: 300px;" src="img/chrome-application.png" />
           </figure>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Ciastko (profesjonalnie nazywa się "HTTP Cookie") to po prostu fragment danych, które są zapisywane przez stronę internetową w przeglądarce i które mogą być odczytane przez serwer, który tę stronę wygenerował</p>
-          <p class="fragment fade-down">Po co ktoś miałby zapisywać dane w mojej przeglądarce? Nie stać ich na twarde dyski?</p>
-          <ul>
-            <li class="fragment fade-down">statystyki odwiedzin</li>
-            <li class="fragment fade-down">zakupy internetowe bez zakładania konta</li>
-            <li class="fragment fade-down">automatyczny login</li>
-            <li class="fragment fade-down">przechowywanie informacji w formularzu, żeby nie zniknęły po odświeżeniu strony</li>
-            <li class="fragment fade-down">wyświetlanie informacji o ciasteczkach</li>
-          </ul>
-        </section>
-        <section>
-          <p>Ciasteczka to nie jedyny sposób na zapisywanie danych w przeglądarce</p>
-          <p>Jest jednak prawdopodobnie najbardziej rozpowszechniony</p>
-        </section>
-        <section>
-          <h2>Obejrzyjmy nasze ciastka</h2>
-          <video src="img/cookieConsole.webm" controls="controls"></video>
-          <p style="font-size: 1rem">Przypomnienie: narzędzia programisty w Chrome włączamy przez F12 (Ctrl + Option + I na Macbookach)</p>
-        </section>
-        <section>
-          <h2>Anatomia ciastka</h2>
-          <p class="fragment fade-down">Każde ciastko składa się przynajmniej z nazwy i wartości.</p>
-          <p class="fragment fade-down">Nazwa i wartość to po prostu napisy</p>
-          <p class="fragment fade-down">Dodatkowo przeglądarka zapamiętuje, do której domeny należy dane ciastko, żeby wiedzieć któremu serwerowi może je udostępnić</p>
-          <p class="fragment fade-down">Serwer widzi tylko nazwę i wartość ciastka</p>
-          <p class="fragment fade-down">Pozostałe atrybuty są widoczne tylko dla przeglądarki i służą zarządzaniu ciastkami</p>
-          <p class="fragment fade-down">Spośród tych atrybutów najbardziej nas zazwyczaj interesuje tym razem nie liczba kalorii, ale data ważności</p>
-        </section>
-        <section>
-          <h2>Dlaczego informuje się o używaniu ciastek?</h2>
-          <p class="fragment fade-down">Jednym z zastosowań ciastek jest śledzenie naszych poczynań w sieci</p>
-          <p class="fragment fade-down">UE uznała, że jeżeli będzie wymagana zgoda użytkownika na zapisanie ciastka, to problem będzie rozwiązany</p>
-          <p class="fragment fade-down"><a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2009:337:0011:0036:en:PDF">Dyrektywa 2009/136/EC Rady Europy</a> nakłada na dostawców treści internetowych, którzy chcą zapisywać dane w przeglądarce (nie tylko przez cookie, ale też przez inne mechanizmy, jak localStorage) obowiązek uzyskania zgody na taką czynność</p>
-        </section>
-        <section>
-          <h2>I co z tego wynikło?</h2>
-          <p class="fragment fade-down">W praktyce nic się nie zmieniło. Czy ktoś, kiedyś nie zgodził się na zapisanie ciastka?</p>
-          <p class="fragment fade-down">Ale za to musimy wiedzieć, jak zrobić informację o cookies</p>
-        </section>
-        <section>
-          <h2>Do maszyn!</h2>
-          <figure>
-              <img style="height: 400px;" src="img/F-15_Eagle_female_pilots,_3rd_Wing.jpg"/>
-              <figcaption style="font-size: 0.5rem;"><a href="https://commons.wikimedia.org/wiki/File:F-15_Eagle_female_pilots,_3rd_Wing.jpg">Zdjęcie w domenie publicznej. Autorem jest Tech. Sgt. Keith Brown</a></figcaption>
-            </figure>
-            <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <h3>Źródła</h3>
-          <p><a href="../cookies.zip">Stąd pobierzesz paczkę z kodem źródłowym</a></p>
-          <p class="fragment fade-up">Po wypakowaniu znajdziesz w głównym folderze dwa pliki HTML - <strong>demo.html</strong>
-              będzie nam służyć jako przykład, <strong>index.html</strong> to plik na którym pracujemy.</p>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p class="note task">Rozpakujmy nasze źródła i otwórzmy w przeglądarce plik <code>index.html</code>.</p>
-          <p class="fragment fade-down">Nic nie widać?</p>
-          <p class="fragment fade-down">Czas włączyć narzędzia programisty!</p>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Tym razem mamy naprawdę prostą strukturę dokumentu:</p>
-          <p class="fragment fade-down">Element <i>aside</i> w którym znajduje się informacja o ciasteczku oraz przycisk do jej zamknięcia</p>
-          <p class="fragment fade-down">Mnóstwo miejsca, które można wypełnić treścią</p>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Zastanówmy się co można zrobić, żeby widoczna w kodzie informacja o ciasteczkach, wyświetliła się na stronie:</p>
-          <p class="fragment fade-down">Jakie klasy ma ustawiony element zawierający informację?</p>
-          <p class="fragment fade-down">Co się stanie, kiedy zabierzemy klasę <i>hide</i>?</p>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Po tym eksperymencie (i po naszych poprzednich warsztatach) rozwiązanie powinno już się samo nasuwać</p>
-          <p class="fragment fade-down">Jak napisać funkcję, która pokaże informację o ciasteczkach?</p>
-          <p class="fragment fade-down">Pokaże, czyli zabierze klasę <i>hide</i></p>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Szybka powtórka, bo widzieliśmy się przecież tak dawno</p>
-          <p class="fragment fade-down">document</p>
-          <p class="fragment fade-down">querySelector()</p>
-          <p class="fragment fade-down">classList</p>
-          <p class="fragment fade-down">classList.add() classList.remove()</p>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <h2>Piszemy!</h2>
-          <figure>
-              <img style="height: 400px;" src="img/website-647013_1920.jpg"/>
-              <figcaption style="font-size: 0.5rem;"><a href="https://pixabay.com/pl/witryny-sieci-web-kod-html-647013/">Zdjęcie w domenie publicznej. Autorem jest Lawrence Monk</a></figcaption>
-            </figure>
-            <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Nasza funkcja wygląda zapewne mniej więcej tak</p>
-          <pre><code>
-function showNotice() {
+        </div>
+        <i class="fragment fade-down fa fa-angle-right"></i>
+      </section>
+
+      <section>
+        <h3>Drugie zadanie</h3>
+        <p>Skoro potrafimy już zapisać dane, to nic nas nie jest w stanie powstrzymać przed ich odczytaniem!</p>
+        <p class="fragment fade-down">
+          Celem naszego drugiego zadania będzie odczytanie po naciśnięciu przycisku <code>Restore</code> kolorów zapisanych w localStorage i sessionStorage oraz ustawienie ich jako aktualnych na stronie.
+        </p>
+      </section>
+
+      <section>
+        <h4>Znowu potrzebny jest plan!</h4>
+        <div class="fragment fade-up">
+          <ol>
+            <li>Odczytaj wartość zapisaną w lokalStorage</li>
+            <li>Ustaw ją jako aktualny kolor tła</li>
+            <li>Odczytaj wartość zapisaną w sessionStorage</li>
+            <li>Ustaw ją jako aktualny kolor tekstu</li>
+          </ol>
+        </div>
+        <p class="fragment fade-up">Spróbujmy napisać funkcję <em>restoreColors</em>, która realizuje drugie zadanie!</p>
+        <p class="fragment fade-up">Czy możemy wykorzystać istniejący już kod?</p>
+      </section>
+
+      <section>
+        <p>Gotowe?</p>
+        <div class="fragment fade-up">
+          <p>Wyszło nam pewnie coś takiego:</p>
+          <pre><code>function restoreColors() {
+  const bgColor = localStorage.getItem('backgroundColor');
+  const fgColor = sessionStorage.getItem('color');
+
+  setBackground(bgColor);
+  setForeground(fgColor);
+}</code></pre>
+        </div>
+        <p class="fragment fade-up">Prawda, że łatwo się pisze, jak możemy wykorzystać istniejący kod?!</p>
+        <i class="fragment fade-down fa fa-angle-right"></i>
+      </section>
+
+      <section>
+        <p>Pozostało nam tylko połączenie funkcji <em>restoreColors</em> ze zdarzeniem kliknięcia na przycisk <code>Restore</code></p>
+        <div class="fragment fade-down">
+          <pre><code>document
+  .querySelector('#restore')
+  .addEventListener('click', restoreColors);</code></pre>
+          <p>Dodajmy ten kod poniżej naszej funkcji i sprawdźmy działanie strony.</p>
+        </div>
+        <i class="fragment fade-down fa fa-angle-right"></i>
+      </section>
+
+      <section>
+        <h2>Udało się!</h2>
+        <img src="img/nasa-celebration.gif">
+      </section>
+
+      <section>
+        <h3>Sprawdźmy w praktyce jak działa Web Storage</h3>
+        <h4 class="fragment fade-in">Test #1</h4>
+        <ol class="fragment fade-in">
+          <li>Ustaw nowe kolory tła i tekstu</li>
+          <li>Zapisz je w Web Storage naciskając <code>Save</code></li>
+          <li>Otwórz w nowej zakładce drugą kopię strony <strong>webstorage.html</strong></li>
+          <li>Odtwórz kolory w otwartym przed chwilą dokumencie naciskając <code>Restore</code>.</li>
+        </ol>
+        <p class="fragment fade-in">Co zaobserwowałaś?</p>
+      </section>
+
+      <section>
+        <h4>Test #2</h4>
+        <ol class="fragment fade-in">
+          <li>Ustaw nowe kolory tła i tekstu w drugiej zakładce</li>
+          <li>Zapisz je w Web Storage naciskając <code>Save</code></li>
+          <li>Otwórz pierwszą zakładkę ze stronę <strong>webstorage.html</strong></li>
+          <li>Naciśnij przycisk <code>Restore</code></li>
+        </ol>
+        <p class="fragment fade-in">Co zaobserwowałaś?</p>
+      </section>
+
+      <section>
+        <h3>Zdarzenia Web Storage</h3>
+        <h4>(tylko jeśli mamy działający nasz serwer)</h4>
+        <p class="fragment fade-in">
+          Poniżej ramki z formularzem znajduje się odnośnik, zróbmy z niego użytek!
+        </p>
+        <p class="fragment fade-in">
+          W nowej zakładce powinien się otworzyć dokument <strong>webstoragemonitor.html</strong>.
+          Umieśćmy oba dokumenty obok siebie, tak aby były jednocześnie widoczne.
+        </p>
+        <p class="fragment fade-in">
+          Czas na magię - zmieńmy kolor tła i zapiszmy nową wartość w Web Storage.
+        </p>
+      </section>
+
+      <section>
+        <h3>Jak to działa?</h3>
+        <figure>
+          <img src="img/mindblown.gif" />
+        </figure>
+        <p class="fragment fade-in">
+          Otwórzmy dokument <strong>webstoragemonitor.html</strong> w naszym ulubionym edytorze i zobaczmy, co tam się dzieje.
+        </p>
+        <p class="fragment fade-in">
+          Czy wszystko jasne? Nie wygląda to aż tak magicznie ;)
+        </p>
+        <p class="fragment fade-in">
+          Spróbujmy zrobić jakiś użytek z tego, co widzimy.
+        </p>
+      </section>
+
+      <section>
+        <h3>Trzecie zadanie</h3>
+        <p>
+          Sprawmy, aby strona <strong>webstoragemonitor.html</strong> zmieniła kolor tła za każdym razem,
+          gdy zmieniamy go i zapisujemy na stronie <strong>webstorage.html</strong>.
+        </p>
+        <p class="fragment fade-up">
+          Napiszmy funkcję <em>setStyle</em>, która ustawi kolor tła dokumentu za kadym razem,
+          gdy pojawi się zdarzenie związane z Web Storage.</p>
+      </section>
+
+      <section>
+        <p>200kcal później...</p>
+        <pre><code>function setStyle(ev) {
+  document.body.style[ev.key] = ev.newValue;
+}
+
+window.addEventListener('storage', setStyle);</pre></code>
+      </section>
+
+      <section>
+        <h3>Web Storage mamy w jednym paluszku!</h3>
+        <figure>
+          <img style="height: 400px;" src="img/highfive.gif" />
+        </figure>
+      </section>
+
+      <section>
+        <h3>Pora na ciastka</h3>
+        <h4>(tylko jeśli mamy działający nasz serwer)</h4>
+        <figure>
+          <img style="height: 400px;" src="img/269577433_1a4cc0685d_o.jpg" />
+          <figcaption style="font-size: 0.5rem;"><a href="https://www.flickr.com/photos/mackenzieeeee/269577433">Autorem
+              zdjęcia jest mackenzie</a> - <a href="https://creativecommons.org/licenses/by-nd/2.0/">Grafika na licencji
+              Creative Commons CC BY-ND 2.0</a></figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <p>
+          Zapisujemy różne informacje w przeglądarce i w myśl dyrektywy unijnej powinniśmy poprosić o zgodę,<br />
+          co niezwłocznie uczynimy.
+        </p>
+        <p class="fragment fade-down">
+          W tym celu wykorzystamy nieużywany jeszcze element <em>aside</em> na stronie <strong>webstorage.html</strong>
+        </p>
+        <p class="fragment fade-down">Zawiera on notyfikację o ciasteczku oraz przycisk do jej zamknięcia.</p>
+        <p class="fragment fade-down">Jedyny problem jest taki, że ta notyfikacja się nie wyświetla na stronie.</p>
+        <p class="fragment fade-down">Sprawdźmy dlaczego.</p>
+      </section>
+
+      <section>
+        <h4>Prośba o zgodę na zapisywanie danych w przeglądarce</h4>
+        <p>Pomyślmy nad scenariuszem, który powinien być realizowany podczas ładowania strony</p>
+        <p class="fragment fade-down">Jakie powinniśmy uwzględnić wymagania?</p>
+        <ul class="fragment fade-down">
+          <li>Pokaż notyfikację o ciasteczkach, jeśli użytkownik jest u nas pierwszy raz.</li>
+          <li>Schowaj notyfikację, gdy użytkownik wyrazi zgodę na ciasteczka.</li>
+          <li>Nie nękaj go więcej notyfikacjami (powiedzmy przez nadchodzący rok).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Scenariusz, który chcemy zrealizować</h3>
+        <ol class="fragment fade-down">
+          <li>Sprawdź, czy użytkowik ma zapisane nasze magiczne ciasteczko</li>
+          <li>Jeśli nie, natychmiast pokaż notyfikację o ciasteczkach</li>
+          <li>Gdy wyrazi zgodę, ukryj notyfikację i zapisz nasze magiczne ciasteczko z rocznym terminem przydatności do spożycia</li>
+        </ol>
+      </section>
+
+      <section>
+        <h4>Krok 1. Sprawdź ciasteczko</h4>
+        <p class="fragment fade-down">
+          Napiszmy funkcję <em>isCookieSet</em>, która przyjmie nazwę ciasteczka jako jedyny parametr
+          i zwróci wartość logiczną <em>true / false</em> mówiącą o tym, czy ciasteczko o podanej nazwie jest ustawione.
+        </p>
+        <div class="fragment fade-down">
+          <p>Jedno z możliwych rozwiązań:</p>
+          <pre><code>function isCookieSet(name) {
+  const cookies = document.cookie.split('; ');
+  for (let i = 0; i < cookies.length; i += 1) {
+    if (cookies[i].startsWith(name + '=')) {
+      return true;
+    }
+  }
+  return false;
+}</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h4>Krok 2. Pokaż notyfikację o ciasteczkach</h4>
+        <p class="fragment fade-down">
+          Napiszmy funkcję <em>showCookieNotice</em>, która pokaże element <em>aside</em>
+          oraz połączmy jej działanie z funkcją z kroku pierwszego.
+        </p>
+        <p class="fragment fade-down">
+          Skorzystamy tu z <em>element</em>.classList i classList.remove()
+        </p>
+        <div class="fragment fade-down">
+          <pre><code>function showCookieNotice() {
   document.querySelector('#cookie-notice').classList.remove('hide');
 }
-          </pre></code>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Mamy już funkcję, ale po przeładowaniu nadal nie widać naszej informacji. Dlaczego?</p>
-          <p class="fragment fade-down">Funkcję trzeba jeszcze wywołać</p>
-          <p class="fragment fade-down">W naszym przypadku najlepiej będzie to zrobić umieszczając taki fragment tuż przed tagiem zamykającym <i>body</i></p>
-          <pre class="fragment fade-down"><code>
-  ...        
-  &lt;script&gt;
-    showNotice();
-  &lt;/script&gt;
-&lt;/body&gt;
-          </code></pre>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Nasze dzisiejsze ćwiczenie jest na tyle krótkie, że wszystko (czyli HTML, CSS i JavaScript) będziemy trzymać w jednym pliku</p>
-          <p>Pamiętajmy jednak, że w prawdziwym projekcie, warto mieć osobne pliki zarówno na CSS jak i JavaScript</p>
-        </section>
-        <section>
-          <p>Pierwsze koty za płoty<p>
-          <p class="fragment fade-down">Udało nam się wyświetlić informację o ciastkach, to teraz zastanówmy się jak ją schować</p>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Stworzenie funkcji, której działanie będzie odwrotne do funkcji <i>showNotice()</i> to już dla nas bułka z masłem</p>
-          <figure>
-              <img style="height: 400px;" src="img/bread-and-butter.jpg"/>
-              <figcaption style="font-size: 0.5rem;"><a href="http://www.publicdomainpictures.net/view-image.php?image=54923&picture=&jazyk=PL">Zdjęcie w domenie publicznej. Autorem jest Marina Shemesh</a></figcaption>
-          </figure>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>200kcal później...</p>
-          <pre><code>
-function hideNotice() {
+
+if ( !isCookieSet('accept-cookies') ) {
+  showCookieNotice();
+}</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h4>Krok 3. Ukryj notyfikację i zapisz ciasteczko</h4>
+        <p class="fragment fade-down">
+          Ten krok podzielimy na dwie niezależne części.
+        </p>
+        <p class="fragment fade-down">
+          Po pierwsze potrzebujemy funkcji <em>hideCookieNotice</em> działającej odwrotnie do funkcji z kroku drugiego. Skorzystamy tu z metody classList.add()
+        </p>
+        <div class="fragment fade-down">
+          <pre><code>function hideCookieNotice() {
   document.querySelector('#cookie-notice').classList.add('hide');
-}
-          </pre></code>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Kto pamięta co zrobić, żeby kliknięcie w przycisk uruchomiło naszą funkcję? Ręka do góry!<p>
-          <div class="fragment fade-down">
-            <pre><code>document.querySelector( '#cookie-notice-button' )
-        .addEventListener( 'click', hideNotice );</code></pre>
-            <p>Umieszczamy to pod wywołaniem naszej funkcji <i>showNotice()</i> i ...</p>
-          </div>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <h2>Udało się!</h2>
-          <img src="img/nasa-celebration.gif"> 
-          <p class="fragment fade-down">Ale czy na pewno?</p>
-          <p class="fragment fade-down">Co się stanie gdy odświeżymy stronę?</p>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>W większości przypadków chciałybyśmy, żeby użytkownikowi, który już raz potwierdził że zobaczył informację o ciastkach, drugi raz już jej nie pokazywać</p>
-          <p class="fragment fade-down">Musimy gdzieś zapisać, że użytkownik kliknął w przycisk</p>
-          <p class="fragment fade-down">Ale gdzie?</p>
-          <p class="fragment fade-down">W zmiennej?</p>
-          <p class="fragment fade-down">Ale zmienne są czyszczone przy każdym odświeżeniu strony...</p>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Gdyby tak można było zapisać dane w przeglądarce tak, żeby przetrwały odświeżanie...</p>
-          <figure class="fragment fade-in">
-              <img style="height: 400px;" src="img/269577433_1a4cc0685d_o.jpg"/>
-              <figcaption style="font-size: 0.5rem;"><a href="https://www.flickr.com/photos/mackenzieeeee/269577433">Autorem zdjęcia jest mackenzie</a> - <a href="https://creativecommons.org/licenses/by-nd/2.0/">Grafika na licencji Creative Commons CC BY-ND 2.0</a></figcaption>
-          </figure>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Ciastka są jak najbardziej odpowiednim mechanizmem na przechowanie takiej informacji</p>
-          <p class="fragment fade-down">Dzisiaj jednak użyjemy innego, a to dlatego, że ciastka do działania wymagają, aby strona została zaserwowana z serwera www, a nie wczytana z dysku. Nie mamy dzisiaj niestety czasu, żeby wykonać takie ćwiczenie</p>
-          <p class="fragment fade-down">Ale nic nie stracimy! Wręcz przeciwnie, bo dowiemy się (i&nbsp;nauczymy korzystać) o jeszcze jednym mechanizmie służącym do zapisywania danych w przeglądarce!</p>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <h2>Local Storage!</h2>
-          <p class="fragment fade-down">Wprowadzony w ramach standardu HTML5, a więc stosunkowo młoda technologia (IE8+)</p>
-          <p class="fragment fade-down">Widoczny tylko dla przeglądarki (ciastka są widoczne także dla serwera)</p>
-          <p class="fragment fade-down">Można w nim przechować więcej danych, ok. 1000 razy więcej niż w ciastkach</p>
-          <p class="fragment fade-down">Duuuużo łatwiejszy w użyciu</p>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Podstawowe użycie local storage</p>
-          <p>Zapisywanie napisu</p>
-          <pre><code>localStorage.setItem('nazwa', 'wartość');</code></pre>
-          <p>Odczyt z local storage i zapisanie do zmiennej</p>
-          <pre><code>var zmienna = localStorage.getItem('nazwa');</code></pre>
-          <p>Skasowanie danych z local storage</p>
-          <pre><code>localStorage.removeItem('nazwa');</code></pre>
-        </section>
-        <section>
-          <p>Zastanówmy się teraz i zapiszmy w krokach po polsku, jak mogłybyśmy wykorzystać ten mechanizm, żeby nasza informacja o ciasteczkach, zachowywała się tak, jak powinna</p>
-          <img style="height: 400px;" src="img/RigidDeliriousHanumanmonkey.gif"/> 
-          <i class="fragment fade-down fa fa-angle-right"></i>          
-        </section>
-        <section>
-            <p>Gotowe?</p>
-            <div class="fragment fade-up">
-                <p>Wyszło nam pewnie coś takiego:</p>
-                <pre><code>1. Przy otwarciu strony sprawdź, 
-   czy w local storage jest informacja, że użytkowik kliknął przycisk
-2. Jeśli nie ma - wyświetl informację o ciasteczkach
-3. Gdy użytkownik kliknie przycisk, 
-   zapisz informację o tym w local storage i ukryj informację o ciasteczkach
-</code></pre>
-            </div>
-            <p class="fragment fade-down">Spróbujmy to teraz zakodować</p>
-            <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Zacznijmy przewrotnie od końca. Jak zmodyfikujemy naszą funkcję hideNotice()?</p>
-          <pre class="fragment fade-down"><code>function hideNotice() {
-  document.querySelector('#cookie-notice').classList.add('hide');
-  localStorage.setItem('showCookieNotice', 'false');
-}
-          </code></pre>
-          <p class="fragment fade-down">W local storage zapisaliśmy pod nazwą <i>showCookieNotice</i> słowo <i>false</i>. To będzie dla nas znak, żeby więcej nie wyświetlać informacji o ciastkach</p>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <p>Teraz zastanówmy się nad funkcją showNotice()</p>
-          <pre class="fragment fade-down"><code>function showNotice() {
-  if(localStorage.getItem('showCookieNotice') !== 'false') {
-    document.querySelector('#cookie-notice').classList.remove('hide');
+}</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <p>Po drugie potrzebujemy fukncji, która zapisze ciasteczko w przeglądarce.</p>
+        <p class="fragment fade-down">
+          Nasza funkcja <em>setCookie</em> powinna przyjmować nazwę ciasteczka, jego wartość i opcjonalnie czas przydatności do spożycia.
+        </p>
+        <div class="fragment fade-down">
+          <p>Oto jedno z możliwych rozwiązań:</p>
+          <pre><code>function setCookie(name, value, time) {
+  let cookie = name + '=' + value;
+  if (time) {
+    cookie += '; max-age=' + time;
   }
+  document.cookie = cookie;
+}</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <p>Pozostaje nam tylko połączenie wszystkich elementów</p>
+        <div class="fragment fade-down">
+          <p>Na przykład tak:</p>
+          <pre><code>function acceptCookies() {
+  hideCookieNotice();
+  setCookie('accept-cookies', true, 60*60*24*365);
 }
-          </code></pre>
-          <p class="fragment fade-down">Korzystając z <i>if</i> sprawdzamy, czy to, co zapisano w local storage pod nazwą <i>showCookieNotice</i> nie jest słowem <i>false</i> i tylko wtedy wyświetlamy naszą informację.</p>
-          <i class="fragment fade-down fa fa-angle-right"></i>
-        </section>
-        <section>
-          <h2>Czas próby!</h2>
-          <p>Zapisujemy naszą stronę, odświeżamy i patrzymy co się dzieje</p>
-          <p class="fragment fade-down">Wszystko gra?</p>
-          <div class="fragment fade-down">
-            <p>Żeby przeprowadzić próbę więcej niż raz, musimy usunąć z local storage to, co zapisane jest pod nazwą <i>showCookieNotice</i>. Możemy to zrobić wpisując w konsoli:</p>
-            <pre><code>localStorage.removeItem('showCookieNotice');</code></pre>
-          </div>
-        </section>
-        <section data-transition="zoom" data-transition-speed="slow">
-            <p>Dzięki za wspólnie spędzony czas i do zobaczenia!</p>
-            <img src="img/logo.svg" style="border: none; box-shadow: none;"/>
-        </section>  
+
+document
+  .querySelector('#cookie-notice-button')
+  .addEventListener('click', acceptCookies);
+</code></pre>
+        </div>
+        <p class="fragment fade-down">Ufff... mamy już wszystkie potrzebne elementy.</p>
+        <i class="fragment fade-down fa fa-angle-right"></i>
+      </section>
+
+      <section>
+        <h2>Czas próby!</h2>
+        <p>Zapisujemy naszą stronę, odświeżamy i patrzymy co się dzieje</p>
+        <p class="fragment fade-down">Wszystko gra?</p>
+        <img class="fragment fade-down" src="img/wedidit.gif">
+      </section>
+
+      <section data-transition="zoom" data-transition-speed="slow">
+          <p>Dzięki za wspólnie spędzony czas i do zobaczenia!</p>
+          <img src="img/logo.svg" style="border: none; box-shadow: none;"/>
+      </section>
     </div>
     <div class="small-duck"></div>
     <div class="footer">
@@ -348,8 +664,8 @@ function hideNotice() {
 <script>
     // More info https://github.com/hakimel/reveal.js#configuration
     Reveal.initialize({
-        history: true,
         controls: false,
+        history: true,
         progress: false,
         transition: 'convex',
         slideNumber: 'true',
@@ -362,7 +678,7 @@ function hideNotice() {
             }
         ]
     });
-    
+
   function changeTopBar(slideNumber) {
     if (slideNumber === 0) {
       document.querySelector('.left-bar').classList.add('big')

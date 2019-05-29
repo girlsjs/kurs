@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>girls.js :: Web Storage API and cookies</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h1>Web Storage</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu placerat enim, condimentum congue eros. Nam sodales
+    tincidunt tincidunt. Etiam interdum lorem nisi, eget euismod metus lacinia in. Ut vestibulum metus mi, vel ullamcorper
+    diam blandit eget. Fusce nec enim ac dui posuere scelerisque. Praesent in augue mattis, ullamcorper nisi eu, laoreet
+    turpis. Praesent a consequat erat, id semper neque. Pellentesque risus augue, aliquam a tristique in, suscipit vel
+    purus. Fusce turpis urna, porttitor semper consectetur id, mollis et risus. Phasellus ut eros quis mi ornare pharetra.
+    </p>
+    <article>
+      <form>
+        <div>
+          <label for="background-color">Background</label>
+          <input type="text" id="background-color" autocomplete="off" />
+        </div>
+
+        <div>
+          <label for="foreground-color">Foreground</label>
+          <input type="text" id="foreground-color" autocomplete="off" />
+        </div>
+      </form>
+
+      <footer>
+        <button type="button" class="save" id="save">Save</button>
+        <button type="button" class="restore" id="restore">Restore</button>
+      </footer>
+    </article>
+
+    <p><a href="webstoragemonitor.html" target="_blank">Storage event monitor</a></p>
+
+    <aside id="cookie-notice" class="hide">
+      <p>Ta strona zapisuje w Twoim urządzeniu krótkie informacje tekstowe zwane plikami cookies (ciasteczkami).</p>
+      <button id="cookie-notice-button">Czuję się poinformowany</button>
+    </aside>
+
+    <script>
+      function setBackground(color) {
+        document.body.style.backgroundColor = color;
+        document.querySelector('#background-color').value = color;
+      }
+
+      document
+        .querySelector('#background-color')
+        .addEventListener('change', (ev) => setBackground(ev.target.value));
+
+
+      function setForeground(color) {
+        document.body.style.color = color;
+        document.querySelector('#foreground-color').value = color;
+      }
+
+      document
+        .querySelector('#foreground-color')
+        .addEventListener('change', (ev) => setForeground(ev.target.value));
+    </script>
+  </body>
+</html>
