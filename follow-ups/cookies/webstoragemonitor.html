@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>girls.js :: Web Storage Monitor</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h1>Web Storage Monitor</h1>
+    <article>
+      <section>
+        <div>
+          <label for="ev-key">Klucz</label>
+          <input type="text" disabled id="ev-key" />
+        </div>
+        <div>
+          <label for="ev-oldValue">Poprzednia wartość</label>
+          <input type="text" disabled id="ev-oldValue" />
+        </div>
+        <div>
+          <label for="ev-newValue">Nowa wartość</label>
+          <input type="text" disabled id="ev-newValue" />
+        </div>
+        <div>
+          <label for="ev-url">URL</label>
+          <input type="text" disabled id="ev-url" />
+        </div>
+      </section>
+    </article>
+
+    <script>
+      window.addEventListener('storage', (ev) => {
+        document.querySelector('#ev-key').value = ev.key;
+        document.querySelector('#ev-oldValue').value = ev.oldValue;
+        document.querySelector('#ev-newValue').value = ev.newValue;
+        document.querySelector('#ev-url').value = ev.url;
+      });
+    </script>
+  </body>
+</html>
