@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="lib/css/zenburn.css">
     <link rel="icon" href="img/logo.svg">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/custom.css">і\
+    <link rel="stylesheet" href="css/custom.css">
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
@@ -132,26 +132,26 @@
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note task">Тепер перейдіть до файла <code>index.html</code> у своєму веб-переглядачі.</p>
-            <p class="note question fragment fade-up">З якіх елементів складается нашої галереї? Як ми можемо знати, 
-                як вони побудовані?</p>
+            <p class="note task">Перейдіть до файла <code>index.html</code> у своєму браузері.</p>
+            <p class="note question fragment fade-up">З якіх елементів складается наша галерії? Як ми можемо дізнатися, 
+                як вони збудовані?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <h3>Інструменти розробника!</h3>
-            <p class="fragment fade-up">Майже кожен веб-браузер має дуже просунуті інструменти, які допоможуть нам зрозуміти,
+            <p class="fragment fade-up">Майже кожен веб-браузер має дуже продвинуті інструменти, які допоможуть нам зрозуміти,
                 що саме сторінка містить і як вона працює. </p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <!-- screencast -->
-            <p>Можливість <strong>перегляду</strong> дозволяє нам переглядати деталі.</p>
+            <p>Можливість <strong>перегляду коду</strong> дозволяє нам переглядати деталі веб-сторінки.</p>
             <img src="img/zbadaj.gif"/>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <!-- screencast -->
-            <p>Подствідлення вибраннего елементу</p>
+            <p>Підсвітлення вибраного елементу</p>
             <img src="img/podswietl.gif"/>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -167,13 +167,13 @@
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note task">Час для експериментів! Використовуючи ці інструменти, давайте спробуємо взяти клас 
-                <code>show</code> з елемента, який його зараз має, і додати його до іншого зображення.</p>
+            <p class="note task">Час для експериментів! Використовуючи ці інструменти, давайте візьмемо клас 
+                <code>show</code> з елементу, який його містить, і додамо його до іншого зображення.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="convex-in zoom-out">
             <p>Вийшло? Клас <code>show</code> показує додаткові стилі CSS, тому елемент із цим класом відображається поверх інших.</p>
-            <p class="fragment fade-up note side-note">Якщо вам цікаво, як це буде зроблено, наш інструктор (и) буде радий пояснити це більш точно.</p>
+            <p class="fragment fade-up note side-note">Якщо вам цікаво, як це працює, наш інструктор(и) буде радий пояснити це більш детально.</p>
             <p class="fragment fade-in">Нашим завданням буде знайти спосіб переключити цей клас за допомогою коду і тим самим автоматично змінювати слайди.</p>
 
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -184,11 +184,11 @@
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note task">Напишіть інструкції, необхідні для показу слайда 5.</p>
+            <p class="note task">Давайте напишемо інструкції, необхідні для показу слайда 5.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Ймовірно, виглядає приблизно так:</p>
+            <p>Ймовірно, виглядає то приблизно так:</p>
             <pre class="fragment fade-left"><code class="lang-html">1. Знайдіть слайд 5 у документі.
 2. Додайте йому клас `show`</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -204,18 +204,18 @@
         <section>
             <p class="note more">Об'єкт <code>document</code> містить всю структуру HTML-файлу. Завдяки цьому
                 ми можемо знайти будь-який елемент документа та змінити його за допомогою коду.</p>
-            <p class="fragment fade-up note side-note">Цікаво, як це працює - читати далі: <a
+            <p class="fragment fade-up note side-note">Якщо вам цікаво як це працює - додаткова інформація: <a
                     href="https://css-tricks.com/dom/">Що таке DOM? - на трюках CSS</a></p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Об'єкт <code>document</code> має ряд <strong>metod</strong> маніпулювання елементами сторінки. На цьому етапі 
-                ми будемо знати одну з них:</p>
-            <p class="fragment fade-in note more"><code>querySelector( стан )</code> - вибирає перший елемент, який відповідає умовам.</p>
+            <p>Об'єкт <code>document</code> має ряд <strong>метод</strong> маніпулювання елементами сторінки. На цьому етапі 
+                ми дізнаємось про одну з них:</p>
+            <p class="fragment fade-in note more"><code>querySelector( умова )</code> - вибирає перший елемент, який відповідає вказаним умовам.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Якщо ви знаєте CSS, це чудово. Інвертори в цьому випадку працюють однаково, наприклад:</p>
+            <p>Якщо ви знайомі з CSS, це чудово. Селектори в цьому випадку працюють так само, наприклад:</p>
             <pre><code class="lang-javascript">// вибирає перший 3-рівневий заголовок
 document.querySelector( 'h3' )
 // вибирає першу статтю
@@ -224,82 +224,82 @@ document.querySelector( 'article' )
 document.querySelector( '.my-class' )
 // вибирає елемент з ID article-1
 document.querySelector( '#article-1' ) </code></pre>
-            <p class="fragment fade-up note side-note">Якщо ви не знаєте CSS, нічого не втрачається. У інструменті розробника 
-                натисніть праву кнопку <strong>Копіювати > Копіювати селектор</strong>.</p>
+            <p class="fragment fade-up note side-note">Якщо ви не знайомі з CSS, ви нічого не втрачаєте. У інструменті розробника 
+                натисніть правою кнопкою <strong>Копіювати > Копіювати селектор</strong>.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note task">Давайте відкриємо консоль, і на підставі прикладів з попереднього слайда напишіть код, який 
-                знайде нам слайд 5.</p>
+            <p class="note task">Давайте відкриємо консоль і на підставі прикладів з попереднього слайду напишемо код, який 
+                знайде нам 5 слайд.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <pre><code class="lang-javascript">document.querySelector( '#slide5' )</code></pre>
-            <p>Що ми повернули, це елемент дерева документів. Ми хочемо тепер знайти методи, які дозволять вам додавати чи видаляти клас CSS.</p>
-            <p class="fragment fade-down">Для цього ви зможете:</p>
+            <p>Отримуємо елемент дерева елементів. Знайдемо теперь методи, які дозволять вам додавати чи видаляти клас CSS.</p>
+            <p class="fragment fade-down">В цьому нам допоможуть:</p>
             <ul class="fragment fade-down note more">
                 <li><code>classList.add( class-name )</code> - додає клас з даним ім'ям,</li>
-                <li><code>classList.remove( class-name )</code> - приймає клас з елемента.</li>
+                <li><code>classList.remove( class-name )</code> - видаляє клас з елементу.</li>
             </ul>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note task">Давайте покладемо в консоль код, необхідний для показу слайдера 5 - ми шукаємо його за допомогою 
-                параметра <code>querySelector</code>, потім ми називаємо це методом <code>classList.add</code> з ім'ям класу (у цьому випадку <code>show</code>).
-                Пільнуймо, щоб велиина букв була відповідна і закінчуємо команду цим символом - ";"</p>
-            <p class="fragment fade-left">Чи готові?</p>
+            <p class="note task">Давайте додамо до консолі код, необхідний для показу слайду 5 - шукатимемо його за допомогою 
+                параметра <code>querySelector</code>, потім використаємо метод <code>classList.add</code> з ім'ям класу (в нашому випадку <code>show</code>).
+                Зверніть увагу, щоб величина букв була відповідна лінія коду закінчувалася цим символом - ";"</p>
+            <p class="fragment fade-left">Готово?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <pre><code class="lang-javascript">document.querySelector( '#slide5' ).classList.add( 'show' );</code></pre>
-            <p>Він працює? Тепер давайте зробимо те ж саме для слайду 4.</p>
+            <p>Отримали очікуваний результат? Тепер давайте зробимо те ж саме для 4 слайду.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <pre><code class="lang-javascript">document.querySelector( '#slide4' ).classList.add( 'show' );</code></pre>
             <p class="fragment fade-right note question">Код для слайда 4 не працював, хоча він побудований практично 
-                так само, як і попередній. Будь-які ідеї, чому це сталося?</p>
+                так само, як і попередній. Ктось має ідеї, чому так сталося?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Потрібно приховати слайд 5, який охоплює решту.</p>
-            <p class="note task">Давайте писати в коді консолі, щоб зробити це.</p>
+            <p>Потрібно сховати слайд 5, який затуляє решту.</p>
+            <p class="note task">Напишемо код в консолі, який це зробить.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="convex-in zoom-out">
             <pre><code class="lang-javascript">document.querySelector( '#slide5' ).classList.remove( 'show' );</code></pre>
-            <p>Супер! Давайте копіюємо всі три фрагменти у наш файл <code>gallery.js</code>. Ми підготуємось до 
-                програми навігації найближчим часом.</p>
+            <p>Супер! Давайте скопіюємо всі три фрагменти у наш файл <code>gallery.js</code>. Нам це буде потрібне для 
+                програмування навігації.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-background-image="img/coffee.gif" data-transition="zoom" class="no-background">
         </section>
         <section data-transition="zoom-in convex-out">
-            <p>Унизу ми маємо 5 білих кнопок. Опраграмуєми кожен, щоб показати відповідний слайд.</p>
+            <p>Внизу маємо 5 білих кнопок. Опраграмуєми кожен, щоб показати відповідний слайд.</p>
             <p class="fragment fade-left">Ми можемо подивитися на <code>demo.html</code>, щоб побачити, як воно повинно 
                 виглядати.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note question">Давайте розглянемо і пишемо по-польськи, як написати наступний алгоритм: 
-                коли хтось натискає кнопку 5 миші, покажіть слайда з цим номером.</p>
+            <p class="note question">Давайте розглянемо крок по кроку, як напишемо наступний алгоритм: 
+                Коли хтось натискає лівою кнопкою миші кнопку 5, покажемо слайд з цим номером.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Чи готові?</p>
+            <p>Готові?</p>
             <div class="fragment fade-up">
                 <p>Напевно, ми маємо щось на зразок цього:</p>
                 <pre><code class="lang-html">1. Знайдіть п'яту кнопку.
-2. Перевірте, коли він натиснув.
-3. Коли натиснете кнопку, виконайте дію:
+2. Перевірте, коли він був натиснутий.
+3. Коли натиснете кнопку, виконайте дії:
 	3.1. Сховати поточний слайд.
-	3.2. Покажіть п'ятий слайд.</code></pre>
+	3.2. Показати п'ятий слайд.</code></pre>
             </div>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <p>Цього разу ми почнемо з кінця. Останні дві інструкції повинні працювати разом, 
-                тому нам потрібно знайти спосіб зв'язати їх разом.</p>
+                тому нам потрібно знайти спосіб як зв'язати їх разом.</p>
             <p class="fragment fade-right">Для цього нам потрібні <strong>функції</strong>.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
