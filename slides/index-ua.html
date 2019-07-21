@@ -298,7 +298,7 @@ document.querySelector( '#article-1' ) </code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Цього разу ми почнемо з кінця. Останні дві інструкції повинні працювати разом, 
+            <p>Цього разу ми почнемо з кінця. Останні два пункти повинні працювати разом, 
                 тому нам потрібно знайти спосіб як зв'язати їх разом.</p>
             <p class="fragment fade-right">Для цього нам потрібні <strong>функції</strong>.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -306,97 +306,96 @@ document.querySelector( '#article-1' ) </code></pre>
         <section>
             <p class="note more"><strong>Функція</strong> це послідовність декількох команд, які утворюють логічне ціле 
                 і повинні виконуватись один за одним.</p>
-            <p class="fragment fade-left">У&nbsp;JavaScript ми можемо будувати функції кількома різними способами, 
+            <p class="fragment fade-left">У&nbsp;JavaScript можна будувати функції кількома різними способами, 
                 найпростішими з яких є:</p>
             <pre class="fragment fade-right"><code class="lang-javascript">function myFunction( ) {
-   /* вміст функції */
+   /* код функції */
 }</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note task">У файлі <code>gallery.js</code> створіть функцію з ім'ям <code>showSlide5</code>. 
-                Всередині функції (в тілі функції) додайте код, який показує п'ятий слайд (як це було на попередньому кроці).</p>
+            <p class="note task">У файлі <code>gallery.js</code> створіть функцію яка називаэться <code>showSlide5</code>. 
+                Всередині функції (в тілі функції) додайте код, який показує п'ятий слайд (як це було в попередньому кроці).</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
           <pre><code class="lang-javascript">function showSlide5( ) {
   document.querySelector( '#slide5' ).classList.add( 'show' );
 }</code></pre>
-              <p class="fragment fade-right">У нас є перша функція! Тепер ми хочемо зв'язати її з кнопкою 
+              <p class="fragment fade-right">Це перша наша функція! Тепер зв'яжемо її з кнопкою 
                   №5, щоб ця функція виконувалась кожного разу, коли хтось натискає на кнопку.</p>
               <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-              <p class="note question">Пам'ятаєте, як нам вдалося знайти певний слайд на попередньому етапі? 
+              <p class="note question">Пам'ятаєте, як нам вдалося знайти конкретний слайд на попередньому етапі? 
                   Як ми можемо зробити те ж саме зараз за допомогою кнопки?</p>
               <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <pre><code class="lang-javascript">document.querySelector( '#pin5' )</code></pre>
-            <p>Тепер нам потрібен якусь <strong>мутоду</strong>, яка дозволить нам пов'язувати нашу 
-                функцію з натисканням на цей елемент.</p>
+            <p>Потрібно написати <strong>функцію</strong>, котра дозволить нам пов'язати запроектовану логіку з натисканням на цей елемент.</p>
             <div class="fragment fade-left">
-                <p>Всі елементи документа мають цей метод і це:</p>
+                <p>Всі елементи документа мають свою функцію:</p>
                 <ul class="note more">
-                    <li><code>addEventListener( подія, action-to-execute )</code> - виконує вказану дію,
-                        коли щось стає конкретним.
+                    <li><code>addEventListener( подія, action-to-execute )</code> - виконує вказану логіку,
+                        коли відбувається конкретна логіка, пов'язана с подією.
                     </li>
                 </ul>
             </div>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note more"><strong>Подія </strong> може бути будь-чим, що відбувається на сторінці: те, що 
+            <p class="note more"><strong>Подією </strong> може бути будь-що, що відбувається на веб-сторінці: те, що 
                 користувач робить (натискання, переміщення мишки над елементом, натискання клавіші, збільшення вікна, 
                 прокручування тощо) та речі, які відбуваються автоматично, наприклад завантаження сторінки.</p>
-            <p class="fragment fade-up">У такому випадку нам потрібна подію типу <code>'click'</code>, яка відповідає за натискання елемента.</p>
+            <p class="fragment fade-up">У такому випадку нам потрібна подія типу <code>'click'</code>, яка відповідає за натискання елемента.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note task">У файлі <code>gallery.js</code> ви вже маєте код для кнопки 5. Використовуючи 
-                метод <code>addEventListener</code> натисніть цю кнопку (подія клацання - <code>'click'</code>) за допомогою функції 
+            <p class="note task">У файлі <code>gallery.js</code> ви вже маєте код для 5 кнопки. Використовуючи 
+                функцію <code>addEventListener</code> пов'яжіть логіку з кнопкою (подія клацання - <code>'click'</code>) за допомогою функції 
                 <code>showSlide5</code>, написаної раніше.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <pre><code class="lang-javascript">document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code></pre>
-            <p class="fragment fade-right">Що зараз? Ми оновлюємо сторінку і дізнаємося, чи вона працює ;-)</p>
+            <p class="fragment fade-right">Що тепер? Оновлюємо веб-сторінку і дивимося, чи все у нас працює ;-)</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>У нас вже є код, який показує слайд 5. Тепер, перш ніж ми покажемо це, було б корисно знайти поточний слайд 
-                і сховати його.</p>
-            <p class="fragment fade-up note question">Як ми можемо знайти поточний слайд? Чи є щось, що відрізняє його 
+            <p>Маємо вже код, який показує 5 слайд. Тепер, перш ніж покажемо його, знайдемо поточний слайд 
+                і сховаємо його.</p>
+            <p class="fragment fade-up note question">Як можна знайти поточний слайд? Чи є щось, що відрізняє його 
                 від інших?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <p class="note task">Поточний слайд, на відміну від інших, має доданий клас <code>show</code>.
-                Коли ми додаємо період до імені класу, ми отримуємо селектор, який дозволяє шукати його. Використовуючи
+                Коли ми додамо період до імені класу, отримаємо селектор, який дозволить нам знайти його. Використовуючи
                 ці знання та попередні приклади, додайте код на початку <code>showSlide5</code>, який знайде
-                поточний слайд та приховує його.</p>
+                поточний слайд та сховає його.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Коли ви збережете поточний слайд, ви побачите таке:</p>
+            <p>Коли ви збережете поточний слайд, код повинен виглядати так:</p>
             <pre><code class="lang-javascript">function showSlide5( ) {
    document.querySelector( '.show' ).classList.remove( 'show' );
    document.querySelector( '#slide5' ).classList.add( 'show' );
 }
 document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code></pre>
-            <p class="fragment fade-right">Він працює? Тепер ми можемо створити код для інших слайдів 
+            <p class="fragment fade-right">Працює? Тепер ми можемо створити код для інших слайдів 
                 і кнопок. Найпростіший спосіб - <strong>скопіювати-вставити метод-змінити те, що вам потрібно</strong> :-)</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="convex-in zoom-out">
-            <h3>Час для тестів!</h3>
+            <h3>Розпочнемо тестування!</h3>
             <p class="note question">Що потрібно перевірити, щоб переконатися, що все добре?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="zoom-in convex-out">
             <h3>Попередня / наступна навігація</h3>
-            <p class="fragment fade-left">Наступним кроком є програмування стрілок вправо та вліво, 
-                які перемістять вас до наступного / попереднього зображення.</p>
+            <p class="fragment fade-left">Наступний крок це програмування стрілок вправо та вліво, 
+                які перемістять вас до наступного або попереднього зображення.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -407,30 +406,30 @@ document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code
         <section>
             <p>Є кілька способів зберегти його. Ось приклад:</p>
             <pre class="fragment fade-left"><code class="lang-html">1. Знайдіть стрілку праворуч -> ,
-2. Перевірте, коли вона натиснута.
+2. Перевірте, коли вона натискаэться користувачем.
 3. Коли ви натискаєте то відбуваються наступні дії:
-	3.1. Знайдіть слайд, який в даний час призначений для класу `show`,
-	3.2. Забери від слайда цей клас (видали),
-	3.3. Знайдіть наступний елемент у порядку,
-	3.4. Додайте його до класу `show`.</code></pre>
+	3.1. Знайти слайд, який в даний час призначений для класу `show`,
+	3.2. Забрати від слайда цей клас (видалити),
+	3.3. Зайти наступний елемент у правильному порядку,
+	3.4. Додати його до класу `show`.</code></pre>
             <p class="fragment fade-right note side-note">Якщо ваш метод дуже відрізняється від прикладу, 
                 інструктор буде радий вам повідомити, що робити далі.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Багато хто з цих чи подібних інструкцій вже обговорювалися:</p>
+            <p>Багато з цих чи подібних інструкцій вже обговорювалися:</p>
             <ul style="list-style-type: none;">
-                <li class="fragment highlight-green">1. Знайдіть стрілку праворуч,</li>
-                <li class="fragment highlight-green">2. Перевірте, коли він натиснув.</li>
+                <li class="fragment highlight-green">1. Знайти стрілку праворуч,</li>
+                <li class="fragment highlight-green">2. Перевірити, чи вона натиснута.</li>
                 <li class="fragment highlight-green">3. Коли ви натискаєте подію:</li>
                 <li>
                     <ul style="list-style-type: none;">
                         <li class="fragment highlight-green">3.1. Знайдіть слайд, в якому наразі є призначений клас
                             <code>show</code>,
                         </li>
-                        <li class="fragment highlight-green">3.2. Забери від слайда цей клас (видали),</li>
-                        <li class="fragment highlight-green">3.3. Знайдіть наступний елемент у порядку.</li>
-                        <li class="fragment highlight-green">3.4. Додати його <code>show</code>.</li>
+                        <li class="fragment highlight-green">3.2. Заберіть від слайда цей клас (видалити),</li>
+                        <li class="fragment highlight-green">3.3. Знайдіть наступний елемент в черзі.</li>
+                        <li class="fragment highlight-green">3.4. Додайте його <code>show</code>.</li>
                     </ul>
                 </li>
             </ul>
@@ -442,7 +441,7 @@ document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code
         </section>
         <section>
             <p class="note task">Використовуючи те, що ми вже знаємо, у файлі <code>gallery.js</code> створіть функцію
-                <code>showNextSlide</code> і додайте поточний елемент до нього.</p>
+                <code>showNextSlide</code> і додайте поточний елемент до неї.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -456,12 +455,12 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note question">Найважча частина на цьому етапі - знайти наступний елемент у порядку. 
-                Які наші ідеї про те, як це зробити?</p>
+            <p class="note question">Найважча частина на цьому етапі - знайти наступний елемент у черзі. 
+                Які ідеї, як це зробити?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Ми повинні де-небудь пам'ятати, який слайд був останній раз відображений, і на цій основі, щоб обчислити, 
+            <p>Треба якось запам'ятати, який слайд був останній раз відображений, і на цій основі вирішити, 
                 який з них буде наступним.</p>
             <p class="fragment fade-up">Для цього потрібні <strong>змінні</strong>.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -469,7 +468,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
         <section>
             <p class="note more"><strong>Змінна</strong> це контейнер, в якому ми можемо зберігати інформацію
                 та читати її пізніше в іншому місці. У JavaScript кожна змінна може зберігати практично будь-що
-                 - текст, номер, елемент документа, складний об'єкт і навіть функція.</p>
+                 - текст, номер, елемент документа, складний об'єкт і навіть функцію.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -483,9 +482,9 @@ let titleLength = courseTitle.length;</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note question">Як ми вже згадували, змінна може зберігати все. Давайте розглянемо, 
-                в якому вигляді найпростіший спосіб запам'ятовувати поточний слайд, а потім обчислити 
-                наступний на ньому.</p>
+            <p class="note question">Як ми вже згадували, змінна може переховувати все. Давайте розглянемо, 
+                в якому вигляді найпростішим спосібом можна запам'ятувати поточний слайд, а потім обчислити 
+                наступний.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -496,18 +495,18 @@ let titleLength = courseTitle.length;</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Це виглядає так:</p>
+            <p>Напишемо інструкцію українською:</p>
             <pre class="fragment fade-left"><code class="lang-html">1. Знайдіть стрілку праворуч,
-2. Перевірте, коли він натиснув.
-3. Коли ви натискаєте подію:
+2. Перевірте, коли вона була натиснута.
+3. Коли вона була натиснута:
 	3.1. Знайдіть слайд, який в даний час призначений для класу `show`,
 	3.2. Візьміть його до цього класу, // до цих пір без змін
 	3.3. Прочитайте номер поточного елемента, збереженого в змінній,
-	3.4. Додати до неї `1`,
+	3.4. Додайте до неї `1`,
 	3.5. Знайти елемент з новим номером,
 	3.6. Додайте його до класу `show`.
-	3.7. Зберегти новий номер як поточний елемент.</code></pre>
-            <p class="fragment fade-right">Все зрозуміло? Настав час задавати питання, перш ніж перейти.</p>
+	3.7. Збережіть новий номер як поточний елемент.</code></pre>
+            <p class="fragment fade-right">Зрозуміло? Задавайте питання, перш ніж перейти до написання коду.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
