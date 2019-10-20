@@ -1010,44 +1010,44 @@ document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code><
         <section data-transition="zoom-in convex-out">
             <h3>Четвертий бонус - автозапуск!</h3>
             <p>Цього разу давайте спробуємо додати режим автозапуску до нашого слайд-шоу.</p>
-            <p class="fragment fade-left">Традиційно, ми можемо побачити, як це працює на нашій <a
+            <p class="fragment fade-left">Традиційно, ми можемо побачити, як це працює на нашим <a
                     href="../gallery/demo.html" target="_blank">демо</a>, натиснувши кнопку у нижньому правому куті.
             </p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note question">Цього разу ми не повинні брати до уваги все, що відбувається на сайті,
-                і давайте зможемо максимально наблизити картину ситуації. Ми бачимо, що автозапуск включається
-                і вимикається поперемінно, коли ми кілька разів натискаємо кнопку <code>play</code>. Як ми
+            <p class="note question">Вийонтково цього разу ми не повинні брати до уваги все, що відбувається на сайті,
+                давайте максимально приблизимо картину ситуації. Ми бачимо, що автозапуск включається
+                і виключається перемінно, коли ми кілька разів натискаємо кнопку <code>play</code>. Як ми
                 можемо зберегти те, що відбувається тут, на самому загальному рівні?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Напевно щось подібне до нас сталося:</p>
-            <pre class="fragment fade-left"><code class="lang-html">1. Знайди кнопку "плей",
-2. Перевір коли ми в неї клікнемо. 
-3. Коли клікнемо, то будуть виконані подальші дії: 
-  3.1. Перевір чи слайди показуютсья: 
-        3.1.1. Йак так - то виключіть його 
-      3.1.2. Йак ні - включіть.</code></pre>
+            <p>Напишемо ще один код українською:</p>
+            <pre class="fragment fade-left"><code class="lang-html">1. Знайдіть кнопку "плей",
+2. Перевірте коли ми на неї натиснемо. 
+3. Коли кнопка натиснута, то повинні бути виконані подальші дії: 
+  3.1. Перевірка чи слайди показуютсья: 
+        3.1.1. Якщо так - то виключіть його 
+      3.1.2. Якщо ні - включіть.</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note question">Настав час розпочати створення функції, яка буде керувати нашою слайд-шоу.
+            <p class="note question">Настав час розпочати створення функції, яка буде керувати нашим слайд-шоу.
                 Як ми можемо перевірити, чи показується слайд-шоу?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <p>Так само, як ми пам'ятаємо номер поточного слайда, - використовуємо змінну.</p>
-            <p class="fragment fade-up">У цьому випадку наша змінна матиме лише два значення
+            <p class="fragment fade-up">У цьому випадку наша змінна матиме лише дві вартості
                 (включене /виключене), тому найкраще призначити <strong>логічне значення</strong></p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note more">Ви пам'ятаєте, що в JavaScript, змінна може бути практично чимось? Серед іншого, ми 
-                можемо призначити <strong>логічне значення</strong> (правда або неправда).</p>
-            <p class="fragment fade-left">Ми пишемо <strong>правду</strong> в JavaScript як істину <code>true</code>,
-                бо <strong>неправда</strong> ми використовуємо слово <code>false</code>:</p>
+            <p class="note more">Ви пам'ятаєте, що в JavaScript, змінна може бути практично чим завгодно? Серед іншого, ми 
+                можемо надати <strong>логічне значення</strong> (правда або неправда).</p>
+            <p class="fragment fade-left">Ми пишемо <strong>правду</strong> в JavaScript як <code>true</code>,
+                і <strong>неправду</strong> ми пишемо як <code>false</code>:</p>
             <pre class="fragment fade-right"><code class="lang-javascript">let isJavaScriptAwesome = true;
 let isJavaScriptComplicated = false;</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
@@ -1060,27 +1060,27 @@ let isJavaScriptComplicated = false;</code></pre>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note task">У початку файлу <code>gallery.js</code> створіть змінну <code>playing</code>,
+            <p class="note task">На початку файлу <code>gallery.js</code> створіть змінну <code>playing</code>,
                 яка зберігатиме поточний стан слайд-шоу. Спочатку шоу має бути вимкнено,
-                тому встановіть його на помилку.</p>
+                тому встановіть його на false.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <pre><code class="lang-javascript">let playing = false;</code></pre>
             <p class="fragment fade-left">Відмінно! Тепер ми можемо йти до скелету нашої функції. Давайте швидко подивимося
-                на код, написаний в попередніх кроках, щоб нагадати вам, як пов'язати цю функцію за допомогою клацання
+                на код, написаний в попередніх кроках, щоб пригадати, як пов'язати цю функцію за допомогою клікання
                 мишкою на елементі.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
             <p class="note task">У файлі <code>gallery.js</code> додайте нову функцію <code>playButtonClicked</code>
-                і зв'яжіть її одним натисканням кнопки відтворення (play). У тілі функції перевірте поточний стан
+                і пов'яжіть її з натисканням кнопки відтворення (play). У тілі функції перевірте поточний стан
                 слайд-шоу, збереженого у змінній, <code>playing</code>. Наразі цього достатньо, щоб ви змінили його 
-                на протилежне (від правди до помилкових, від неправдивих до правди).</p>
+                на протилежне (з true на false, з false на true).</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Найімовірніше, ми отримаємо щось на зразок цього:</p>
+            <p>Ймовірно, ми отримаємо щось на зразок цього:</p>
             <pre class="fragment fade-left"><code class="lang-javascript">function playButtonClicked( ) {
     if ( playing === true ) {
         playing = false;
@@ -1089,11 +1089,11 @@ let isJavaScriptComplicated = false;</code></pre>
     }
 }
 document.querySelector( '#play' ).addEventListener( 'click', playButtonClicked );</code></pre>
-            <p class="fragment fade-right">Як ми можемо на цьому етапі перевірити, правильно чи працює наш код?</p>
+            <p class="fragment fade-right">Як ми можемо на цьому етапі перевірити, чи правильно працює наш код?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Найпростіший спосіб - ввести ім'я нашої змінної в консоль - ми повернемо його до поточного значення.</p>
+            <p>Найпростіший спосіб - ввести ім'я нашої змінної в консоль - ми побачимо її поточну вартість.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
@@ -1139,13 +1139,13 @@ function stopSlideshow( ) {
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p class="note question">Все тепер зрозуміло? Як ми тестуємо?</p>
+            <p class="note question">Все тепер зрозуміло? Якщо так, то час на тести:</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Якщо все добре, тоді ми йдемо в найважчу частину - перемикання слайд-шоу увімкнено та вимикається.</p>
-            <p class="fragment fade-right note question">Що саме являє собою слайд-шоу? Як ми можемо зберегти його 
-                алгоритм українською мовою? Частина, яку ми вже описали в функції <code>startSlideshow</code>,
+            <p>Якщо все добре, тоді ми йдемо в найважчу частину - включення и виключення слайд-шоу.</p>
+            <p class="fragment fade-right note question">Що саме являє собою слайд-шоу? Як ми можемо записати його 
+                алгоритм українською мовою? Частина коду вже є, яку ми описали в функції <code>startSlideshow</code>,
                 тому ми повинні думати про решту.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
@@ -1153,7 +1153,7 @@ function stopSlideshow( ) {
             <p>Існує декілька способів збереження, але ідея більш-менш однакова:</p>
             <pre><code class="lang-html">Функція Увімкнення слайд-шоу:
 1. Додайте клас playing до кнопки play
-2. Записати стан слайд-шоу в змінній playing
+2. Запишіть стан слайд-шоу в змінній playing
 3. Зачекайте 3 секунди,
 4. Пересуньте слайдер до наступного,
 5. Поверніться до кроку 3.</code></pre>
@@ -1212,7 +1212,7 @@ function stopSlideshow( ) {
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Цього разу ми повинні отримати щось подібне:</p>
+            <p>Цього разу ми повинні отримати щось подібне до цього:</p>
             <pre><code class="lang-javascript">let slideshowInterval;
 // (...)
 
@@ -1226,7 +1226,7 @@ function startSlideshow( ) {
         <section>
             <p>Тепер нам просто треба вимкнути інтервал.</p>
             <div class="fragment fade-left">
-                <p>З цією метою ця функція допоможе нам:</p>
+                <p>З цим нам допоможе ця функція:</p>
                 <ul class="note more">
                     <li><code>clearInterval( interval )</code> - вимикає інтервал, попередньо збережений у заданій змінній.
                     </li>
@@ -1235,9 +1235,9 @@ function startSlideshow( ) {
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Спробуємо використати це на практиці.</p>
+            <p>Розглянемо це на практиці.</p>
             <p class="fragment fade-right note task">У функції <code>stopSlideshow</code> ми очистимо раніше збережений інтервал.
-                Для цього виклик функцію <code>clearInterval</code> з відповідним параметром.</p>
+                Для цього використаємо функцію <code>clearInterval</code> з відповідним параметром.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="convex-in zoom-out">
@@ -1247,18 +1247,18 @@ function startSlideshow( ) {
     playing = false;
     clearInterval( slideshowInterval );
 }</code></pre>
-            <p class="fragment fade-right">Що тести говорять нам?</p>
+            <p class="fragment fade-right">Що тести нам показують?</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section data-transition="zoom" data-transition-speed="slow" id="theend">
             <h3>Вітаємо!</h3>
             <img src="img/confetti.gif" style="height: 350px;"/>
             <p class="fragment fade-up">Це кінець нашого курсу. Ми зробили чудову роботу, але це лише початок 
-                мови JavaScript.</p>
+                JavaScript.</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
         <section>
-            <p>Ми збираємося ознайомити вас із цікавими проектами, побудованими на цій мові.</p>
+            <p>Ми збираємося ознайомити вас з цікавими проектами, заімплементованимі на цій мові.</p>
             <p class="fragment fade-left">Але ви, напевно, вже замислювалися "що далі?".</p>
             <i class="fragment fade-down fa fa-angle-right"></i>
         </section>
