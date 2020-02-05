@@ -16,7 +16,7 @@ function showNewNoteForm () {
 document.querySelector("#pen").addEventListener( 'click', showNewNoteForm );
 
 function submitNewNoteForm ( ) {
-  const text = document.querySelector('#new-note-text').value || undefined;
+  const text = document.querySelector('#new-note-text').value || null;
   document.querySelector('#new-note-text').value = "";
   createNewNote ( text );
   document.querySelector("#overlay").classList.remove('active');
