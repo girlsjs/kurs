@@ -1,12 +1,12 @@
 
 function getNote() {
   let element = document.createElement( 'div' );
-  element.classList.add( 'note' );  
+  element.classList.add( 'note' );
   return element;
 }
 
 function addNoteToBoard( note ) {
-  document.querySelector( '#board' ).appendChild( note );  
+  document.querySelector( '#board' ).appendChild( note );
 }
 
 function showNewNoteForm () {
@@ -16,7 +16,7 @@ function showNewNoteForm () {
 document.querySelector("#pen").addEventListener( 'click', showNewNoteForm );
 
 function submitNewNoteForm ( ) {
-  var text = document.querySelector('#new-note-text').value;
+  const text = document.querySelector('#new-note-text').value || undefined;
   document.querySelector('#new-note-text').value = "";
   createNewNote ( text );
   document.querySelector("#overlay").classList.remove('active');
