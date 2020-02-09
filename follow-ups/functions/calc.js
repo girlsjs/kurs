@@ -14,9 +14,9 @@ function hardReset() {
   currentNumber = "0";
   lastNumber = "0";
   decimals = false;
-  nextOperation = null;  
-  isResetNeeded = false;  
-  refreshScreen();  
+  nextOperation = null;
+  isResetNeeded = false;
+  refreshScreen();
 }
 
 /** podpinamy funkcję hardReset pod przycisk AC **/
@@ -24,13 +24,13 @@ document.querySelector("#AC").addEventListener( 'click' , hardReset);
 
 /** refreshScreen - funkcja pomocnicza - wyświetla przekazaną liczbę na ekranie. Jeśli nie przekazano liczby, wyświetla currentNumber **/
 function refreshScreen( newValue = currentNumber ) {
-  document.querySelector("#screen").innerHTML = newValue;    
+  document.querySelector("#screen").innerHTML = newValue;
 }
 
 /** percent - zamienia aktualnie wyświetloną liczbę na procenty **/
 function percent() {
   currentNumber = parseFloat( currentNumber ) / 100;
-  refreshScreen( currentNumber ); 
+  refreshScreen( currentNumber );
 }
 
 /** podpinamy funkcję percent pod odpowiedni przycisk **/
@@ -39,7 +39,7 @@ document.querySelector("#percent").addEventListener( 'click' , percent);
 /** pointClicked - wyświetla kropkę na ekranie - pod warunkiem, że nie ma jeszcze żadnej **/
 function pointClicked() {
   if ( decimals === false ) {
-    currentNumber += ".";    
+    currentNumber += ".";
     decimals = true;
     refreshScreen();
   }
@@ -59,20 +59,20 @@ if( nextOperation ) {
     lastNumber = processOperation( nextOperation );
   } else {
     lastNumber = currentNumber.toString();
-  }  
-  refreshScreen( lastNumber );  
+  }
+  refreshScreen( lastNumber );
 }
 
 /** Zapamiętuje następną operację do wykonania **/
-function scheduleNextOperation( operation ) { 
+function scheduleNextOperation( operation ) {
   if( isResetNeeded ) {
-    lastNumber = lastNumber.toString();    
+    lastNumber = lastNumber.toString();
     isResetNeeded = false;
   } else {
     maybeProcessNextOperation();
   }
-  nextOperation = operation;    
-  currentNumber = "0";      
+  nextOperation = operation;
+  currentNumber = "0";
 }
 
 /** przycisk = - po wciśnięciu potrzebny reset **/
