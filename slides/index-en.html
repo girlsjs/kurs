@@ -51,7 +51,7 @@
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p>Today we are going to learn how to use JavaScript to create an interactive image slideshow.</p>
+        <p>Today we are going to learn how to create an interactive image slideshow, using JavaScript.</p>
         <a class="no-chain" href="../gallery/demo.html" target="_blank">
           <figure>
             <img style="height: 400px;" src="img/demo.jpg" />
@@ -219,7 +219,7 @@
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p>If you are familiar with CSS - great. The selectors work the same way:</p>
+        <p>If you are familiar with CSS - great. CSS selectors work the same way:</p>
         <pre><code class="lang-javascript">// selects the first third level header element
 document.querySelector( 'h3' )
 // selects the first article
@@ -237,7 +237,7 @@ document.querySelector( '#article-1' ) </code></pre>
       </section>
       <section>
         <pre><code class="lang-javascript">document.querySelector( '#slide5' )</code></pre>
-        <p>What a selector returns is the document tree element. Now we need a method to remove or add a CSS class to it. </p>
+        <p>The method returned the requested document tree element. Now we need a method to remove or add a CSS class to it. </p>
         <p>And for that we will use:</p>
         <ul class=" note more">
           <li><code>classList.add( <i>class-name</i> )</code> - adds given class,</li>
@@ -280,11 +280,11 @@ document.querySelector( '#article-1' ) </code></pre>
       </section>
       <section data-transition="zoom-in convex-out">
         <p>There are 5 white buttons at the bottom. Let's program each of them to show the corresponding slide. </p>
-        <p>We can take a loot at <code>demo.html</code>, to see the result we are aiming for.</p>
+        <p>We can take a look at <code>demo.html</code>, to see the result we are aiming for.</p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p class="note question">Let's think and write down in english the algorithm: when the user clicks the button no. 5 then the slide no. 5 gets  displayed in the gallery.</p>
+        <p class="note question">Let's think and write down in English the algorithm: when the user clicks the button no. 5 then the slide no. 5 gets  displayed in the gallery.</p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
@@ -300,12 +300,12 @@ document.querySelector( '#article-1' ) </code></pre>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p>This time let's start from the end. The two last instructions should be executed together so we need a way to bind them.</p>
+        <p>This time let's start from the end. The last two instructions should be executed together so we need a way to bind them.</p>
         <p>We can use a <strong>function</strong>.</p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p class="note more"><strong>Function</strong> encapsulates instructions that need to be executed in a given order to achieve one goal.</p>
+        <p class="note more"><strong>Function</strong> groups instructions that need to be executed in a given order to achieve one goal.</p>
         <p>In JavaScript there is a few different ways to write a function. One of them is:</p>
         <pre><code class="lang-javascript">function functionName( ) {
    /* content - function body */
@@ -321,7 +321,7 @@ document.querySelector( '#article-1' ) </code></pre>
         <pre><code class="lang-javascript">function showSlide5( ) {
   document.querySelector( '#slide5' ).classList.add( 'show' );
 }</code></pre>
-        <p>Here is our first function! Now we need to assign it with the button no. 5, so it is being called every time the user clicks on this button.</p>
+        <p>Here is our first function! Now we need to bind it to the button no. 5, so it is being called every time the user clicks on this button.</p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
@@ -330,11 +330,11 @@ document.querySelector( '#article-1' ) </code></pre>
       </section>
       <section>
         <pre><code class="lang-javascript">document.querySelector( '#pin5' )</code></pre>
-        <p>Now we need a <strong>method</strong> to assing our function to clicking on that element.</p>
+        <p>Now we need a <strong>method</strong> that will fire our function, when user clicks on that element.</p>
         <div>
           <p>All document elements have such method and it is:</p>
           <ul class="note more">
-            <li><code>addEventListener( <i>event</i>, <i>action-to-undertake</i> )</code> - undertakes the given action, when a particular event happens on an element.
+            <li><code>addEventListener( <i>event</i>, <i>action-to-perform</i> )</code> - performs the given action, when a particular event happens on an element.
             </li>
           </ul>
         </div>
@@ -342,13 +342,13 @@ document.querySelector( '#article-1' ) </code></pre>
       </section>
       <section>
         <p class="note more">An <strong>event</strong> could be anything that happens on a page: any user interaction
-          (cliking, hovering mouse coursor over the element, pressing a key, maximizing a window, scroll, etc), or any automatic actions like the page loading.</p>
+          (cliking, hovering mouse cursor over the element, pressing a key, maximizing a window, scroll, etc), or any automatic actions like page loading.</p>
         <p>For our button we need a <code>'click'</code> event - for when an element is being clicked.</p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p class="note task">In the <code>gallery.js</code> you already have the code for searching for a no. 5 button. With the
-          <code>addEventListener</code> method, assing the <code>showSlide5</code> function on a button <code>'click'</code> event.</p>
+        <p class="note task">In the <code>gallery.js</code> you already have the code for searching for a no. 5 button. Using the
+          <code>addEventListener</code> method, bind the <code>showSlide5</code> function to a button <code>'click'</code> event.</p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
@@ -388,7 +388,7 @@ document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p class="note question">Again, let's start with writing down in english what we would need to do to 
+        <p class="note question">Again, let's start with writing down in English what we would need to do to 
           make the clicking in the <code>>></code> take us to the right slide.</p>
         <i class=" fa fa-angle-right"></i>
       </section>
@@ -427,7 +427,7 @@ document.querySelector( '#pin5' ).addEventListener( 'click', showSlide5 );</code
         <p class="note question">Are you unsure about any of the instructions? Now would be the good time to spend some more time with them to make sure you know what is happening.</p> <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p class="note task">Using what we have learnt already, add the <code>showNextSlide</code> function in the <code>gallery.js</code> file and add hiding the currently being displayed element in it. Assing this function
+        <p class="note task">Using what we have learnt already, add the <code>showNextSlide</code> function in the <code>gallery.js</code> file and add hiding the currently being displayed element in it. Assign this function
           to clicking in the right arrow.
         </p>
         <i class=" fa fa-angle-right"></i>
@@ -459,18 +459,18 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p>To create <strong>a variable</strong> in JavaScript we use the key word <code>let</code>:</p>
+        <p>To create <strong>a variable</strong> in JavaScript we use the keyword <code>let</code>:</p>
         <pre><code class="lang-javascript">//text variable
 let courseTitle = 'JavaScript gallery';</code></pre>
-        <p>Once created the variable we can use it anywhere else in the code with just using its name:</p>
-        <pre><code class="lang-javascript">//number variable - the text ,ength
+        <p>Once the variable is created we can use it anywhere else in the code with just using its name:</p>
+        <pre><code class="lang-javascript">//number variable - the text length
 let titleLength = courseTitle.length;</code></pre>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p class="note question">As mentioned before, we can store anything in a variable. Let's have a moment to think,
-          what format of data we should use to store the information of which slide is currently being viewed, so then
-          we can easily count which would be the nex one.</p>
+        <p class="note question">As mentioned before, we can store anything in a variable. Let's think for a moment: 
+          what format of data should we use to store the information about the currently viewed slide, so that
+          we can easily count which will be the next one?</p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
@@ -492,7 +492,7 @@ let titleLength = courseTitle.length;</code></pre>
 	3.5. Find the element with the new number,
 	3.6. Add `show` class to it.
 	3.7. Save that new number as the current number.</code></pre>
-        <p>Is everything clear co far? Now would be a good time to clarify things if you feel lost.</p>
+        <p>Is everything clear so far? Now would be a good time to clarify things if you feel lost.</p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
@@ -508,7 +508,7 @@ let titleLength = courseTitle.length;</code></pre>
       <section>
         <p class="note task">Now that we know what to do, let's try to implement it. At the beginning of the
           <code>gallery.js</code> file let's create a variable named <code>currentNumber</code>
-          and let's assing <code>1</code> to it.
+          and let's assign <code>1</code> to it.
         </p>
         <i class=" fa fa-angle-right"></i>
       </section>
@@ -530,13 +530,13 @@ let titleLength = courseTitle.length;</code></pre>
       </section>
       <section>
         <p>All our slides have an ID as <code>#slide</code> + a number (1, 2, 3, ...).</p>
-        <p>So now we can use a JavaScript concatenate abilty and put the text and a number together with a <code>+</code>, like this::</p>
+        <p>So now we can use JavaScript's concatenate ability and put the text and the number together with a <code>+</code>, like this:</p>
         <pre><code class="lang-javascript">'#slide' + 1</code></pre>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p class="note task">Using this abilty, let's write at the end of the <code>showNextSlide</code> function a code
-        for: finding an element with the <code>newNumber</code> and adding a <code>show</code> class to it.
+        <p class="note task">Using this ability, let's write at the end of the <code>showNextSlide</code> function a code
+        for finding an element with the <code>newNumber</code> and adding a <code>show</code> class to it.
         </p>
         <i class=" fa fa-angle-right"></i>
       </section>
@@ -573,7 +573,7 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
       <section>
         <p>There is only 5 slides, so when we reach the fifth one, the script tries to load slide no. 6 that doesn't exist.</p>
         <p>To fix that, we could check what is the new number and if it is bigger than 5 then change it back to 1.</p>
-        <p class="note question">How we could change outr algorithm to include that change?</p>
+        <p class="note question">How we could change our algorithm to include that change?</p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
@@ -582,17 +582,17 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
 3.2. Remove that class from it,
 3.3. Read the current slide number that is stored in a variable,
 3.4. Add `1` to id,
-3.5. If th enew number is bigger than 5, change it to 1,
+3.5. If the new number is bigger than 5, change it to 1,
 3.6. Find the element with the new number,
 3.7. Add `show` class to it.
 3.8. Save that new number as the current number.</code></pre>
-        <p>For achieving such goals we will be using <strong>conditional statemenets</strong>.</p>
+        <p>For achieving such goals we will be using <strong>conditional statements</strong>.</p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p class="note more"><strong>Conditional statemenets</strong> are parts of the code which we execute only if a condition is met.</p>
+        <p class="note more"><strong>Conditional statements</strong> are parts of the code which is executed only if a condition is met.</p>
         <div>
-          <p>The easiest conditional statemenet would look like this:</p>
+          <p>The easiest conditional statement would look like this:</p>
           <pre><code class="lang-javascript">if ( condition ) {
     //execute this code.
 }</code></pre>
@@ -606,8 +606,8 @@ document.querySelector( '#next' ).addEventListener( 'click', showNextSlide );</c
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p class="note task">Let's add a conditional statemenet in the right place in the <code>showNextSlide</code> function.
-          It should check if the new number (<code>newNumber</code>) is bigger than 5 and if it is then we should assing 1 to the new number variable.</p>
+        <p class="note task">Let's add a conditional statement in the right place in the <code>showNextSlide</code> function.
+          It should check if the new number (<code>newNumber</code>) is bigger than 5 and if it is then we should assign 1 to the new number variable.</p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
@@ -656,7 +656,7 @@ document.querySelector( '#prev' ).addEventListener( 'click', showPreviousSlide )
       </section>
       <section data-transition="zoom-in convex-out">
         <h3>Bonus 1 - putting everything together</h3>
-        <p>We have two ways of navigation already - buttons at the bottm and the arrows. It is time to see how they cooperate.</p>
+        <p>We have two ways of navigation already - buttons at the bottom and the arrows. It is time to see how they work together.</p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
@@ -672,7 +672,7 @@ document.querySelector( '#prev' ).addEventListener( 'click', showPreviousSlide )
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p class="note side-note">Hurray! We got our first side effect ;-) These things happens when adding new functionalities to the old code.
+        <p class="note side-note">Hurray! We got our first side effect ;-) These things happen when you add new functionalities to some old code.
           To avoid them, we need to test our code and make it as simple as possible.</p>
         <i class=" fa fa-angle-right"></i>
       </section>
@@ -688,7 +688,7 @@ document.querySelector( '#prev' ).addEventListener( 'click', showPreviousSlide )
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p>However, this solution has one serious downnffect. Each time we change something in our code,
+        <p>However, this solution has one serious downside. Each time we change something in our code,
           we will need to check all existing functions and make sure they are still accurate.
           If not, we will need to fix each of them.</p>
         <i class=" fa fa-angle-right"></i>
@@ -950,7 +950,7 @@ document.querySelector('#pin312').addEventListener( 'click', showSlide312 );</co
   showSlide( 1 );
 }
 document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code></pre>
-        <p>The <code>showSlide</code> invoke was in the <code>showSlide1</code> body and so it was invoked
+        <p>The <code>showSlide</code> invocation was in the <code>showSlide1</code> body and so it was invoked
           at the right moment (on the click)</p>
       </section>
       <section data-transition="zoom-in convex-out">
@@ -1011,16 +1011,16 @@ document.querySelector('#pin1').addEventListener( 'click', showSlide1 );</code><
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p>The same way we use to rememebr what is the current slide number - using a variable.</p>
-        <p>In this case our variable will take only two valules
-          (on / off), so it will be best to assign it with a <strong>logical valule</strong></p>
+        <p>The same way we use to remember what is the current slide number - using a variable.</p>
+        <p>In this case our variable will take only two values
+          (on / off), so it will be best to assign it with a <strong>logical value</strong></p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p class="note more">Did you rememebr than in &nbsp;JavaScript a variable can store practically anything?
-          Among all the other possibilities, we can also assign a <strong>logical value</strong> (tryue/false) to it.</p>
+        <p class="note more">Did you remember that in&nbsp;JavaScript a variable can store practically anything?
+          Among all the other possibilities, we can also assign a <strong>logical value</strong> (true/false) to it.</p>
         <p><strong>True</strong> in&nbsp;JavaScript we just code as <code>true</code>,
-          and for <strong>false</strong> we just use the key word <code>false</code>:</p>
+          and for <strong>false</strong> we just use the keyword <code>false</code>:</p>
         <pre><code class="lang-javascript">let isJavaScriptAwesome = true;
 let isJavaScriptComplicated = false;</code></pre>
         <i class=" fa fa-angle-right"></i>
@@ -1039,7 +1039,7 @@ let isJavaScriptComplicated = false;</code></pre>
       </section>
       <section>
         <pre><code class="lang-javascript">let playing = false;</code></pre>
-        <p>Great! Now we can start working on our funstion. Take a quick look at your code to see again how we assign
+        <p>Great! Now we can start working on our function. Take a quick look at your code to see again how we assign
           a function with a mouse click on an element.</p>
         <i class=" fa fa-angle-right"></i>
       </section>
@@ -1068,7 +1068,7 @@ document.querySelector( '#play' ).addEventListener( 'click', playButtonClicked )
       </section>
       <section>
         <p class="note question">Now let's take a look at the <em>play</em> button itself.
-          We can see that clickng on it changes its icon. What makes it happen?</p>
+          We can see that clicking on it changes its icon. What makes it happen?</p>
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
@@ -1121,7 +1121,7 @@ function stopSlideshow( ) {
       <section>
         <p>Of course there is few ways to write it down, but the gist would be pretty much the same:</p>
         <pre><code class="lang-html">Starting a slideshow function:
-1. Add playing class to the play buttno
+1. Add playing class to the play button
 2. Save the slideshow status in the playing variable
 3. Wait 3 seconds,
 4. Change slide to the next one,
@@ -1166,7 +1166,7 @@ function stopSlideshow( ) {
         <i class=" fa fa-angle-right"></i>
       </section>
       <section>
-        <p>That was a tricky question. As you already kno, the variables in JavaScript can store anything.</p>
+        <p>That was a tricky question. As you already know, the variables in JavaScript can store anything.</p>
         <p>What will happen, if we store a <code>setInterval</code> function result in a variable?
           We can then use it to stop this interval.</p>
         <i class=" fa fa-angle-right"></i>
@@ -1192,9 +1192,9 @@ function startSlideshow( ) {
       <section>
         <p>Now we only need to stop the interval.</p>
         <div>
-          <p>We will use this function to achieve that:</p>
+          <p>To achieve that, we will use this function:</p>
           <ul class="note more">
-            <li><code>clearInterval( interval )</code> - tops the interval stored in the given variable.
+            <li><code>clearInterval( interval )</code> - stops the interval stored in the given variable.
             </li>
           </ul>
         </div>
