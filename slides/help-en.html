@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Girls.js - glossary</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/solarized.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <link rel="icon" href="img/kaczucha.png">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    let link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides" style="text-align: left;">
+      <section data-background-color="#c6d5e0" id="help">
+        <h3>Glossary</h3>
+        <div class="col-narrow">
+          <p><a href="#/document">document</a></p>
+          <ul>
+            <li><a href="#/querySelector">querySelector</a></li>
+          </ul>
+          <p>element</p>
+          <ul>
+            <li><a href="#/classList-add">classList.add</a></li>
+            <li><a href="#/classList-remove">classList.remove</a></li>
+            <li><a href="#/addEventListener">addEventListener</a></li>
+          </ul>
+          <p><a href="#/let">Variables</a></p>
+          <ul>
+            <li><a href="#/number">numbers</a></li>
+            <li><a href="#/text">string</a></li>
+            <li><a href="#/bool">boolean</a></li>
+          </ul>
+        </div>
+        <div class="col-wide">
+          <p>Concepts</p>
+          <ul>
+            <li><a href="#/function"><code>function</code></a></li>
+            <li><a href="#/event">event</a></li>
+            <li><a href="#/if">conditional statement - <code>if + else</code></a></li>
+            <li><a href="#/params">function parameters - <code>functionName( parameter )</code></a></li>
+            <li><a href="#/interval">intervals - <code>setInterval</code></a> </li>
+            <li><a href="#/clearInterval">clearing intervals - <code>clearInterval</code></a></li>
+          </ul>
+
+        </div>
+      </section>
+      <section data-background-color="#c6d5e0" id="document">
+        <p><strong>Document</strong> object represents the structure of the HTML file. Using it, we can find a specific
+          document element and change it with our code.</p>
+        <p>If you are curious of how it works - you can read it later here: <a href="https://css-tricks.com/dom/">What is the DOM? - on
+            CSS Tricks</a></p>
+      </section>
+      <section data-background-color="#c6d5e0" id="querySelector">
+        <p><strong><code>querySelector</code></strong> is one of the <code>document</code> object method that allows us to interact
+          with document elements:</p>
+        <p><strong><code>document.querySelector( <i>condition</i> )</code></strong> - selects the first element for which the condition is true.</p>
+        <p> This method selectors work the exact same way as CSS selectors, for example:</p>
+        <pre><code class="language-javascript">// select the level 3 header:
+document.querySelector( 'h3' )
+// select the element with the "my-class" class
+document.querySelector( '.my-class' )
+// select the element with the "#article-1" id:
+document.querySelector( '#article-1' ) </code></pre>
+        <p>You can find a selector for any element on the page when going to dev tools and clicking the mouse right button on it (option:
+          <strong>Copy > Copy selector</strong>).</p>
+      </section>
+      <section data-background-color="#c6d5e0" id="classList-add">
+        <p><strong><code>classList.add</code></strong> is one of the method that every DOM tree element has. We use it like this:</p>
+        <p><strong><code>element.classList.add( 'class-name' )</code></strong> - adds given class to the selected element.</p>
+        <pre><code class="language-javascript">document.querySelector( '#button' ).classList.add( 'big' ) );
+// adds "big" class to the element with the "button" id</code></pre>
+      </section>
+      <section data-background-color="#c6d5e0" id="classList-remove">
+        <p><strong><code>classList.remove</code></strong> is one of the method that every DOM tree element has.
+          We use it like this:</p>
+        <p><strong><code>element.classList.remove( <i>'class-name'</i> )</code></strong> - removes given class from the selected element.</p>
+        <pre><code class="language-javascript">document.querySelector( '#button' ).classList.remove( 'big' ) );
+// removes "big" class from the element with the "button" id</code></pre>
+
+      </section>
+      <section data-background-color="#c6d5e0" id="addEventListener">
+        <p><strong><code>addEventListener</code></strong> is  a <strong>method</strong> of a tree DOM element,
+          that allows to bind an <a href="#/event">event</a> on this element with an action that should take place when the event happens.</p>
+        <p>We use it like this:</p>
+        <p><strong><code>addEventListener( <i>'event'</i>, <i>action</i> )</code></strong> - executes given action,
+          when the event happens on the element. Example:</p>
+        <pre><code class="language-javascript">document.querySelector( '#button' ).addEventListener( 'click', myFunction );
+// invoke myFunction when the button with the "button" id is clicked</code></pre>
+      </section>
+      <section data-background-color="#c6d5e0" id="let">
+        <p><strong>Variable</strong> is a kind of a storage, where we can save and store information, so we can read them later and from other places in our code.
+          In JavaScript a variable can store basically anything - text, number, document element, a complex object and even a function.</p>
+        <p>In order to create <strong>a variable</strong> in JavaScript we use the keyword <code>let</code>:</p>
+        <pre><code class="language-javascript">// text variable
+let courseTitle = 'JavaScript gallery';</code></pre>
+        <p>Such created variable we can then use in the code by just giving its name, for example:</p>
+        <pre><code class="language-javascript">// number variable - text length
+let titleLength = courseTitle.length;</code></pre>
+      </section>
+      <section data-background-color="#c6d5e0" id="number">
+        <h3>Numbers</h3>
+        <p>Math calculations (<code>+</code>, <code>-</code>, <code>%</code> and <code>/</code>) write in this order <code>result = computation</code>, for example:</p>
+        <pre><code class="language-javascript">let newNumber = oldNumber + 4;</code></pre>
+        <p>To compare which of the given numbers is bigger or smaller, we use <code>&gt;</code> and <code>&lt;</code>,
+          <code>&gt;=</code> and <code>&lt;=</code>.</p>
+        <pre><code class="language-javascript">if ( a > 1 ) {
+	// execute the code, if a is bigger than 1.
+}</code></pre>
+        <p>To compare two numbers with each other we use a triple equal sign <code>===</code>.</p>
+        <pre><code class="language-javascript">if ( a === 1 ) {
+	// execute the code, if a is equal to 1.
+}</code></pre>
+      </section>
+      <section data-background-color="#c6d5e0" id="text">
+        <h3>Text</h3>
+        <p>In JavaScript text we wrap in quotation marks, eg:</p>
+        <pre><code class="language-javascript">let name = "Anna";</code></pre>
+        <p>Text fragments we can join together with a <code>+</code> sign, for example:</p>
+        <pre><code class="language-javascript">let greeting = 'Hi ' + 'Anna' + '!';</code></pre>
+        <p>We can join a number or a variable with a text the exact same way:</p>
+        <pre><code class="language-javascript">let greeting = 'Hi ' + name + '!';</code></pre>
+      </section>
+      <section data-background-color="#c6d5e0" id="bool">
+        <h3>Boolean</h3>
+        <p><strong>Boolean</strong> value is only one of these two values: true or false.</p>
+        <pre><code class="language-javascript">let isJavaScriptAwesome = true;</code></pre>
+        <p>We can compare boolean values using a triple equal sign, for example:</p>
+        <pre><code class="language-javascript">if ( isJavaScriptAwesome === true ) {
+	let doWeHaveEnoughYet = false;
+}</code></pre>
+      </section>
+      <section data-background-color="#c6d5e0" id="function">
+        <p><strong>Function</strong> is a group of instructions that are executed in a given order to achieve a final goal.</p>
+        <p>In JavaScript there is few ways to create a function and the simplest one is:</p>
+        <pre><code class="language-javascript">function functionName( ) {
+   /* function body */
+}</code></pre>
+        <p>Such function we can then <strong>execute</strong> in a different place in our code by giving its name with parentheses, for example:</p>
+        <pre><code class="language-javascript">functionName( );</code></pre>
+      </section>
+      <section data-background-color="#c6d5e0" id="event">
+        <p><strong>An event</strong> can be anything, that happens on the website: events created by the user
+          (clicking, dragging mouse cursor over an element, clicking a button, maximizing the window, scrolling, etc) and events that happen
+          automatically like webpage being loaded.</p>
+        <p>All events can be handled in the code meaning we can bind an action to them.
+          For that we use an <a href="#/addEventListener">addEventListener</a> method.</p>
+      </section>
+      <section data-background-color="#c6d5e0" id="if">
+        <p><strong>Conditional statements</strong> are parts of code that are executed only when a given statement is true.</p>
+        <p>The simplest example would look like this:</p>
+        <pre><code class="language-javascript">if ( statement ) {
+	// execute this code.
+}</code></pre>
+        <p>If we want to execute a different part of the code for a situation when the statement is not met we can add to the logical statement the <code>else</code> part:</p>
+        <pre><code class="language-javascript">if ( condition ) {
+	// execute this code when the statement is true.
+} else {
+	// execute this code when the statement is false
+}</code></pre>
+      </section>
+      <section data-background-color="#c6d5e0" id="params">
+        <p><strong>Function parameters</strong> are parts of data given to a function when invoking it.
+          Thanks to parameters, the same function instructions can be executed on different data.
+          We pass the parameters in the parentheses.</p>
+        <p>Example - a function that takes a name as a <strong>parameter</strong> and writes to the console a greeting for a person with this name:</p>
+        <pre><code class="language-javascript">function hi( name ) {
+	console.log( 'Hi ' + name + '! Nice to meet you!' );
+}</code></pre>
+        <p>Now, we can invoke this function several times with different parameters, for example:</p>
+        <pre><code class="language-javascript">hi( 'Magda' );
+// writes: 'Hi Magda! Nice to meet you!'
+hi( 'Ania' );
+// writes: 'Hi Ania! Nice to meet you!'
+					</code></pre>
+      </section>
+      <section data-background-color="#c6d5e0" id="interval">
+        <p><strong>Interval</strong> repeats given instructions in cycles in a given time span.</p>
+        <p>You can create it with a function:</p>
+        <p><strong><code>setInterval( action, time )</code></strong> - executes the action every given time (given in miliseconds).</p>
+        <pre><code class="language-javascript">setInterval( myFunction, 2000 );
+// invoke the myFunction every 2 seconds.
+</code></pre>
+      </section>
+      <section data-background-color="#c6d5e0" id="clearInterval">
+        <p>To <strong>clear Interval</strong> we need to do two things:</p>
+        <ol>
+          <li>Bind the created interval to a variable,</li>
+          <li>use this variable in a <br /> <strong><code>clearInterval( variable )</code></strong> function - stops the given interval.</li>
+        </ol>
+        <pre><code class="language-javascript">let savedInterval = setInterval( myFunction, 2000 );
+// invoke the myFunction every 2 seconds.
+clearInterval( savedInterval );
+// stop invoking this interval
+</code></pre>
+      </section>
+    </div>
+  </div>
+
+  <div class="help"><a href="#/help" target="help"><i class="fa fa-home"></i></a></div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      history: true,
+      controls: true,
+      progress: false,
+      transition: 'slide',
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+
+</html>
