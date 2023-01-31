@@ -1334,7 +1334,8 @@ function startSlideshow( ) {
     changeTopBar(event.indexh)
   });
 
-  setTimeout(changeTopBar(Reveal.getIndices()['h']), 100)
+  setTimeout(changeTopBar(Reveal.getIndices()['h']), 100);
+  document.querySelectorAll('i.fa.fa-angle-right').forEach(el => el.addEventListener('click', Reveal.next));
 </script>
 </body>
 </html>
