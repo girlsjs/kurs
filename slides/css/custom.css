@@ -163,7 +163,7 @@ body{
 	font-style: italic;
 }
 
-.reveal .slides section .fragment.highlight-green.visible {
+.reveal .slides section .highlight-green {
   color: #47ab95; /*#5475c5;*/
   transition: color 0.5s, letter-spacing 0.5s;
   letter-spacing: 1px;
