@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/simple.css">
+	<link rel="stylesheet" href="dist/font-awesome.min.css">
+	<link rel="stylesheet" href="dist/custom.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/nord.min.css">
+	<link rel="icon" href="img/logo.svg">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+
+		code.hljs {
+			font-family: 'Fira Code', monospace;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="left-bar big">
+		<div class="left-bar-photo"></div>
+	</div>
+	<div class="help">
+		<a href="help.html">?</a>
+	</div>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<div class="big-logo">
+					<img style="height: 400px; border: none; box-shadow: none;" src="img/logo.svg" />
+				</div>
+				<h3 class="fragment grow">Cześć!</h3>
+				<p>(naciśnij spację, żeby kontynuować)</p>
+				<i class="fragment fade-down fa fa-angle-right"></i>
+			</section>
+			<section data-markdown="slides/00_arnold.md"></section>
+			<section data-markdown="slides/01_intro.md"></section>
+			<section data-markdown="slides/02_agenda.md"></section>
+			<section data-markdown="slides/03_ai-revolution.md" data-separator-vertical="^\r?\n\r?\n\r?\n"></section>
+		</div>
+	</div>
+	<div class="small-duck"></div>
+	<div class="footer">
+		<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">
+			<img alt="Licencja Creative Commons" style="border-width:0;vertical-align:bottom" src="./img/cc.png" />
+		</a>
+		<span>
+			Ta prezentacja jest dostępna na
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/pl/">;
+				licencji Creative Commons Uznanie autorstwa-Użycie niekomercyjne-Na tych
+				samych warunkach 3.0 Polska
+			</a>.
+		</span>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			history: true,
+			controlsTutorial: false,
+			controls: false,
+			progress: false,
+			center: true,
+			transition: 'convex',
+			slideNumber: 'c',
+			markdown: {
+				smartLists: true,
+				smartypants: true
+			},
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+		function changeTopBar(slideNumber) {
+			if (slideNumber === 0) {
+				document.querySelector('.left-bar').classList.add('big')
+			} else {
+				document.querySelector('.left-bar').classList.remove('big')
+			}
+		}
+
+		Reveal.addEventListener('slidechanged', function (event) {
+			changeTopBar(event.indexh)
+		});
+	</script>
+</body>
+
+</html>
