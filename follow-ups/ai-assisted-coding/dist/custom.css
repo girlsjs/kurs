@@ -336,6 +336,13 @@ pre {
 	float: left;
 }
 
+.image-floated-right {
+  float: right;
+  padding: 0 20px;
+  width: 45%;
+  vertical-align: middle;
+}
+
 figure a:before {
   display: none;
 }

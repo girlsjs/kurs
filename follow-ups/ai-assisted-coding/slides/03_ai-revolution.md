@@ -1,5 +1,8 @@
 ## tu będzie śmieszny obrazek tytułowy
 
+#### ...ale AI nie umiało podpowiedzieć, jaki :(
+<!-- .element: class="fragment fade-in" -->
+
 
 Jeszcze w 2015 r. Google zaprezentował swój Deep Dream (który następnie został udostępniony jako open source i zapoczątkował wiele innych, podobnych programów) (dać przykładowe obrazki)
 

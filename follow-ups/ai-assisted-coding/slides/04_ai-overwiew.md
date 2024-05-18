@@ -1,31 +1,19 @@
 ## Co to jest AI?
-![](img/podzial-szt-inteligencji-wg-dalle.jpg)
+![Obraz wygenerowany przez DALL-E w odpowiedzi na prompt "Co to jest AI"](img/podzial-szt-inteligencji-wg-dalle.jpg)<!-- .element: style="width: 40%" -->
 
 
 
-<div class="row">
-  <div class="column" style="flex:50%; padding: 10px;">
-    AI odnosi się do systemów komputerowych zdolnych do wykonywania zadań, które zwykle wymagałyby ludzkiej inteligencji. 
+![](img/inteligencja.png)<!-- .element: class="image-floated-right" -->
+
+AI odnosi się do systemów komputerowych zdolnych do wykonywania zadań, które zwykle wymagałyby ludzkiej inteligencji.
 
 Jak to stwierdzić w praktyce?
-  </div>
-  <div class="column" style="flex:50%; padding: 10px;">
-    <img src="img/inteligencja.png">
-  </div>
-</div>
 
 
 
+![](img/test-turinga.png)<!-- .element: class="image-floated-right" -->
 
-
-<div class="row">
-  <div class="column" style="flex:50%; padding: 10px;">
-    Zgodnie z testem Turinga, maszyna uważana jest za „inteligentną”, jeśli w trakcie tekstowej konwersacji uda jej sie przekonać obserwatora, że jest człowiekiem.
-  </div>
-  <div class="column" style="flex:50%; padding: 10px;">
-    <img src="img/test-turinga.png">
-  </div>
-</div>
+Zgodnie z testem Turinga, maszyna uważana jest za „inteligentną”, jeśli w trakcie tekstowej konwersacji uda jej się przekonać obserwatora, że jest człowiekiem.
 
 
 
@@ -35,7 +23,7 @@ To bardzo szeroka definicja, dlatego istnieje wiele modeli, które ją spełniaj
 
 Nas najbardziej intereinteresuje model GPT, ponieważ jest wstępnie trenowany na bardzo dużej ilości tekstu z Internetu, co obejmuje także kod źródłowy i dokumentację techniczną. 
 
-<img src="img/openai.png" width="80">
+![](img/openai.png)<!-- .element: style="width: 80px" -->
 
 Świetnie nadaje się jako baza dla asystentów kodowania!
 
