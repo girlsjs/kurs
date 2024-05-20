@@ -33,17 +33,38 @@ Niektóre z tych technik, które mogą się przydać:
 
 
 
-* Promptowanie bez próbek (Zero-shot Prompting)
+Promptowanie z kilkoma przykładami (Few-shot Prompting)
 
-**Prompt:** "Napisz funkcję JavaScript, która sprawdza, czy dany ciąg znaków jest palindromem.”
-
-**Wyjaśnienie:** Ten prompt bezpośrednio prosi AI o wygenerowanie kodu bez dostarczania jakichkolwiek przykładów czy dodatkowego kontekstu, opierając się wyłącznie na wstępnie przetrenowanej wiedzy modelu.
+![](img/few-shot.png)<!-- .element: style="width: 35%" -->
 
 
 
-* Promptowanie oparte na łańcuchu myślenia (Chain-of-thought Prompting)
+
+**Prompt:** Aby zmienić tekst elementu o id „demo” użyj takiego kodu: 
+```document.querySelector('#demo').innerHTML = 'Witaj, świecie!’;```
+Aby zmienić tekst w pierwszym paragrafie użyj takiego kodu: 
+```document.querySelector('p').textContent = 'Zmieniony tekst’;```
+
+Jak mogę użyć JavaScript do zmiany tekstu w elemencie HTML o klasie „moja-klasa" na „Nowy tekst"?
+
+
+
+
+**Wyjaśnienie:** Optymalizuje zdolność modelu do interpretacji i odpowiedzi na pytania w specyficznym kontekście bez konieczności dodatkowego trenowania na dużych zbiorach danych.
+
+
+
+
+Promptowanie oparte na łańcuchu myślenia (Chain-of-thought Prompting)
+
+![](img/chain-of-thought.png)<!-- .element: style="width: 35%" -->
+
+
+
 
 **Prompt:** "Aby określić, czy ciąg znaków jest palindromem w JavaScript, najpierw pomyśl o odwróceniu ciągu znaków, a następnie porównaj go z oryginalnym ciągiem. Jeśli są takie same, ciąg znaków jest palindromem. Napisz tę logikę jako funkcję.”
+
+
 
 **Wyjaśnienie:** Ten prompt kieruje AI przez logiczny proces myślenia, instruując, aby najpierw rozważyło odwrócenie ciągu znaków, a następnie wykonało porównanie, efektywnie "myśląc na głos”.
 
