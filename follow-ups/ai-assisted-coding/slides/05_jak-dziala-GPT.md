@@ -48,6 +48,3 @@ Zobaczmy, krok po kroku, jak została wygenerowana ta odpowiedź
 
 
 ![](img/etapy-1-7.png)
-
-
-

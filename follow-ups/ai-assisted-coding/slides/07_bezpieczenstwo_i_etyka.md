@@ -22,9 +22,18 @@ Na pytanie:
 
 Chat może odpowiedzieć błędnie: 
 
-```array[array.length] = 'nowy element';``` (dodaje element na koniec, nie na początek)
+```
+array[array.length] = 'nowy element';
+```
 
-Poprawna odpowiedź: ```array.unshift('nowy element');```
+(dodaje element na koniec, nie na początek)
+<!-- .element style="font-size: 0.8em" -->
+
+Poprawna odpowiedź:
+
+```
+array.unshift('nowy element');
+```
 
 
 

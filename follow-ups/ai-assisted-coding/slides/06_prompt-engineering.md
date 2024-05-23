@@ -8,19 +8,19 @@ Spróbujmy napisać różne wersje zadanego wcześniej promptu:
 
 
 
-„Napisz program, który dodaje dwie liczby”
+"Napisz program, który dodaje dwie liczby"
 
 
 
-„Napisz program w JavaScript, który dodaje dwie liczby”
+"Napisz program w JavaScript, który dodaje dwie liczby"
 
 
 
-„Napisz funkcję w JavaScript, która dodaje dwie liczby”
+"Napisz funkcję w JavaScript, która dodaje dwie liczby"
 
 
 
-„Jako senior programistka napisz funkcję w JavaScript, która dodaje dwie liczby”
+"Jako senior programistka napisz funkcję w JavaScript, która dodaje dwie liczby"
 
 
 
@@ -40,12 +40,20 @@ Promptowanie z kilkoma przykładami (Few-shot Prompting)
 
 
 
-**Prompt:** Aby zmienić tekst elementu o id „demo” użyj takiego kodu: 
-```document.querySelector('#demo').innerHTML = 'Witaj, świecie!’;```
-Aby zmienić tekst w pierwszym paragrafie użyj takiego kodu: 
-```document.querySelector('p').textContent = 'Zmieniony tekst’;```
+<!-- .slide: style="font-size: 0.9em" -->
+**Prompt:** \
+Aby zmienić tekst elementu o id "demo" użyj takiego kodu:
+```
+document.querySelector('#demo').innerHTML = 'Witaj, świecie!';
+```
 
-Jak mogę użyć JavaScript do zmiany tekstu w elemencie HTML o klasie „moja-klasa" na „Nowy tekst"?
+Aby zmienić tekst w pierwszym paragrafie użyj takiego kodu:
+
+```
+document.querySelector('p').textContent = 'Zmieniony tekst';
+```
+
+Jak mogę użyć JavaScript do zmiany tekstu w elemencie HTML o klasie "moja-klasa" na "Nowy tekst"?
 
 
 
@@ -62,11 +70,11 @@ Promptowanie oparte na łańcuchu myślenia (Chain-of-thought Prompting)
 
 
 
-**Prompt:** "Aby określić, czy ciąg znaków jest palindromem w JavaScript, najpierw pomyśl o odwróceniu ciągu znaków, a następnie porównaj go z oryginalnym ciągiem. Jeśli są takie same, ciąg znaków jest palindromem. Napisz tę logikę jako funkcję.”
+**Prompt:** "Aby określić, czy ciąg znaków jest palindromem w JavaScript, najpierw pomyśl o odwróceniu ciągu znaków, a następnie porównaj go z oryginalnym ciągiem. Jeśli są takie same, ciąg znaków jest palindromem. Napisz tę logikę jako funkcję."
 
 
 
-**Wyjaśnienie:** Ten prompt kieruje AI przez logiczny proces myślenia, instruując, aby najpierw rozważyło odwrócenie ciągu znaków, a następnie wykonało porównanie, efektywnie "myśląc na głos”.
+**Wyjaśnienie:** Ten prompt kieruje AI przez logiczny proces myślenia, instruując, aby najpierw rozważyło odwrócenie ciągu znaków, a następnie wykonało porównanie, efektywnie "myśląc na głos".
 
 
 

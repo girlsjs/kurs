@@ -300,6 +300,10 @@ pre {
 	padding: 0.5em;
 }
 
+pre.code-wrapper {
+  padding: 0;
+}
+
 .reveal ul.note li {
 	list-style-type: none;
 }
@@ -345,4 +349,10 @@ pre {
 
 figure a:before {
   display: none;
+}
+
+.title-on-dark-bg {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 0.2em 0;
+  border-radius: 15px;
 }
