@@ -4,9 +4,12 @@
 <!-- .element: class="fragment fade-in" -->
 
 
-Jeszcze w 2015 r. Google zaprezentował swój Deep Dream (który następnie został udostępniony jako open source i zapoczątkował wiele innych, podobnych programów) (dać przykładowe obrazki)
+![Mona Lisa by Deep Dream](img/Mona_Lisa__with_DeepDream.jpg)<!-- .element: class="image-floated-right" -->
+
+Jeszcze w 2015 r. Google zaprezentował swój Deep Dream (który następnie został udostępniony jako open source i zapoczątkował wiele innych, podobnych programów)
 
 
+![Kot stworzony przez Midjourney](img/midjourney_cat.jpg)<!-- .element: class="image-floated-right" -->
 Niedługo później pojawiły się generatory grafiki DALL-E oraz midjourney, znacznie bardziej zaawansowane
 
 
