@@ -33,3 +33,6 @@ Jeśli masz wykupionego Chata GPT, nie uda Ci się wygenerować klucza API.
 - napisaniu prostej funkcji pobierającej dane z API Instagrama
 - napisaniu funkcji obliczającej silnię (działanie matematyczne)
 - wygenerowaniu testów jednostkowych do w/w funkcji
+
+
+### Czy jesteś zadowolona z pomocy asystenta?
