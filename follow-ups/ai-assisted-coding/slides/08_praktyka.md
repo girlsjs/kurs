@@ -8,7 +8,9 @@ Jak w praktyce możemy korzystać z asystentów?
 
 Smutna prawda jest taka, że nie ma rozwiązań darmowych*
 
-note: podobno github oferuje Copilota za darmo studentom oraz kontrybutorom open source
+note:
+podobno github oferuje Copilota za darmo studentom oraz kontrybutorom open source
+do pewnego stopnia darmowy jest asystent o nazwie bito.ai
 
 
 Nawet ChatGPT w wersji "darmowej" jest limitowany do konkretnej liczby zapytań dziennie
@@ -25,6 +27,15 @@ Jeśli masz wykupionego Chata GPT, nie uda Ci się wygenerować klucza API.
 
 
 ## Sprawdzamy!
+
+
+### _How to prompt_
+
+- bezpośrednio w okienku z czatem<!-- .element: class="fragment fade-in" -->
+- w aplikacji w telefonie<!-- .element: class="fragment fade-in" -->
+- można zainstalować plugin do IDE (zwykle płatne)<!-- .element: class="fragment fade-in" -->
+  - asystent będzie podpowiadał w trakcie pisania kodu<!-- .element: class="fragment fade-in" -->
+  - można pisać prompty w komentarzach w kodzie i asystent powinien to wychwycić <!-- .element: class="fragment fade-in" -->
 
 
 ### Poproś asystenta o pomoc przy:
