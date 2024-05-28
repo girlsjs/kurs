@@ -10,3 +10,4 @@ Follow-up:
 - Ciasteczka: [tutaj](follow-ups/cookies/slides/index.html)
 - Funkcje: [tutaj](follow-ups/functions/index.html)
 - Debugowanie: [tutaj](follow-ups/debugging/index.html)
+- Kodowanie z AI: [tutaj](follow-ups/ai-assisted-coding/index.html)
