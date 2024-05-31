@@ -12,6 +12,9 @@ note:
 podobno github oferuje Copilota za darmo studentom oraz kontrybutorom open source
 do pewnego stopnia darmowy jest asystent o nazwie bito.ai
 
+jak mam 1-2 konwersacje z Chatem GPT i to nie codziennie to idzie z taką ilością progrmować za darmo. Szkopuł w tym, żeby pisać dobre zapytania w Google, jeśli nie musimy szukać pomocy w czacie. Wtedy ChatGPT pełni funkcję mida czy seniora, który nam podpowiada jak utkniemy i nasze wyszukiwania nie wystarczą - to jest moje obejście modeli płatnych
+
+
 
 Nawet ChatGPT w wersji "darmowej" jest limitowany do konkretnej liczby zapytań dziennie
 

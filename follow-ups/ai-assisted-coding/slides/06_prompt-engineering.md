@@ -81,3 +81,5 @@ Promptowanie oparte na łańcuchu myślenia (Chain-of-thought Prompting)
 Najlepiej jest zawrzeć w pytaniu jak najwięcej informacji i oczekiwań, jeśli mamy już jakiś pomysł na rozwiązanie. Jeśli wiemy bardzo mało, pozwólmy odpowiedzieć modelowi a potem zadawajmy dodatkowe pytania, żeby stopniowo dostosowywać odpowiedź. 
 
 Chat pamięta całą rozmowę otwartą w jednym oknie więc możemy odnosić się do jej kontekstu!
+
+note: czasem niestety ten kontekst bywa ograniczeniem, tj. ChatGPT kręci się wokół tego samego rodzaju rozwiązań nawet jak prosimy go, by spróbował inaczej. Jak widzimy, że biedak się zablokował otwieramy nowe okno i zadajemy pytanie precyzyjniej, na bazie zebranych informacji z pierwszego czatu. Zazwyczaj to pomaga :)
