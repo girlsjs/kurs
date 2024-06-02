@@ -1,7 +1,11 @@
 ## A co, jeśli asystent zmyśla?
 
-### czyli jak rozpoznać, że asystent się myli
+
+## Jak to tak naprawdę działa?
 
 
-- najprościej jest uruchomić kod wygenerowany przez asystenta i sprawdzić, czy działa
-- można też spytać go, czy jest pewny - jeśli zacznie kręcić, to znaczy, że nie jest
+## Kto trenuje algorytm?
+
+
+## Dead Internet Theory
+
