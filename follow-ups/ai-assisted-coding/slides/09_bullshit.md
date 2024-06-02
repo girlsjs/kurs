@@ -8,4 +8,3 @@
 
 
 ## Dead Internet Theory
-

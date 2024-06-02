@@ -8,25 +8,13 @@ Jak w praktyce możemy korzystać z asystentów?
 
 Smutna prawda jest taka, że nie ma rozwiązań darmowych*
 
-note:
-podobno github oferuje Copilota za darmo studentom oraz kontrybutorom open source
-do pewnego stopnia darmowy jest asystent o nazwie bito.ai
-
-jak mam 1-2 konwersacje z Chatem GPT i to nie codziennie to idzie z taką ilością progrmować za darmo. Szkopuł w tym, żeby pisać dobre zapytania w Google, jeśli nie musimy szukać pomocy w czacie. Wtedy ChatGPT pełni funkcję mida czy seniora, który nam podpowiada jak utkniemy i nasze wyszukiwania nie wystarczą - to jest moje obejście modeli płatnych
-
+note: podobno github oferuje Copilota za darmo studentom oraz kontrybutorom open source
 
 
 Nawet ChatGPT w wersji "darmowej" jest limitowany do konkretnej liczby zapytań dziennie
 
 
 Dobra wiadomość jest taka, że niektórzy producenci asystentów AI oferują darmowy okres próbny, dzięki czemu można przynajmniej sprawdzić, czy faktycznie to się przydaje
-
-
-### Dygresja (acz nie całkiem)
-
-Konto openAI to nie jest to samo, co konto ChatGPT.\
-Rozszerzenia VS Code oferujące ChatGPT zwykle wymagają wklejenia klucza API z openAI.\
-Jeśli masz wykupionego Chata GPT, nie uda Ci się wygenerować klucza API.
 
 
 ## Sprawdzamy!
@@ -41,12 +29,80 @@ Jeśli masz wykupionego Chata GPT, nie uda Ci się wygenerować klucza API.
   - można pisać prompty w komentarzach w kodzie i asystent powinien to wychwycić <!-- .element: class="fragment fade-in" -->
 
 
-### Poproś asystenta o pomoc przy:
-
-- stworzeniu funkcji konwertującej stopnie Celsjusza na Fahrenheita
-- napisaniu prostej funkcji pobierającej dane z API Instagrama
-- napisaniu funkcji obliczającej silnię (działanie matematyczne)
-- wygenerowaniu testów jednostkowych do w/w funkcji
+### Instalacja Copilota
 
 
-### Czy jesteś zadowolona z pomocy asystenta?
+### Tetsujemy czy wszystko działa
+Utwórzmy w edytorze pusty plik z rozszerzeniem js i zacznijmy coś pisać (jak zwykle function)
+
+
+### Skróty klawiaturowe
+
+* Akceptuj sugestię — Tab
+* Odrzuć sugestię — Esc
+* Następna sugestia — Alt + ] or Option (⌥) + ]
+* Poprzednia sugestia — Alt + [ or Option (⌥) + [
+* Wywołaj sugestię — Alt + \ or Option (⌥) + \
+* Okno chatu Control+Command+i (Mac) / Ctrl+Alt+i (Windows/Linux).
+* Okno chatu inline Command+i (Mac) / Alt+i (Windows/Linux).
+
+
+### Gra "Zgadnij literę"
+Polega na zgadywaniu litery alfabetu wylosowanej przez komputer
+
+![](img/gra.png)<!-- .element: style="width: 40%" -->
+
+
+### Co jest potrzebne, żeby powstała aplikacja internetowa?
+
+![](img/document.png)<!-- .element: style="width: 30%" -->
+
+
+### Tworzymy index.html
+
+`Utwórz pusty dokument html z napisem Hello`
+
+Uruchommy ten dokument w przeglądarce, że by zobaczyć jak obecnie wygląda
+
+
+
+### Dodajemy przycisk i pole do wpisania litery
+W dokumencie html zacznij pod nagłówkiem `<h1>` pisać `<button>`, 
+Copilot dokończy cały kod przycisku za Ciebie.
+
+Podobnie dodaj `<input>`
+
+
+### Programujemy zachowanie aplikacji w JS
+Wyniki zapytań mogą się róznić, dlatego musimy dostosowywać do nich dalsze ktoki. 
+
+
+### Zacznijmy od wylosowania litery:
+
+`napisz funkcję losującą literę polskiego alfabetu od a do z`
+
+
+### później mogą być potrzebne: 
+* `po wejściu na stronę wylosuj literę a gdy użytkownik wpisze literę do inputu to porównaj ją z wylosowaną literą`
+
+* `pod inputem napisz czy odpowiedź była prawidłowa`
+
+
+### Poprawiamy wygląd
+
+`Wygeneruj style dla przycisku oraz wyniku użytkownika w light mode w motywie neomorphic ui`
+
+
+### Rozwijamy nasz program
+
+Czego tu brakuje? Jakie funkcjonalności możemy dodać? Zastanówmy się wspólnie i spróbujcie zrealizować któryś z tych pomysłów samodzielnie.
+
+
+### Można jeszcze szybciej
+
+Czemu nie poprosić od razu o cały program?
+
+`stwórz aplikację kalkulator w html js i css`
+
+
+## Czy jesteś zadowolona z pomocy asystenta?
