@@ -62,7 +62,7 @@ Polega na zgadywaniu litery alfabetu wylosowanej przez komputer
 
 ### Tworzymy index.html
 
-`Utwórz pusty dokument html z napisem Hello`
+`Utwórz pusty dokument html z napisem Hello`<!-- .element: class="prompt" -->
 
 Uruchommy ten dokument w przeglądarce, że by zobaczyć jak obecnie wygląda
 
@@ -76,23 +76,23 @@ Podobnie dodaj `<input>`
 
 
 ### Programujemy zachowanie aplikacji w JS
-Wyniki zapytań mogą się róznić, dlatego musimy dostosowywać do nich dalsze ktoki. 
+Wyniki zapytań mogą się różnić, dlatego musimy dostosowywać do nich dalsze kroki. 
 
 
 ### Zacznijmy od wylosowania litery:
 
-`napisz funkcję losującą literę polskiego alfabetu od a do z`
+`napisz funkcję losującą literę polskiego alfabetu od a do z`<!-- .element: class="prompt" -->
 
 
 ### później mogą być potrzebne: 
-* `po wejściu na stronę wylosuj literę a gdy użytkownik wpisze literę do inputu to porównaj ją z wylosowaną literą`
+`po wejściu na stronę wylosuj literę a gdy użytkownik wpisze literę do inputu to porównaj ją z wylosowaną literą`<!-- .element: class="prompt" -->
 
-* `pod inputem napisz czy odpowiedź była prawidłowa`
+`pod inputem napisz czy odpowiedź była prawidłowa`<!-- .element: class="prompt" -->
 
 
 ### Poprawiamy wygląd
 
-`Wygeneruj style dla przycisku oraz wyniku użytkownika w light mode w motywie neomorphic ui`
+`Wygeneruj style dla przycisku oraz wyniku użytkownika w light mode w motywie neomorphic ui`<!-- .element: class="prompt" -->
 
 
 ### Rozwijamy nasz program
@@ -104,7 +104,7 @@ Czego tu brakuje? Jakie funkcjonalności możemy dodać? Zastanówmy się wspól
 
 Czemu nie poprosić od razu o cały program?
 
-`stwórz aplikację kalkulator w html js i css`
+`stwórz aplikację kalkulator w html js i css`<!-- .element: class="prompt" -->
 
 
 ## Czy jesteś zadowolona z pomocy asystenta?
