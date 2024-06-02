@@ -356,3 +356,17 @@ figure a:before {
   padding: 0.2em 0;
   border-radius: 15px;
 }
+
+code.prompt::before {
+  content: "\f120";
+  font-family: 'FontAwesome';
+  margin-right: 0.5em;
+}
+
+code.prompt {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.5em;
+  border-radius: 5px;
+  display: flex;
+  text-align: left;
+}
