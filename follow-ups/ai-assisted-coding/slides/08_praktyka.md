@@ -38,13 +38,15 @@ Utwórzmy w edytorze pusty plik z rozszerzeniem js i zacznijmy coś pisać (jak 
 
 ### Skróty klawiaturowe
 
-* Akceptuj sugestię — Tab
-* Odrzuć sugestię — Esc
-* Następna sugestia — Alt + ] or Option (⌥) + ]
-* Poprzednia sugestia — Alt + [ or Option (⌥) + [
-* Wywołaj sugestię — Alt + \ or Option (⌥) + \
-* Okno chatu Control+Command+i (Mac) / Ctrl+Alt+i (Windows/Linux).
-* Okno chatu inline Command+i (Mac) / Alt+i (Windows/Linux).
+* Akceptuj sugestię — `Tab`
+* Odrzuć sugestię — `Esc`
+* Następna sugestia — `Alt` + `]` lub `⌥` + `]`
+* Poprzednia sugestia — `Alt` + `[` lub `⌥` + `[`
+* Wywołaj sugestię — `Alt` + `\` lub `⌥` + `\`
+* Okno chatu `Ctrl` + `Alt` + `I` lub\
+  `Ctrl` + `⌘` + `I`.
+* Okno chatu inline `Alt` + `I` lub `⌘` + `I`.
+
 
 
 ### Gra "Zgadnij literę"
