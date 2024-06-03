@@ -16,7 +16,7 @@ W odpowiedziach mogą pojawiać się błędy. Trzeba zawsze je sprawdzać
 
 Na pytanie: 
 
-"Jak dodać element na początek tablicy w JavaScript?"
+`Jak dodać element na początek tablicy w JavaScript?`<!-- .element: class="prompt" style="font-size: 0.7em; white-space: pre" -->
 
 Chat może odpowiedzieć błędnie: 
 
