@@ -6,7 +6,7 @@ Możemy przywitać się z chatem
 
 
 A teraz poprośmy o napisanie prostej funkcji:
-"Napisz funkcję w JavaScript, która dodaje dwie liczby i zwraca wynik"
+`Napisz funkcję w JavaScript, która dodaje dwie liczby i zwraca wynik`<!-- .element: class="prompt" -->
 
 
 
